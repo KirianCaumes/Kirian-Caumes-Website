@@ -1,0 +1,102 @@
+/***************************
+****** Dependencies 📚 *****
+***************************/
+@import "bulma/sass/utilities/initial-variables.sass";
+@import "bulma/sass/utilities/functions.sass";
+@import "bulma/sass/utilities/derived-variables.sass";
+@import "bulma/sass/utilities/mixins.sass";
+
+/***************************
+******** Theme 🎨 **********
+***************************/
+@import "./_variables.scss";
+@import "./_helpers.scss";
+@import "./_base.scss";
+
+$tabs-link-active-border-bottom-color: $pink;
+$tabs-link-active-color: $pink;
+
+$pagination-focus-border-color: $pink;
+$pagination-current-background-color: $pink;
+$pagination-current-border-color: $pink;
+
+//Used to add colors as bulma helpers
+$colors: map-merge(
+    $colors,
+    (
+        "pink": (
+            $pink,
+            findColorInvert($dark),
+        ),
+        "dark-pink": (
+            $dark-pink,
+            findColorInvert($dark-pink),
+        ),
+        "greyblue": (
+            $greyblue,
+            findColorInvert($greyblue),
+        ),
+        "dark-greyblue": (
+            $dark-greyblue,
+            findColorInvert($dark-greyblue),
+        ),
+    )
+);
+
+//Dependencies: We Import bulma after variables to add new colors
+// @import "bulma/bulma.sass";
+@import "bulma/sass/utilities/_all.sass";
+@import "bulma/sass/base/_all.sass";
+// @import "bulma/sass/elements/_all.sass";
+// @import "bulma/sass/elements/box.sass";
+@import "bulma/sass/elements/button.sass";
+@import "bulma/sass/elements/container.sass";
+@import "bulma/sass/elements/content.sass";
+@import "bulma/sass/elements/icon.sass";
+// @import "bulma/sass/elements/image.sass";
+@import "bulma/sass/elements/notification.sass";
+// @import "bulma/sass/elements/progress.sass";
+// @import "bulma/sass/elements/table.sass";
+@import "bulma/sass/elements/tag.sass";
+@import "bulma/sass/elements/title.sass";
+@import "bulma/sass/elements/other.sass";
+
+@import "bulma/sass/form/_all.sass";
+@import "bulma/sass/components/_all.sass";
+@import "bulma/sass/grid/_all.sass";
+@import "bulma/sass/helpers/_all.sass";
+@import "bulma/sass/layout/_all.sass";
+
+// @import "bulma-extensions/bulma-accordion/src/sass/index.sass";
+// @import "bulma-extensions/bulma-badge/src/sass/index.sass";
+// @import "bulma-extensions/bulma-calendar/src/sass/index.sass";
+// @import "bulma-extensions/bulma-carousel/src/sass/index.sass";
+// @import "bulma-extensions/bulma-checkradio/src/sass/index.sass";
+// @import "bulma-extensions/bulma-divider/src/sass/index.sass";
+// @import "bulma-extensions/bulma-iconpicker/src/sass/index.sass";
+// @import "bulma-extensions/bulma-pageloader/src/sass/index.sass";
+// @import "bulma-extensions/bulma-pricingtable/src/sass/index.sass";
+// @import "bulma-extensions/bulma-quickview/src/sass/index.sass";
+// @import "bulma-extensions/bulma-ribbon/src/sass/index.sass";
+// @import "bulma-extensions/bulma-slider/src/sass/index.sass"; //Isue on this one
+// @import "bulma-extensions/bulma-steps/src/sass/index.sass";
+// @import "bulma-extensions/bulma-switch/src/sass/index.sass";
+// @import "bulma-extensions/bulma-tagsinput/src/sass/index.sass";
+// @import "bulma-extensions/bulma-timeline/src/sass/index.sass";
+// @import "bulma-extensions/bulma-tooltip/src/sass/index.sass";
+// @import "~@creativebulma/bulma-divider";
+// @import "node_modules/bulma-block-list/src/block-list";
+
+/***************************
+********** Pages 📖 ********
+***************************/
+//⚠ It may be better to only load it on needed component
+// @import "./pages/_layout.scss";
+
+/***************************
+******* Components 🧱 *****
+***************************/
+// @import "./components/divider.scss";
+// @import "./components/card.scss";
+// @import "./components/loader.scss";
+// @import "./components/workflow.scss";

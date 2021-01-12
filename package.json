@@ -1,15 +1,20 @@
 {
-  "name": "kirian-caumes-fr",
+  "name": "kirian-caumes-website",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next start"
   },
   "dependencies": {
+    "bulma": "^0.9.1",
     "next": "10.0.5",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-dom": "17.0.1",
+    "sass": "^1.32.4"
+  },
+  "engines": {
+    "node": "14.15.x"
   }
 }

@@ -1,7 +1,12 @@
-import '../styles/globals.css'
+import React from 'react'
+import { AppProps } from 'next/dist/next-server/lib/router/router'
+import 'styles/index.scss'
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+/**
+ * Base layout
+ * @param {AppProps} props 
+ * {@link https://nextjs.org/docs/advanced-features/custom-app}
+ */
+export default function MyApp({ Component, pageProps }) {
+    return <Component {...pageProps} />
 }
-
-export default MyApp
