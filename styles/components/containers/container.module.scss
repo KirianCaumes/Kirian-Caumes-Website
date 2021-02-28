@@ -1,0 +1,34 @@
+@import "../../mixins";
+
+$container-offset: 2 * $gap !default;
+$container-max-width: $fullhd !default;
+
+.container {
+  flex-grow: 1;
+  margin: 0 auto;
+  position: relative;
+  width: auto;
+  @include desktop {
+    max-width: $desktop - $container-offset;
+  }
+  @include until-widescreen {
+    &.is-widescreen:not(.is-max-desktop) {
+      max-width: min($widescreen, $container-max-width) - $container-offset;
+    }
+  }
+  @include until-fullhd {
+    &.is-fullhd:not(.is-max-desktop):not(.is-max-widescreen) {
+      max-width: min($fullhd, $container-max-width) - $container-offset;
+    }
+  }
+  @include widescreen {
+    &:not(.is-max-desktop) {
+      max-width: min($widescreen, $container-max-width) - $container-offset;
+    }
+  }
+  @include fullhd {
+    &:not(.is-max-desktop):not(.is-max-widescreen) {
+      max-width: min($fullhd, $container-max-width) - $container-offset;
+    }
+  }
+}

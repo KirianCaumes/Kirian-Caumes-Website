@@ -1,0 +1,47 @@
+// If you want to run as a non-root user in the container, see .devcontainer/docker-compose.yml.
+{
+  "name": "kiriancaumes",
+  "context": "..",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "kiriancaumes_container",
+  // Use 'settings' to set *default* container specific settings.json values on container create.
+  // You can edit these settings after create using File > Preferences > Settings > Remote.
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash",
+    // "editor.rulers": [
+    //   80
+    // ],
+    "workbench.colorCustomizations": {
+      "editorRuler.foreground": "#fff8fa"
+    }
+  },
+  // Use 'appPort' to create a container with published ports. If the port isn't working, be sure
+  // your server accepts connections from all interfaces (0.0.0.0 or '*'), not just localhost.
+  "appPort": [
+    "5000:5000",
+    "5001:5001"
+  ],
+  // "postCreateCommand": "dotnet restore /app_kiriancaumes/back/back.sln && npm install /app_kiriancaumes/Front/ --silence",
+  // The optional 'workspaceFolder' property is the path VS Code should open by default when
+  // connected. This is typically a file mount in .devcontainer/docker-compose.yml
+  "workspaceFolder": "/app_kiriancaumes",
+  // Uncomment the next line to have VS Code connect as an existing non-root user in the container. See
+  // https://aka.ms/vscode-remote/containers/non-root for details on adding a non-root user if none exist.
+  // "remoteUser": "vscode",
+  // Uncomment the next line if you want start specific services in your Docker Compose config.
+  //"runServices": ["db"],
+  // Uncomment the next line if you want to keep your containers running after VS Code shuts down.
+  // "shutdownAction": "none",
+  // Uncomment the next line to run commands after the container is created - for example installing git.
+  // "postCreateCommand": "apt-get update && apt-get install -y git",
+  // Add the IDs of extensions you want installed when the container is created in the array below.
+  "extensions": [
+    "fudge.auto-using",
+    "k--kato.docomment",
+    "gruntfuggly.todo-tree",
+    "ofhumanbondage.react-proptypes-intellisense",
+    "sibiraj-s.vscode-scss-formatter",
+    "firefox-devtools.vscode-firefox-debug",
+    "msjsdiag.debugger-for-chrome"
+  ]
+}

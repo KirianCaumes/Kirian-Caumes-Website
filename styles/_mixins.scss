@@ -1,0 +1,155 @@
+// The container horizontal gap, which acts as the offset for breakpoints
+$gap: 32px !default;
+
+// 960, 1152, and 1344 have been chosen because they are divisible by both 12 and 16
+$tablet: 769px !default;
+
+// 960px container + 4rem
+$desktop: 960px + 2 * $gap !default;
+
+// 1152px container + 4rem
+$widescreen: 1152px + 2 * $gap !default;
+$widescreen-enabled: true !default;
+
+// 1344px container + 4rem
+$fullhd: 1344px + 2 * $gap !default;
+$fullhd-enabled: true !default;
+
+@mixin from($device) {
+  @media screen and (min-width: $device) {
+    @content;
+  }
+}
+@mixin until($device) {
+  @media screen and (max-width: $device - 1px) {
+    @content;
+  }
+}
+@mixin mobile {
+  @media screen and (max-width: $tablet - 1px) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media screen and (min-width: $tablet), print {
+    @content;
+  }
+}
+@mixin tablet-only {
+  @media screen and (min-width: $tablet) and (max-width: $desktop - 1px) {
+    @content;
+  }
+}
+@mixin touch {
+  @media screen and (max-width: $desktop - 1px) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media screen and (min-width: $desktop) {
+    @content;
+  }
+}
+@mixin desktop-only {
+  @if $widescreen-enabled {
+    @media screen and (min-width: $desktop) and (max-width: $widescreen - 1px) {
+      @content;
+    }
+  }
+}
+@mixin until-widescreen {
+  @if $widescreen-enabled {
+    @media screen and (max-width: $widescreen - 1px) {
+      @content;
+    }
+  }
+}
+
+@mixin widescreen {
+  @if $widescreen-enabled {
+    @media screen and (min-width: $widescreen) {
+      @content;
+    }
+  }
+}
+
+@mixin widescreen-only {
+  @if $widescreen-enabled and $fullhd-enabled {
+    @media screen and (min-width: $widescreen) and (max-width: $fullhd - 1px) {
+      @content;
+    }
+  }
+}
+
+@mixin until-fullhd {
+  @if $fullhd-enabled {
+    @media screen and (max-width: $fullhd - 1px) {
+      @content;
+    }
+  }
+}
+
+@mixin fullhd {
+  @if $fullhd-enabled {
+    @media screen and (min-width: $fullhd) {
+      @content;
+    }
+  }
+}
+
+/***************************
+********* Functions ********
+***************************/
+
+/** Find invert color **/
+@function findColorInvert($color) {
+  @if luminance($color) > 0.55 {
+    @return rgba(#000, 0.7);
+  } @else {
+    @return #fff;
+  }
+}
+
+/** Get luminance value of a color **/
+@function luminance($color) {
+  $colors: (
+    "red": red($color),
+    "green": green($color),
+    "blue": blue($color),
+  );
+
+  @each $name, $value in $colors {
+    $adjusted: 0;
+    $value: $value / 255;
+
+    @if $value < 0.03928 {
+      $value: $value / 12.92;
+    } @else {
+      $value: ($value + 0.055) / 1.055;
+      $value: pow($value, 2.4);
+    }
+
+    $colors: map-merge(
+      $colors,
+      (
+        $name: $value,
+      )
+    );
+  }
+
+  @return (map-get($colors, "red") * 0.2126) + (map-get($colors, "green") * 0.7152) +
+    (map-get($colors, "blue") * 0.0722);
+}
+
+/** Number to pow **/
+@function pow($number, $exponent) {
+  $value: 1;
+
+  @if $exponent > 0 {
+    @for $i from 1 through ceil($exponent) {
+      $value: $value * $number;
+    }
+  }
+
+  @return $value;
+}

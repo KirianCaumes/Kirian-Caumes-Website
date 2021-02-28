@@ -2,16 +2,29 @@
 ********* Colors 🎨 ********
 ***************************/
 
-$white: #ffffff;
-$pink: #c51f5d;
-$dark-pink: #891541;
-$greyblue: #243447;
-$dark-greyblue: #141d26;
+$yellow: #f0b068;
+$pink: #df6a7c;
+$purple: #7f5587;
+$blue: #263547;
 
-$grey: #f5f5f5;
+$white: #ffffff;
+$grey: #f3f3f3;
+$medium-grey: #757575;
+$black: #3f3f3f;
+
+$colors: (
+  "yellow": $yellow,
+  "pink": $pink,
+  "purple": $purple,
+  "blue": $blue,
+  "white": $white,
+  "grey": $grey,
+  "medium-grey": $medium-grey,
+  "black": $black,
+);
 
 /***************************
 ******** Settings ⚙ *******
 ***************************/
-$headerHeight: 54px;
-$footerHeight: 49px;
+$headerHeight: 3em;
+$footerHeight: 2.5em;

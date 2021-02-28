@@ -1,0 +1,21 @@
+@import "../../variables";
+
+svg.border {
+  height: 150px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  pointer-events: none;
+  &.is-top {
+    top: 0;
+    // transform: scaleY(-1);
+  }
+  &.is-bottom {
+    bottom: 0;
+  }
+  @each $name, $value in $colors {
+    &.is-#{$name} {
+      fill: $value;
+    }
+  }
+}

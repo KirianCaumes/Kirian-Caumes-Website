@@ -1,0 +1,77 @@
+@import "../../../mixins";
+@import "../../../variables";
+
+.skillcard {
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  .skillcard-stars {
+    font-weight: normal;
+    line-height: 16px;
+  }
+  .skillcard-body {
+    overflow: hidden;
+    box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.02);
+    background: white;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1em;
+    @each $key, $color in $colors {
+      &.is-#{$key} {
+        .skillcard-body-left {
+          border-right: 1px solid $color;
+        }
+        .skillcard-body-right {
+          border-left: 1px solid $color;
+        }
+      }
+    }
+    .skillcard-body-left,
+    .skillcard-body-right {
+      padding: 1em;
+      width: 100%;
+      flex: 1;
+      overflow: hidden;
+    }
+    .skillcard-body-left {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      .skillcard-title {
+        text-align: center;
+        font-weight: bold;
+        span {
+          &:first-child {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+          }
+        }
+      }
+    }
+    .skillcard-body-right {
+      .skillcard-content {
+        text-align: left;
+        font-size: 0.85em;
+        list-style: none;
+        li {
+          display: flex;
+          justify-content: space-between;
+          span {
+            &:first-child {
+              overflow: hidden;
+              text-overflow: ellipsis;
+              display: -webkit-box;
+              -webkit-line-clamp: 1;
+              -webkit-box-orient: vertical;
+            }
+          }
+        }
+      }
+    }
+  }
+}

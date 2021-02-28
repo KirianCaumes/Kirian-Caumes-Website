@@ -1,0 +1,22 @@
+version: '3'
+services:
+  kiriancaumes_container:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    stdin_open: true
+    tty: true
+    volumes:
+      - ../:/app_kiriancaumes:rw
+      - /app_kiriancaumes/front/node_modules
+
+      - ~/.ssh:/.ssh
+    ports:
+      - "5000:5000"
+      - '3000:3000'
+    networks:
+      - backend_serv
+
+networks:
+  backend_serv:
+    driver: "bridge"

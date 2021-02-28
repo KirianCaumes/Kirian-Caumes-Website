@@ -1,0 +1,33 @@
+@import "../../variables";
+
+h1.title {
+  font-size: 2rem;
+}
+h2.title {
+  font-size: 1.5rem;
+}
+h3.title {
+  font-size: 1rem;
+}
+h4.title {
+  font-size: 1rem;
+}
+
+.title {
+  word-break: break-word;
+  margin-bottom: 1.5rem;
+  color: $black;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.125;
+  &.is-centered {
+    text-align: center;
+  }
+  &.subtitle {
+    color: $blue;
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.25;
+    margin-top: -1.25rem;
+  }
+}

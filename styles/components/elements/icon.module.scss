@@ -1,0 +1,21 @@
+@import "../../variables";
+
+svg.icon {
+  fill: $white;
+  transition: 0.1s;
+  padding: 1em;
+  &.is-colored {
+    &[data-iconname="linkedin"] {
+      fill: $blue;
+      &:hover {
+        fill: #007bb6;
+      }
+    }
+    &[data-iconname="github"] {
+      fill: $blue;
+      &:hover {
+        fill: #fff;
+      }
+    }
+  }
+}

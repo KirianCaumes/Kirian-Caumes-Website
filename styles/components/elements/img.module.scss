@@ -1,0 +1,17 @@
+@import "../../variables";
+.img {
+  max-width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  width: min-content;
+  height: min-content;
+  &.is-zoomable {
+    img {
+      transition: 0.5s;
+      vertical-align: middle;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+@import "../variables";
+@import "../mixins";
+
+.layout {
+  header {
+    background-color: $grey;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.02);
+    padding: 0 1em;
+    height: $headerHeight;
+  }
+  footer {
+    background-color: $black;
+    height: $footerHeight;
+    color: $white;
+    padding: 0 1em;
+    div {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      font-size: 0.75em;
+      a {
+        color: $white;
+      }
+    }
+  }
+}

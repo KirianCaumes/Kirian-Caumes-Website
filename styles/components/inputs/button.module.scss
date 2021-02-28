@@ -1,0 +1,77 @@
+@import "../../variables";
+@import "../../mixins";
+
+.button {
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: 0.375em;
+  display: inline-flex;
+  font-size: 1rem;
+  padding-bottom: calc(0.5em - 1px);
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: calc(0.5em - 1px);
+  line-height: 1.5;
+  position: relative;
+  vertical-align: top;
+  user-select: none;
+  background-color: #fff;
+  border-color: #dbdbdb;
+  border-width: 1px;
+  color: #363636;
+  cursor: pointer;
+  justify-content: center;
+  text-align: center;
+  white-space: nowrap;
+  @each $key, $color in $colors {
+    &.is-#{$key} {
+      background-color: $color;
+      border-color: transparent;
+      color: findColorInvert($color);
+      &:hover {
+        background-color: darken($color, 2.5%);
+        border-color: transparent;
+        color: findColorInvert($color);
+      }
+      &:focus {
+        border-color: transparent;
+        color: findColorInvert($color);
+        &:not(:active) {
+          box-shadow: 0 0 0 0.125em rgba($color, 0.25);
+        }
+      }
+      &:active {
+        background-color: darken($color, 5%);
+        border-color: transparent;
+        color: findColorInvert($color);
+      }
+      &[disabled] {
+        background-color: $color;
+        border-color: transparent;
+        box-shadow: none;
+      }
+      &.is-outlined {
+        background-color: transparent;
+        border-color: $color;
+        color: $color;
+
+        &:hover,
+        &:focus {
+          background-color: $color;
+          border-color: $color;
+          color: findColorInvert($color);
+        }
+
+        &[disabled] {
+          background-color: transparent;
+          border-color: $color;
+          box-shadow: none;
+          color: $color;
+        }
+      }
+    }
+  }
+  &.is-fullwidth {
+    display: flex;
+  }
+}

@@ -1,6 +1,7 @@
 import React from 'react'
 import { AppProps } from 'next/dist/next-server/lib/router/router'
 import 'styles/index.scss'
+import Layout from 'components/layout'
 
 /**
  * Base layout
@@ -8,5 +9,9 @@ import 'styles/index.scss'
  * {@link https://nextjs.org/docs/advanced-features/custom-app}
  */
 export default function MyApp({ Component, pageProps }) {
-    return <Component {...pageProps} />
+    return (
+        <Layout>
+            <Component {...pageProps} />
+        </Layout>
+    )
 }

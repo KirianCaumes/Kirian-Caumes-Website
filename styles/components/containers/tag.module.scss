@@ -1,0 +1,30 @@
+@import "../../mixins";
+@import "../../variables";
+
+.tag {
+  align-items: center;
+  background-color: $blue;
+  color: $white;
+  border-radius: 0.375em;
+  display: inline-flex;
+  font-size: 0.75rem;
+  height: 2em;
+  justify-content: center;
+  line-height: 1.5;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+  white-space: nowrap;
+  margin-right: 0.5em;
+  @each $name, $value in $colors {
+    &.is-#{$name} {
+      background-color: $value;
+      color: findColorInvert($value);
+    }
+  }
+  &.is-normal {
+    font-size: 0.75em;
+  }
+  &.is-medium {
+    font-size: 1em;
+  }
+}
