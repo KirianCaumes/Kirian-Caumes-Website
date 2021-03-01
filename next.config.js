@@ -2,9 +2,16 @@ const withPlugins = require('next-compose-plugins')
 // // @ts-ignore
 const optimizedImages = require('next-optimized-images')
 const responsiveLoaderSharp = require('responsive-loader/sharp')
+const withPWA = require("next-pwa")
 
 module.exports = withPlugins(
     [
+        withPWA({
+            pwa: {
+                disable: process.env.NODE_ENV === 'development',
+                dest: "public",
+            },
+        }),
         [optimizedImages, {
             responsive: {
                 adapter: responsiveLoaderSharp,
@@ -12,16 +19,19 @@ module.exports = withPlugins(
                 placeholder: true,
                 placeholderSize: 40,
             },
-        }]
+        }],
     ],
     {
         // Will only be available on the server side
-        serverRuntimeConfig: {
-
-        },
+        serverRuntimeConfig: {},
         // Will be available on both server and client
         publicRuntimeConfig: {
-            appName: 'Kirian Caumes',
+            appLang: "FR-fr",
+            appColor: "#b91d47",
+            appUrl: "https://kiriancaumes.fr/",
+            appName: "Kirian Caumes",
+            appTitle: "Kirian Caumes - Développeur nantais",
+            appDescription: "Kirian Caumes, développeur Nantais. Passionné d'informatique et de Handball. Persévérant, sympathique et curieux sont des qualités qui me définissent."
         },
     }
 )

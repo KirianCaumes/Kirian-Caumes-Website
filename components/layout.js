@@ -23,7 +23,10 @@ export default function Layout({ children }) {
                         itemHome={{
                             href: "/#intro",
                             children: <Img
-                                src="icon/favicon-96x96.png"
+                                // @ts-ignore
+                                src={require(`public/icons/favicon-96x96.png?resize`)}
+                                // @ts-ignore
+                                srcWebp={require(`public/icons/favicon-96x96.png?resize&format=webp`)}
                                 alt="kiriancaumes"
                                 width={19}
                                 height={19}

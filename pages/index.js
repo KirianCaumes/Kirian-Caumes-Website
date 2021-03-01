@@ -29,10 +29,10 @@ export default function Index() {
     return (
         <>
             <Head>
-                <title>{publicRuntimeConfig.appName} - Développeur nantais</title>
+                <title>{publicRuntimeConfig.appTitle}</title>
                 <meta
                     name="description"
-                    content={`${publicRuntimeConfig.appName}, développeur Nantais. Passionné d'informatique et de Handball. Persévérant, sympathique et curieux sont des qualités qui me définissent.`}
+                    content={publicRuntimeConfig.appDescription}
                 />
             </Head>
 
@@ -52,6 +52,7 @@ export default function Index() {
                         <Columns>
                             <Columns.Column>
                                 <p>
+                                    {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur viverra in magna non aliquet. Vestibulum ex sem, elementum ac facilisis vitae, molestie id nisl. <br />Sed eget elementum justo. Praesent dignissim lorem quis mauris pulvinar, nec condimentum purus accumsan. Aliquam pharetra tortor eget dui vulputate, non cursus ante sodales. Nunc vel sollicitudin nibh. Nullam sit amet ante eu sapien tincidunt semper quis ut nibh.<br /> Phasellus sagittis magna vitae ipsum blandit, non fringilla massa blandit. Curabitur et sapien rhoncus, scelerisque turpis in, accumsan tellus. */}
                                     Jeune étudiant passionné et curieux  du  monde  informatique, je cherche à exploiter mes  compétences  afin  que ce domaine puisse être mon métier de demain.<br />
                                     Persévérant,  pour  un  projet qui me tient à cœur je donnerais  mon  possible  afin d'en voir l'aboutissement.<br />
                                     Agréable,  je  me  montre  sérieux  et  professionnel  tout en  gardant  ma  sympathie qui  m'importe  particulièrement.
@@ -70,7 +71,7 @@ export default function Index() {
                                     </Columns.Column>
                                     <Columns.Column>
                                         <Button
-                                            href="https://kiriancaumes.fr/wp-content/uploads/2018/02/Kirian-CAUMES-CV.pdf"
+                                            href="/documents/Kirian-CAUMES-CV.pdf"
                                             rel="noopener"
                                             target="_blank"
                                             color="purple"
@@ -108,7 +109,10 @@ export default function Index() {
                             >
                                 <Fade right>
                                     <Img
-                                        src="img/kirian_caumes.jpg"
+                                        // @ts-ignore
+                                        src={require(`public/images/kirian_caumes.jpg?resize`)}
+                                        // @ts-ignore
+                                        srcWebp={require(`public/images/kirian_caumes.jpg?resize&format=webp`)}
                                         alt="kirian caumes"
                                         width={300}
                                         height={300}
@@ -428,7 +432,10 @@ export default function Index() {
                             >
                                 <Fade left>
                                     <Img
-                                        src="img/ajesterscollection.png"
+                                        // @ts-ignore
+                                        src={require(`public/images/website.png?resize`)}
+                                        // @ts-ignore
+                                        srcWebp={require(`public/images/website.png?resize&format=webp`)}
                                         alt="kiriancaumes.fr"
                                         width={320}
                                         height={180}
@@ -478,7 +485,10 @@ export default function Index() {
                             <Columns.Column sizes={["one-third-desktop", "full-tablet"]}>
                                 <Fade left>
                                     <FlatCard
-                                        imageSrc="img/handball.jpg"
+                                        // @ts-ignore
+                                        imageSrc={require(`public/images/handball.jpg?resize`)}
+                                        // @ts-ignore
+                                        imageSrcWebp={require(`public/images/handball.jpg?resize&format=webp`)}
                                         title="Handball"
                                         content={<>
                                             Joueur de Handball au poste de gardien de but, à ma treizième année au club de Thouaré sur Loire, puis de Carquefou.<br /><br />
@@ -491,7 +501,10 @@ export default function Index() {
                             <Columns.Column sizes={["one-third-desktop", "full-tablet"]}>
                                 <Fade bottom>
                                     <FlatCard
-                                        imageSrc="img/ajesterscollection.png"
+                                        // @ts-ignore
+                                        imageSrc={require(`public/images/ajesterscollection.png?resize`)}
+                                        // @ts-ignore
+                                        imageSrcWebp={require(`public/images/ajesterscollection.png?resize&format=webp`)}
                                         title="Collections"
                                         content={<>
                                             Collectionneur depuis toujours d'objets en tous genres (pièces d'euros, timbres, fèves, jeux vidéo, etc.), j'y voue une véritable passion. Aujourd'hui mes collections sont tournées vers les thèmes :<br /><br />
@@ -503,7 +516,10 @@ export default function Index() {
                             <Columns.Column sizes={["one-third-desktop", "full-tablet"]}>
                                 <Fade right>
                                     <FlatCard
-                                        imageSrc="img/developpement.jpg"
+                                        // @ts-ignore
+                                        imageSrc={require(`public/images/developpement.jpg?resize`)}
+                                        // @ts-ignore
+                                        imageSrcWebp={require(`public/images/developpement.jpg?resize&format=webp`)}
                                         title="Développement"
                                         content={<>
                                             Plus qu'un métier, le développement est également une passion. Je m'amuse fréquemment à développer différents projets, qu'ils soient Open Source, ou bien directement pour mon usage personnel (<a href="https://github.com/KirianCaumes" target="_blank" rel="noopener">Github</a>).<br /><br />

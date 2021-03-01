@@ -4,8 +4,8 @@
         {
             "label": "npm:start",
             "type": "npm",
-            "script": "start",
-            "path": "Front/",
+            "script": "dev",
+            "path": "/",
             "detail": "react-scripts start",
             "group": {
                 "kind": "test",
@@ -13,14 +13,16 @@
             },
             "isBackground": true,
             "problemMatcher": {
+                "fileLocation": "relative",
+                "applyTo": "allDocuments",
                 "owner": "custom",
                 "pattern": {
                     "regexp": "ˆ$"
                 },
                 "background": {
                     "activeOnStart": true,
-                    "beginsPattern": "Compiling...",
-                    "endsPattern": "Compiled .*"
+                    "beginsPattern": "event -",
+                    "endsPattern": "compiled successfully*"
                 }
             }
         }

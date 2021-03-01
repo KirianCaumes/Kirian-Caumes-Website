@@ -1,5 +1,8 @@
 import React from 'react'
 import Document, { Html, Head, Main, NextScript } from 'next/document'
+import getConfig from 'next/config'
+
+const { publicRuntimeConfig } = getConfig()
 
 /**
  * Base component to render base HTML
@@ -10,7 +13,7 @@ export default class MyDocument extends Document {
     render() {
         return (
             <Html
-                lang="fr"
+                lang={publicRuntimeConfig.appLang}
             >
                 <Head>
                     <link rel="icon" href="/favicon.ico" />
@@ -18,7 +21,35 @@ export default class MyDocument extends Document {
                     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
                     <link rel="manifest" href="/manifest.webmanifest" />
                     <link rel="preconnect" href="https://fonts.googleapis.com" />
-                    <meta name="theme-color" content="#263547" />
+                    <meta name="theme-color" content={publicRuntimeConfig.appColor} />
+
+                    <meta property="og:type" content="website" />
+                    <meta property="og:locale" content={publicRuntimeConfig.appLang} />
+                    <meta property="og:title" content={publicRuntimeConfig.appTitle} />
+                    <meta property="og:description" content={publicRuntimeConfig.appDescription} />
+                    <meta property="og:url" content={publicRuntimeConfig.appUrl} />
+                    <meta property="og:site_name" content={publicRuntimeConfig.appName} />
+                    <meta property="og:image" content={`${publicRuntimeConfig.appUrl}images/kirian_caumes.jpg`} />
+
+                    <meta property="twitter:title" content={publicRuntimeConfig.appTitle} />
+                    <meta property="twitter:description" content={publicRuntimeConfig.appDescription} />
+                    <meta property="twitter:card" content="summary" />
+                    <meta property="twitter:image" content={`${publicRuntimeConfig.appUrl}images/kirian_caumes.jpg`} />
+                    <meta property="twitter:url" content={publicRuntimeConfig.appUrl} />
+
+                    <script type="application/ld+json">{`
+                        {
+                            "@context":"https://schema.org",
+                            "@type":"Person",
+                            "url":"${publicRuntimeConfig.appUrl}",
+                            "sameAs":[
+                                "https://www.linkedin.com/in/kirian-caumes-120a0513a/",
+                                "https://github.com/KirianCaumes"
+                            ],
+                            "@id":"#person",
+                            "name":"${publicRuntimeConfig.appName}"
+                        }
+                    `}</script>
                 </Head>
                 <body>
                     <Main />

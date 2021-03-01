@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
+    "build": "npm run sitemap && next build && next export",
     "start": "next start",
     "sitemap": "node sitemap-generator.js"
   },
@@ -17,12 +17,13 @@
     "next": "10.0.5",
     "next-compose-plugins": "^2.2.1",
     "next-optimized-images": "^2.6.2",
+    "next-pwa": "^5.0.5",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-onclickoutside": "^6.10.0",
     "react-reveal": "^1.2.2",
-    "responsive-loader": "^2.0.0",
-    "sass": "^1.32.4",
+    "responsive-loader": "^2.3.0",
+    "sass": "^1.32.8",
     "sharp": "^0.27.2",
     "webp-loader": "^0.6.0"
   },
