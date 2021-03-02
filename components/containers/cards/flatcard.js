@@ -3,6 +3,7 @@ import React from 'react'
 import styles from 'styles/components/containers/cards/flatcard.module.scss'
 import classNames from 'classnames'
 import Img from 'components/elements/img'
+import { SrcType } from 'components/elements/img'
 
 /**
  * @typedef {object} SkillRow SkillRow props
@@ -13,13 +14,12 @@ import Img from 'components/elements/img'
 /**
  * A skill card
  * @param {object} props
- * @param {string} props.imageSrc Image src
- * @param {string} props.imageSrcWebp Image src webp
+ * @param {SrcType} props.imageSrc Image src
  * @param {string} props.title Title
  * @param {string | React.ReactNode} props.content Content
  * @param {'center' | 'justify'=} props.align Align
  */
-export default function FlatCard({ imageSrc, imageSrcWebp, title, content, align = "justify" }) {
+export default function FlatCard({ imageSrc, title, content, align = "justify" }) {
     return (
         <div className={styles['flatcard']}>
             <div
@@ -27,7 +27,6 @@ export default function FlatCard({ imageSrc, imageSrcWebp, title, content, align
             >
                 <Img
                     src={imageSrc}
-                    srcWebp={imageSrcWebp}
                     alt={title}
                     width={320}
                     height={180}

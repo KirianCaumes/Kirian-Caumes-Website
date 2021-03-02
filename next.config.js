@@ -31,7 +31,8 @@ module.exports = withPlugins(
             appUrl: "https://kiriancaumes.fr/",
             appName: "Kirian Caumes",
             appTitle: "Kirian Caumes - Développeur nantais",
-            appDescription: "Kirian Caumes, développeur Nantais. Passionné d'informatique et de Handball. Persévérant, sympathique et curieux sont des qualités qui me définissent."
+            appDescription: "Kirian Caumes, développeur Nantais. Passionné d'informatique et de Handball. Persévérant, sympathique et curieux sont des qualités qui me définissent.",
+            appComment: "👉 If you are able to see this, feel free to check out the source code of my website: https://github.com/KirianCaumes/Kirian-Caumes-Website 👈"
         },
     }
 )

@@ -52,10 +52,9 @@ export default function Index() {
                         <Columns>
                             <Columns.Column>
                                 <p>
-                                    {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur viverra in magna non aliquet. Vestibulum ex sem, elementum ac facilisis vitae, molestie id nisl. <br />Sed eget elementum justo. Praesent dignissim lorem quis mauris pulvinar, nec condimentum purus accumsan. Aliquam pharetra tortor eget dui vulputate, non cursus ante sodales. Nunc vel sollicitudin nibh. Nullam sit amet ante eu sapien tincidunt semper quis ut nibh.<br /> Phasellus sagittis magna vitae ipsum blandit, non fringilla massa blandit. Curabitur et sapien rhoncus, scelerisque turpis in, accumsan tellus. */}
-                                    Jeune étudiant passionné et curieux  du  monde  informatique, je cherche à exploiter mes  compétences  afin  que ce domaine puisse être mon métier de demain.<br />
-                                    Persévérant,  pour  un  projet qui me tient à cœur je donnerais  mon  possible  afin d'en voir l'aboutissement.<br />
-                                    Agréable,  je  me  montre  sérieux  et  professionnel  tout en  gardant  ma  sympathie qui  m'importe  particulièrement.
+                                    Développeur web junior âgé de <b>{Math.abs((new Date(Date.now() - new Date(1997, 1, 21).getTime())).getUTCFullYear() - 1970)} ans</b>, je suis situé aux abords de la ville de <b>Nantes</b> et titulaire du <b>permis B</b>.<br /><br />
+                                    Dans le domaine de l'informatique depuis maintenant plus de 5 ans, mes études à Ynov Nantes avec l'obtention de mon mastère « <b>Expert Développement Web</b> » ainsi que mon <a href="#career" onClick={() => router.replace({ hash: '#career' })}>parcours professionnel</a>, m'ont permis l'acquisition de <a href="#skills" onClick={() => router.replace({ hash: '#skills' })}>compétences</a> solides et adaptatives.<br /><br />
+                                    Ce savoir-faire technique, acquis également grâce à ma bonne compréhension de l'<b>anglais</b>, se sera exprimé autour de la réalisation (notamment) d'<b>applications web métier</b> mais aussi de la <b>gestion de projets</b> et de la <b>relation client</b>.<br /><br />
                                 </p>
                                 <br />
                                 <Columns>
@@ -109,10 +108,14 @@ export default function Index() {
                             >
                                 <Fade right>
                                     <Img
-                                        // @ts-ignore
-                                        src={require(`public/images/kirian_caumes.jpg?resize`)}
-                                        // @ts-ignore
-                                        srcWebp={require(`public/images/kirian_caumes.jpg?resize&format=webp`)}
+                                        src={{
+                                            // @ts-ignore
+                                            normal: require(`public/images/kirian_caumes.jpg?resize`),
+                                            // @ts-ignore
+                                            webp: require(`public/images/kirian_caumes.jpg?resize&format=webp`),
+                                            // @ts-ignore
+                                            lqip: require(`public/images/kirian_caumes.jpg?lqip`)
+                                        }}
                                         alt="kirian caumes"
                                         width={300}
                                         height={300}
@@ -132,14 +135,14 @@ export default function Index() {
                             level={2}
                             isCentered
                         >
-                            A propos de moi
+                            À propos de moi
                         </Title>
                         <Title
                             level={3}
                             isSubtitle
                             isCentered
                         >
-                            Quelques traits de caracteres
+                            Quelques traits de caractères
                         </Title>
                         <br />
 
@@ -196,54 +199,69 @@ export default function Index() {
                             isSubtitle
                             isCentered
                         >
-                            Mon savoir-faire de développeur web
+                            Mon savoir-faire (non exhaustif) de développeur web
                         </Title>
                         <br />
                         <Fade bottom>
                             <Columns>
                                 <Columns.Column sizes={["one-quarter-widescreen", "half-desktop", "half-tablet"]}>
                                     <Skillcard
-                                        title="test test testtesttesttest"
+                                        title="NodeJs"
                                         score={4}
                                         rows={[
-                                            { title: "qsdqsd aze qsdqs qsdqsd aze qsdqs", score: 3 },
-                                            { title: "cc", score: 3 },
-                                            { title: "cc", score: 3 },
-                                            { title: "cc", score: 3 },
-                                            { title: "cc", score: 3 },
-                                            { title: "cc", score: 3 },
-                                            { title: "cc", score: 3 },
-                                            { title: "cc", score: 3 },
+                                            { title: "Express", score: 4 },
+                                            { title: "Puppeteer", score: 3 },
+                                            { title: "Babel", score: 3 },
+                                            { title: "WebPush", score: 3 },
+                                            { title: "Nest", score: 2 },
+                                            { title: "Mongoose", score: 3 },
+                                            { title: "Sequelize", score: 2 },
+                                            { title: "Jest", score: 2 },
+                                            { title: "Passport", score: 2 },
                                         ]}
                                         color="yellow"
                                     />
                                 </Columns.Column>
                                 <Columns.Column sizes={["one-quarter-widescreen", "half-desktop", "half-tablet"]}>
                                     <Skillcard
-                                        title="test"
+                                        title="Javascript"
                                         score={4}
                                         rows={[
-                                            { title: "cc", score: 3 }
+                                            { title: "Vanilla", score: 4 },
+                                            { title: "ReactJs", score: 4 },
+                                            { title: "Angular", score: 2 },
+                                            { title: "jQuery", score: 2 },
+                                            { title: "VueJs", score: 1 },
                                         ]}
                                         color="yellow"
                                     />
                                 </Columns.Column>
                                 <Columns.Column sizes={["one-quarter-widescreen", "half-desktop", "half-tablet"]}>
                                     <Skillcard
-                                        title="test"
-                                        score={4}
+                                        title="BDD"
+                                        score={3}
                                         rows={[
-                                            { title: "cc", score: 3 }
+                                            { title: "TSQL", score: 3 },
+                                            { title: "MySQL", score: 3 },
+                                            { title: "MongoDB", score: 3 },
+                                            { title: "PostgreSQL", score: 2 },
+                                            { title: "SQLite", score: 2 },
+                                            { title: "ElasticSearch", score: 1 }
                                         ]}
-                                        color="yellow"
+                                        color="pink"
                                     />
                                 </Columns.Column>
                                 <Columns.Column sizes={["one-quarter-widescreen", "half-desktop", "half-tablet"]}>
                                     <Skillcard
-                                        title="test"
-                                        score={4}
+                                        title="PHP"
+                                        score={3}
                                         rows={[
-                                            { title: "cc", score: 3 }
+                                            { title: "Symfony 4/5", score: 4 },
+                                            { title: "Wordpress", score: 3 },
+                                            { title: "Doctrine", score: 3 },
+                                            { title: "Twig", score: 3 },
+                                            { title: "Monolog", score: 3 },
+                                            { title: "PHPUnit", score: 2 },
                                         ]}
                                         color="yellow"
                                     />
@@ -254,40 +272,47 @@ export default function Index() {
                             <Columns>
                                 <Columns.Column sizes={["one-quarter-widescreen", "half-desktop", "half-tablet"]}>
                                     <Skillcard
-                                        title="test"
+                                        title="HTML/CSS"
                                         score={4}
                                         rows={[
-                                            { title: "cc", score: 3 }
+                                            { title: "Bulma", score: 4 },
+                                            { title: "Bootstrap", score: 2 },
                                         ]}
                                         color="pink"
                                     />
                                 </Columns.Column>
                                 <Columns.Column sizes={["one-quarter-widescreen", "half-desktop", "half-tablet"]}>
                                     <Skillcard
-                                        title="test"
+                                        title="CSS"
                                         score={4}
                                         rows={[
-                                            { title: "cc", score: 3 }
+                                            { title: "SCSS", score: 3 },
+                                            { title: "SASS", score: 2 },
                                         ]}
                                         color="pink"
                                     />
                                 </Columns.Column>
                                 <Columns.Column sizes={["one-quarter-widescreen", "half-desktop", "half-tablet"]}>
                                     <Skillcard
-                                        title="test"
-                                        score={4}
+                                        title="Deno"
+                                        score={3}
                                         rows={[
-                                            { title: "cc", score: 3 }
+                                            { title: "Computed Types", score: 4 },
+                                            { title: "Oak", score: 3 },
+                                            { title: "Djwt", score: 3 },
+
                                         ]}
-                                        color="pink"
+                                        color="yellow"
                                     />
                                 </Columns.Column>
                                 <Columns.Column sizes={["one-quarter-widescreen", "half-desktop", "half-tablet"]}>
                                     <Skillcard
-                                        title="test"
-                                        score={4}
+                                        title=".NET Core"
+                                        score={2}
                                         rows={[
-                                            { title: "cc", score: 3 }
+                                            { title: "C#", score: 3 },
+                                            { title: "AspNetCore.Mvc", score: 3 },
+                                            { title: "Entity Framework", score: 3 }
                                         ]}
                                         color="pink"
                                     />
@@ -298,40 +323,51 @@ export default function Index() {
                             <Columns>
                                 <Columns.Column sizes={["one-quarter-widescreen", "half-desktop", "half-tablet"]}>
                                     <Skillcard
-                                        title="test"
-                                        score={4}
+                                        title="Mobile"
+                                        score={2}
                                         rows={[
-                                            { title: "cc", score: 3 }
+                                            { title: "PWA", score: 3 },
+                                            { title: "Ionic 3/4", score: 2 },
+                                            { title: "Android Studio", score: 1 },
+                                            { title: "React Native", score: 1 },
                                         ]}
                                         color="purple"
                                     />
                                 </Columns.Column>
                                 <Columns.Column sizes={["one-quarter-widescreen", "half-desktop", "half-tablet"]}>
                                     <Skillcard
-                                        title="test"
-                                        score={4}
+                                        title="Divers"
+                                        score={0}
                                         rows={[
-                                            { title: "cc", score: 3 }
+                                            { title: "Java", score: 2 },
+                                            { title: "Python", score: 2 },
+                                            { title: "C/C++", score: 1 },
                                         ]}
                                         color="purple"
                                     />
                                 </Columns.Column>
                                 <Columns.Column sizes={["one-quarter-widescreen", "half-desktop", "half-tablet"]}>
                                     <Skillcard
-                                        title="test"
-                                        score={4}
+                                        title="Env."
+                                        score={0}
                                         rows={[
-                                            { title: "cc", score: 3 }
+                                            { title: "Debian", score: 3 },
+                                            { title: "OMV", score: 3 },
+                                            { title: "Win. Server", score: 2 },
+                                            { title: "Bash", score: 3 },
+                                            { title: "Cisco", score: 1 },
                                         ]}
                                         color="purple"
                                     />
                                 </Columns.Column>
                                 <Columns.Column sizes={["one-quarter-widescreen", "half-desktop", "half-tablet"]}>
                                     <Skillcard
-                                        title="test"
-                                        score={4}
+                                        title="Transverse"
+                                        score={0}
                                         rows={[
-                                            { title: "cc", score: 3 }
+                                            { title: "Merise", score: 3 },
+                                            { title: "Agile", score: 3 },
+                                            { title: "UML", score: 2 },
                                         ]}
                                         color="purple"
                                     />
@@ -362,7 +398,7 @@ export default function Index() {
                         <Fade bottom>
                             <>
                                 <CareerCard
-                                    title="Alternance"
+                                    title="Alternance en développement informatique"
                                     location={{
                                         company: "Nextdecision",
                                         url: "https://www.next-decision.fr/",
@@ -371,33 +407,95 @@ export default function Index() {
                                     period={[new Date(2018, 2), new Date()]}
                                     missions={[
                                         {
-                                            title: "Mission 1",
-                                            desc: "Description mission 1"
+                                            title: "Développement d'applications web métier",
+                                            desc: "Interventions aux différents niveaux d'une application web : Frontend, Backend (API) et Base de données"
                                         },
                                         {
-                                            title: "Mission 2",
-                                            desc: "Description mission 2"
+                                            title: "Gestion du client",
+                                            desc: "Élaboration de cahiers des charges, TMA, gestion de projets et relation client"
                                         },
                                         {
-                                            title: "Mission 3",
-                                            desc: "Description mission 3"
+                                            title: "Création de programmes/outils divers",
+                                            desc: "Génération de PDF, Job Talend, mise en place d'environnements, etc."
                                         }
                                     ]}
                                 />
                                 <CareerCard
-                                    title="Stage"
+                                    title="Stage en développement web (B2)"
                                     location={{
+                                        company: "Nextdecision",
+                                        url: "https://www.next-decision.fr/",
                                         city: "Nantes"
                                     }}
-                                    period={[new Date(2017, 8), new Date(2018, 2)]}
+                                    period={[new Date(2018, 6), new Date(2018, 7)]}
                                     missions={[
                                         {
-                                            title: "Mission 1",
-                                            desc: "Description mission 1"
+                                            title: "Développement d'applications web",
+                                            desc: "Réalisation de fonctionnalités & corrections de bugs d'applications existantes"
+                                        }
+                                    ]}
+                                />
+                                <CareerCard
+                                    title="Stage en développement web (B1)"
+                                    location={{
+                                        city: "Nantes",
+                                        company: "Label Communication",
+                                        url: "https://www.labelcommunication.net/"
+                                    }}
+                                    period={[new Date(2017, 6), new Date(2017, 7)]}
+                                    missions={[
+                                        {
+                                            title: "Réalisation de sites vitrines",
+                                            desc: "Apprentissage de Wordpress et son environnement (WooComerce, etc.)"
+                                        }
+                                    ]}
+                                />
+                                <CareerCard
+                                    title="Diplôme d'expert développement web"
+                                    location={{
+                                        city: "Nantes",
+                                        company: "Ynov",
+                                        url: "https://www.ynov.com/campus/nantes/",
+                                    }}
+                                    period={[new Date(2016, 8), new Date(2021, 8)]}
+                                    missions={[
+                                        {
+                                            title: "2 années de Mastères",
+                                            desc: "Spécialisation expert développement web"
                                         },
                                         {
-                                            title: "Mission 2",
-                                            desc: "Description mission 2"
+                                            title: "3 années de Bachelor",
+                                            desc: "Apprentissage général de l'informatique : développement, réseaux et culture générale"
+                                        }
+                                    ]}
+                                />
+                                <CareerCard
+                                    title="Baccalauréat S SVT, mention assez bien (13.5/20)"
+                                    location={{
+                                        city: "Nantes",
+                                        company: "Lycée Notre-Dame de Toutes-Aides",
+                                        url: "http://ndtoutesaides.fr/"
+                                    }}
+                                    period={[new Date(2016, 3), new Date(2016, 5)]}
+                                    missions={[
+                                        {
+                                            title: "Projet Bac ISN (spécialité informatique)",
+                                            desc: "Réalisation d’un jeu vidéo sous Processing 3 : 20/20 obtenu"
+                                        }
+                                    ]}
+                                />
+                                <CareerCard
+                                    title="Stage de 3e"
+                                    location={{
+                                        city: "Nantes",
+                                        company: "Parabellum Geographic Insight",
+                                        url: "https://www.pginsight.com/"
+                                    }}
+                                    period={[new Date(2011, 11)]}
+                                    missions={[
+                                        {
+                                            title: "Observation des métiers de l'informatique",
+                                            desc: "Observation de problématiques réseaux et développement"
                                         }
                                     ]}
                                 />
@@ -421,7 +519,7 @@ export default function Index() {
                             isSubtitle
                             isCentered
                         >
-                            Vous êtes en train de vivre une
+                            Vous êtes en train d'en vivre une
                         </Title>
                         <br />
                         <Columns>
@@ -432,10 +530,14 @@ export default function Index() {
                             >
                                 <Fade left>
                                     <Img
-                                        // @ts-ignore
-                                        src={require(`public/images/website.png?resize`)}
-                                        // @ts-ignore
-                                        srcWebp={require(`public/images/website.png?resize&format=webp`)}
+                                        src={{
+                                            // @ts-ignore
+                                            normal: require(`public/images/website.png?resize`),
+                                            // @ts-ignore
+                                            webp: require(`public/images/website.png?resize&format=webp`),
+                                            // @ts-ignore
+                                            lqip: require(`public/images/website.png?lqip`)
+                                        }}
                                         alt="kiriancaumes.fr"
                                         width={320}
                                         height={180}
@@ -444,10 +546,13 @@ export default function Index() {
                             </Columns.Column>
                             <Columns.Column>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent pharetra quam non neque varius, at mollis sem mattis. Aenean ultrices rhoncus hendrerit. Mauris finibus, mauris non blandit rhoncus, risus mi maximus augue, ac hendrerit tellus tortor vel ante. Proin dapibus est ut cursus vulputate. Pellentesque ullamcorper ex et lorem blandit, vitae facilisis est aliquet.<br />
+                                    Le site que vous êtes en train de visiter a été entièrement réalisé par mes soins. Celui-ci repose sur <b>NextJs</b> : un Framework <b>ReactJs</b> permettant notamment la mise en place d'un rendu des composants côté serveur ou, dans le cas de ce site, la génération d'application statique.<br />
+                                    À travers ce projet, une partie de mes compétences auront pu être exprimées. Allant de la phase de <b>conception</b> (recherche d'idées, mockup, etc.) à l'<b>hébergement</b> (déploiement continu, etc.) en passant bien sûr par la phase de <b>développement</b> (découpage des composants, logique fonctionnelle, etc.).<br />
                                     <Tag color="blue">#NextJs</Tag>
                                     <Tag color="blue">#ReactJs</Tag>
                                     <Tag color="blue">#SCSS</Tag>
+                                    <Tag color="blue">#PWA</Tag>
+                                    <Tag color="blue">#Docker</Tag>
                                 </p>
                                 <br />
                                 <br />
@@ -485,30 +590,38 @@ export default function Index() {
                             <Columns.Column sizes={["one-third-desktop", "full-tablet"]}>
                                 <Fade left>
                                     <FlatCard
-                                        // @ts-ignore
-                                        imageSrc={require(`public/images/handball.jpg?resize`)}
-                                        // @ts-ignore
-                                        imageSrcWebp={require(`public/images/handball.jpg?resize&format=webp`)}
+                                        imageSrc={{
+                                            // @ts-ignore
+                                            normal: require(`public/images/handball.jpg?resize`),
+                                            // @ts-ignore
+                                            webp: require(`public/images/handball.jpg?resize&format=webp`),
+                                            // @ts-ignore
+                                            lqip: require(`public/images/handball.jpg?lqip`)
+                                        }}
                                         title="Handball"
                                         content={<>
                                             Joueur de Handball au poste de gardien de but, à ma treizième année au club de Thouaré sur Loire, puis de Carquefou.<br /><br />
-                                        J'y ai développé de vrais liens humains dans un projet d'équipe ayant un objectif commun.<br /><br />
-                                        Fidèle supporter du HBC Nantes et de l'équipe de France.
-                                    </>}
+                                            J'y ai développé de vrais liens humains dans un projet d'équipe ayant un objectif commun.<br /><br />
+                                            Fidèle supporter du HBC Nantes et de l'équipe de France.
+                                        </>}
                                     />
                                 </Fade>
                             </Columns.Column>
                             <Columns.Column sizes={["one-third-desktop", "full-tablet"]}>
                                 <Fade bottom>
                                     <FlatCard
-                                        // @ts-ignore
-                                        imageSrc={require(`public/images/ajesterscollection.png?resize`)}
-                                        // @ts-ignore
-                                        imageSrcWebp={require(`public/images/ajesterscollection.png?resize&format=webp`)}
+                                        imageSrc={{
+                                            // @ts-ignore
+                                            normal: require(`public/images/ajesterscollection.png?resize`),
+                                            // @ts-ignore
+                                            webp: require(`public/images/ajesterscollection.png?resize&format=webp`),
+                                            // @ts-ignore
+                                            lqip: require(`public/images/ajesterscollection.png?lqip`)
+                                        }}
                                         title="Collections"
                                         content={<>
-                                            Collectionneur depuis toujours d'objets en tous genres (pièces d'euros, timbres, fèves, jeux vidéo, etc.), j'y voue une véritable passion. Aujourd'hui mes collections sont tournées vers les thèmes :<br /><br />
-                                            Le groupe du musique In Flames (<a href="https://jesterscollection.kiriancaumes.fr/" target="_blank" rel="noopener">A Jester's Collection</a>)
+                                            Collectionneur depuis toujours d'objets en tous genres (pièces d'euros, timbres, fèves, jeux vidéo, etc.), j'y voue une véritable passion.<br /><br />
+                                            Aujourd'hui la collection vers laquelle je suis principalement tourné concerne le groupe de musique In Flames avec un ensemble de CD, vinyl et autres. Je partage également cette passion sur internet sous le pseudonyme : <a href="https://jesterscollection.kiriancaumes.fr/" target="_blank" rel="noopener">A Jester's Collection</a>.
                                     </>}
                                     />
                                 </Fade>
@@ -516,10 +629,14 @@ export default function Index() {
                             <Columns.Column sizes={["one-third-desktop", "full-tablet"]}>
                                 <Fade right>
                                     <FlatCard
-                                        // @ts-ignore
-                                        imageSrc={require(`public/images/developpement.jpg?resize`)}
-                                        // @ts-ignore
-                                        imageSrcWebp={require(`public/images/developpement.jpg?resize&format=webp`)}
+                                        imageSrc={{
+                                            // @ts-ignore
+                                            normal: require(`public/images/developpement.jpg?resize`),
+                                            // @ts-ignore
+                                            webp: require(`public/images/developpement.jpg?resize&format=webp`),
+                                            // @ts-ignore
+                                            lqip: require(`public/images/developpement.jpg?lqip`)
+                                        }}
                                         title="Développement"
                                         content={<>
                                             Plus qu'un métier, le développement est également une passion. Je m'amuse fréquemment à développer différents projets, qu'ils soient Open Source, ou bien directement pour mon usage personnel (<a href="https://github.com/KirianCaumes" target="_blank" rel="noopener">Github</a>).<br /><br />

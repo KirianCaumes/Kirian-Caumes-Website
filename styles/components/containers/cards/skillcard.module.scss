@@ -49,11 +49,15 @@
             display: -webkit-box;
             -webkit-line-clamp: 1;
             -webkit-box-orient: vertical;
+            word-break: break-word;
           }
         }
       }
     }
     .skillcard-body-right {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
       .skillcard-content {
         text-align: left;
         font-size: 0.85em;
@@ -68,6 +72,8 @@
               display: -webkit-box;
               -webkit-line-clamp: 1;
               -webkit-box-orient: vertical;
+              word-break: break-word;
+              font-size: 0.95em;
             }
           }
         }

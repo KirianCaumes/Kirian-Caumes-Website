@@ -115,11 +115,11 @@ $circleBorder: 3px;
     }
     .careercard-mission-title {
       font-weight: 700;
-      // line-height: 1em;
+      font-size: 0.95em;
     }
     .careercard-mission-desc {
-      line-height: 1em;
-      font-size: 0.95em;
+      line-height: 1.25em;
+      font-size: 0.85em;
       &:not(:last-child) {
         margin-bottom: 0.25em;
       }

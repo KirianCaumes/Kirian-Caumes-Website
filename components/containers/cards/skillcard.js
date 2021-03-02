@@ -28,11 +28,14 @@ export default function Skillcard({ title, score, rows, color }) {
                 >
                     <p
                         className={styles['skillcard-title']}
+                        title={`${title} ${score > 0 ? `${score}/5` : ''}`}
                     >
-                        <span title={title}>{title}</span>
-                        <Score
-                            value={score}
-                        />
+                        <span>{title}</span>
+                        {score > 0 &&
+                            <Score
+                                value={score}
+                            />
+                        }
                     </p>
                 </div>
                 <div
@@ -40,8 +43,11 @@ export default function Skillcard({ title, score, rows, color }) {
                 >
                     <ul className={styles['skillcard-content']}>
                         {rows.map((row, i) => (
-                            <li key={`skillrow_${i}`}>
-                                <span title={row.title}>{row.title}</span>
+                            <li
+                                key={`skillrow_${i}`}
+                                title={`${row.title} ${row.score > 0 ? `${row.score}/5` : ''}`}
+                            >
+                                <span>{row.title}</span>
                                 <Score value={row.score} />
                             </li>
                         ))}
@@ -63,7 +69,7 @@ export default function Skillcard({ title, score, rows, color }) {
 function Score({ value, max = 5, icon = "★", unselectedIcon = "☆", }) {
     return (
         <span className={styles['skillcard-stars']}>
-            {new Array(max).fill({}).map((_, i) => i + 1 <= value ? icon : unselectedIcon)}
+            {new Array(max).fill({}).map((_, i) => i + 1 <= value ? icon : unselectedIcon).join('')}
         </span>
     )
 }

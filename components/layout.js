@@ -23,10 +23,14 @@ export default function Layout({ children }) {
                         itemHome={{
                             href: "/#intro",
                             children: <Img
-                                // @ts-ignore
-                                src={require(`public/icons/favicon-96x96.png?resize`)}
-                                // @ts-ignore
-                                srcWebp={require(`public/icons/favicon-96x96.png?resize&format=webp`)}
+                                src={{
+                                    // @ts-ignore
+                                    normal: require(`public/icons/favicon-96x96.png?resize`),
+                                    // @ts-ignore
+                                    webp: require(`public/icons/favicon-96x96.png?resize&format=webp`),
+                                    // @ts-ignore
+                                    lqip: require(`public/icons/favicon-96x96.png?lqip`)
+                                }}
                                 alt="kiriancaumes"
                                 width={19}
                                 height={19}

@@ -1,2 +1,6 @@
+@import "../variables";
+
 .not-found {
+    min-height: calc(100vh - #{$footerHeight});
+    @include bg-one;
 }

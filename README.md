@@ -40,7 +40,7 @@ Copy all the file to the FTP.
 
 ## Project conception
 
-[Mockup](https://user-images.githubusercontent.com/24525092/109560396-1d6cde80-7adc-11eb-9ddc-0cbcbd839492.png) made with Balsamiq.
+[Mockup](https://user-images.githubusercontent.com/24525092/109662037-e85b9d00-7b6a-11eb-8da9-bf4794d06904.png) made with Balsamiq.
 
 ### Why NextJS?
 
@@ -50,7 +50,7 @@ NextJs allow us to build an application with React, and, in this case, generate 
 
 Additionally, the app is configured to function as a PWA (Progressive Web App). It has a resource caching policy and is also installable on the device.
 
-Perfomance result with [Ligthhouse](https://user-images.githubusercontent.com/24525092/109560396-1d6cde80-7adc-11eb-9ddc-0cbcbd839492.png).
+Perfomance result with [Ligthhouse](https://user-images.githubusercontent.com/24525092/109662061-ef82ab00-7b6a-11eb-9d9d-b0ef3ad7a3a8.PNG).
 
 ### Project structure
 

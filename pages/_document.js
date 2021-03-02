@@ -47,7 +47,10 @@ export default class MyDocument extends Document {
                                 "https://github.com/KirianCaumes"
                             ],
                             "@id":"#person",
-                            "name":"${publicRuntimeConfig.appName}"
+                            "name":"${publicRuntimeConfig.appName}",
+                            "birthDate":"1997-02-21",
+                            "email": "mailto:kirian.caumes@gmail.com",
+                            "jobTitle": "Developer"
                         }
                     `}</script>
                 </Head>
