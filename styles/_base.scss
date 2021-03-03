@@ -56,8 +56,14 @@ html {
   font-family: "Montserrat", sans-serif;
   color: $black;
   background-color: $white;
-  scroll-behavior: smooth;
   overflow-x: hidden;
+  scroll-behavior: smooth;
+  &[data-scroll-behavior="auto"] {
+    scroll-behavior: auto;
+  }
+  // &.is-scroll-behavior-auto {
+  //   scroll-behavior: auto;
+  // }
   body {
     box-sizing: border-box;
     overflow-x: hidden;
@@ -70,7 +76,6 @@ html {
       a {
         color: $blue;
         text-decoration: none;
-        // font-weight: bold;
         &:hover {
           text-decoration: underline;
         }

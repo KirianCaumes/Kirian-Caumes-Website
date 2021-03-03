@@ -1,0 +1,30 @@
+@import "../../variables";
+
+.gdpr-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  z-index: 999;
+  padding: 1em;
+  display: inline-block;
+  text-align: center;
+  p.gdpr-banner-content {
+    color: $white;
+    text-align: center;
+    display: inline-block;
+    padding: 0.75em 0 0;
+    a {
+      color: $medium-grey;
+    }
+  }
+  form.gdpr-banner-form {
+    display: inline-block;
+    margin: 0 0 0 0.5em;
+    button {
+      margin: 0.75em 0.5em;
+      vertical-align: inherit;
+    }
+  }
+}

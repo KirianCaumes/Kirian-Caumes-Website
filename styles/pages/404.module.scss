@@ -1,6 +1,28 @@
 @import "../variables";
 
 .not-found {
-    min-height: calc(100vh - #{$footerHeight});
-    @include bg-one;
+  padding: 6em 1em;
+  min-height: calc(100vh - #{$footerHeight} - (6em * 2));
+  @include bg-one;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  > div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    > span {
+      font-size: 10em;
+      line-height: 1.25em;
+    }
+    button,
+    a {
+      margin: 0.75em 0.5em;
+      vertical-align: inherit;
+    }
+    p {
+      padding: 0 0 1.5em;
+    }
+  }
 }

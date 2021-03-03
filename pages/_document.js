@@ -37,22 +37,24 @@ export default class MyDocument extends Document {
                     <meta property="twitter:image" content={`${publicRuntimeConfig.appUrl}images/kirian_caumes.jpg`} />
                     <meta property="twitter:url" content={publicRuntimeConfig.appUrl} />
 
-                    <script type="application/ld+json">{`
-                        {
-                            "@context":"https://schema.org",
-                            "@type":"Person",
-                            "url":"${publicRuntimeConfig.appUrl}",
-                            "sameAs":[
-                                "https://www.linkedin.com/in/kirian-caumes-120a0513a/",
-                                "https://github.com/KirianCaumes"
-                            ],
-                            "@id":"#person",
-                            "name":"${publicRuntimeConfig.appName}",
-                            "birthDate":"1997-02-21",
-                            "email": "mailto:kirian.caumes@gmail.com",
-                            "jobTitle": "Developer"
-                        }
-                    `}</script>
+                    <script
+                        type="application/ld+json"
+                        dangerouslySetInnerHTML={{
+                            __html: JSON.stringify({
+                                "@context": "https://schema.org",
+                                "@type": "Person",
+                                url: publicRuntimeConfig.appUrl,
+                                sameAs: [
+                                    "https://www.linkedin.com/in/kirian-caumes-120a0513a/",
+                                    "https://github.com/KirianCaumes"
+                                ],
+                                name: publicRuntimeConfig.appName,
+                                birthDate: "1997-02-21",
+                                email: "mailto:kirian.caumes@gmail.com",
+                                jobTitle: "Developer"
+                            })
+                        }}
+                    />
                 </Head>
                 <body>
                     <Main />

@@ -101,9 +101,3 @@ kirian-caumes-fr
 │   README.md
 └── sitemap-generator.js        //Script to generate sitemap
 ```
-
-## Know issues/Axis for improvement
-
-### Improve component "Img"
-
-This component is not perfect, because it is necessary to prepare the imports upstream of the component, webpack managing badly dynamic imports in this case.

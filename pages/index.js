@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Head from 'next/head'
 // @ts-ignore
 import styles from 'styles/pages/index.module.scss'
@@ -25,6 +25,16 @@ import { useRouter } from 'next/router'
 export default function Index() {
     const { publicRuntimeConfig } = getConfig()
     const router = useRouter()
+
+    // useEffect(
+    //     () => {
+    //         document.querySelector('html').style.scrollBehavior = "smooth"
+    //         return () => {
+    //             document.querySelector('html').style.scrollBehavior = 'unset'
+    //         }
+    //     },
+    //     []
+    // )
 
     return (
         <>
