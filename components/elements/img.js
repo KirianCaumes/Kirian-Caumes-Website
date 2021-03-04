@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import React, { useMemo, useState } from 'react'
+import React, { useEffect, useMemo, useRef, useState } from 'react'
 // @ts-ignore
 import styles from 'styles/components/elements/img.module.scss'
 
@@ -23,29 +23,35 @@ export default function Img({ src = { normal: {} }, alt, width, height, isZoomab
     /** @type {[boolean, function(boolean):any]} Is image loaded? */
     const [isLoaded, setIsLoaded] = useState(!true)
 
+    /** @type {React.MutableRefObject<HTMLImageElement>} */
+    const ref = useRef(null)
+
     /** @type {'image/jpeg' | 'image/png'} Type of image */
-    const type = useMemo(
-        () => {
-            if (src?.toString()?.endsWith(".jpg") || src?.toString()?.endsWith(".jpeg"))
-                return "image/jpeg"
-            else if (src?.toString()?.endsWith(".png"))
-                return "image/png"
+    const type = useMemo(() => {
+        if (src?.toString()?.endsWith(".jpg") || src?.toString()?.endsWith(".jpeg"))
+            return "image/jpeg"
+        else if (src?.toString()?.endsWith(".png"))
             return "image/png"
-        },
-        [src]
-    )
+        return "image/png"
+    }, [src])
+
+    //Workaround to hide preview image if onLoad is not fired
+    useEffect(() => {
+        if (ref.current?.complete)
+            setIsLoaded(true)
+    }, [setIsLoaded, ref])
 
     return (
         <div className={classNames(styles['img'], { [styles['is-zoomable']]: isZoomable })}>
             <picture>
-                {!isLoaded &&
+                {!!src.lqip &&
                     <img
                         src={src.lqip}
                         alt={alt}
                         width={width}
                         height={height}
                         sizes={`${width}px`}
-                        style={{ filter: 'blur(25px)' }}
+                        style={{ filter: 'blur(25px)', display: isLoaded ? 'none' : undefined }}
                     />
                 }
                 {!!src.webp &&
@@ -53,24 +59,24 @@ export default function Img({ src = { normal: {} }, alt, width, height, isZoomab
                         srcSet={src.webp?.srcSet}
                         type="image/webp"
                         sizes={`${width}px`}
-                        onLoad={() => setIsLoaded(true)}
                     />
                 }
                 <source
                     srcSet={src.normal?.srcSet}
                     type={type}
                     sizes={`${width}px`}
-                    onLoad={() => setIsLoaded(true)}
                 />
                 <img
+                    ref={ref}
+                    onLoad={() => setIsLoaded(true)}
                     src={src.normal?.src}
-                    // srcSet={require(`../../public/${src}?resize`).srcSet}
+                    srcSet={src.normal?.srcSet}
                     alt={alt}
                     width={width}
                     height={height}
                     sizes={`${width}px`}
                     loading="lazy"
-                    onLoad={() => setIsLoaded(true)}
+                    decoding="async"
                 />
             </picture>
 

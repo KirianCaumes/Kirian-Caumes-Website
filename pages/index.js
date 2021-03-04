@@ -258,7 +258,7 @@ export default function Index() {
                                             { title: "SQLite", score: 2 },
                                             { title: "ElasticSearch", score: 1 }
                                         ]}
-                                        color="pink"
+                                        color="yellow"
                                     />
                                 </Columns.Column>
                                 <Columns.Column sizes={["one-quarter-widescreen", "half-desktop", "half-tablet"]}>
@@ -312,7 +312,7 @@ export default function Index() {
                                             { title: "Djwt", score: 3 },
 
                                         ]}
-                                        color="yellow"
+                                        color="pink"
                                     />
                                 </Columns.Column>
                                 <Columns.Column sizes={["one-quarter-widescreen", "half-desktop", "half-tablet"]}>
@@ -570,6 +570,8 @@ export default function Index() {
                                     href="https://github.com/KirianCaumes/Kirian-Caumes-Website"
                                     color="purple"
                                     isOutlined
+                                    rel="noopener"
+                                    target="_blank"
                                 >
                                     Voir sur Github
                                 </Button>

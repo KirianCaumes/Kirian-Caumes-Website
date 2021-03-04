@@ -25,28 +25,23 @@ import styles from 'styles/components/containers/cards/careercard.module.scss'
  */
 export default function CareerCard({ period, title, location, missions }) {
     /** @type {string} Start date clean */
-    const periodStart = useMemo(
-        () => {
-            const val = period?.[0]?.toLocaleDateString("fr-FR", { month: "long", year: "numeric" })
-            return val.charAt(0).toUpperCase() + val.slice(1)
-        },
-        [period[0]]
-    )
+    const periodStart = useMemo(() => {
+        const val = period?.[0]?.toLocaleDateString("fr-FR", { month: "long", year: "numeric" })
+        return val.charAt(0).toUpperCase() + val.slice(1)
+    }, [period[0]])
 
     /** @type {string} End date clean */
-    const periodEnd = useMemo(
-        () => {
-            if (
-                period[1]?.getDate() == (new Date()).getDate() &&
-                period[1]?.getMonth() == (new Date()).getMonth() &&
-                period[1]?.getFullYear() == (new Date()).getFullYear()
-            )
-                return "Aujourd'hui"
-            const val = period?.[1]?.toLocaleDateString("fr-FR", { month: "long", year: "numeric" })
-            return val?.charAt(0)?.toUpperCase() + val?.slice(1)
-        },
-        [period[1]]
-    )
+    const periodEnd = useMemo(() => {
+        if (
+            period[1]?.getDate() == (new Date()).getDate() &&
+            period[1]?.getMonth() == (new Date()).getMonth() &&
+            period[1]?.getFullYear() == (new Date()).getFullYear()
+        )
+            return "Aujourd'hui"
+
+        const val = period?.[1]?.toLocaleDateString("fr-FR", { month: "long", year: "numeric" })
+        return val?.charAt(0)?.toUpperCase() + val?.slice(1)
+    }, [period[1]])
 
     return (
         <div className={styles['careercard']}>
