@@ -7,8 +7,10 @@
   height: min-content;
   transform: translate3d(0, 0, 0);
   picture {
-    &:first-child {
-      position: absolute;
+    img {
+      &:first-child {
+        position: absolute;
+      }
     }
     &.is-zoomable {
       img {
