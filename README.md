@@ -1,6 +1,6 @@
 # Kirian Caumes website
 
-Kirian Caumes, développeur Nantais. Passionné d'informatique et de Handball. Persévérant, sympathique et curieux sont des qualités qui me définissent.
+My (wonderful) website! ⚡
 
 ## Run in dev
 
@@ -62,7 +62,7 @@ The design of components and CSS approach the SMACSS model (Scalable and Modular
 
 The project is structured as follows:
 
-```
+```.
 kirian-caumes-fr
 ├── .devcontainer               //About VS Code Container
 │   ├── devcontainer.json       //Setup for VS Code Container
