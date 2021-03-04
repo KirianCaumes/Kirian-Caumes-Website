@@ -27,7 +27,7 @@ module.exports = withPlugins(
         // Will be available on both server and client
         publicRuntimeConfig: {
             appLang: "FR-fr",
-            appColor: "#b91d47",
+            appColor: "#263547",
             appUrl: "https://kiriancaumes.fr/",
             appName: "Kirian Caumes",
             appTitle: "Kirian Caumes - Développeur nantais",
