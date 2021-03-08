@@ -26,16 +26,6 @@ export default function Index() {
     const { publicRuntimeConfig } = getConfig()
     const router = useRouter()
 
-    // useEffect(
-    //     () => {
-    //         document.querySelector('html').style.scrollBehavior = "smooth"
-    //         return () => {
-    //             document.querySelector('html').style.scrollBehavior = 'unset'
-    //         }
-    //     },
-    //     []
-    // )
-
     return (
         <>
             <Head>
