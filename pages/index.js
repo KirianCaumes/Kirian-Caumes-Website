@@ -52,7 +52,7 @@ export default function Index() {
                         <Columns>
                             <Columns.Column>
                                 <p>
-                                    Développeur web junior âgé de <b>{Math.abs((new Date(Date.now() - new Date(1997, 1, 21).getTime())).getUTCFullYear() - 1970)} ans</b>, je suis situé aux abords de la ville de <b>Nantes</b> et titulaire du <b>permis B</b>.<br /><br />
+                                    Développeur full stack junior âgé de <b>{Math.abs((new Date(Date.now() - new Date(1997, 1, 21).getTime())).getUTCFullYear() - 1970)} ans</b>, je suis situé aux abords de la ville de <b>Nantes</b> et titulaire du <b>permis B</b>.<br /><br />
                                     Dans le domaine de l'informatique depuis maintenant plus de 5 ans, mes études à Ynov Nantes avec l'obtention de mon mastère « <b>Expert Développement Web</b> » ainsi que mon <a href="#career" onClick={() => router.replace({ hash: '#career' })}>parcours professionnel</a>, m'ont permis l'acquisition de <a href="#skills" onClick={() => router.replace({ hash: '#skills' })}>compétences</a> solides et adaptatives.<br /><br />
                                     Ce savoir-faire technique, acquis également grâce à ma bonne compréhension de l'<b>anglais</b>, se sera exprimé autour de la réalisation (notamment) d'<b>applications web métier</b> mais aussi de la <b>gestion de projets</b> et de la <b>relation client</b>.<br /><br />
                                 </p>
@@ -199,7 +199,7 @@ export default function Index() {
                             isSubtitle
                             isCentered
                         >
-                            Mon savoir-faire (non exhaustif) de développeur web
+                            Mon savoir-faire (non exhaustif) de développeur full stack
                         </Title>
                         <br />
                         <Fade bottom>
@@ -624,7 +624,7 @@ export default function Index() {
                                         content={<>
                                             Collectionneur depuis toujours d'objets en tous genres (pièces d'euros, timbres, fèves, jeux vidéo, etc.), j'y voue une véritable passion.<br /><br />
                                             Aujourd'hui la collection vers laquelle je suis principalement tourné concerne le groupe de musique In Flames avec un ensemble de CD, vinyl et autres. Je partage également cette passion sur internet sous le pseudonyme : <a href="https://jesterscollection.kiriancaumes.fr/" target="_blank" rel="noopener">A Jester's Collection</a>.
-                                    </>}
+                                        </>}
                                     />
                                 </Fade>
                             </Columns.Column>
@@ -643,7 +643,7 @@ export default function Index() {
                                         content={<>
                                             Plus qu'un métier, le développement est également une passion. Je m'amuse fréquemment à développer différents projets, qu'ils soient Open Source, ou bien directement pour mon usage personnel (<a href="https://github.com/KirianCaumes" target="_blank" rel="noopener">Github</a>).<br /><br />
                                             Ainsi, je peux me permettre d'expérimenter de mon côté pour proposer des solutions innovantes lors de projets professionnels.
-                                    </>}
+                                        </>}
                                     />
                                 </Fade>
                             </Columns.Column>
