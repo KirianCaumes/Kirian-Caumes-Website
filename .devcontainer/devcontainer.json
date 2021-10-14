@@ -36,12 +36,13 @@
   // "postCreateCommand": "apt-get update && apt-get install -y git",
   // Add the IDs of extensions you want installed when the container is created in the array below.
   "extensions": [
-    "fudge.auto-using",
-    "k--kato.docomment",
     "gruntfuggly.todo-tree",
-    "ofhumanbondage.react-proptypes-intellisense",
     "sibiraj-s.vscode-scss-formatter",
     "firefox-devtools.vscode-firefox-debug",
-    "msjsdiag.debugger-for-chrome"
+    "msjsdiag.debugger-for-chrome",
+    "davidanson.vscode-markdownlint",
+    "dbaeumer.vscode-eslint",
+    "stylelint.vscode-stylelint",
+    "pflannery.vscode-versionlens"
   ]
 }

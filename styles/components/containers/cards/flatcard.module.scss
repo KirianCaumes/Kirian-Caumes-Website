@@ -1,28 +1,33 @@
-@import "../../../mixins";
-@import "../../../variables";
+@use '../../../abstracts/mixins';
+@use '../../../abstracts/variables';
 
 .flatcard {
-  height: 100%;
   display: flex;
-  justify-content: flex-start;
   flex-direction: column;
-  text-align: center;
+  height: 100%;
+  justify-content: flex-start;
   padding: 0 1em;
-  @include until($tablet) {
+  text-align: center;
+  @include mixins.until(variables.$tablet) {
     padding: 0;
   }
-  .flatcard-image {
-  }
+
+  // .flatcard-image {
+  // }
+
   .flatcard-title {
-    text-align: center;
     font-weight: bold;
     margin: 0.5em 0;
+    text-align: center;
   }
+
   .flatcard-content {
     font-size: 0.85em;
+
     &.is-content-center {
       text-align: center;
     }
+
     &.is-content-justify {
       text-align: justify;
     }

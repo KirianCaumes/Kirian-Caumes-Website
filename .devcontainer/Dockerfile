@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.10
 
 # Avoid warnings by switching to noninteractive
 ENV DEBIAN_FRONTEND=noninteractive
@@ -15,13 +15,15 @@ RUN apt-get clean
 RUN apt-get update
 RUN apt-get install gnupg -y \
     && apt-get install git -y \
-    && apt-get install python-pip -y \
+    && apt-get install python3-pip -y \
     && apt-get install apt-transport-https -y \
     && apt-get install vim -y \
-    && apt-get install -y wget \
+    && apt-get install wget -y \
     && apt-get install curl -y \
     && apt-get install wget -y \
-    && apt-get install unzip -y
+    && apt-get install unzip -y \
+    && apt-get install libglu1 -y \
+    && apt-get install libxi6 libgconf-2-4 -y
 
 # install nodejs 14.x
 RUN wget -qO- https://deb.nodesource.com/setup_14.x | bash -

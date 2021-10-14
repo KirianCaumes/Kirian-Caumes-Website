@@ -1,27 +1,31 @@
-@import "../../variables";
+@use '../../abstracts/variables';
 
 .gdpr-banner {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
   background-color: rgba(0, 0, 0, 0.85);
-  z-index: 999;
-  padding: 1em;
+  bottom: 0;
   display: inline-block;
+  left: 0;
+  padding: 1em;
+  position: fixed;
+  right: 0;
   text-align: center;
+  z-index: 999;
+
   p.gdpr-banner-content {
-    color: $white;
-    text-align: center;
+    color: variables.$white;
     display: inline-block;
     padding: 0.75em 0 0;
+    text-align: center;
+
     a {
-      color: $medium-grey;
+      color: variables.$medium-grey;
     }
   }
+
   form.gdpr-banner-form {
     display: inline-block;
     margin: 0 0 0 0.5em;
+
     button {
       margin: 0.75em 0.5em;
       vertical-align: inherit;

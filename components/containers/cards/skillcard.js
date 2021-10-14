@@ -1,25 +1,27 @@
 import React from 'react'
-// @ts-ignore
 import styles from 'styles/components/containers/cards/skillcard.module.scss'
 import classNames from 'classnames'
 
 /**
  * @typedef {object} SkillRow SkillRow props
- * @property {string} props.title Title
- * @property {number} props.score Score
+ * @property {string} title Title
+ * @property {number} score Score
  */
 
 /**
  * A skill card
- * @param {object} props
+ * @param {object} props Props
  * @param {string} props.title Title
  * @param {number} props.score Score
  * @param {SkillRow[]} props.rows Rows
  * @param {'yellow' | 'pink' | 'purple' | 'blue'} props.color Color
+ * @returns {JSX.Element} Content
  */
-export default function Skillcard({ title, score, rows, color }) {
+export default function Skillcard({
+    title, score, rows, color,
+}) {
     return (
-        <div className={styles['skillcard']}>
+        <div className={styles.skillcard}>
             <div
                 className={classNames(styles['skillcard-body'], styles[`is-${color}`])}
             >
@@ -31,11 +33,12 @@ export default function Skillcard({ title, score, rows, color }) {
                         title={`${title} ${score > 0 ? `${score}/5` : ''}`}
                     >
                         <span>{title}</span>
-                        {score > 0 &&
-                            <Score
-                                value={score}
-                            />
-                        }
+                        {score > 0
+                            && (
+                                <Score
+                                    value={score}
+                                />
+                            )}
                     </p>
                 </div>
                 <div
@@ -44,6 +47,7 @@ export default function Skillcard({ title, score, rows, color }) {
                     <ul className={styles['skillcard-content']}>
                         {rows.map((row, i) => (
                             <li
+                                // eslint-disable-next-line react/no-array-index-key
                                 key={`skillrow_${i}`}
                                 title={`${row.title} ${row.score > 0 ? `${row.score}/5` : ''}`}
                             >
@@ -60,16 +64,19 @@ export default function Skillcard({ title, score, rows, color }) {
 
 /**
  * Score with stars
- * @param {object} props
- * @param {number} props.value
- * @param {number=} props.max
- * @param {string=} props.icon
- * @param {string=} props.unselectedIcon
+ * @param {object} props props
+ * @param {number} props.value value
+ * @param {number=} props.max max
+ * @param {string=} props.icon icon
+ * @param {string=} props.unselectedIcon unselectedIcon
+ * @returns {JSX.Element} Content
  */
-function Score({ value, max = 5, icon = "★", unselectedIcon = "☆", }) {
+function Score({
+    value, max = 5, icon = '★', unselectedIcon = '☆',
+}) {
     return (
         <span className={styles['skillcard-stars']}>
-            {new Array(max).fill({}).map((_, i) => i + 1 <= value ? icon : unselectedIcon).join('')}
+            {new Array(max).fill({}).map((_, i) => (i + 1 <= value ? icon : unselectedIcon)).join('')}
         </span>
     )
 }

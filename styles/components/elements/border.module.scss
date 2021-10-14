@@ -1,19 +1,21 @@
-@import "../../variables";
+@use '../../abstracts/variables';
 
 svg.border {
   height: 150px;
-  width: 100%;
-  position: absolute;
   left: 0;
   pointer-events: none;
+  position: absolute;
+  width: 100%;
+
   &.is-top {
     top: 0;
     // transform: scaleY(-1);
   }
+
   &.is-bottom {
     bottom: 0;
   }
-  @each $name, $value in $colors {
+  @each $name, $value in variables.$colors {
     &.is-#{$name} {
       fill: $value;
     }

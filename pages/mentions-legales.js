@@ -1,28 +1,35 @@
-import React from "react"
-import Head from "next/head"
-// @ts-ignore
-import styles from "styles/pages/mentions-legales.module.scss"
-import getConfig from 'next/config'
-import Container from "components/containers/container"
-import Title from "components/elements/title"
-import Link from "next/link"
+/* eslint-disable max-len */
+import React from 'react'
+import Head from 'next/head'
+import styles from 'styles/pages/mentions-legales.module.scss'
+import Container from 'components/containers/container'
+import Title from 'components/elements/title'
+import Link from 'next/link'
+import useMentionsLegales from 'hooks/pages/useIndex'
 
 /**
  * Mentios légales page
+ * @returns {JSX.Element} Content
  */
 export default function MentionsLegales() {
-    const { publicRuntimeConfig } = getConfig()
+    const { publicRuntimeConfig } = useMentionsLegales()
 
     return (
         <>
             <Head>
-                <title>Mentions legales - {publicRuntimeConfig.appName}
+                <title>
+                    Mentions legales -
+                    {' '}
+                    {publicRuntimeConfig.appName}
                 </title>
                 <meta
                     name="description"
                     content={`Mentions legales du site ${publicRuntimeConfig.appName}`}
                 />
-                <meta name="robots" content="noindex" />
+                <meta
+                    name="robots"
+                    content="noindex"
+                />
             </Head>
 
             <main className={styles['mentions-legales']}>
@@ -38,13 +45,35 @@ export default function MentionsLegales() {
                         Présentation du site
                     </Title>
                     <p>
-                        En vertu de l'article 6 de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique, il est précisé aux utilisateurs du site <a href="https://kiriancaumes.fr" title="kiriancaumes.fr">kiriancaumes.fr</a> l'identité des différents intervenants dans le cadre de sa réalisation et de son suivi :
+                        En vertu de l'article 6 de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique, il est précisé aux utilisateurs du site
+                        {' '}
+                        <a
+                            href="https://kiriancaumes.fr"
+                            title="kiriancaumes.fr"
+                        >
+                            kiriancaumes.fr
+                        </a>
+                        {' '}
+                        l'identité des différents intervenants dans le cadre de sa réalisation et de son suivi :
                     </p>
                     <br />
                     <p>
-                        Le présent site est édité par : Kirian CAUMES, personne morale<br />
-                        Responsable de la publication : Kirian CAUMES, personne morale, joignable par <a href="mailto:kirian.caumes@gmail.com">email</a><br />
-                        Hébergeur du site: <a href="https://www.ovh.com/fr/" target="_blank" rel="noopener">ovh.com</a>, qui est domicilé 2 rue Kellermann / 59100 Roubaix / France et joignable par téléphone au 1007.
+                        Le présent site est édité par : Kirian CAUMES, personne morale
+                        <br />
+                        Responsable de la publication : Kirian CAUMES, personne morale, joignable par
+                        {' '}
+                        <a href="mailto:kirian.caumes@gmail.com">email</a>
+                        <br />
+                        Hébergeur du site:
+                        {' '}
+                        <a
+                            href="https://www.ovh.com/fr/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            ovh.com
+                        </a>
+                        , qui est domicilé 2 rue Kellermann / 59100 Roubaix / France et joignable par téléphone au 1007.
                     </p>
                     <br />
                     <Title
@@ -70,7 +99,12 @@ export default function MentionsLegales() {
                         Cookies et traceurs
                     </Title>
                     <p>
-                        Le site internet <Link href="https://kiriancaumes.fr"><a>kiriancaumes.fr</a></Link> possède un système de mesure d'audience.
+                        Le site internet
+                        {' '}
+                        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                        <Link href="https://kiriancaumes.fr"><a>kiriancaumes.fr</a></Link>
+                        {' '}
+                        possède un système de mesure d'audience.
                     </p>
                     <br />
                     <p>
@@ -100,7 +134,12 @@ export default function MentionsLegales() {
                         Liens hypertextes
                     </Title>
                     <p>
-                        Ce site internet contient un certain nombre de liens hypertextes vers d'autres sites. Cependant, <Link href="https://kiriancaumes.fr"><a>kiriancaumes.fr</a></Link> n'a pas la possibilité de suivre et vérifier le contenu de ces sites, et n'assumera en conséquence aucune responsabilité de ce fait.
+                        Ce site internet contient un certain nombre de liens hypertextes vers d'autres sites. Cependant,
+                        {' '}
+                        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                        <Link href="https://kiriancaumes.fr"><a>kiriancaumes.fr</a></Link>
+                        {' '}
+                        n'a pas la possibilité de suivre et vérifier le contenu de ces sites, et n'assumera en conséquence aucune responsabilité de ce fait.
                     </p>
                     <br />
                     <Title
@@ -120,7 +159,15 @@ export default function MentionsLegales() {
                     <ul>
                         <li>
                             <p>
-                                Photo de Antonio Batinić : <a href="https://www.pexels.com/photo/internet-technologie-ordinateur-texte-4164418/" rel="noopener" target="_blank">Pexels</a>
+                                Photo de Antonio Batinić :
+                                {' '}
+                                <a
+                                    href="https://www.pexels.com/photo/internet-technologie-ordinateur-texte-4164418/"
+                                    rel="noopener noreferrer"
+                                    target="_blank"
+                                >
+                                    Pexels
+                                </a>
                             </p>
                         </li>
                     </ul>
@@ -133,12 +180,28 @@ export default function MentionsLegales() {
                     <ul>
                         <li>
                             <p>
-                                Balloon Emoticons de AomAm : <a href="https://thenounproject.com/aomam/collection/balloon-emoticons-line/" rel="noopener" target="_blank">The Noun Project</a>
+                                Balloon Emoticons de AomAm :
+                                {' '}
+                                <a
+                                    href="https://thenounproject.com/aomam/collection/balloon-emoticons-line/"
+                                    rel="noopener noreferrer"
+                                    target="_blank"
+                                >
+                                    The Noun Project
+                                </a>
                             </p>
                         </li>
                         <li>
                             <p>
-                                Letter de Vladimir Belochkin : <a href="https://thenounproject.com/search/?q=letter&i=2157680" rel="noopener" target="_blank">The Noun Project</a>
+                                Letter de Vladimir Belochkin :
+                                {' '}
+                                <a
+                                    href="https://thenounproject.com/search/?q=letter&i=2157680"
+                                    rel="noopener noreferrer"
+                                    target="_blank"
+                                >
+                                    The Noun Project
+                                </a>
                             </p>
                         </li>
                     </ul>

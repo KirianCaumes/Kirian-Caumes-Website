@@ -1,64 +1,35 @@
-@import "../../mixins";
+@use '../../abstracts/mixins';
 
 $column-gap: 0.75rem !default;
 
 .columns {
+  box-sizing: border-box;
+  flex-wrap: wrap;
   margin-left: -$column-gap;
   margin-right: -$column-gap;
   margin-top: -$column-gap;
-  box-sizing: border-box;
-  flex-wrap: wrap;
+  @include mixins.tablet {
+    display: flex;
+  }
+
   &:last-child {
     margin-bottom: -$column-gap;
   }
+
   &:not(:last-child) {
     margin-bottom: calc(1.5rem - #{$column-gap});
-  }
-  @include tablet {
-    display: flex;
   }
 }
 
 .column {
+  box-sizing: inherit;
   display: block;
   flex-basis: 0;
   flex-grow: 1;
   flex-shrink: 1;
   padding: $column-gap;
-  box-sizing: inherit;
-  &.is-center {
-    text-align: center;
-  }
-  &.is-left {
-    text-align: left;
-    @include touch {
-      text-align: center;
-    }
-  }
-  &.is-right {
-    text-align: right;
-    @include touch {
-      text-align: center;
-    }
-  }
 
-  &.is-v-top {
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-  }
-  &.is-v-center {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-  }
-  &.is-v-bottom {
-    display: flex;
-    justify-content: flex-end;
-    flex-direction: column;
-  }
-
-  @include tablet {
+  @include mixins.tablet {
     &.is-full,
     &.is-full-tablet {
       flex: none;
@@ -120,7 +91,7 @@ $column-gap: 0.75rem !default;
     }
   }
 
-  @include desktop {
+  @include mixins.desktop {
     &.is-full-desktop {
       flex: none;
       width: 100%;
@@ -172,7 +143,7 @@ $column-gap: 0.75rem !default;
     }
   }
 
-  @include widescreen {
+  @include mixins.widescreen {
     &.is-full-widescreen {
       flex: none;
       width: 100%;
@@ -222,5 +193,41 @@ $column-gap: 0.75rem !default;
       flex: none;
       width: 80%;
     }
+  }
+
+  &.is-center {
+    text-align: center;
+  }
+
+  &.is-left {
+    text-align: left;
+    @include mixins.touch {
+      text-align: center;
+    }
+  }
+
+  &.is-right {
+    text-align: right;
+    @include mixins.touch {
+      text-align: center;
+    }
+  }
+
+  &.is-v-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  &.is-v-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &.is-v-bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
   }
 }

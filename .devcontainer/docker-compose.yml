@@ -8,7 +8,6 @@ services:
     tty: true
     volumes:
       - ../:/app_kiriancaumes:rw
-      - /app_kiriancaumes/front/node_modules
 
       - ~/.ssh:/.ssh
     ports:

@@ -1,132 +1,164 @@
-@import "../../../mixins";
-@import "../../../variables";
+@use '../../../abstracts/variables';
+@use '../../../abstracts/mixins';
 
 $padding: 2.5em;
-$lineWidth: 3px;
-$circleRatio: 4;
-$circleBorder: 3px;
+$line-width: 3px;
+$circle-ratio: 4;
+$circle-border: 3px;
+$margin-top: 2rem;
 
 .careercard {
   display: flex;
   justify-content: center;
+
   &:nth-child(odd) {
-    $color: $pink;
-    text-align: left;
+    $color: variables.$pink;
     flex-direction: row-reverse;
+    text-align: left;
+
     .careercard-body {
       padding-left: calc(#{$padding} * 2);
+
       .careercard-title {
         color: $color;
       }
+
       &::before {
-        left: calc(#{$padding} - (#{$lineWidth} / 2));
+        left: calc(#{$padding} - (#{$line-width} / 2));
       }
+
       &::after {
         background-color: $color;
-        left: calc(#{$padding} + (#{$lineWidth} * (-#{$circleRatio} / 2)) - #{$circleBorder});
+        left: calc(#{$padding} + (#{$line-width} * (-#{$circle-ratio} / 2)) - #{$circle-border});
       }
     }
-    @include until($tablet) {
+    
+    /* stylelint-disable-next-line order/order */
+    @include mixins.until(variables.$tablet) {
+      margin-top: $margin-top;
+
       .careercard-body {
         padding-left: $padding;
+
         &::before {
-          left: calc((#{$padding} / 2) - (#{$lineWidth} / 2));
+          left: calc((#{$padding} / 2) - (#{$line-width} / 2));
         }
+
         &::after {
-          left: calc((#{$padding} / 2) + (#{$lineWidth} * (-#{$circleRatio} / 2)) - #{$circleBorder});
+          left: calc((#{$padding} / 2) + (#{$line-width} * (-#{$circle-ratio} / 2)) - #{$circle-border});
         }
       }
     }
   }
+
   &:nth-child(even) {
-    $color: $purple;
-    text-align: right;
+    $color: variables.$purple;
     flex-direction: row;
+    text-align: right;
+
     .careercard-body {
       padding-right: calc(#{$padding} * 2);
+
       .careercard-title {
-        color: $purple;
+        color: $color;
       }
+
       &::before {
-        right: calc(#{$padding} - (#{$lineWidth} / 2));
+        right: calc(#{$padding} - (#{$line-width} / 2));
       }
+
       &::after {
         background-color: $color;
-        right: calc(#{$padding} + (#{$lineWidth} * (-#{$circleRatio} / 2)) - #{$circleBorder});
+        right: calc(#{$padding} + (#{$line-width} * (-#{$circle-ratio} / 2)) - #{$circle-border});
       }
     }
-    @include until($tablet) {
-      text-align: left;
+    
+    /* stylelint-disable-next-line order/order */
+    @include mixins.until(variables.$tablet) {
       flex-direction: row-reverse;
+      margin-top: $margin-top;
+      text-align: left;
+
       .careercard-body {
         padding-left: $padding;
         padding-right: 0;
-        .careercard-title {
-          color: $purple;
-        }
+
         &::before {
-          left: calc((#{$padding} / 2) - (#{$lineWidth} / 2));
+          left: calc((#{$padding} / 2) - (#{$line-width} / 2));
         }
+
         &::after {
-          left: calc((#{$padding} / 2) + (#{$lineWidth} * (-#{$circleRatio} / 2)) - #{$circleBorder});
+          left: calc((#{$padding} / 2) + (#{$line-width} * (-#{$circle-ratio} / 2)) - #{$circle-border});
         }
       }
     }
   }
+
   .careercard-body,
   .careercard-void {
     flex: 1;
   }
+
   .careercard-body {
     position: relative;
+
     &::before {
-      content: "";
-      height: 100%;
-      width: $lineWidth;
-      background-color: $blue;
+      background-color: variables.$blue;
+      content: '';
+      height: 150%;
       position: absolute;
       right: $padding;
+      width: $line-width;
     }
+
     &::after {
-      content: "";
-      width: calc(#{$lineWidth} * #{$circleRatio});
-      height: calc(#{$lineWidth} * #{$circleRatio});
+      border: $circle-border solid variables.$grey;
       border-radius: 50%;
+      content: '';
+      height: calc(#{$line-width} * #{$circle-ratio});
       position: absolute;
-      border: $circleBorder solid $grey;
-      top: 2.1em;
+      top: 1.9em;
+      width: calc(#{$line-width} * #{$circle-ratio});
     }
+
     .careercard-period {
-      font-weight: bold;
       font-size: 0.75em;
+      font-weight: bold;
       margin-bottom: 0.75em;
     }
+
     .careercard-title {
-      font-weight: bold;
       font-size: 1em;
+      font-weight: bold;
     }
+
     .careercard-location {
+      color: variables.$medium-grey;
       font-size: 0.65em;
-      color: $medium-grey;
       margin-bottom: 0.5em;
+
       a {
-        color: $medium-grey;
+        color: variables.$medium-grey;
       }
     }
+
     .careercard-mission-title {
-      font-weight: 700;
       font-size: 0.95em;
+      font-weight: 700;
     }
+
     .careercard-mission-desc {
-      line-height: 1.25em;
       font-size: 0.85em;
+      line-height: 1.25em;
+
       &:not(:last-child) {
         margin-bottom: 0.25em;
       }
     }
   }
+
   .careercard-void {
-    @include until($tablet) {
+    @include mixins.until(variables.$tablet) {
       display: none;
     }
   }

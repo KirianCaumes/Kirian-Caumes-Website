@@ -1,27 +1,37 @@
 import React, { useEffect, useMemo, useState } from 'react'
-// @ts-ignore
-import styles from "styles/components/layout/gdpr-banner.module.scss"
+import styles from 'styles/components/layout/gdpr-banner.module.scss'
 import cookie from 'js-cookie'
 import Link from 'next/link'
 import Button from 'components/inputs/button'
 
+/**
+ * GdprBanner
+ * @returns {JSX.Element} Content
+ */
 export default function GdprBanner() {
-    /** @type {[boolean, function(boolean):any]} Modal */
-    const [isVisible, setIsVisible] = useState(!true)
+    /** Modal */
+    const [isVisible, setIsVisible] = useState(false)
 
     const cookieName = useMemo(() => 'gtb_accept_cookies', [])
 
     useEffect(() => {
         setIsVisible(!cookie.get(cookieName))
-    }, [])
+    }, [cookieName])
 
-    if (!isVisible || process.env.NODE_ENV === "development")
+    if (!isVisible || process.env.NODE_ENV === 'development')
         return null
 
     return (
         <div className={styles['gdpr-banner']}>
             <p className={styles['gdpr-banner-content']}>
-                Ce site utilise des <Link href="/general-conditions"><a>cookies</a></Link> pour analyser vos préférences de manière anonyme. Vous pouvez les accepter pour nous permettre d'améliorer votre expérience ou les refuser.
+                Ce site utilise des
+                {' '}
+                <Link href="/general-conditions">
+                    {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                    <a>cookies</a>
+                </Link>
+                {' '}
+                pour analyser vos préférences de manière anonyme. Vous pouvez les accepter pour nous permettre d'améliorer votre expérience ou les refuser.
             </p>
             <form
                 className={styles['gdpr-banner-form']}
@@ -31,13 +41,13 @@ export default function GdprBanner() {
                     setIsVisible(false)
                     cookie.set(
                         cookieName,
-                        "true",
+                        'true',
                         {
                             expires: 1,
                             path: '/',
-                            secure: process.env.NODE_ENV !== "development",
-                            sameSite: "lax"
-                        }
+                            secure: process.env.NODE_ENV !== 'development',
+                            sameSite: 'lax',
+                        },
                     )
                 }}
             >
@@ -54,6 +64,6 @@ export default function GdprBanner() {
                     Refuser les cookies
                 </Button>
             </form>
-        </div >
+        </div>
     )
 }

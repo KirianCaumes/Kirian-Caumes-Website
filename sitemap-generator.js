@@ -11,7 +11,7 @@ configureSitemap({
         },
     },
     isTrailingSlashRequired: true,
-    targetDirectory: __dirname + '/public',
-    pagesDirectory: __dirname + '/pages',
+    targetDirectory: `${__dirname}/public`,
+    pagesDirectory: `${__dirname}/pages`,
 })
     .generateSitemap()

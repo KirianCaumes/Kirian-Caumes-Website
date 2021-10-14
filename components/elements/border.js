@@ -1,18 +1,18 @@
 import classNames from 'classnames'
 import React from 'react'
-// @ts-ignore
 import styles from 'styles/components/elements/border.module.scss'
 
 /**
  * A border for div
- * @param {object} props
+ * @param {object} props Props
  * @param {'white' | 'grey'=} props.color Color
  * @param {'top' | 'bottom'=} props.position Position
+ * @returns {JSX.Element} Content
  */
 export default function Border({ color = 'grey', position = 'bottom' }) {
     return (
         <svg
-            className={classNames(styles['border'], styles[`is-${color}`], styles[`is-${position}`])}
+            className={classNames(styles.border, styles[`is-${color}`], styles[`is-${position}`])}
             viewBox="0 0 500 150"
             preserveAspectRatio="none"
         >

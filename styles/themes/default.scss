@@ -1,0 +1,36 @@
+@use '../abstracts/variables';
+
+html {
+  background-color: variables.$white;
+  color: variables.$black;
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+
+  &[data-scroll-behavior='auto'] {
+    scroll-behavior: auto;
+  }
+  
+  body {
+    box-sizing: border-box;
+    overflow-x: hidden;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    p {
+      line-height: 1.5em;
+
+      a {
+        color: variables.$blue;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

@@ -87,12 +87,12 @@ kirian-caumes-fr
 │   ├── manifest.webmanifest    //PWA manifest
 │   └── sitemap.xml
 ├── styles                      //All style
+│   ├── abstracts               
+│   ├── bases                   
 │   ├── components              //Components SCSS
 │   ├── pages                   //Pages SCSS
-│   ├── _base.scss              //Common SCSS
-│   ├── _mixins.scss
-│   ├── _variables.scss         
-│   └── index.scss
+│   ├── themes                  
+│   └── index.scss              //Common SCSS
 │   .gitignore
 │   jsconfig.json
 │   next.config.js

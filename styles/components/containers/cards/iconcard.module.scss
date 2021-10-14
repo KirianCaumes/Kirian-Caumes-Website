@@ -1,50 +1,55 @@
-@import "../../../mixins";
-@import "../../../variables";
+@use '../../../abstracts/variables';
 
 .iconcard {
-  height: 100%;
   display: flex;
-  justify-content: flex-start;
   flex-direction: column;
+  height: 100%;
+  justify-content: flex-start;
+
   .iconcard-icon {
-    margin: 0 auto;
+    background-color: variables.$white;
     display: flex;
-    width: 82px;
+    margin: 0 auto;
     position: relative;
-    background-color: $white;
+    width: 82px;
     // border: 1em solid $white;
     &.is-icon-border {
-      border: 1em solid $grey;
+      border: 1em solid variables.$grey;
     }
-    @each $key, $color in $colors {
+    @each $key, $color in variables.$colors {
       &.is-#{$key} {
         background-color: $color;
       }
     }
   }
+
   .iconcard-body {
+    background: variables.$white;
+    border-bottom: 2px solid #000;
     box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.02);
-    background: white;
+    height: 100%;
     margin-top: -50px;
     padding: 1em;
     padding-top: 4em;
-    height: 100%;
-    border-bottom: 2px solid black;
-    @each $key, $color in $colors {
+    @each $key, $color in variables.$colors {
       &.is-#{$key} {
         border-bottom: 2px solid $color;
       }
     }
+
     .iconcard-title {
-      text-align: center;
       font-weight: bold;
       margin-bottom: 0.5em;
+      text-align: center;
     }
+
     .iconcard-content {
       font-size: 0.85em;
+
       &.is-content-center {
         text-align: center;
       }
+
       &.is-content-justify {
         text-align: justify;
       }

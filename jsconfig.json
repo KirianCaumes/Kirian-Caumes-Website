@@ -4,7 +4,13 @@
         "module": "commonJS",
         "target": "es6",
         "jsx": "react",
-        "baseUrl": "./"
+        "baseUrl": "./",
+        "lib": [
+            "dom",
+            "webworker",
+            "webworker.importscripts",
+            "es2020"
+        ]
     },
     "exclude": [
         "node_modules",

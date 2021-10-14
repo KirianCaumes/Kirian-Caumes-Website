@@ -1,21 +1,23 @@
-@import "../../variables";
 .img {
-  max-width: 100%;
-  margin: 0 auto;
-  overflow: hidden;
-  width: min-content;
   height: min-content;
+  margin: 0 auto;
+  max-width: 100%;
+  overflow: hidden;
   transform: translate3d(0, 0, 0);
+  width: min-content;
+
   picture {
     img {
       &:first-child {
         position: absolute;
       }
     }
+
     &.is-zoomable {
       img {
         transition: 0.5s;
         vertical-align: middle;
+
         &:hover {
           transform: scale(1.1);
         }

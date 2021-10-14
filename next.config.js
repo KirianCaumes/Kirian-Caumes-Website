@@ -1,15 +1,14 @@
 const withPlugins = require('next-compose-plugins')
-// // @ts-ignore
 const optimizedImages = require('next-optimized-images')
 const responsiveLoaderSharp = require('responsive-loader/sharp')
-const withPWA = require("next-pwa")
+const withPWA = require('next-pwa')
 
 module.exports = withPlugins(
     [
         withPWA({
             pwa: {
                 disable: process.env.NODE_ENV === 'development',
-                dest: "public",
+                dest: 'public',
             },
         }),
         [optimizedImages, {
@@ -26,14 +25,16 @@ module.exports = withPlugins(
         serverRuntimeConfig: {},
         // Will be available on both server and client
         publicRuntimeConfig: {
-            appLang: "FR-fr",
-            appColor: "#263547",
-            appUrl: "https://kiriancaumes.fr/",
-            appName: "Kirian Caumes",
-            appTitle: "Kirian Caumes - Développeur full stack junior nantais",
-            appDescription: "Kirian Caumes, développeur full stack junior passionné d'informatique. Persévérant, sympathique et curieux sont des qualités qui me définissent.",
-            appComment: "👉 If you are able to see this, feel free to check out the source code of my website: https://github.com/KirianCaumes/Kirian-Caumes-Website 👈",
-            gtmId: "GTM-WSRB7TM"
+            appLang: 'FR-fr',
+            appColor: '#263547',
+            appUrl: 'https://kiriancaumes.fr/',
+            appName: 'Kirian Caumes',
+            appTitle: 'Kirian Caumes - Développeur full stack nantais',
+            // eslint-disable-next-line max-len
+            appDescription: "Kirian Caumes, développeur full stack passionné d'informatique. Persévérant, sympathique et curieux sont des qualités qui me définissent.",
+            // eslint-disable-next-line max-len
+            appComment: '👉 If you are able to see this, feel free to check out the source code of my website: https://github.com/KirianCaumes/Kirian-Caumes-Website 👈',
+            gtmId: 'GTM-WSRB7TM',
         },
-    }
+    },
 )

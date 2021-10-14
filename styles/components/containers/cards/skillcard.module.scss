@@ -1,79 +1,93 @@
-@import "../../../mixins";
-@import "../../../variables";
+@use '../../../abstracts/variables';
 
 .skillcard {
-  height: 100%;
   display: flex;
-  justify-content: flex-start;
   flex-direction: column;
+  height: 100%;
+  justify-content: flex-start;
+
   .skillcard-stars {
     font-weight: normal;
     line-height: 16px;
   }
+
   .skillcard-body {
-    overflow: hidden;
+    background: variables.$white;
     box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.02);
-    background: white;
-    height: 100%;
     display: flex;
+    height: 100%;
     justify-content: center;
     margin-bottom: 1em;
-    @each $key, $color in $colors {
+    overflow: hidden;
+    @each $key, $color in variables.$colors {
       &.is-#{$key} {
         .skillcard-body-left {
           border-right: 1px solid $color;
         }
+
         .skillcard-body-right {
           border-left: 1px solid $color;
         }
       }
     }
+
     .skillcard-body-left,
     .skillcard-body-right {
-      padding: 1em;
-      width: 100%;
       flex: 1;
       overflow: hidden;
+      padding: 1em;
+      width: 100%;
     }
+
     .skillcard-body-left {
       display: flex;
-      justify-content: center;
       flex-direction: column;
+      justify-content: center;
+
       .skillcard-title {
-        text-align: center;
         font-weight: bold;
+        text-align: center;
+
         span {
           &:first-child {
-            overflow: hidden;
-            text-overflow: ellipsis;
+            /* stylelint-disable-next-line property-no-vendor-prefix */
+            -webkit-box-orient: vertical;
+            /* stylelint-disable-next-line  value-no-vendor-prefix */
             display: -webkit-box;
             -webkit-line-clamp: 1;
-            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
             word-break: break-word;
           }
         }
       }
     }
+
     .skillcard-body-right {
       display: flex;
-      justify-content: center;
       flex-direction: column;
+      justify-content: center;
+
       .skillcard-content {
-        text-align: left;
         font-size: 0.85em;
         list-style: none;
+        text-align: left;
+
         li {
           display: flex;
           justify-content: space-between;
+
           span {
             &:first-child {
+              /* stylelint-disable-next-line property-no-vendor-prefix */
+              -webkit-box-orient: vertical;
+              /* stylelint-disable-next-line  value-no-vendor-prefix */
+              display: -webkit-box;
+              font-size: 0.95em;
+              -webkit-line-clamp: 1;
               overflow: hidden;
               text-overflow: ellipsis;
-              display: -webkit-box;
-              -webkit-line-clamp: 1;
-              -webkit-box-orient: vertical;
               word-break: break-word;
-              font-size: 0.95em;
             }
           }
         }

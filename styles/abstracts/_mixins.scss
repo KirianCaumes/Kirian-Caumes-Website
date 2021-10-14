@@ -1,0 +1,83 @@
+@use 'variables';
+
+@mixin from($device) {
+  @media screen and (min-width: $device) {
+    @content;
+  }
+}
+@mixin until($device) {
+  @media screen and (max-width: $device - 1px) {
+    @content;
+  }
+}
+@mixin mobile {
+  @media screen and (max-width: variables.$tablet - 1px) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media screen and (min-width: variables.$tablet), print {
+    @content;
+  }
+}
+@mixin tablet-only {
+  @media screen and (min-width: variables.$tablet) and (max-width: variables.$desktop - 1px) {
+    @content;
+  }
+}
+@mixin touch {
+  @media screen and (max-width: variables.$desktop - 1px) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media screen and (min-width: variables.$desktop) {
+    @content;
+  }
+}
+@mixin desktop-only {
+  @if variables.$widescreen-enabled {
+    @media screen and (min-width: variables.$desktop) and (max-width: variables.$widescreen - 1px) {
+      @content;
+    }
+  }
+}
+@mixin until-widescreen {
+  @if variables.$widescreen-enabled {
+    @media screen and (max-width: variables.$widescreen - 1px) {
+      @content;
+    }
+  }
+}
+
+@mixin widescreen {
+  @if variables.$widescreen-enabled {
+    @media screen and (min-width: variables.$widescreen) {
+      @content;
+    }
+  }
+}
+
+@mixin widescreen-only {
+  @if variables.$widescreen-enabled and variables.$fullhd-enabled {
+    @media screen and (min-width: variables.$widescreen) and (max-width: variables.$fullhd - 1px) {
+      @content;
+    }
+  }
+}
+
+@mixin until-fullhd {
+  @if variables.$fullhd-enabled {
+    @media screen and (max-width: variables.$fullhd - 1px) {
+      @content;
+    }
+  }
+}
+
+@mixin fullhd {
+  @if variables.$fullhd-enabled {
+    @media screen and (min-width: variables.$fullhd) {
+      @content;
+    }
+  }
+}

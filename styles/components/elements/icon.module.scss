@@ -1,20 +1,24 @@
-@import "../../variables";
+@use '../../abstracts/variables';
 
 svg.icon {
-  fill: $white;
-  transition: 0.1s;
+  fill: variables.$white;
   padding: 1em;
+  transition: fill 0.2s;
+
   &.is-colored {
-    &[data-iconname="linkedin"] {
-      fill: $blue;
+    &[data-iconname='linkedin'] {
+      fill: variables.$blue;
+
       &:hover {
-        fill: #007bb6;
+        fill: variables.$brand-linkedin;
       }
     }
-    &[data-iconname="github"] {
-      fill: $blue;
+
+    &[data-iconname='github'] {
+      fill: variables.$blue;
+
       &:hover {
-        fill: #fff;
+        fill: variables.$brand-github;
       }
     }
   }

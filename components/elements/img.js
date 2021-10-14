@@ -1,7 +1,7 @@
 import classNames from 'classnames'
-import React, { useEffect, useMemo, useRef, useState } from 'react'
-// @ts-ignore
+import React from 'react'
 import styles from 'styles/components/elements/img.module.scss'
+import useImg from 'hooks/components/elements/useImg'
 
 /**
  * @typedef {object} SrcType
@@ -12,55 +12,43 @@ import styles from 'styles/components/elements/img.module.scss'
 
 /**
  * An image handler
- * @param {object} props
+ * @param {object} props Props
  * @param {SrcType} props.src Src
  * @param {string} props.alt Alt
  * @param {number=} props.width Width
  * @param {number=} props.height Height
  * @param {boolean=} props.isZoomable Is zoomable
+ * @returns {JSX.Element} Content
  */
-export default function Img({ src = { normal: {} }, alt, width, height, isZoomable = true }) {
-    /** @type {[boolean, function(boolean):any]} Is image loaded? */
-    const [isLoaded, setIsLoaded] = useState(!true)
-
-    /** @type {React.MutableRefObject<HTMLImageElement>} */
-    const ref = useRef(null)
-
-    /** @type {'image/jpeg' | 'image/png'} Type of image */
-    const type = useMemo(() => {
-        if (src?.toString()?.endsWith(".jpg") || src?.toString()?.endsWith(".jpeg"))
-            return "image/jpeg"
-        else if (src?.toString()?.endsWith(".png"))
-            return "image/png"
-        return "image/png"
-    }, [src])
-
-    //Workaround to hide preview image if onLoad is not fired
-    useEffect(() => {
-        if (ref.current?.complete)
-            setIsLoaded(true)
-    }, [setIsLoaded, ref])
+export default function Img({
+    src = { normal: {} }, alt, width, height, isZoomable = true,
+}) {
+    const {
+        isLoaded, ref, setIsLoaded, type,
+    } = useImg({ src })
 
     return (
-        <div className={classNames(styles['img'], { [styles['is-zoomable']]: isZoomable })}>
+        <div className={classNames(styles.img, { [styles['is-zoomable']]: isZoomable })}>
             <picture>
-                {!!src.lqip &&
-                    <img
-                        src={src.lqip}
-                        alt={alt}
-                        width={width}
-                        height={height}
-                        sizes={`${width}px`}
-                        style={{ filter: 'blur(25px)', display: isLoaded ? 'none' : undefined }}
-                    />
-                }
-                {!!src.webp &&
-                    <source
-                        srcSet={src.webp?.srcSet}
-                        type="image/webp"
-                        sizes={`${width}px`}
-                    />
-                }
+                {!!src.lqip
+                    && (
+                        <img
+                            src={src.lqip}
+                            alt={alt}
+                            width={width}
+                            height={height}
+                            sizes={`${width}px`}
+                            style={{ filter: 'blur(25px)', display: isLoaded ? 'none' : undefined }}
+                        />
+                    )}
+                {!!src.webp
+                    && (
+                        <source
+                            srcSet={src.webp?.srcSet}
+                            type="image/webp"
+                            sizes={`${width}px`}
+                        />
+                    )}
                 <source
                     srcSet={src.normal?.srcSet}
                     type={type}

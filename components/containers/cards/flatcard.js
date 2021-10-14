@@ -1,27 +1,29 @@
 import React from 'react'
-// @ts-ignore
 import styles from 'styles/components/containers/cards/flatcard.module.scss'
 import classNames from 'classnames'
-import Img from 'components/elements/img'
-import { SrcType } from 'components/elements/img'
+// eslint-disable-next-line import/named
+import Img, { SrcType } from 'components/elements/img'
 
 /**
  * @typedef {object} SkillRow SkillRow props
- * @property {string} props.title Title
- * @property {number} props.score Score
+ * @property {string} title Title
+ * @property {number} score Score
  */
 
 /**
  * A skill card
- * @param {object} props
+ * @param {object} props Props
  * @param {SrcType} props.imageSrc Image src
  * @param {string} props.title Title
  * @param {string | React.ReactNode} props.content Content
  * @param {'center' | 'justify'=} props.align Align
+ * @returns {JSX.Element} Content
  */
-export default function FlatCard({ imageSrc, title, content, align = "justify" }) {
+export default function FlatCard({
+    imageSrc, title, content, align = 'justify',
+}) {
     return (
-        <div className={styles['flatcard']}>
+        <div className={styles.flatcard}>
             <div
                 className={styles['flatcard-image']}
             >

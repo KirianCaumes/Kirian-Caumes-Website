@@ -1,40 +1,53 @@
-@import "../variables";
+@use '../abstracts/variables';
 
 .index-page {
   div.row {
     padding: 6em 1em;
-    scroll-margin-top: $headerHeight;
     position: relative;
+    scroll-margin-top: variables.$header-height;
+
     &:nth-child(even) {
-      background-color: $grey;
+      background-color: variables.$grey;
     }
+
     &.row-intro {
-      @include bg-one;
+      @include variables.bg-one;
+
       p {
         text-align: justify;
       }
     }
+
     &.row-about {
-      div[class*="react-reveal"] {
+      div[class*='react-reveal'] {
         height: 100%;
       }
     }
+
     &.row-skills {
-      div[class*="react-reveal"] {
+      div[class*='react-reveal'] {
         margin-bottom: 0.75em;
       }
     }
+
     &.row-career {
-      @include bg-two;
+      @include variables.bg-two;
+
+      > div {        
+        overflow-y: hidden;
+      }
     }
+
     &.row-productions {
       p {
         text-align: justify;
       }
     }
-    &.row-passions {
-    }
-    &.row-contact {
-    }
+
+    // &.row-passions {
+    // }
+
+    // &.row-contact {
+    // }
   }
 }

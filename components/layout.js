@@ -1,69 +1,70 @@
+/* eslint-disable global-require */
 import React from 'react'
-// @ts-ignore
 import styles from 'styles/components/layout.module.scss'
-import Container from './containers/container'
-import Navbar from './layout/navbar'
 import Link from 'next/link'
-import getConfig from 'next/config'
-import Img from './elements/img'
+import useLayout from 'hooks/components/useLayout'
+import Container from 'components/containers/container'
+import Navbar from 'components/layout/navbar'
+import Img from 'components/elements/img'
 
 /**
  * App layout
- * @param {object} props
- * @param {React.ReactNode} props.children Children 
+ * @param {object} props props
+ * @param {React.ReactNode} props.children Children
+ * @returns {JSX.Element} Content
  */
 export default function Layout({ children }) {
-    const { publicRuntimeConfig } = getConfig()
+    const { publicRuntimeConfig } = useLayout()
 
     return (
-        <div className={styles['layout']}>
+        <div className={styles.layout}>
             <header>
                 <Container>
                     <Navbar
                         itemHome={{
-                            href: "/#intro",
+                            href: '/#intro',
                             children: <Img
                                 src={{
-                                    // @ts-ignore
-                                    normal: require(`public/icons/favicon-96x96.png?resize`),
-                                    // @ts-ignore
-                                    webp: require(`public/icons/favicon-96x96.png?resize&format=webp`),
-                                    // @ts-ignore
-                                    lqip: require(`public/icons/favicon-96x96.png?lqip`)
+                                    // eslint-disable-next-line import/no-unresolved
+                                    normal: require('public/icons/favicon-96x96.png?resize'),
+                                    // eslint-disable-next-line import/no-unresolved
+                                    webp: require('public/icons/favicon-96x96.png?resize&format=webp'),
+                                    // eslint-disable-next-line import/no-unresolved
+                                    lqip: require('public/icons/favicon-96x96.png?lqip'),
                                 }}
                                 alt="kiriancaumes"
                                 width={19}
                                 height={19}
                                 isZoomable={false}
-                            />
+                            />,
                         }}
                         itemsMain={[
                             {
-                                href: "/#about",
-                                children: "A propos"
+                                href: '/#about',
+                                children: 'A propos',
                             },
                             {
-                                href: "/#skills",
-                                children: "Compétences"
+                                href: '/#skills',
+                                children: 'Compétences',
                             },
                             {
-                                href: "/#career",
-                                children: "Parcours"
+                                href: '/#career',
+                                children: 'Parcours',
                             },
                             {
-                                href: "/#productions",
-                                children: "Réalisations"
+                                href: '/#productions',
+                                children: 'Réalisations',
                             },
                             {
-                                href: "/#passions",
-                                children: "Passions"
-                            }
+                                href: '/#passions',
+                                children: 'Passions',
+                            },
                         ]}
                         itemsEnd={[
                             {
-                                href: "/#contact",
-                                children: "Contact"
-                            }
+                                href: '/#contact',
+                                children: 'Contact',
+                            },
 
                         ]}
                     />
@@ -72,7 +73,20 @@ export default function Layout({ children }) {
             {children}
             <footer>
                 <Container>
-                    <p>© {(new Date().getFullYear())} - {publicRuntimeConfig.appName} - <Link href="/mentions-legales"><a>Mentions légales</a></Link></p>
+                    <p>
+                        ©
+                        {' '}
+                        {(new Date().getFullYear())}
+                        {' '}
+                        -
+                        {' '}
+                        {publicRuntimeConfig.appName}
+                        {' '}
+                        -
+                        {' '}
+                        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                        <Link href="/mentions-legales"><a>Mentions légales</a></Link>
+                    </p>
                 </Container>
             </footer>
         </div>
