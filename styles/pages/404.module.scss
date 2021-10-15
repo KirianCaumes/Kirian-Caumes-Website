@@ -1,7 +1,7 @@
 @use '../abstracts/variables';
 
 .not-found {
-  @include bg-one;
+  @include variables.bg-one;
   display: flex;
   flex-direction: column;
   justify-content: center;

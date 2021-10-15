@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable global-require */
 import React from 'react'
 import Head from 'next/head'
@@ -23,7 +24,7 @@ import useIndex from 'hooks/pages/useIndex'
  * @returns {JSX.Element} Content
  */
 export default function Index() {
-    const { publicRuntimeConfig, router } = useIndex()
+    const { publicRuntimeConfig, router, age } = useIndex()
 
     return (
         <>
@@ -54,7 +55,7 @@ export default function Index() {
                                     Développeur full stack âgé de
                                     {' '}
                                     <b>
-                                        {Math.abs((new Date(Date.now() - new Date(1997, 1, 21).getTime())).getUTCFullYear() - 1970)}
+                                        {age}
                                         {' '}
                                         ans
                                     </b>
@@ -68,7 +69,6 @@ export default function Index() {
                                     .
                                     <br />
                                     <br />
-                                    {/* eslint-disable-next-line max-len */}
                                     Dans le domaine de l'informatique depuis maintenant plus de 5 ans, mes études à Ynov Nantes avec l'obtention de mon mastère «
                                     {' '}
                                     <b>Expert Développement Web</b>
@@ -203,7 +203,7 @@ export default function Index() {
                             <Columns.Column>
                                 <Fade left>
                                     <Card
-                                        icon={<Icon name="balloon_laughing" />}
+                                        iconName="balloon_laughing"
                                         title="Sérieux sans se prendre au sérieux"
                                         content="Sérieux dans le travail, mais avec une pointe d'humour suffisante pour rendre une journée moins monotone."
                                         color="yellow"
@@ -214,9 +214,8 @@ export default function Index() {
                             <Columns.Column>
                                 <Fade bottom>
                                     <Card
-                                        icon={<Icon name="balloon_naughty" />}
+                                        iconName="balloon_naughty"
                                         title="Calme mais pas amorphe"
-                                        // eslint-disable-next-line max-len
                                         content="Concentré sur un projet pour qu'il puisse aboutir, sans être un simple robot uniquement coincé derrière son écran."
                                         color="pink"
                                         isIconBorder
@@ -226,9 +225,8 @@ export default function Index() {
                             <Columns.Column>
                                 <Fade right>
                                     <Card
-                                        icon={<Icon name="balloon_dead" />}
+                                        iconName="balloon_dead"
                                         title="Passionné et patient"
-                                        // eslint-disable-next-line max-len
                                         content="Mordu depuis plusieurs années par l'informatique, savoir faire face à des problèmes et s'impliquer pour les résoudre est un objectif du quotidien."
                                         color="purple"
                                         isIconBorder
@@ -265,14 +263,13 @@ export default function Index() {
                                         score={4}
                                         rows={[
                                             { title: 'Express', score: 4 },
-                                            { title: 'Puppeteer', score: 3 },
+                                            { title: 'Nest', score: 4 },
+                                            { title: 'Mongoose/Prisma/TypeOrm', score: 4 },
+                                            { title: 'Next', score: 3 },
+                                            { title: 'Playwright/Puppeteer', score: 3 },
+                                            { title: 'Jest', score: 3 },
                                             { title: 'Babel', score: 3 },
                                             { title: 'WebPush', score: 3 },
-                                            { title: 'Nest', score: 2 },
-                                            { title: 'Mongoose', score: 3 },
-                                            { title: 'Sequelize', score: 2 },
-                                            { title: 'Jest', score: 2 },
-                                            { title: 'Passport', score: 2 },
                                         ]}
                                         color="yellow"
                                     />
@@ -406,7 +403,7 @@ export default function Index() {
                                         title="Env."
                                         score={0}
                                         rows={[
-                                            { title: 'Debian', score: 3 },
+                                            { title: 'Ubuntu/Debian', score: 3 },
                                             { title: 'OMV', score: 3 },
                                             { title: 'Win. Server', score: 2 },
                                             { title: 'Bash', score: 3 },
@@ -628,7 +625,6 @@ export default function Index() {
                                     {' '}
                                     <b>ReactJs</b>
                                     {' '}
-                                    {/* eslint-disable-next-line max-len */}
                                     permettant notamment la mise en place d'un rendu des composants côté serveur ou, dans le cas de ce site, la génération d'application statique.
                                     <br />
                                     À travers ce projet, une partie de mes compétences auront pu être exprimées. Allant de la phase de
@@ -699,7 +695,6 @@ export default function Index() {
                                         title="Handball"
                                         content={(
                                             <>
-                                                {/* eslint-disable-next-line max-len */}
                                                 Joueur de Handball au poste de gardien de but, à ma treizième année au club de Thouaré sur Loire, puis de Carquefou.
                                                 <br />
                                                 <br />
@@ -726,15 +721,13 @@ export default function Index() {
                                         title="Collections"
                                         content={(
                                             <>
-                                                {/* eslint-disable-next-line max-len */}
                                                 Collectionneur depuis toujours d'objets en tous genres (pièces d'euros, timbres, fèves, jeux vidéo, etc.), j'y voue une véritable passion.
                                                 <br />
                                                 <br />
-                                                {/* eslint-disable-next-line max-len */}
                                                 Aujourd'hui la collection vers laquelle je suis principalement tourné concerne le groupe de musique In Flames avec un ensemble de CD, vinyl et autres. Je partage également cette passion sur internet sous le pseudonyme :
                                                 {' '}
                                                 <a
-                                                    href="https://jesterscollection.kiriancaumes.fr/"
+                                                    href="https://www.instagram.com/jesters_collection/"
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                 >
@@ -760,7 +753,6 @@ export default function Index() {
                                         title="Développement"
                                         content={(
                                             <>
-                                                {/* eslint-disable-next-line max-len */}
                                                 Plus qu'un métier, le développement est également une passion. Je m'amuse fréquemment à développer différents projets, qu'ils soient Open Source, ou bien directement pour mon usage personnel (
                                                 <a
                                                     href="https://github.com/KirianCaumes"
@@ -772,7 +764,6 @@ export default function Index() {
                                                 ).
                                                 <br />
                                                 <br />
-                                                {/* eslint-disable-next-line max-len */}
                                                 Ainsi, je peux me permettre d'expérimenter de mon côté pour proposer des solutions innovantes lors de projets professionnels.
                                             </>
                                         )}
@@ -806,7 +797,7 @@ export default function Index() {
                             <Columns.Column>
                                 <Fade left>
                                     <Card
-                                        icon={<Icon name="mail" />}
+                                        iconName="mail"
                                         title="Par mail"
                                         content={(
                                             <a
@@ -823,7 +814,7 @@ export default function Index() {
                             <Columns.Column>
                                 <Fade right>
                                     <Card
-                                        icon={<Icon name="linkedin" />}
+                                        iconName="linkedin"
                                         title="Par Linkedin"
                                         content={(
                                             <a

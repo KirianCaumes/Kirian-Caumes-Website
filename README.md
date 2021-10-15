@@ -6,7 +6,7 @@ My (wonderful) website! ⚡
 
 ### Open with Visual Studio Code Container (optional)
 
-This solution allow you to run the project in the exact same linux environnement. (**Docker Required**)
+This solution allow you to run the project in a linux environnement. (**Docker Required**)
 
 Run Visual Studio Code
 

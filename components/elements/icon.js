@@ -4,9 +4,13 @@ import styles from 'styles/components/elements/icon.module.scss'
 import classNames from 'classnames'
 
 /**
+ * @typedef {'linkedin' | 'github' | 'balloon_laughing' | 'balloon_naughty' | 'balloon_dead' | 'mail'} IconNameType
+ */
+
+/**
  * An Icon
  * @param {object} props Props
- * @param {'linkedin' | 'github' | 'balloon_laughing' | 'balloon_naughty' | 'balloon_dead' | 'mail'} props.name Name
+ * @param {IconNameType} props.name Name
  * @param {boolean=} props.isColored Is colored
  * @returns {JSX.Element} Content
  */

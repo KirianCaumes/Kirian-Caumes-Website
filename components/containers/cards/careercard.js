@@ -46,7 +46,7 @@ export default function CareerCard({
                 <p className={styles['careercard-title']}>
                     {title}
                 </p>
-                <p className={styles['careercard-location']}>
+                <p className={styles['careercard-place']}>
                     {!location?.url && !!location?.company && (
                         <>
                             {location?.company}

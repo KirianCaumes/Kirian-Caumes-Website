@@ -20,12 +20,17 @@ html {
       text-decoration: none;
     }
 
+    b {
+      font-weight: bold;
+    }
+
     p {
       line-height: 1.5em;
 
       a {
         color: variables.$blue;
-        text-decoration: none;
+        text-decoration: underline;
+        text-underline-offset: 1px;
 
         &:hover {
           text-decoration: underline;

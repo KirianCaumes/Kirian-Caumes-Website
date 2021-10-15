@@ -132,13 +132,14 @@ $margin-top: 2rem;
       font-weight: bold;
     }
 
-    .careercard-location {
+    .careercard-place {
       color: variables.$medium-grey;
       font-size: 0.65em;
       margin-bottom: 0.5em;
 
       a {
         color: variables.$medium-grey;
+        text-decoration: none;
       }
     }
 

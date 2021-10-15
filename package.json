@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npm run sitemap && next build && next export && copy .htaccess out",
+    "build": "npm run sitemap && next build && next export && cp .htaccess out",
     "start": "next start",
     "sitemap": "node sitemap-generator.js",
     "lint:fix": "eslint \"**/*.js\" --fix",

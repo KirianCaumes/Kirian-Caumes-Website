@@ -1,11 +1,13 @@
 import React from 'react'
 import styles from 'styles/components/containers/cards/iconcard.module.scss'
 import classNames from 'classnames'
+// eslint-disable-next-line import/named
+import Icon, { IconNameType } from 'components/elements/icon'
 
 /**
  * A card with icon
  * @param {object} props Props
- * @param {any} props.icon Icon
+ * @param {IconNameType} props.iconName Icon
  * @param {string} props.title Title
  * @param {string | React.ReactNode} props.content Content
  * @param {'yellow' | 'pink' | 'purple' | 'blue'} props.color Color
@@ -14,14 +16,14 @@ import classNames from 'classnames'
  * @returns {JSX.Element} Content
  */
 export default function IconCard({
-    icon, title, content, color, isIconBorder = false, align = 'justify',
+    iconName, title, content, color, isIconBorder = false, align = 'justify',
 }) {
     return (
         <div className={styles.iconcard}>
             <div
                 className={classNames(styles['iconcard-icon'], styles[`is-${color}`], { [styles['is-icon-border']]: isIconBorder })}
             >
-                {icon}
+                <Icon name={iconName} />
             </div>
             <div
                 className={classNames(styles['iconcard-body'], styles[`is-${color}`])}

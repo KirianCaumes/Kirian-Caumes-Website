@@ -1,4 +1,5 @@
 @use '../../../abstracts/variables';
+@use '../../../abstracts/mixins';
 
 .skillcard {
   display: flex;
@@ -41,23 +42,21 @@
 
     .skillcard-body-left {
       display: flex;
+      flex: 2;
       flex-direction: column;
       justify-content: center;
 
       .skillcard-title {
         font-weight: bold;
+        overflow: hidden;
         text-align: center;
 
         span {
           &:first-child {
-            /* stylelint-disable-next-line property-no-vendor-prefix */
-            -webkit-box-orient: vertical;
-            /* stylelint-disable-next-line  value-no-vendor-prefix */
-            display: -webkit-box;
-            -webkit-line-clamp: 1;
+            display: block;
             overflow: hidden;
             text-overflow: ellipsis;
-            word-break: break-word;
+            white-space: nowrap;
           }
         }
       }
@@ -65,6 +64,7 @@
 
     .skillcard-body-right {
       display: flex;
+      flex: 3;
       flex-direction: column;
       justify-content: center;
 
@@ -79,15 +79,21 @@
 
           span {
             &:first-child {
-              /* stylelint-disable-next-line property-no-vendor-prefix */
-              -webkit-box-orient: vertical;
-              /* stylelint-disable-next-line  value-no-vendor-prefix */
-              display: -webkit-box;
               font-size: 0.95em;
-              -webkit-line-clamp: 1;
+              margin-top: 2px;
               overflow: hidden;
               text-overflow: ellipsis;
-              word-break: break-word;
+              white-space: nowrap;
+              @include mixins.until(variables.$tablet) {
+                max-width: 50%;
+              }
+            }
+
+            &:last-child {
+              @include mixins.until(variables.$tablet) {
+                max-width: 50%;
+                overflow: hidden;
+              }
             }
           }
         }
