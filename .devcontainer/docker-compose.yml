@@ -14,8 +14,8 @@ services:
       - "5000:5000"
       - '3000:3000'
     networks:
-      - backend_serv
+      - kiriancaumes_network
 
 networks:
-  backend_serv:
+  kiriancaumes_network:
     driver: "bridge"

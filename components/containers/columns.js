@@ -35,7 +35,7 @@ Columns.Column = function Column({
                 styles.column,
                 { [styles[`is-${align}`]]: align },
                 { [styles[`is-v-${vAlign}`]]: !!vAlign },
-                ...sizes?.map(size => [styles[`is-${size}`]]),
+                ...(sizes?.map(size => [styles[`is-${size}`]]) ?? [{}]),
             )}
         >
             {children}

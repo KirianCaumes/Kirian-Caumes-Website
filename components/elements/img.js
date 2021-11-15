@@ -32,6 +32,7 @@ export default function Img({
             <picture>
                 {!!src.lqip
                     && (
+                        // eslint-disable-next-line @next/next/no-img-element
                         <img
                             src={src.lqip}
                             alt={alt}
@@ -54,6 +55,7 @@ export default function Img({
                     type={type}
                     sizes={`${width}px`}
                 />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                     ref={ref}
                     onLoad={() => setIsLoaded(true)}

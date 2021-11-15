@@ -23,6 +23,7 @@ module.exports = {
         'plugin:react/recommended',
         'plugin:react-hooks/recommended',
         'plugin:jsdoc/recommended',
+        'plugin:@next/next/recommended',
         'airbnb',
     ],
     parserOptions: {
@@ -42,6 +43,7 @@ module.exports = {
         'arrow-parens': ['warn', 'as-needed'],
         'no-restricted-imports': ['error', { patterns: ['../*', './*'] }],
         'no-restricted-modules': ['error', { patterns: ['../*', './*'] }],
+        'react/function-component-definition': [2, { namedComponents: 'function-declaration' }],
         'react/jsx-filename-extension': [
             'error',
             { extensions: ['.js', '.jsx'] },

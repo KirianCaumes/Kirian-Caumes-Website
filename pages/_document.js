@@ -20,7 +20,8 @@ export default class MyDocument extends Document {
             >
                 <Head>
                     <link
-                        rel="icon"
+                        // eslint-disable-next-line react/no-invalid-html-attribute
+                        rel="shortcut icon"
                         href="/favicon.ico"
                     />
                     <link
@@ -29,6 +30,7 @@ export default class MyDocument extends Document {
                         type="image/svg+xml"
                     />
                     <link
+                        // eslint-disable-next-line react/no-invalid-html-attribute
                         rel="apple-touch-icon"
                         href="/apple-touch-icon.png"
                     />

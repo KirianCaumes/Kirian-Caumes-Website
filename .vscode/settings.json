@@ -30,5 +30,12 @@
         "scss",
     ],
     "stylelint.configFile": ".stylelintrc.json",
-    "versionlens.suggestions.showOnStartup": true
+    "versionlens.suggestions.showOnStartup": true,
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "terminal.integrated.profiles.linux": {
+        "bash": {
+            "path": "/bin/bash",
+            "icon": "terminal-bash"
+        },
+    },
 }

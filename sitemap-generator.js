@@ -1,7 +1,7 @@
 const { configureSitemap } = require('@sergeymyssak/nextjs-sitemap')
 
 configureSitemap({
-    baseUrl: 'https://kiriancaumes.fr',
+    domains: [{ domain: 'https://kiriancaumes.fr', defaultLocale: 'fr' }],
     exclude: ['/404', '/mentions-legales'],
     excludeIndex: true,
     pagesConfig: {
@@ -10,7 +10,6 @@ configureSitemap({
             changefreq: 'monthly',
         },
     },
-    isTrailingSlashRequired: true,
     targetDirectory: `${__dirname}/public`,
     pagesDirectory: `${__dirname}/pages`,
 })

@@ -1,35 +1,40 @@
-FROM ubuntu:20.10
+FROM ubuntu:21.04
 
-# Avoid warnings by switching to noninteractive
 ENV DEBIAN_FRONTEND=noninteractive
 
-# This Dockerfile adds a non-root user with sudo access. Use the "remoteUser"
-# property in devcontainer.json to use it. On Linux, the container user's GID/UIDs
-# will be updated to match your local UID/GID (when using the dockerFile property).
-# See https://aka.ms/vscode-remote/containers/non-root-user for details.
+ENV TZ=Europe/Paris
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime 
+RUN echo $TZ > /etc/timezone
+
+# This Dockerfile adds a non-root user with sudo access.
 ARG USERNAME=vscode
 ARG USER_UID=1000
 ARG USER_GID=$USER_UID
 
-RUN apt-get clean
-RUN apt-get update
-RUN apt-get install gnupg -y \
-    && apt-get install git -y \
-    && apt-get install python3-pip -y \
-    && apt-get install apt-transport-https -y \
-    && apt-get install vim -y \
-    && apt-get install wget -y \
-    && apt-get install curl -y \
-    && apt-get install wget -y \
-    && apt-get install unzip -y \
-    && apt-get install libglu1 -y \
-    && apt-get install libxi6 libgconf-2-4 -y
+# Create the user
+RUN groupadd --gid $USER_GID $USERNAME \
+    && useradd --uid $USER_UID --gid $USER_GID -m $USERNAME \
+    && apt-get update \
+    && apt-get install -y sudo \
+    && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
+    && chmod 0440 /etc/sudoers.d/$USERNAME
 
-# install nodejs 14.x
-RUN wget -qO- https://deb.nodesource.com/setup_14.x | bash -
-RUN apt-get install -y nodejs
+# Set the default user
+USER $USERNAME
+
+RUN sudo apt-get clean
+RUN sudo apt-get update
+RUN sudo apt-get install gnupg -y \
+    && sudo apt-get install git -y \
+    && sudo apt-get install python3-pip -y \
+    && sudo apt-get install apt-transport-https -y \
+    && sudo apt-get install vim -y \
+    && sudo apt-get install curl -y \
+    && sudo apt-get install unzip -y \
+    && sudo apt-get install psmisc -y
+
+# install nodejs 16.13
+RUN sudo curl -sL https://deb.nodesource.com/setup_16.x | sudo bash -
+RUN sudo apt-get install -y nodejs
 
 WORKDIR /app_kiriancaumes
-
-# Switch back to dialog for any ad-hoc use of apt-get
-ENV DEBIAN_FRONTEND=dialog

@@ -26,7 +26,7 @@ export default function useCareercard({ period }) {
             return "Aujourd'hui"
 
         const val = period?.[1]?.toLocaleDateString('fr-FR', { month: 'long', year: 'numeric' })
-        return val?.charAt(0)?.toUpperCase() + val?.slice(1)
+        return `${val?.charAt(0)?.toUpperCase()} ${val?.slice(1)}`
     }, [period])
 
     return {

@@ -20,6 +20,11 @@ module.exports = withPlugins(
                 placeholderSize: 40,
             },
         }],
+        {
+            images: {
+                disableStaticImages: true,
+            },
+        },
     ],
     {
         // Will only be available on the server side

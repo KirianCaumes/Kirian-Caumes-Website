@@ -1,8 +1,10 @@
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from 'styles/components/layout/gdpr-banner.module.scss'
 import cookie from 'js-cookie'
 import Link from 'next/link'
 import Button from 'components/inputs/button'
+
+const COOKIE_NAME = 'kc_accept_cookies'
 
 /**
  * GdprBanner
@@ -12,11 +14,9 @@ export default function GdprBanner() {
     /** Modal */
     const [isVisible, setIsVisible] = useState(false)
 
-    const cookieName = useMemo(() => 'gtb_accept_cookies', [])
-
     useEffect(() => {
-        setIsVisible(!cookie.get(cookieName))
-    }, [cookieName])
+        setIsVisible(!cookie.get(COOKIE_NAME))
+    }, [])
 
     if (!isVisible || process.env.NODE_ENV === 'development')
         return null
@@ -35,12 +35,12 @@ export default function GdprBanner() {
             </p>
             <form
                 className={styles['gdpr-banner-form']}
-                id="gtb-accept-cookies"
+                id="kc-accept-cookies"
                 onSubmit={ev => {
                     ev.preventDefault()
                     setIsVisible(false)
                     cookie.set(
-                        cookieName,
+                        COOKIE_NAME,
                         'true',
                         {
                             expires: 1,

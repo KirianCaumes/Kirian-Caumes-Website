@@ -13,7 +13,7 @@
         {
             "src": "/icons/maskable_icon.png",
             "type": "image/png",
-            "sizes": "360x360",
+            "sizes": "384x384",
             "purpose": "any maskable"
         },
         {
