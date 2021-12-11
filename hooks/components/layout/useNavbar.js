@@ -32,6 +32,9 @@ export default function useNavbar() {
     // Handle init router to setup first hash
     useEffect(() => setHash(router?.asPath?.replace('#', '')?.replace('/', '')), [router?.asPath])
 
+    // Close menu when path change
+    useEffect(() => setIsOpen(false), [router?.asPath])
+
     return {
         isOpen,
         hash,

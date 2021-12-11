@@ -11,7 +11,7 @@ import classNames from 'classnames'
 /**
  * A skill card
  * @param {object} props Props
- * @param {string} props.title Title
+ * @param {string | [string, string]} props.title Title
  * @param {number} props.score Score
  * @param {SkillRow[]} props.rows Rows
  * @param {'yellow' | 'pink' | 'purple' | 'blue'} props.color Color
@@ -30,9 +30,18 @@ export default function Skillcard({
                 >
                     <p
                         className={styles['skillcard-title']}
-                        title={`${title} ${score > 0 ? `${score}/5` : ''}`}
+                        title={`${Array.isArray(title) ? title.join(' - ') : title} ${score > 0 ? `${score}/5` : ''}`}
                     >
-                        <span>{title}</span>
+                        <span>
+                            {Array.isArray(title)
+                                ? (
+                                    <>
+                                        {title[0]}
+                                        <span className={styles['skillcard-title-subtitle']}>{title[1]}</span>
+                                    </>
+                                )
+                                : title}
+                        </span>
                         {score > 0
                             && (
                                 <Score

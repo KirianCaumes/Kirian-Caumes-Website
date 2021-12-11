@@ -29,17 +29,17 @@ export default function Img({
 
     return (
         <div className={classNames(styles.img, { [styles['is-zoomable']]: isZoomable })}>
-            <picture>
+            <picture
+                style={{ width, height }}
+            >
                 {!!src.lqip
                     && (
                         // eslint-disable-next-line @next/next/no-img-element
                         <img
                             src={src.lqip}
                             alt={alt}
-                            width={width}
-                            height={height}
                             sizes={`${width}px`}
-                            style={{ filter: 'blur(25px)', display: isLoaded ? 'none' : undefined }}
+                            style={{ display: isLoaded ? 'none' : 'block' }}
                         />
                     )}
                 {!!src.webp
@@ -62,8 +62,6 @@ export default function Img({
                     src={src.normal?.src}
                     srcSet={src.normal?.srcSet}
                     alt={alt}
-                    width={width}
-                    height={height}
                     sizes={`${width}px`}
                     loading="lazy"
                     decoding="async"

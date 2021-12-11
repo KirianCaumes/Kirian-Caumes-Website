@@ -19,6 +19,7 @@ export default class MyDocument extends Document {
                 lang={publicRuntimeConfig.appLang}
             >
                 <Head>
+                    <meta charSet="UTF-8" />
                     <link
                         // eslint-disable-next-line react/no-invalid-html-attribute
                         rel="shortcut icon"

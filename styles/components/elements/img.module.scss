@@ -7,9 +7,14 @@
   width: min-content;
 
   picture {
+    display: block;
+
     img {
       &:first-child {
+        height: 100%;
+        object-fit: cover;
         position: absolute;
+        width: 100%;
       }
     }
 

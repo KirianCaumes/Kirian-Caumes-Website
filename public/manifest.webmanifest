@@ -2,7 +2,7 @@
     "short_name": "Kirian Caumes",
     "name": "Kirian Caumes",
     "lang": "fr",
-    "description": "Kirian Caumes, développeur full stack passionné d'informatique. Persévérant, sympathique et curieux sont des qualités qui me définissent.",
+    "description": "Kirian Caumes, développeur full stack passionné de développement informatique. Féru de Javascript, Typescript, Node, Nest, PWA, Next et autre !",
     "start_url": "/",
     "background_color": "#263547",
     "theme_color": "#263547",
@@ -14,7 +14,7 @@
             "src": "/icons/maskable_icon.png",
             "type": "image/png",
             "sizes": "384x384",
-            "purpose": "any maskable"
+            "purpose": "maskable"
         },
         {
             "src": "/icons/android-icon-512x512.png",

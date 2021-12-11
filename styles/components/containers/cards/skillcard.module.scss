@@ -57,6 +57,11 @@
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
+
+            .skillcard-title-subtitle {
+              font-size: 0.66rem;
+              margin-top: -0.25rem;
+            }
           }
         }
       }

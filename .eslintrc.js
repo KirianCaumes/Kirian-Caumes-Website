@@ -43,6 +43,7 @@ module.exports = {
         'arrow-parens': ['warn', 'as-needed'],
         'no-restricted-imports': ['error', { patterns: ['../*', './*'] }],
         'no-restricted-modules': ['error', { patterns: ['../*', './*'] }],
+        'function-paren-newline': ['error', 'consistent'],
         'react/function-component-definition': [2, { namedComponents: 'function-declaration' }],
         'react/jsx-filename-extension': [
             'error',
@@ -71,5 +72,6 @@ module.exports = {
         }],
         'jsdoc/valid-types': 'off',
         'jsdoc/newline-after-description': 'off',
+        'no-unused-vars': ['warn', { vars: 'all', args: 'after-used', ignoreRestSiblings: true }], // Must be at the end
     },
 }

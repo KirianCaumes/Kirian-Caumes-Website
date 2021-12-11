@@ -18,13 +18,14 @@ import Tag from 'components/containers/tag'
 import CareerCard from 'components/containers/cards/careercard'
 import Img from 'components/elements/img'
 import useIndex from 'hooks/pages/useIndex'
+import Link from 'next/link'
 
 /**
  * Home page
  * @returns {JSX.Element} Content
  */
 export default function Index() {
-    const { publicRuntimeConfig, router, age } = useIndex()
+    const { publicRuntimeConfig, age } = useIndex()
 
     return (
         <>
@@ -75,20 +76,14 @@ export default function Index() {
                                     {' '}
                                     » ainsi que mon
                                     {' '}
-                                    <a
-                                        href="#career"
-                                        onClick={() => router.replace({ hash: '#career' })}
-                                    >
+                                    <Link href="/#career">
                                         parcours professionnel
-                                    </a>
+                                    </Link>
                                     , m'ont permis l'acquisition de
                                     {' '}
-                                    <a
-                                        href="#skills"
-                                        onClick={() => router.replace({ hash: '#skills' })}
-                                    >
+                                    <Link href="/#skills">
                                         compétences
-                                    </a>
+                                    </Link>
                                     {' '}
                                     solides et adaptatives.
                                     <br />
@@ -113,23 +108,25 @@ export default function Index() {
                                 <Columns>
                                     <Columns.Column>
                                         <Button
-                                            href="/#contact"
-                                            color="yellow"
-                                            onClick={() => router.replace({ hash: '#contact' })}
-                                            isFullWidth
-                                        >
-                                            Me contacter
-                                        </Button>
-                                    </Columns.Column>
-                                    <Columns.Column>
-                                        <Button
                                             href="/documents/Kirian-CAUMES-CV.pdf"
                                             rel="noopener"
                                             target="_blank"
+                                            color="yellow"
+                                            isFullWidth
+                                        >
+                                            Mon CV *
+                                        </Button>
+                                        <p className={classNames(styles['last-update'])}>
+                                            * Dernière mise à jour : janvier 2018
+                                        </p>
+                                    </Columns.Column>
+                                    <Columns.Column>
+                                        <Button
+                                            href="/#contact"
                                             color="purple"
                                             isFullWidth
                                         >
-                                            Mon CV
+                                            Me contacter
                                         </Button>
                                     </Columns.Column>
                                 </Columns>
@@ -138,6 +135,7 @@ export default function Index() {
                                     rel="noopener noreferrer"
                                     target="_blank"
                                     aria-label="Linkedin"
+                                    title="Linkedin"
                                 >
                                     <Icon
                                         name="linkedin"
@@ -149,9 +147,22 @@ export default function Index() {
                                     rel="noopener noreferrer"
                                     target="_blank"
                                     aria-label="Github"
+                                    title="Github"
                                 >
                                     <Icon
                                         name="github"
+                                        isColored
+                                    />
+                                </a>
+                                <a
+                                    href="https://medium.com/@kirian.caumes"
+                                    rel="noopener noreferrer"
+                                    target="_blank"
+                                    aria-label="Medium"
+                                    title="Medium"
+                                >
+                                    <Icon
+                                        name="medium"
                                         isColored
                                     />
                                 </a>
@@ -259,28 +270,30 @@ export default function Index() {
                             <Columns>
                                 <Columns.Column sizes={['one-quarter-widescreen', 'half-desktop', 'half-tablet']}>
                                     <Skillcard
-                                        title="NodeJs"
+                                        title={[
+                                            'NodeJs',
+                                            'Javascript/Typescript',
+                                        ]}
                                         score={4}
                                         rows={[
                                             { title: 'Express', score: 4 },
                                             { title: 'Nest', score: 4 },
-                                            { title: 'Mongoose/Prisma/TypeOrm', score: 4 },
-                                            { title: 'Next', score: 3 },
+                                            { title: 'ORM (Mongoose/Prisma/TypeOrm)', score: 4 },
                                             { title: 'Playwright/Puppeteer', score: 3 },
                                             { title: 'Jest', score: 3 },
                                             { title: 'Babel', score: 3 },
-                                            { title: 'WebPush', score: 3 },
                                         ]}
                                         color="yellow"
                                     />
                                 </Columns.Column>
                                 <Columns.Column sizes={['one-quarter-widescreen', 'half-desktop', 'half-tablet']}>
                                     <Skillcard
-                                        title="Javascript"
+                                        title={['FrontEnd', 'Framework JS']}
                                         score={4}
                                         rows={[
                                             { title: 'Vanilla', score: 4 },
                                             { title: 'ReactJs', score: 4 },
+                                            { title: 'Next', score: 3 },
                                             { title: 'Angular', score: 2 },
                                             { title: 'jQuery', score: 2 },
                                             { title: 'VueJs', score: 1 },
@@ -305,15 +318,12 @@ export default function Index() {
                                 </Columns.Column>
                                 <Columns.Column sizes={['one-quarter-widescreen', 'half-desktop', 'half-tablet']}>
                                     <Skillcard
-                                        title="PHP"
-                                        score={3}
+                                        title=".NET Core"
+                                        score={2}
                                         rows={[
-                                            { title: 'Symfony 4/5', score: 4 },
-                                            { title: 'Wordpress', score: 3 },
-                                            { title: 'Doctrine', score: 3 },
-                                            { title: 'Twig', score: 3 },
-                                            { title: 'Monolog', score: 3 },
-                                            { title: 'PHPUnit', score: 2 },
+                                            { title: 'C#', score: 3 },
+                                            { title: 'AspNetCore.Mvc', score: 3 },
+                                            { title: 'Entity Framework', score: 3 },
                                         ]}
                                         color="yellow"
                                     />
@@ -329,6 +339,8 @@ export default function Index() {
                                         rows={[
                                             { title: 'Bulma', score: 4 },
                                             { title: 'Bootstrap', score: 2 },
+                                            { title: 'Material Design', score: 1 },
+                                            { title: 'Web component', score: 1 },
                                         ]}
                                         color="pink"
                                     />
@@ -338,15 +350,16 @@ export default function Index() {
                                         title="CSS"
                                         score={4}
                                         rows={[
-                                            { title: 'SCSS', score: 3 },
-                                            { title: 'SASS', score: 2 },
+                                            { title: 'SCSS', score: 4 },
+                                            { title: 'Sass', score: 4 },
+                                            { title: 'Less', score: 1 },
                                         ]}
                                         color="pink"
                                     />
                                 </Columns.Column>
                                 <Columns.Column sizes={['one-quarter-widescreen', 'half-desktop', 'half-tablet']}>
                                     <Skillcard
-                                        title="Deno"
+                                        title={['Deno', 'Typescript']}
                                         score={3}
                                         rows={[
                                             { title: 'Computed Types', score: 4 },
@@ -359,12 +372,14 @@ export default function Index() {
                                 </Columns.Column>
                                 <Columns.Column sizes={['one-quarter-widescreen', 'half-desktop', 'half-tablet']}>
                                     <Skillcard
-                                        title=".NET Core"
-                                        score={2}
+                                        title="PHP"
+                                        score={3}
                                         rows={[
-                                            { title: 'C#', score: 3 },
-                                            { title: 'AspNetCore.Mvc', score: 3 },
-                                            { title: 'Entity Framework', score: 3 },
+                                            { title: 'Symfony 4/5', score: 4 },
+                                            { title: 'Wordpress', score: 3 },
+                                            { title: 'Doctrine', score: 3 },
+                                            { title: 'Twig', score: 3 },
+                                            { title: 'PHPUnit', score: 2 },
                                         ]}
                                         color="pink"
                                     />
@@ -394,6 +409,8 @@ export default function Index() {
                                             { title: 'Java', score: 2 },
                                             { title: 'Python', score: 2 },
                                             { title: 'C/C++', score: 1 },
+                                            { title: 'Bash', score: 3 },
+                                            { title: 'Cisco', score: 1 },
                                         ]}
                                         color="purple"
                                     />
@@ -403,11 +420,11 @@ export default function Index() {
                                         title="Env."
                                         score={0}
                                         rows={[
+                                            { title: 'Heroku', score: 3 },
+                                            { title: 'Azure', score: 3 },
                                             { title: 'Ubuntu/Debian', score: 3 },
                                             { title: 'OMV', score: 3 },
                                             { title: 'Win. Server', score: 2 },
-                                            { title: 'Bash', score: 3 },
-                                            { title: 'Cisco', score: 1 },
                                         ]}
                                         color="purple"
                                     />
@@ -456,7 +473,7 @@ export default function Index() {
                                         url: 'https://www.next-decision.fr/',
                                         city: 'Nantes',
                                     }}
-                                    period={[new Date(2018, 2), new Date()]}
+                                    period={[new Date(2021, 8), new Date()]}
                                     missions={[
                                         {
                                             title: "Développement d'applications web métier",
@@ -467,19 +484,19 @@ export default function Index() {
                                             desc: 'Élaboration de cahiers des charges, TMA, gestion de projets et relation client',
                                         },
                                         {
-                                            title: 'Création de programmes/outils divers',
-                                            desc: "Génération de PDF, Job Talend, mise en place d'environnements (Azure, VM), etc.",
+                                            title: 'Création de programmes/scripts/outils divers',
+                                            desc: "Génération de PDF, mise en place d'environnements (Azure, VM), etc.",
                                         },
                                     ]}
                                 />
                                 <CareerCard
-                                    title="Alternance en développement informatique"
+                                    title="Alternance en développement d'applications web (B3 à M2)"
                                     location={{
                                         company: 'Nextdecision',
                                         url: 'https://www.next-decision.fr/',
                                         city: 'Nantes',
                                     }}
-                                    period={[new Date(2018, 2), new Date(2021, 8)]}
+                                    period={[new Date(2018, 8), new Date(2021, 8)]}
                                     missions={[
                                         {
                                             title: "Développement d'applications web métier",
@@ -492,7 +509,7 @@ export default function Index() {
                                     ]}
                                 />
                                 <CareerCard
-                                    title="Stage en développement web (B2)"
+                                    title="Stage en développement d'applications web (B2)"
                                     location={{
                                         company: 'Nextdecision',
                                         url: 'https://www.next-decision.fr/',
@@ -501,7 +518,7 @@ export default function Index() {
                                     period={[new Date(2018, 6), new Date(2018, 7)]}
                                     missions={[
                                         {
-                                            title: "Développement d'applications web",
+                                            title: "Développement d'applications web métier",
                                             desc: "Réalisation de fonctionnalités & corrections de bugs d'applications existantes",
                                         },
                                     ]}
@@ -528,7 +545,7 @@ export default function Index() {
                                         company: 'Ynov',
                                         url: 'https://www.ynov.com/campus/nantes/',
                                     }}
-                                    period={[new Date(2016, 8), new Date(2021, 8)]}
+                                    period={[new Date(2016, 8), new Date(2021, 7)]}
                                     missions={[
                                         {
                                             title: '2 années de Mastères',
@@ -536,27 +553,27 @@ export default function Index() {
                                         },
                                         {
                                             title: '3 années de Bachelor',
-                                            desc: "Apprentissage général de l'informatique : développement, réseaux et culture générale",
+                                            desc: "Apprentissage général de l'informatique : développement, réseau et culture générale",
                                         },
                                     ]}
                                 />
                                 <CareerCard
-                                    title="Baccalauréat S SVT, mention assez bien (13.5/20)"
+                                    title="Diplôme Bac. Scientifique SVT, mention assez bien (13.5/20)"
                                     location={{
                                         city: 'Nantes',
                                         company: 'Lycée Notre-Dame de Toutes-Aides',
                                         url: 'http://ndtoutesaides.fr/',
                                     }}
-                                    period={[new Date(2016, 3), new Date(2016, 5)]}
+                                    period={[new Date(2015, 8), new Date(2016, 5)]}
                                     missions={[
                                         {
                                             title: 'Projet Bac ISN (spécialité informatique)',
-                                            desc: 'Réalisation d’un jeu vidéo sous Processing 3 : 20/20 obtenu',
+                                            desc: "Réalisation d'un jeu vidéo sous Processing 3 : 20/20 obtenu",
                                         },
                                     ]}
                                 />
                                 <CareerCard
-                                    title="Stage de 3e"
+                                    title="Stage d'observation (3e, Lycée)"
                                     location={{
                                         city: 'Nantes',
                                         company: 'Parabellum Geographic Insight',
@@ -566,7 +583,7 @@ export default function Index() {
                                     missions={[
                                         {
                                             title: "Observation des métiers de l'informatique",
-                                            desc: 'Observation de problématiques réseaux et développement',
+                                            desc: 'Observation de problématiques réseaux et développements',
                                         },
                                     ]}
                                 />
@@ -590,7 +607,7 @@ export default function Index() {
                             isSubtitle
                             isCentered
                         >
-                            Vous êtes en train d'en vivre une
+                            Vous êtes en train d'en vivre un
                         </Title>
                         <br />
                         <Columns>
@@ -627,6 +644,15 @@ export default function Index() {
                                     {' '}
                                     permettant notamment la mise en place d'un rendu des composants côté serveur ou, dans le cas de ce site, la génération d'application statique.
                                     <br />
+                                    Pour un simple projet tel que celui-ci,
+                                    {' '}
+                                    <b>NextJs</b>
+                                    {' '}
+                                    est "overkill", et un site sans Framework serait plus optimal. Mais ici, ce choix résulte d'une volonté personnelle de démontrer mes compétences en
+                                    {' '}
+                                    <b>ReactJs</b>
+                                    .
+                                    <br />
                                     À travers ce projet, une partie de mes compétences auront pu être exprimées. Allant de la phase de
                                     {' '}
                                     <b>conception</b>
@@ -647,7 +673,6 @@ export default function Index() {
                                     <Tag color="blue">#Docker</Tag>
                                 </p>
                                 <br />
-                                <br />
                                 <Button
                                     href="https://github.com/KirianCaumes/Kirian-Caumes-Website"
                                     color="purple"
@@ -660,6 +685,36 @@ export default function Index() {
                             </Columns.Column>
                         </Columns>
                     </Container>
+                </div>
+                <div
+                    className={classNames(styles.row, styles['row-quote'])}
+                >
+                    <figure>
+                        <blockquote>
+                            Il est parfois sensé d'
+                            <strong>être insensé</strong>
+                            .
+                        </blockquote>
+                        <figcaption>
+                            Jérémie Belpois,
+                            {' '}
+                            <cite>
+                                <a
+                                    href="https://youtu.be/G5Q9CVbo67o?t=1348"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    Code Lyoko
+                                </a>
+                            </cite>
+                        </figcaption>
+                    </figure>
+                    <hr />
+                    <p>
+                        Une simple locution qui, bien que provenant d'un dessin animé, m'a toujours inspiré et notamment aujourd'hui dans mes projets personnels de développements informatiques.
+                        <br />
+                        Même si une idée me parait farfelue, peu utile ou encore ayant de faibles chances d'aboutir ; j'aime me lancer des défis et explorer des solutions originales dans le but d'expérimenter mais aussi d'apprendre.
+                    </p>
                 </div>
                 <div
                     id="passions"

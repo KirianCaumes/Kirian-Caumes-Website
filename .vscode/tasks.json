@@ -17,12 +17,12 @@
                 "applyTo": "allDocuments",
                 "owner": "custom",
                 "pattern": {
-                    "regexp": "ˆ$"
+                    "regexp": "^$"
                 },
                 "background": {
                     "activeOnStart": true,
                     "beginsPattern": "event -",
-                    "endsPattern": "compiled successfully*"
+                    "endsPattern": "compiled client and server successfully*"
                 }
             }
         }

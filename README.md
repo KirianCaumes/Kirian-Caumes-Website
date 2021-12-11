@@ -50,7 +50,9 @@ NextJs allow us to build an application with React, and, in this case, generate 
 
 Additionally, the app is configured to function as a PWA (Progressive Web App). It has a resource caching policy and is also installable on the device.
 
-Perfomance result with [Ligthhouse](https://user-images.githubusercontent.com/24525092/109662061-ef82ab00-7b6a-11eb-9d9d-b0ef3ad7a3a8.PNG).
+For a simple project like this, NextJs is "overkill", and a site without a framework would be more optimal. But here, this choice results from a personal desire to demonstrate my skills in ReactJs.
+
+Audit result with [Ligthhouse](https://user-images.githubusercontent.com/24525092/145677664-2d1fe785-c5ea-4c77-a36f-527553e69af3.png).
 
 ### Project structure
 
@@ -73,6 +75,7 @@ kirian-caumes-fr
 │   ├── settings.json           //Settings for VS Code
 │   └── tasks.json              //Tasks that can be run by debbuggers
 ├── components                  //React components
+├── hooks                       //React hooks
 ├── node_modules
 ├── pages                       //Pages with auto routing
 │   ├── _app.js

@@ -1,4 +1,4 @@
-FROM ubuntu:21.04
+FROM ubuntu:20.10
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -36,5 +36,6 @@ RUN sudo apt-get install gnupg -y \
 # install nodejs 16.13
 RUN sudo curl -sL https://deb.nodesource.com/setup_16.x | sudo bash -
 RUN sudo apt-get install -y nodejs
+RUN sudo npm i -g serve
 
 WORKDIR /app_kiriancaumes

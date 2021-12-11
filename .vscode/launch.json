@@ -14,7 +14,11 @@
                 "url": "http://localhost:3000/app",
                 "path": "${workspaceFolder}"
             },
-            "preLaunchTask": "npm:start"
+            "preLaunchTask": "npm:start",
+            "runtimeArgs": [
+                "--start-maximized",
+                "--auto-open-devtools-for-tabs"
+            ]
         },
         // You need to open Firefox like this with CMD :
         // cd "C:\Program Files\Mozilla Firefox"

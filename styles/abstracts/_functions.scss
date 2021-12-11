@@ -4,7 +4,7 @@
 /** Find invert color **/
 @function find-color-invert($color) {
   @if luminance($color) > 0.55 {
-    @return rgba(#000, 0.7);
+    @return variables.$black;
   } @else {
     @return variables.$white;
   }

@@ -21,5 +21,13 @@ svg.icon {
         fill: variables.$brand-github;
       }
     }
+
+    &[data-iconname='medium'] {
+      fill: variables.$blue;
+
+      &:hover {
+        fill: variables.$brand-medium;
+      }
+    }
   }
 }

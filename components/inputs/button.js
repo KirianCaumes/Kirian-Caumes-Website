@@ -15,6 +15,7 @@ import Link from 'next/link'
  * @param {string=} props.href Href
  * @param {string=} props.rel Rel
  * @param {string=} props.target Target
+ * @param {string=} props.title Title
  * @param {React.ReactNode} props.children Children
  * @returns {JSX.Element} Content
  */
@@ -28,6 +29,7 @@ export default function Button({
     href,
     rel = 'noopener',
     target,
+    title,
     children,
 }) {
     /** Button element */
@@ -41,6 +43,7 @@ export default function Button({
             disabled={isDisabled}
             rel={rel}
             target={target}
+            title={title}
         >
             {children}
         </Btn>
