@@ -35,7 +35,6 @@ export default function Layout({ children }) {
                                 alt="kiriancaumes"
                                 width={19}
                                 height={19}
-                                isZoomable={false}
                             />,
                         }}
                         itemsMain={[

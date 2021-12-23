@@ -17,16 +17,5 @@
         width: 100%;
       }
     }
-
-    &.is-zoomable {
-      img {
-        transition: 0.5s;
-        vertical-align: middle;
-
-        &:hover {
-          transform: scale(1.1);
-        }
-      }
-    }
   }
 }

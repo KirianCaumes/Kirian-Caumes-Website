@@ -65,7 +65,7 @@
         &:hover,
         &:focus {
           background-color: $color;
-          border-color: $color;
+          border-color: unset;
           color: functions.find-color-invert($color);
         }
 

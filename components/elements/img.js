@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import classNames from 'classnames'
 import React from 'react'
 import styles from 'styles/components/elements/img.module.scss'
@@ -17,28 +18,25 @@ import useImg from 'hooks/components/elements/useImg'
  * @param {string} props.alt Alt
  * @param {number=} props.width Width
  * @param {number=} props.height Height
- * @param {boolean=} props.isZoomable Is zoomable
  * @returns {JSX.Element} Content
  */
 export default function Img({
-    src = { normal: {} }, alt, width, height, isZoomable = true,
+    src = { normal: {} }, alt, width, height,
 }) {
     const {
         isLoaded, ref, setIsLoaded, type,
     } = useImg({ src })
 
     return (
-        <div className={classNames(styles.img, { [styles['is-zoomable']]: isZoomable })}>
+        <div className={classNames(styles.img)}>
             <picture
                 style={{ width, height }}
             >
                 {!!src.lqip
                     && (
-                        // eslint-disable-next-line @next/next/no-img-element
                         <img
                             src={src.lqip}
                             alt={alt}
-                            sizes={`${width}px`}
                             style={{ display: isLoaded ? 'none' : 'block' }}
                         />
                     )}
@@ -55,7 +53,6 @@ export default function Img({
                     type={type}
                     sizes={`${width}px`}
                 />
-                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                     ref={ref}
                     onLoad={() => setIsLoaded(true)}

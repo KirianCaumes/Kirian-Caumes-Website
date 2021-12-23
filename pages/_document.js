@@ -1,3 +1,4 @@
+// eslint-disable-next-line max-classes-per-file
 import React from 'react'
 import Document, {
     Html, Head, Main, NextScript,
@@ -14,11 +15,22 @@ const { publicRuntimeConfig } = getConfig()
  */
 export default class MyDocument extends Document {
     render() {
+        /**
+         * Handle bug with multplecharSet
+         * {@link https://github.com/vercel/next.js/issues/9794#issuecomment-903107184}
+         */
+        const DocumentHead = class extends Head {
+            render() {
+                this.context.head = this.context.head.filter(item => !item.props?.charSet)
+                return super.render()
+            }
+        }
+
         return (
             <Html
                 lang={publicRuntimeConfig.appLang}
             >
-                <Head>
+                <DocumentHead>
                     <meta charSet="UTF-8" />
                     <link
                         // eslint-disable-next-line react/no-invalid-html-attribute
@@ -117,7 +129,7 @@ export default class MyDocument extends Document {
                             }),
                         }}
                     />
-                </Head>
+                </DocumentHead>
                 <body>
                     <Main />
                     <NextScript />

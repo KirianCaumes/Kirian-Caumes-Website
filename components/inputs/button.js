@@ -33,20 +33,20 @@ export default function Button({
     children,
 }) {
     /** Button element */
-    const Btn = !!href && !isDisabled ? 'a' : 'button'
+    const Element = !!href && !isDisabled ? 'a' : 'button'
 
     const element = (
-        <Btn
+        <Element
             className={classNames(styles.button, { [styles['is-fullwidth']]: isFullWidth }, { [styles['is-outlined']]: isOutlined }, styles[`is-${color}`])}
-            type={type}
+            type={Element === 'button' ? type : undefined}
             onClick={onClick}
             disabled={isDisabled}
-            rel={rel}
-            target={target}
+            rel={Element === 'a' ? rel : undefined}
+            target={Element === 'a' ? target : undefined}
             title={title}
         >
             {children}
-        </Btn>
+        </Element>
     )
 
     if (href)
