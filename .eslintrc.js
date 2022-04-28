@@ -8,7 +8,7 @@ module.exports = {
         react: { version: 'detect' },
         'import/resolver': {
             node: {
-                paths: ['./'],
+                paths: ['./src'],
                 extensions: ['.js', '.jsx'],
             },
             typescript: {

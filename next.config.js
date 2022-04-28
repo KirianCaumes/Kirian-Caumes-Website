@@ -36,9 +36,9 @@ module.exports = withPlugins(
             appUrl: 'https://kiriancaumes.fr/',
             appName: 'Kirian Caumes',
             appTitle: 'Kirian Caumes - Développeur full stack nantais',
-            appDescription: 'Kirian Caumes, développeur full stack passionné de développement informatique. Féru de Javascript, Typescript, Node, Nest, PWA, Next et autre !',
+            appDescription: 'Kirian Caumes, développeur full stack passionné de développement informatique. Féru de Javascript, Typescript, Node, Nest, PWA, Next.js et autre !',
             appComment: '👉 If you are able to see this, feel free to check out the source code of my website: https://github.com/KirianCaumes/Kirian-Caumes-Website 👈',
-            gtmId: 'GTM-WSRB7TM',
+            gtmId: 'G-C3SCVG7W7N',
         },
     },
 )

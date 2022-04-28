@@ -36,7 +36,7 @@ npm run build
 npm start
 ```
 
-Copy all the file to the FTP.
+Copy all the file from `our` folder to the FTP.
 
 ## Project conception
 

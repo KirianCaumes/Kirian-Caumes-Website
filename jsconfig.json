@@ -4,7 +4,7 @@
         "module": "commonJS",
         "target": "es6",
         "jsx": "react",
-        "baseUrl": "./",
+        "baseUrl": "./src",
         "lib": [
             "dom",
             "webworker",

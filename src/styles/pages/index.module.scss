@@ -25,13 +25,13 @@
     }
 
     &.row-about {
-      div[class*='react-reveal'] {
+      div.row-about-fade-container {
         height: 100%;
       }
     }
 
     &.row-skills {
-      div[class*='react-reveal'] {
+      div.row-skills-fade-container {
         margin-bottom: 0.75em;
       }
     }

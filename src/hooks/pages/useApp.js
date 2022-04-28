@@ -1,7 +1,6 @@
 import { useEffect, useRef, MutableRefObject } from 'react'
 import getConfig from 'next/config'
 import { useRouter } from 'next/router'
-import TagManager from 'react-gtm-module'
 
 /**
  * Use App hook
@@ -20,12 +19,6 @@ export default function useApp() {
             document.createComment(publicRuntimeConfig.appComment),
             document.querySelector('html'),
         )
-    }, [publicRuntimeConfig])
-
-    // Google Tag Manager
-    useEffect(() => {
-        if (process.env.NODE_ENV !== 'development' && !!publicRuntimeConfig.gtmId)
-            TagManager.initialize({ gtmId: publicRuntimeConfig.gtmId })
     }, [publicRuntimeConfig])
 
     /**

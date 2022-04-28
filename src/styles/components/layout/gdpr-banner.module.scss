@@ -1,7 +1,7 @@
 @use '../../abstracts/variables';
 
 .gdpr-banner {
-  background-color: rgba(0, 0, 0, 0.85);
+  background-color: rgba(0, 0, 0, 0.75);
   bottom: 0;
   display: inline-block;
   left: 0;
@@ -9,12 +9,12 @@
   position: fixed;
   right: 0;
   text-align: center;
-  z-index: 999;
+  z-index: 1;
 
   p.gdpr-banner-content {
     color: variables.$white;
     display: inline-block;
-    padding: 0.75em 0 0;
+    padding: 0.75rem 1rem;
     text-align: center;
 
     a {
@@ -22,13 +22,11 @@
     }
   }
 
-  form.gdpr-banner-form {
-    display: inline-block;
-    margin: 0 0 0 0.5em;
-
-    button {
-      margin: 0.75em 0.5em;
-      vertical-align: inherit;
-    }
+  .gdpr-banner-buttons { 
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
   }
 }

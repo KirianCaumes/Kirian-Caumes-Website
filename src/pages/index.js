@@ -1,17 +1,16 @@
 /* eslint-disable max-len */
 /* eslint-disable global-require */
-import React from 'react'
+import React, { ReactNode } from 'react'
 import Head from 'next/head'
 import styles from 'styles/pages/index.module.scss'
 import classNames from 'classnames'
-import Border from 'components/elements/border'
 import Container from 'components/containers/container'
 import Columns from 'components/containers/columns'
 import Icon from 'components/elements/icon'
 import Button from 'components/inputs/button'
 import Title from 'components/elements/title'
 import Card from 'components/containers/cards/iconcard'
-import Fade from 'react-reveal/Fade'
+import { Fade as RevealFade, FadeProps } from 'react-awesome-reveal'
 import Skillcard from 'components/containers/cards/skillcard'
 import FlatCard from 'components/containers/cards/flatcard'
 import Tag from 'components/containers/tag'
@@ -19,6 +18,9 @@ import CareerCard from 'components/containers/cards/careercard'
 import Img from 'components/elements/img'
 import useIndex from 'hooks/pages/useIndex'
 import Link from 'next/link'
+import Border from 'components/elements/border'
+
+const Fade = /** @type {React.FC<FadeProps & { children: ReactNode }>} */(RevealFade)
 
 /**
  * Home page
@@ -170,15 +172,18 @@ export default function Index() {
                             <Columns.Column
                                 align="center"
                             >
-                                <Fade right>
+                                <Fade
+                                    direction="right"
+                                    triggerOnce
+                                >
                                     <Img
                                         src={{
-                                            // eslint-disable-next-line import/no-unresolved
-                                            normal: require('public/images/kirian_caumes.jpg?resize'),
-                                            // eslint-disable-next-line import/no-unresolved
-                                            webp: require('public/images/kirian_caumes.jpg?resize&format=webp'),
-                                            // eslint-disable-next-line import/no-unresolved
-                                            lqip: require('public/images/kirian_caumes.jpg?lqip'),
+                                            // eslint-disable-next-line import/no-absolute-path, import/no-unresolved
+                                            normal: require('/public/images/kirian_caumes.jpg?resize'),
+                                            // eslint-disable-next-line import/no-absolute-path, import/no-unresolved
+                                            webp: require('/public/images/kirian_caumes.jpg?resize&format=webp'),
+                                            // eslint-disable-next-line import/no-absolute-path, import/no-unresolved
+                                            lqip: require('/public/images/kirian_caumes.jpg?lqip'),
                                         }}
                                         alt="kirian caumes"
                                         width={300}
@@ -212,7 +217,11 @@ export default function Index() {
 
                         <Columns>
                             <Columns.Column>
-                                <Fade left>
+                                <Fade
+                                    direction="left"
+                                    triggerOnce
+                                    className={styles['row-about-fade-container']}
+                                >
                                     <Card
                                         iconName="balloon_laughing"
                                         title="Sérieux sans se prendre au sérieux"
@@ -223,7 +232,11 @@ export default function Index() {
                                 </Fade>
                             </Columns.Column>
                             <Columns.Column>
-                                <Fade bottom>
+                                <Fade
+                                    direction="up"
+                                    triggerOnce
+                                    className={styles['row-about-fade-container']}
+                                >
                                     <Card
                                         iconName="balloon_naughty"
                                         title="Calme mais pas amorphe"
@@ -234,7 +247,11 @@ export default function Index() {
                                 </Fade>
                             </Columns.Column>
                             <Columns.Column>
-                                <Fade right>
+                                <Fade
+                                    direction="right"
+                                    triggerOnce
+                                    className={styles['row-about-fade-container']}
+                                >
                                     <Card
                                         iconName="balloon_dead"
                                         title="Passionné et patient"
@@ -266,7 +283,11 @@ export default function Index() {
                             Mon savoir-faire (non exhaustif) de développeur full stack
                         </Title>
                         <br />
-                        <Fade bottom>
+                        <Fade
+                            direction="up"
+                            triggerOnce
+                            className={styles['row-skills-fade-container']}
+                        >
                             <Columns>
                                 <Columns.Column sizes={['one-quarter-widescreen', 'half-desktop', 'half-tablet']}>
                                     <Skillcard
@@ -330,7 +351,11 @@ export default function Index() {
                                 </Columns.Column>
                             </Columns>
                         </Fade>
-                        <Fade bottom>
+                        <Fade
+                            direction="up"
+                            triggerOnce
+                            className={styles['row-skills-fade-container']}
+                        >
                             <Columns>
                                 <Columns.Column sizes={['one-quarter-widescreen', 'half-desktop', 'half-tablet']}>
                                     <Skillcard
@@ -386,7 +411,11 @@ export default function Index() {
                                 </Columns.Column>
                             </Columns>
                         </Fade>
-                        <Fade bottom>
+                        <Fade
+                            direction="up"
+                            triggerOnce
+                            className={styles['row-skills-fade-container']}
+                        >
                             <Columns>
                                 <Columns.Column sizes={['one-quarter-widescreen', 'half-desktop', 'half-tablet']}>
                                     <Skillcard
@@ -464,7 +493,10 @@ export default function Index() {
                             La petite histoire de mon cheminent profesionnel
                         </Title>
                         <br />
-                        <Fade bottom>
+                        <Fade
+                            direction="up"
+                            triggerOnce
+                        >
                             <>
                                 <CareerCard
                                     title="CDI développeur full stack"
@@ -616,15 +648,18 @@ export default function Index() {
                                 vAlign="center"
                                 sizes={['one-third-desktop', 'full-tablet']}
                             >
-                                <Fade left>
+                                <Fade
+                                    direction="left"
+                                    triggerOnce
+                                >
                                     <Img
                                         src={{
-                                            // eslint-disable-next-line import/no-unresolved
-                                            normal: require('public/images/website.png?resize'),
-                                            // eslint-disable-next-line import/no-unresolved
-                                            webp: require('public/images/website.png?resize&format=webp'),
-                                            // eslint-disable-next-line import/no-unresolved
-                                            lqip: require('public/images/website.png?lqip'),
+                                            // eslint-disable-next-line import/no-absolute-path, import/no-unresolved
+                                            normal: require('/public/images/website.png?resize'),
+                                            // eslint-disable-next-line import/no-absolute-path, import/no-unresolved
+                                            webp: require('/public/images/website.png?resize&format=webp'),
+                                            // eslint-disable-next-line import/no-absolute-path, import/no-unresolved
+                                            lqip: require('/public/images/website.png?lqip'),
                                         }}
                                         alt="kiriancaumes.fr"
                                         width={320}
@@ -737,15 +772,18 @@ export default function Index() {
                         <br />
                         <Columns>
                             <Columns.Column sizes={['one-third-desktop', 'full-tablet']}>
-                                <Fade left>
+                                <Fade
+                                    direction="left"
+                                    triggerOnce
+                                >
                                     <FlatCard
                                         imageSrc={{
-                                            // eslint-disable-next-line import/no-unresolved
-                                            normal: require('public/images/handball.jpg?resize'),
-                                            // eslint-disable-next-line import/no-unresolved
-                                            webp: require('public/images/handball.jpg?resize&format=webp'),
-                                            // eslint-disable-next-line import/no-unresolved
-                                            lqip: require('public/images/handball.jpg?lqip'),
+                                            // eslint-disable-next-line import/no-absolute-path, import/no-unresolved
+                                            normal: require('/public/images/handball.jpg?resize'),
+                                            // eslint-disable-next-line import/no-absolute-path, import/no-unresolved
+                                            webp: require('/public/images/handball.jpg?resize&format=webp'),
+                                            // eslint-disable-next-line import/no-absolute-path, import/no-unresolved
+                                            lqip: require('/public/images/handball.jpg?lqip'),
                                         }}
                                         title="Handball"
                                         content={(
@@ -763,15 +801,18 @@ export default function Index() {
                                 </Fade>
                             </Columns.Column>
                             <Columns.Column sizes={['one-third-desktop', 'full-tablet']}>
-                                <Fade bottom>
+                                <Fade
+                                    direction="up"
+                                    triggerOnce
+                                >
                                     <FlatCard
                                         imageSrc={{
-                                            // eslint-disable-next-line import/no-unresolved
-                                            normal: require('public/images/ajesterscollection.png?resize'),
-                                            // eslint-disable-next-line import/no-unresolved
-                                            webp: require('public/images/ajesterscollection.png?resize&format=webp'),
-                                            // eslint-disable-next-line import/no-unresolved
-                                            lqip: require('public/images/ajesterscollection.png?lqip'),
+                                            // eslint-disable-next-line import/no-absolute-path, import/no-unresolved
+                                            normal: require('/public/images/ajesterscollection.png?resize'),
+                                            // eslint-disable-next-line import/no-absolute-path, import/no-unresolved
+                                            webp: require('/public/images/ajesterscollection.png?resize&format=webp'),
+                                            // eslint-disable-next-line import/no-absolute-path, import/no-unresolved
+                                            lqip: require('/public/images/ajesterscollection.png?lqip'),
                                         }}
                                         title="Collections"
                                         content={(
@@ -795,15 +836,18 @@ export default function Index() {
                                 </Fade>
                             </Columns.Column>
                             <Columns.Column sizes={['one-third-desktop', 'full-tablet']}>
-                                <Fade right>
+                                <Fade
+                                    direction="right"
+                                    triggerOnce
+                                >
                                     <FlatCard
                                         imageSrc={{
-                                            // eslint-disable-next-line import/no-unresolved
-                                            normal: require('public/images/developpement.jpg?resize'),
-                                            // eslint-disable-next-line import/no-unresolved
-                                            webp: require('public/images/developpement.jpg?resize&format=webp'),
-                                            // eslint-disable-next-line import/no-unresolved
-                                            lqip: require('public/images/developpement.jpg?lqip'),
+                                            // eslint-disable-next-line import/no-absolute-path, import/no-unresolved
+                                            normal: require('/public/images/developpement.jpg?resize'),
+                                            // eslint-disable-next-line import/no-absolute-path, import/no-unresolved
+                                            webp: require('/public/images/developpement.jpg?resize&format=webp'),
+                                            // eslint-disable-next-line import/no-absolute-path, import/no-unresolved
+                                            lqip: require('/public/images/developpement.jpg?lqip'),
                                         }}
                                         title="Développement"
                                         content={(
@@ -850,7 +894,10 @@ export default function Index() {
 
                         <Columns>
                             <Columns.Column>
-                                <Fade left>
+                                <Fade
+                                    direction="left"
+                                    triggerOnce
+                                >
                                     <Card
                                         iconName="mail"
                                         title="Par mail"
@@ -867,7 +914,10 @@ export default function Index() {
                                 </Fade>
                             </Columns.Column>
                             <Columns.Column>
-                                <Fade right>
+                                <Fade
+                                    direction="right"
+                                    triggerOnce
+                                >
                                     <Card
                                         iconName="linkedin"
                                         title="Par Linkedin"

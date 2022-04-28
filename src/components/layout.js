@@ -25,12 +25,12 @@ export default function Layout({ children }) {
                             href: '/#intro',
                             children: <Img
                                 src={{
-                                    // eslint-disable-next-line import/no-unresolved
-                                    normal: require('public/icons/favicon-96x96.png?resize'),
-                                    // eslint-disable-next-line import/no-unresolved
-                                    webp: require('public/icons/favicon-96x96.png?resize&format=webp'),
-                                    // eslint-disable-next-line import/no-unresolved
-                                    lqip: require('public/icons/favicon-96x96.png?lqip'),
+                                    // eslint-disable-next-line import/no-absolute-path, import/no-unresolved
+                                    normal: require('/public/icons/favicon-96x96.png?resize'),
+                                    // eslint-disable-next-line import/no-absolute-path, import/no-unresolved
+                                    webp: require('/public/icons/favicon-96x96.png?resize&format=webp'),
+                                    // eslint-disable-next-line import/no-absolute-path, import/no-unresolved
+                                    lqip: require('/public/icons/favicon-96x96.png?lqip'),
                                 }}
                                 alt="kiriancaumes"
                                 width={19}
