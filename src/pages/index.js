@@ -76,7 +76,11 @@ export default function Index() {
                                     {' '}
                                     <b>Expert Développement Web</b>
                                     {' '}
-                                    » ainsi que mon
+                                    » et du titre RNCP «
+                                    {' '}
+                                    <b>Expert Informatique et Systèmes d'Information</b>
+                                    {' '}
+                                    », ainsi que mon
                                     {' '}
                                     <Link href="/#career">
                                         parcours professionnel
@@ -133,7 +137,7 @@ export default function Index() {
                                     </Columns.Column>
                                 </Columns>
                                 <a
-                                    href="https://www.linkedin.com/in/kirian-caumes-120a0513a/"
+                                    href="https://www.linkedin.com/in/kirian-caumes"
                                     rel="noopener noreferrer"
                                     target="_blank"
                                     aria-label="Linkedin"
@@ -313,8 +317,8 @@ export default function Index() {
                                         score={4}
                                         rows={[
                                             { title: 'Vanilla', score: 4 },
-                                            { title: 'ReactJs', score: 4 },
-                                            { title: 'Next', score: 3 },
+                                            { title: 'React', score: 4 },
+                                            { title: 'Next.js', score: 3 },
                                             { title: 'Angular', score: 2 },
                                             { title: 'jQuery', score: 2 },
                                             { title: 'VueJs', score: 1 },
@@ -330,9 +334,9 @@ export default function Index() {
                                             { title: 'TSQL', score: 3 },
                                             { title: 'MySQL', score: 3 },
                                             { title: 'MongoDB', score: 3 },
-                                            { title: 'PostgreSQL', score: 2 },
+                                            { title: 'PostgreSQL', score: 3 },
                                             { title: 'SQLite', score: 2 },
-                                            { title: 'ElasticSearch', score: 1 },
+                                            { title: 'ElasticSearch', score: 2 },
                                         ]}
                                         color="yellow"
                                     />
@@ -435,10 +439,10 @@ export default function Index() {
                                         title="Divers"
                                         score={0}
                                         rows={[
+                                            { title: 'Bash', score: 3 },
                                             { title: 'Java', score: 2 },
                                             { title: 'Python', score: 2 },
                                             { title: 'C/C++', score: 1 },
-                                            { title: 'Bash', score: 3 },
                                             { title: 'Cisco', score: 1 },
                                         ]}
                                         color="purple"
@@ -671,21 +675,21 @@ export default function Index() {
                                 <p>
                                     Le site que vous êtes en train de visiter a été entièrement réalisé par mes soins. Celui-ci repose sur
                                     {' '}
-                                    <b>NextJs</b>
+                                    <b>Next.js</b>
                                     {' '}
                                     : un Framework
                                     {' '}
-                                    <b>ReactJs</b>
+                                    <b>React</b>
                                     {' '}
                                     permettant notamment la mise en place d'un rendu des composants côté serveur ou, dans le cas de ce site, la génération d'application statique.
                                     <br />
                                     Pour un simple projet tel que celui-ci,
                                     {' '}
-                                    <b>NextJs</b>
+                                    <b>Next.js</b>
                                     {' '}
                                     est "overkill", et un site sans Framework serait plus optimal. Mais ici, ce choix résulte d'une volonté personnelle de démontrer mes compétences en
                                     {' '}
-                                    <b>ReactJs</b>
+                                    <b>React</b>
                                     .
                                     <br />
                                     À travers ce projet, une partie de mes compétences auront pu être exprimées. Allant de la phase de
@@ -701,8 +705,8 @@ export default function Index() {
                                     {' '}
                                     (découpage des composants, logique fonctionnelle, etc.).
                                     <br />
-                                    <Tag color="blue">#NextJs</Tag>
-                                    <Tag color="blue">#ReactJs</Tag>
+                                    <Tag color="blue">#Next.ss</Tag>
+                                    <Tag color="blue">#React</Tag>
                                     <Tag color="blue">#SCSS</Tag>
                                     <Tag color="blue">#PWA</Tag>
                                     <Tag color="blue">#Docker</Tag>
@@ -923,7 +927,7 @@ export default function Index() {
                                         title="Par Linkedin"
                                         content={(
                                             <a
-                                                href="https://www.linkedin.com/in/kirian-caumes-120a0513a/"
+                                                href="https://www.linkedin.com/in/kirian-caumes"
                                                 rel="noopener noreferrer"
                                                 target="_blank"
                                             >

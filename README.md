@@ -42,15 +42,15 @@ Copy all the file from `our` folder to the FTP.
 
 [Mockup](https://user-images.githubusercontent.com/24525092/109662037-e85b9d00-7b6a-11eb-8da9-bf4794d06904.png) made with Balsamiq.
 
-### Why NextJS?
+### Why Next.js?
 
 "Next.js gives you the best developer experience with all the features you need for production: hybrid static & server rendering, TypeScript support, smart bundling, route pre-fetching, and more. No config needed." - [NextJs.org](https://nextjs.org/)
 
-NextJs allow us to build an application with React, and, in this case, generate a fully static application.
+Next.js allow us to build an application with React, and, in this case, generate a fully static application.
 
 Additionally, the app is configured to function as a PWA (Progressive Web App). It has a resource caching policy and is also installable on the device.
 
-For a simple project like this, NextJs is "overkill", and a site without a framework would be more optimal. But here, this choice results from a personal desire to demonstrate my skills in ReactJs.
+For a simple project like this, Next.Js is "overkill", and a site without a framework would be more optimal. But here, this choice results from a personal desire to demonstrate my skills in React.
 
 Audit result with [Ligthhouse](https://user-images.githubusercontent.com/24525092/145677664-2d1fe785-c5ea-4c77-a36f-527553e69af3.png).
 

@@ -119,7 +119,7 @@ export default class MyDocument extends Document {
                                 '@type': 'Person',
                                 url: publicRuntimeConfig.appUrl,
                                 sameAs: [
-                                    'https://www.linkedin.com/in/kirian-caumes-120a0513a/',
+                                    'https://www.linkedin.com/in/kirian-caumes',
                                     'https://github.com/KirianCaumes',
                                 ],
                                 name: publicRuntimeConfig.appName,

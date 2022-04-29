@@ -3,7 +3,7 @@ import getConfig from 'next/config'
 /**
  * Use MentionsLegales page hook
  * @returns {{
- *  router: NextRouter;
+ *  publicRuntimeConfig: any;
  * }} Returns
  */
 export default function useMentionsLegales() {
