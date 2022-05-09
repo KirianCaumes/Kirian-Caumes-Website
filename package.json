@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build && next export",
-    "postbuild": "cp .htaccess out && npx next-sitemap",
+    "postbuild": "npx next-sitemap",
     "start": "serve out",
     "lint:fix": "eslint \"**/*.js\" --fix",
     "lint": "eslint \"**/*.js\"",

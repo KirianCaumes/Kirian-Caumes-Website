@@ -28,15 +28,13 @@ npm run dev
 
 ## Build (manually)
 
-Continuous deployment are setup and connected to this repository, but you can build the app manually.
+Continuous deployment is setup and connected to this repository via Github Webhook linked to a VPS server, but you can build the app manually.
 
 ```sh
 npm run build
 #Option: Test it locally
 npm start
 ```
-
-Copy all the file from `our` folder to the FTP.
 
 ## Project conception
 
