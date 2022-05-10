@@ -22,7 +22,7 @@ export default function GdprBanner() {
         ReactGA.initialize(publicRuntimeConfig.gtmId, { gaOptions: { cookieFlags: 'SameSite=None;Secure' } })
         ReactGA.send('pageview')
         Cookie.set(ACCEPT_COOKIE_NAME, 'true', {
-            expires: 1,
+            expires: 99999,
             path: '/',
             secure: process.env.NODE_ENV !== 'development',
             sameSite: 'lax',
@@ -32,7 +32,7 @@ export default function GdprBanner() {
 
     const onRefuse = useCallback(() => {
         setIsVisible(false)
-        Cookie.set(ACCEPT_COOKIE_NAME, 'false')
+        Cookie.set(ACCEPT_COOKIE_NAME, 'false', { expires: 99999 })
         Cookie.remove('_ga')
         Cookie.remove('_gat')
         Cookie.remove('_gid')
