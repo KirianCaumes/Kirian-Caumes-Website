@@ -50,7 +50,7 @@ Additionally, the app is configured to function as a PWA (Progressive Web App). 
 
 For a simple project like this, Next.Js is "overkill", and a site without a framework would be more optimal. But here, this choice results from a personal desire to demonstrate my skills in React.
 
-Audit result with [Ligthhouse](https://user-images.githubusercontent.com/24525092/145677664-2d1fe785-c5ea-4c77-a36f-527553e69af3.png).
+Audit result with [Ligthhouse](https://user-images.githubusercontent.com/24525092/167707338-d42ea1da-7c4f-47da-acae-68936876cf2e.png).
 
 ### Project structure
 
