@@ -33,8 +33,8 @@ RUN sudo apt-get install gnupg -y \
     && sudo apt-get install unzip -y \
     && sudo apt-get install psmisc -y
 
-# install nodejs 16.13
-RUN sudo curl -sL https://deb.nodesource.com/setup_16.x | sudo bash -
+# install nodejs 18
+RUN sudo curl -sL https://deb.nodesource.com/setup_18.x | sudo bash -
 RUN sudo apt-get install -y nodejs
 RUN sudo npm i -g serve
 
