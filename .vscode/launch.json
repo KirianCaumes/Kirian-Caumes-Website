@@ -1,41 +1,18 @@
 {
-    // Use IntelliSense to find out which attributes exist for C# debugging
-    // Use hover for the description of the existing attributes
-    // For further information visit https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "🌈 Chrome ",
+            "name": "⚛️ Next",
+            "type": "chrome",
             "request": "launch",
-            "type": "pwa-chrome",
             "url": "http://localhost:3000",
-            "webRoot": "${workspaceFolder}",
-            "pathMapping": {
-                "url": "http://localhost:3000/app",
-                "path": "${workspaceFolder}"
-            },
-            "preLaunchTask": "npm:start",
+            "webRoot": "${workspaceFolder}/app",
+            "preLaunchTask": "⚛️ Next",
+            "postDebugTask": "terminate task",
             "runtimeArgs": [
                 "--start-maximized",
                 "--auto-open-devtools-for-tabs"
             ]
-        },
-        // You need to open Firefox like this with CMD :
-        // cd "C:\Program Files\Mozilla Firefox"
-        // .\firefox.exe -start-debugger-server
-        {
-            "name": "🦊 Firefox",
-            "type": "firefox",
-            "request": "attach", //cf https://github.com/firefox-devtools/vscode-firefox-debug#attach OR "launch"
-            "url": "http://localhost:3000",
-            "webRoot": "${workspaceFolder}",
-            "pathMappings": [
-                {
-                    "url": "http://localhost:3000/app",
-                    "path": "${workspaceFolder}"
-                }
-            ],
-            "preLaunchTask": "npm:start"
-        },
+        }
     ]
 }

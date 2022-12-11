@@ -3,14 +3,13 @@
 html {
   background-color: variables.$white;
   color: variables.$black;
-  font-family: 'Montserrat', sans-serif;
   overflow-x: hidden;
-  scroll-behavior: smooth;
+  scroll-behavior: smooth !important;
 
   &[data-scroll-behavior='auto'] {
-    scroll-behavior: auto;
+    scroll-behavior: auto !important;
   }
-  
+
   body {
     box-sizing: border-box;
     overflow-x: hidden;

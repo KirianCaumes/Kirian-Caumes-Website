@@ -1,0 +1,33 @@
+@use 'styles/abstracts/variables';
+
+.layout {
+  header {
+    background-color: variables.$grey;
+    box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.02);
+    height: variables.$header-height;
+    left: 0;
+    padding: 0 1em;
+    position: fixed;
+    right: 0;
+    z-index: 1;
+  }
+
+  footer {
+    background-color: variables.$black;
+    color: variables.$white;
+    height: variables.$footer-height;
+    padding: 0 1em;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      font-size: 0.75em;
+      height: 100%;
+      justify-content: center;
+
+      a {
+        color: variables.$white;
+      }
+    }
+  }
+}

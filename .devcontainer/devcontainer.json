@@ -1,6 +1,7 @@
 {
   "name": "kiriancaumes",
   "dockerComposeFile": "docker-compose.yml",
+  "postCreateCommand": "bash .devcontainer/init.sh",
   "service": "kiriancaumes_container",
   "workspaceFolder": "/app_kiriancaumes",
   "extensions": [

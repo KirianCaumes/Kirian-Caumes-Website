@@ -1,0 +1,32 @@
+@use 'styles/abstracts/variables';
+
+.gdpr-banner {
+  background-color: rgba(0, 0, 0, 0.75);
+  bottom: 0;
+  display: inline-block;
+  left: 0;
+  padding: 1em;
+  position: fixed;
+  right: 0;
+  text-align: center;
+  z-index: 1;
+
+  p.gdpr-banner-content {
+    color: variables.$white;
+    display: inline-block;
+    padding: 0.75rem 1rem;
+    text-align: center;
+
+    a {
+      color: variables.$medium-grey;
+    }
+  }
+
+  .gdpr-banner-buttons {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+}

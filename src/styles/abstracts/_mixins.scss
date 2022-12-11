@@ -5,36 +5,43 @@
     @content;
   }
 }
+
 @mixin until($device) {
   @media screen and (max-width: $device - 1px) {
     @content;
   }
 }
+
 @mixin mobile {
   @media screen and (max-width: variables.$tablet - 1px) {
     @content;
   }
 }
+
 @mixin tablet {
   @media screen and (min-width: variables.$tablet), print {
     @content;
   }
 }
+
 @mixin tablet-only {
   @media screen and (min-width: variables.$tablet) and (max-width: variables.$desktop - 1px) {
     @content;
   }
 }
+
 @mixin touch {
   @media screen and (max-width: variables.$desktop - 1px) {
     @content;
   }
 }
+
 @mixin desktop {
   @media screen and (min-width: variables.$desktop) {
     @content;
   }
 }
+
 @mixin desktop-only {
   @if variables.$widescreen-enabled {
     @media screen and (min-width: variables.$desktop) and (max-width: variables.$widescreen - 1px) {
@@ -42,6 +49,7 @@
     }
   }
 }
+
 @mixin until-widescreen {
   @if variables.$widescreen-enabled {
     @media screen and (max-width: variables.$widescreen - 1px) {

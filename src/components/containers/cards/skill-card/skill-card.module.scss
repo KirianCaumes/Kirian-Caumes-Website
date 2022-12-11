@@ -1,0 +1,111 @@
+@use 'styles/abstracts/variables';
+@use 'styles/abstracts/mixins';
+
+.skillcard {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: flex-start;
+
+  .skillcard-stars {
+    font-weight: normal;
+    line-height: 16px;
+  }
+
+  .skillcard-body {
+    background: variables.$white;
+    box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.02);
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    margin-bottom: 1em;
+    overflow: hidden;
+
+    @each $key, $color in variables.$colors {
+      &.is-#{$key} {
+        .skillcard-body-left {
+          border-right: 1px solid $color;
+        }
+
+        .skillcard-body-right {
+          border-left: 1px solid $color;
+        }
+      }
+    }
+
+    .skillcard-body-left,
+    .skillcard-body-right {
+      flex: 1;
+      overflow: hidden;
+      padding: 1em;
+      width: 100%;
+    }
+
+    .skillcard-body-left {
+      display: flex;
+      flex: 2;
+      flex-direction: column;
+      justify-content: center;
+
+      .skillcard-title {
+        font-weight: bold;
+        overflow: hidden;
+        text-align: center;
+
+        span {
+          &:first-child {
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+
+            .skillcard-title-subtitle {
+              font-size: 0.66rem;
+              margin-top: -0.25rem;
+            }
+          }
+        }
+      }
+    }
+
+    .skillcard-body-right {
+      display: flex;
+      flex: 3;
+      flex-direction: column;
+      justify-content: center;
+
+      .skillcard-content {
+        font-size: 0.85em;
+        list-style: none;
+        text-align: left;
+
+        li {
+          display: flex;
+          justify-content: space-between;
+
+          /* stylelint-disable-next-line no-descending-specificity */
+          span {
+            &:first-child {
+              font-size: 0.95em;
+              margin-top: 2px;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+
+              @include mixins.until(variables.$tablet) {
+                max-width: 50%;
+              }
+            }
+
+            &:last-child {
+              @include mixins.until(variables.$tablet) {
+                max-width: 50%;
+                overflow: hidden;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

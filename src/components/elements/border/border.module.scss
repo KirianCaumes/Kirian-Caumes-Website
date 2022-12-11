@@ -1,0 +1,24 @@
+@use 'styles/abstracts/variables';
+
+svg.border {
+  height: 150px;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+
+  &.is-top {
+    top: 0;
+    // transform: scaleY(-1);
+  }
+
+  &.is-bottom {
+    bottom: 0;
+  }
+
+  @each $name, $value in variables.$colors {
+    &.is-#{$name} {
+      fill: $value;
+    }
+  }
+}

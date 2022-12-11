@@ -8,11 +8,9 @@ services:
     tty: true
     volumes:
       - ../:/app_kiriancaumes:rw
-
-      - ~/.ssh:/.ssh
     ports:
-      - "5000:5000"
-      - '3000:3000'
+      - 5000:5000
+      - 3000:3000
     networks:
       - kiriancaumes_network
 

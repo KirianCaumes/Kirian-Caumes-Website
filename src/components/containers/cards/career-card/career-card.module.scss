@@ -1,0 +1,173 @@
+@use 'styles/abstracts/variables';
+@use 'styles/abstracts/mixins';
+
+$padding: 2.5em;
+$line-width: 3px;
+$circle-ratio: 4;
+$circle-border: 3px;
+$margin-top: 2rem;
+
+.careercard {
+  display: flex;
+  justify-content: center;
+
+  &:nth-child(odd) {
+    $color: variables.$pink;
+
+    flex-direction: row-reverse;
+    text-align: left;
+
+    .careercard-body {
+      padding-left: calc(#{$padding} * 2);
+
+      .careercard-title {
+        color: $color;
+      }
+
+      &::before {
+        left: calc(#{$padding} - (#{$line-width} / 2));
+      }
+
+      &::after {
+        background-color: $color;
+        left: calc(#{$padding} + (#{$line-width} * (-#{$circle-ratio} / 2)) - #{$circle-border});
+      }
+    }
+
+    /* stylelint-disable-next-line order/order */
+    @include mixins.until(variables.$tablet) {
+      margin-top: $margin-top;
+
+      .careercard-body {
+        padding-left: $padding;
+
+        &::before {
+          left: calc((#{$padding} / 2) - (#{$line-width} / 2));
+        }
+
+        &::after {
+          left: calc((#{$padding} / 2) + (#{$line-width} * (-#{$circle-ratio} / 2)) - #{$circle-border});
+        }
+      }
+    }
+  }
+
+  &:nth-child(even) {
+    $color: variables.$purple;
+
+    flex-direction: row;
+    text-align: right;
+
+    .careercard-body {
+      padding-right: calc(#{$padding} * 2);
+
+      .careercard-title {
+        color: $color;
+      }
+
+      &::before {
+        right: calc(#{$padding} - (#{$line-width} / 2));
+      }
+
+      &::after {
+        background-color: $color;
+        right: calc(#{$padding} + (#{$line-width} * (-#{$circle-ratio} / 2)) - #{$circle-border});
+      }
+    }
+
+    /* stylelint-disable-next-line order/order */
+    @include mixins.until(variables.$tablet) {
+      flex-direction: row-reverse;
+      margin-top: $margin-top;
+      text-align: left;
+
+      .careercard-body {
+        padding-left: $padding;
+        padding-right: 0;
+
+        &::before {
+          left: calc((#{$padding} / 2) - (#{$line-width} / 2));
+        }
+
+        &::after {
+          left: calc((#{$padding} / 2) + (#{$line-width} * (-#{$circle-ratio} / 2)) - #{$circle-border});
+        }
+      }
+    }
+  }
+
+  /* stylelint-disable-next-line no-descending-specificity */
+  .careercard-body,
+  .careercard-void {
+    flex: 1;
+  }
+
+  /* stylelint-disable-next-line no-descending-specificity */
+  .careercard-body {
+    position: relative;
+
+    /* stylelint-disable-next-line no-descending-specificity */
+    &::before {
+      background-color: variables.$blue;
+      content: '';
+      height: 150%;
+      position: absolute;
+      right: $padding;
+      width: $line-width;
+    }
+
+    /* stylelint-disable-next-line no-descending-specificity */
+    &::after {
+      border: $circle-border solid variables.$grey;
+      border-radius: 50%;
+      content: '';
+      height: calc(#{$line-width} * #{$circle-ratio});
+      position: absolute;
+      top: 1.9em;
+      width: calc(#{$line-width} * #{$circle-ratio});
+    }
+
+    .careercard-period {
+      font-size: 0.75em;
+      font-weight: bold;
+      margin-bottom: 0.75em;
+    }
+
+    /* stylelint-disable-next-line no-descending-specificity */
+    .careercard-title {
+      font-size: 1em;
+      font-weight: bold;
+    }
+
+    .careercard-place {
+      color: variables.$medium-grey;
+      font-size: 0.65em;
+      margin-bottom: 0.5em;
+
+      a {
+        color: variables.$medium-grey;
+        text-decoration: none;
+      }
+    }
+
+    .careercard-mission-title {
+      font-size: 0.95em;
+      font-weight: 700;
+    }
+
+    .careercard-mission-desc {
+      font-size: 0.85em;
+      line-height: 1.25em;
+
+      &:not(:last-child) {
+        margin-bottom: 0.25em;
+      }
+    }
+  }
+
+  .careercard-void {
+    @include mixins.until(variables.$tablet) {
+      display: none;
+    }
+  }
+}

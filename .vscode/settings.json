@@ -38,4 +38,10 @@
             "icon": "terminal-bash"
         },
     },
+    "html.format.wrapAttributes": "force-expand-multiline",
+    "markdownlint.config": {
+        "MD024": {
+            "siblings_only": true
+        }
+    }
 }

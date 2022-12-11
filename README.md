@@ -6,19 +6,17 @@ My (wonderful) website! ⚡
 
 ### Open with Visual Studio Code Container (optional)
 
-This solution allow you to run the project in a linux environnement. (**Docker Required**)
+Open folder with Visual Studio Code.
 
-Run Visual Studio Code
+Install `ms-vscode-remote.remote-containers` extension.
 
-Install "ms-vscode-remote.remote-containers" extension
+Open Visual Code in Container: click on the green button at the bottom left of the screen, and choose `Open in Container` (Docker required).
 
-Open Visual Code in Container : click green icon on bottom left screen, and choose "Open in Container"
-
-Wait for container to setup, and that's it
+Wait for the container to start, and that's it!
 
 ### Start project
 
-If open with VS Code Container : go to debugger (Play Icon with a bug) and choose "🦊 Firefox" or "🌈 Chrome"
+If open with VS Code Container: go to debugger (Play Icon with a bug) and choose "⚛️ Next"
 
 Else :
 

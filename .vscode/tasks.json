@@ -2,19 +2,21 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "npm:start",
+            "label": "⚛️ Next",
+            "icon": {
+                "id": "debug"
+            },
             "type": "npm",
             "script": "dev",
-            "path": "/",
-            "detail": "react-scripts start",
             "group": {
                 "kind": "test",
                 "isDefault": true
             },
+            "options": {
+                "cwd": "${workspaceFolder}",
+            },
             "isBackground": true,
             "problemMatcher": {
-                "fileLocation": "relative",
-                "applyTo": "allDocuments",
                 "owner": "custom",
                 "pattern": {
                     "regexp": "^$"
@@ -25,6 +27,19 @@
                     "endsPattern": "compiled client and server successfully*"
                 }
             }
+        },
+        {
+            "label": "terminate task",
+            "command": "echo ${input:terminate}",
+            "type": "shell"
+        }
+    ],
+    "inputs": [
+        {
+            "id": "terminate",
+            "type": "command",
+            "command": "workbench.action.tasks.terminate",
+            "args": "terminateAll"
         }
     ]
 }

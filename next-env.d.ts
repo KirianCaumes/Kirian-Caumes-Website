@@ -1,7 +1,5 @@
-declare module '*.module.scss';
-declare module '*.png?lqip';
-declare module '*.png?resize&format=webp';
-declare module '*.png?resize';
-declare module '*.jpg?lqip';
-declare module '*.jpg?resize&format=webp';
-declare module '*.jpg?resize';
+/// <reference types="next" />
+/// <reference types="next/image-types/global" />
+
+// NOTE: This file should not be edited
+// see https://nextjs.org/docs/basic-features/typescript for more information.

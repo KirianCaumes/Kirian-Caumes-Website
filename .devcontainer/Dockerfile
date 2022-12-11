@@ -31,11 +31,15 @@ RUN sudo apt-get install gnupg -y \
     && sudo apt-get install vim -y \
     && sudo apt-get install curl -y \
     && sudo apt-get install unzip -y \
-    && sudo apt-get install psmisc -y
+    && sudo apt-get install psmisc -y \
+    && sudo apt-get install nano -y
+RUN sudo apt-get update --fix-missing
+RUN export EDITOR="/usr/bin/nano"
 
 # install nodejs 18
 RUN sudo curl -sL https://deb.nodesource.com/setup_18.x | sudo bash -
 RUN sudo apt-get install -y nodejs
-RUN sudo npm i -g serve
+RUN sudo npm i -g serve@14.0.1
+RUN sudo npm i -g gitmoji-cli@7.0.2
 
 WORKDIR /app_kiriancaumes
