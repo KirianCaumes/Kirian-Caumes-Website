@@ -2,37 +2,41 @@
 
 My (wonderful) website! ⚡
 
-## Run in dev
+![Example](https://user-images.githubusercontent.com/24525092/220759992-b7ce3ffe-6819-414d-96fe-5996a3ad459b.png)
 
-### Open with Visual Studio Code Container (optional)
+## How to deploy in production
 
-Open folder with Visual Studio Code.
+*Continuous deployment is setup and connected to this repository via Github Webhook linked to a VPS server, but you can build the app manually.*
 
-Install `ms-vscode-remote.remote-containers` extension.
+Install dependecies with:
 
-Open Visual Code in Container: click on the green button at the bottom left of the screen, and choose `Open in Container` (Docker required).
+```sh
+npm install
+```
 
-Wait for the container to start, and that's it!
+Start the script with a scheduled task:
 
-### Start project
+```sh
+npm start
+```
 
-If open with VS Code Container: go to debugger (Play Icon with a bug) and choose "⚛️ Next"
+## How to develop
 
-Else :
+There is a [devcontainer](https://code.visualstudio.com/docs/devcontainers/containers) on that project already configured, feel free to use it.
+
+Install dependecies with:
+
+```sh
+npm install
+```
+
+Start the script with the debuger or with:
 
 ```sh
 npm run dev
 ```
 
-## Build (manually)
-
-Continuous deployment is setup and connected to this repository via Github Webhook linked to a VPS server, but you can build the app manually.
-
-```sh
-npm run build
-#Option: Test it locally
-npm start
-```
+You can open a pull request with your new additions.
 
 ## Project conception
 
