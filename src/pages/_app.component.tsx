@@ -5,6 +5,7 @@ import getConfig from 'next/config'
 import { useRouter } from 'next/router'
 import { useEffect, useRef } from 'react'
 import { Montserrat } from '@next/font/google'
+import type { PublicRuntimeConfigType } from 'types'
 
 const montserrat = Montserrat({
     subsets: ['latin'],
@@ -16,7 +17,10 @@ const montserrat = Montserrat({
  * Use App hook
  */
 function useApp() {
-    const { publicRuntimeConfig } = getConfig()
+    const { publicRuntimeConfig } = getConfig() as {
+        /** PublicRuntimeConfig */
+        publicRuntimeConfig: PublicRuntimeConfigType
+    }
     const router = useRouter()
 
     const timer = useRef<NodeJS.Timeout>()

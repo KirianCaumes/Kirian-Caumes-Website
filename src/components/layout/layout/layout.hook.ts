@@ -1,9 +1,9 @@
 import getConfig from 'next/config'
+import type { PublicRuntimeConfigType } from 'types'
 
 export type UseLayoutHookReturns = {
     /** publicRuntimeConfig */
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    publicRuntimeConfig: any
+    publicRuntimeConfig: PublicRuntimeConfigType
 }
 
 /**

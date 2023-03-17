@@ -1,0 +1,14 @@
+# *
+User-agent: *
+Allow: /
+
+# *
+User-agent: *
+Disallow: /404
+
+# Host
+Host: https://kiriancaumes.fr
+
+# Sitemaps
+Sitemap: https://kiriancaumes.fr/sitemap.xml
+Sitemap: https://kiriancaumes.fr/sitemap-0.xml

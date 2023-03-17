@@ -2,6 +2,7 @@ import { useEffect, useState, useCallback } from 'react'
 import Cookie from 'js-cookie'
 import ReactGA from 'react-ga4'
 import getConfig from 'next/config'
+import type { PublicRuntimeConfigType } from 'types'
 
 const ACCEPT_COOKIE_NAME = 'accept_cookies'
 
@@ -18,7 +19,10 @@ export type UseGdprBannerHookReturns = {
  * GdprBanner
  */
 export default function useGdprBanner(): UseGdprBannerHookReturns {
-    const { publicRuntimeConfig } = getConfig()
+    const { publicRuntimeConfig } = getConfig() as {
+        /** PublicRuntimeConfig */
+        publicRuntimeConfig: PublicRuntimeConfigType
+    }
 
     /** Is modal visible */
     const [isVisible, setIsVisible] = useState(false)

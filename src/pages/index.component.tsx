@@ -22,9 +22,8 @@ const Fade = RevealFade as React.FC<import('react-awesome-reveal').FadeProps & {
 
 /**
  * Home page
- * @returns {JSX.Element} Content
  */
-export default function Index() {
+export default function Index(): JSX.Element {
     const { publicRuntimeConfig, age } = useIndex()
 
     return (
@@ -504,7 +503,7 @@ export default function Index() {
                                     missions={[
                                         {
                                             title: "Développement d'applications web métier",
-                                            desc: "Interventions aux différents niveaux d'une application web : Frontend, Backend (API) et Base de données",
+                                            desc: "Mise en place et maintenance d'applications web : Frontend, Backend (API) et Base de données",
                                         },
                                         {
                                             title: 'Gestion du client',

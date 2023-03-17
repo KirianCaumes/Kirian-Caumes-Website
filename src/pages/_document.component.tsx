@@ -4,8 +4,12 @@ import Document, {
     Html, Head, Main, NextScript,
 } from 'next/document'
 import getConfig from 'next/config'
+import type { PublicRuntimeConfigType } from 'types'
 
-const { publicRuntimeConfig } = getConfig()
+const { publicRuntimeConfig } = getConfig() as {
+    /** PublicRuntimeConfig */
+    publicRuntimeConfig: PublicRuntimeConfigType
+}
 
 /**
  * Base component to render base HTML
@@ -38,6 +42,10 @@ export default class MyDocument extends Document {
             >
                 <DocumentHead>
                     <meta charSet="UTF-8" />
+                    <link
+                        rel="canonical"
+                        href="https://kiriancaumes.fr"
+                    />
                     <link
                         // eslint-disable-next-line react/no-invalid-html-attribute
                         rel="shortcut icon"

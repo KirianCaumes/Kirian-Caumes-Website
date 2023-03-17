@@ -65,19 +65,18 @@ export default function Navbar({ itemsMain, itemsEnd = [], itemHome }: NavbarPro
                 ))}
             </div>
             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-            <a
-                role="button"
+            <button
                 className={classNames(styles['navbar-burger'], { [styles['is-active']]: isOpen })}
                 onClick={() => setIsOpen(!isOpen)}
-                onKeyDown={() => setIsOpen(!isOpen)}
                 aria-label="menu"
                 aria-expanded={isOpen}
                 tabIndex={0}
+                type="button"
             >
                 <span aria-hidden="true" />
                 <span aria-hidden="true" />
                 <span aria-hidden="true" />
-            </a>
+            </button>
         </nav>
     )
 }

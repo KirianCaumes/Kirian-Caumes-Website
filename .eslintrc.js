@@ -32,6 +32,7 @@ module.exports = {
             },
             { selector: 'typeAlias', format: ['PascalCase'], suffix: ['Type', 'State', 'Props', 'Returns', 'Params'] },
         ],
+        '@typescript-eslint/consistent-type-imports': ['error', { disallowTypeAnnotations: false }],
         'jsdoc/require-jsdoc': ['warn', {
             checkConstructors: false,
             contexts: [
