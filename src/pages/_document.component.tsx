@@ -129,17 +129,141 @@ export default class MyDocument extends Document {
                         // eslint-disable-next-line react/no-danger
                         dangerouslySetInnerHTML={{
                             __html: JSON.stringify({
-                                '@context': 'https://schema.org',
-                                '@type': 'Person',
-                                url: publicRuntimeConfig.appUrl,
-                                sameAs: [
-                                    'https://www.linkedin.com/in/kirian-caumes',
-                                    'https://github.com/KirianCaumes',
+                                '@context': 'http://schema.org',
+                                '@graph': [
+                                    {
+                                        '@type': 'Person',
+                                        name: publicRuntimeConfig.appName,
+                                        description: publicRuntimeConfig.appDescription,
+                                        birthDate: '1997-02-21',
+                                        image: {
+                                            '@type': 'ImageObject',
+                                            contentUrl: 'https://kiriancaumes.fr/_next/image?url=%2Fimages%2Fkirian_caumes.jpg&w=640&q=75',
+                                        },
+                                        url: 'https://kiriancaumes.fr',
+                                        jobTitle: [
+                                            'Développeur Web Full Stack',
+                                        ],
+                                        email: 'mailto:kirian.caumes@gmail.com',
+                                        sameAs: [
+                                            'https://linkedin.com/in/kirian-caumes',
+                                            'https://www.linkedin.com/in/kirian-caumes',
+                                            'https://github.com/KirianCaumes',
+                                            'https://www.github.com/KirianCaumes',
+                                        ],
+                                        address: {
+                                            '@type': 'PostalAddress',
+                                            addressLocality: 'Nantes, France',
+                                            addressCountry: 'FRA',
+                                        },
+                                        knowsLanguage: [
+                                            {
+                                                '@type': 'Language',
+                                                name: 'Francais',
+                                            },
+                                            {
+                                                '@type': 'Language',
+                                                name: 'Anglais',
+                                            },
+                                        ],
+                                        alumniOf: [
+                                            {
+                                                '@type': 'EducationalOrganization',
+                                                name: 'Nantes Ynov Campus',
+                                                url: 'https://www.ynov.com/campus/nantes/',
+                                                member: {
+                                                    '@type': 'OrganizationRole',
+                                                    startDate: '2016-09',
+                                                    endDate: '2021-08',
+                                                },
+                                            },
+                                            {
+                                                '@type': 'EducationalOrganization',
+                                                name: 'Lycée Notre Dame de Toutes Aides',
+                                                url: 'https://ndtoutesaides.fr/',
+                                                member: {
+                                                    '@type': 'OrganizationRole',
+                                                    startDate: '2012-09',
+                                                    endDate: '2016-07',
+                                                },
+                                            },
+                                        ],
+                                        hasCredential: [
+                                            {
+                                                '@type': 'EducationalOccupationalCredential',
+                                                credentialCategory: 'degree',
+                                                name: 'Mastère Expert Développement Web',
+                                                educationalLevel: 'Expert',
+                                                dateCreated: '2021-08',
+                                                about: {
+                                                    '@type': 'EducationalOccupationalProgram',
+                                                    name: 'Développeur Web',
+                                                },
+                                                recognizedBy: {
+                                                    '@type': 'EducationalOrganization',
+                                                    name: 'Nantes Ynov Campus',
+                                                    url: 'https://www.ynov.com/campus/nantes/',
+                                                },
+                                            },
+                                            {
+                                                '@type': 'EducationalOccupationalCredential',
+                                                credentialCategory: 'degree',
+                                                name: "RNCP: Expert Informatique et Systèmes d'Information",
+                                                educationalLevel: 'Expert',
+                                                dateCreated: '2021-08',
+                                                about: {
+                                                    '@type': 'EducationalOccupationalProgram',
+                                                    name: 'Développeur Informatique',
+                                                },
+                                                recognizedBy: {
+                                                    '@type': 'EducationalOrganization',
+                                                    name: 'France Compétences',
+                                                    url: 'https://www.francecompetences.fr/',
+                                                },
+                                            },
+                                            {
+                                                '@type': 'EducationalOccupationalCredential',
+                                                credentialCategory: 'degree',
+                                                name: 'Baccalauréat Scientifique SVT',
+                                                dateCreated: '2016-08',
+                                                about: {
+                                                    '@type': 'EducationalOccupationalProgram',
+                                                    name: 'Bachelier',
+                                                },
+                                                recognizedBy: {
+                                                    '@type': 'CollegeOrUniversity',
+                                                    name: 'Lycée Notre Dame de Toutes Aides',
+                                                    url: 'https://ndtoutesaides.fr/',
+                                                },
+                                            },
+                                        ],
+                                        worksFor: [
+                                            {
+                                                '@type': 'Organization',
+                                                name: 'Next Decision',
+                                                url: 'https://www.next-decision.fr/',
+                                                address: {
+                                                    '@type': 'PostalAddress',
+                                                    addressLocality: 'Nantes, Pays de la Loire, France',
+                                                    addressRegion: 'Pays de la Loire',
+                                                    addressCountry: 'FRA',
+                                                },
+                                                member: {
+                                                    '@type': 'OrganizationRole',
+                                                    startDate: '2018-06',
+                                                },
+                                            },
+                                        ],
+                                    },
+                                    {
+                                        '@type': 'WebPage',
+                                        url: 'https://kiriancaumes.fr',
+                                        reviewedBy: {
+                                            '@type': 'Person',
+                                            name: 'Kirian Caumes',
+                                        },
+                                    },
                                 ],
-                                name: publicRuntimeConfig.appName,
-                                birthDate: '1997-02-21',
-                                email: 'mailto:kirian.caumes@gmail.com',
-                                jobTitle: 'Developer',
                             }),
                         }}
                     />
