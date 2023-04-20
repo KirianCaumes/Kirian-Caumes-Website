@@ -34,6 +34,24 @@ export default function Index(): JSX.Element {
                     name="description"
                     content={publicRuntimeConfig.appDescription}
                 />
+                <script
+                    type="application/ld+json"
+                    // eslint-disable-next-line react/no-danger
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            '@context': 'https://schema.org/',
+                            '@type': 'BreadcrumbList',
+                            itemListElement: [
+                                {
+                                    '@type': 'ListItem',
+                                    position: 1,
+                                    name: publicRuntimeConfig.appName,
+                                    item: '/',
+                                },
+                            ],
+                        }),
+                    }}
+                />
             </Head>
 
             <main

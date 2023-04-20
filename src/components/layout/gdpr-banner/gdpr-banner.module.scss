@@ -1,9 +1,12 @@
 @use 'styles/abstracts/variables';
+@use 'styles/abstracts/mixins';
 
 .gdpr-banner {
   background-color: rgba(0, 0, 0, 0.75);
   bottom: 0;
-  display: inline-block;
+  display: flex;
+  font-size: 0.75rem;
+  justify-content: center;
   left: 0;
   padding: 1em;
   position: fixed;
@@ -11,10 +14,16 @@
   text-align: center;
   z-index: 1;
 
+  @include mixins.until(variables.$tablet) {
+    flex-direction: column;
+    padding: 0.5em;
+  }
+
   p.gdpr-banner-content {
+    align-self: center;
     color: variables.$white;
     display: inline-block;
-    padding: 0.75rem 1rem;
+    padding: 0 1em;
     text-align: center;
 
     a {
@@ -26,7 +35,7 @@
     align-items: center;
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 0.5em;
     justify-content: center;
   }
 }

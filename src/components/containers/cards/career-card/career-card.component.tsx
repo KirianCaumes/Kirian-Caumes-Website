@@ -66,7 +66,7 @@ export default function CareerCard({
                             <a
                                 href={location?.url}
                                 target="_blank"
-                                rel="noopener nofollow noreferrer"
+                                rel="noopener noreferrer"
                             >
                                 {location?.company}
                             </a>

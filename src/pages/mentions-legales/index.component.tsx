@@ -27,6 +27,24 @@ export default function MentionsLegalesIndexPage(): React.ReactElement {
                     name="robots"
                     content="noindex"
                 />
+                <script
+                    type="application/ld+json"
+                    // eslint-disable-next-line react/no-danger
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            '@context': 'https://schema.org/',
+                            '@type': 'BreadcrumbList',
+                            itemListElement: [
+                                {
+                                    '@type': 'ListItem',
+                                    position: 1,
+                                    name: title,
+                                    item: '/mentions-legales',
+                                },
+                            ],
+                        }),
+                    }}
+                />
             </Head>
 
             <main className={styles['mentions-legales']}>

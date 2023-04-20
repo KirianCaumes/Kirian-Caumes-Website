@@ -27,6 +27,24 @@ export default function My404() {
                     name="robots"
                     content="noindex"
                 />
+                <script
+                    type="application/ld+json"
+                    // eslint-disable-next-line react/no-danger
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            '@context': 'https://schema.org/',
+                            '@type': 'BreadcrumbList',
+                            itemListElement: [
+                                {
+                                    '@type': 'ListItem',
+                                    position: 1,
+                                    name: title,
+                                    item: '/404',
+                                },
+                            ],
+                        }),
+                    }}
+                />
             </Head>
 
             <main className={styles['not-found']}>
