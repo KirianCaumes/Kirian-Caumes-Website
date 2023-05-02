@@ -100,7 +100,7 @@ export default class MyDocument extends Document {
                     />
                     <meta
                         property="og:image"
-                        content={`${publicRuntimeConfig.appUrl}images/kirian_caumes.jpg`}
+                        content={`${publicRuntimeConfig.appUrl}/images/kirian_caumes.jpg`}
                     />
 
                     <meta
@@ -117,7 +117,7 @@ export default class MyDocument extends Document {
                     />
                     <meta
                         property="twitter:image"
-                        content={`${publicRuntimeConfig.appUrl}images/kirian_caumes.jpg`}
+                        content={`${publicRuntimeConfig.appUrl}/images/kirian_caumes.jpg`}
                     />
                     <meta
                         property="twitter:url"
@@ -138,9 +138,9 @@ export default class MyDocument extends Document {
                                         birthDate: '1997-02-21',
                                         image: {
                                             '@type': 'ImageObject',
-                                            contentUrl: 'https://kiriancaumes.fr/_next/image?url=%2Fimages%2Fkirian_caumes.jpg&w=640&q=75',
+                                            contentUrl: `${publicRuntimeConfig.appUrl}/_next/image?url=%2Fimages%2Fkirian_caumes.jpg&w=640&q=75`,
                                         },
-                                        url: 'https://kiriancaumes.fr',
+                                        url: publicRuntimeConfig.appUrl,
                                         jobTitle: [
                                             'Développeur Web Full Stack',
                                         ],
@@ -257,7 +257,7 @@ export default class MyDocument extends Document {
                                     },
                                     {
                                         '@type': 'WebPage',
-                                        url: 'https://kiriancaumes.fr',
+                                        url: publicRuntimeConfig.appUrl,
                                         reviewedBy: {
                                             '@type': 'Person',
                                             name: 'Kirian Caumes',

@@ -46,7 +46,7 @@ export default function Index(): JSX.Element {
                                     '@type': 'ListItem',
                                     position: 1,
                                     name: publicRuntimeConfig.appName,
-                                    item: '/',
+                                    item: publicRuntimeConfig.appUrl,
                                 },
                             ],
                         }),

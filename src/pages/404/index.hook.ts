@@ -8,6 +8,8 @@ export type UseNotFoundHookReturns = {
     title: string
     /** router */
     router: import('next/router').NextRouter
+    /** appUrl */
+    appUrl: string
 }
 
 /**
@@ -25,5 +27,6 @@ export default function useNotFound(): UseNotFoundHookReturns {
     return {
         title,
         router,
+        appUrl: publicRuntimeConfig.appUrl,
     }
 }

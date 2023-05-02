@@ -17,7 +17,7 @@ const nextConfig = {
     publicRuntimeConfig: {
         appLang: 'FR-fr',
         appColor: '#263547',
-        appUrl: 'https://kiriancaumes.fr/',
+        appUrl: 'https://kiriancaumes.fr',
         appName: 'Kirian Caumes',
         appTitle: 'Kirian Caumes - Développeur Web Full Stack Nantes',
         appDescription: 'Kirian Caumes, développeur full stack passionné de développement informatique. Féru de Javascript, Typescript, Node, Nest, PWA, Next.js et autre !',

@@ -8,10 +8,9 @@ import { Button } from 'components/inputs'
 
 /**
  * 404 page
- * @returns {JSX.Element} Content
  */
-export default function My404() {
-    const { title, router } = useNotFound()
+export default function My404(): JSX.Element {
+    const { title, router, appUrl } = useNotFound()
 
     return (
         <>
@@ -39,7 +38,7 @@ export default function My404() {
                                     '@type': 'ListItem',
                                     position: 1,
                                     name: title,
-                                    item: '/404',
+                                    item: `${appUrl}/404`,
                                 },
                             ],
                         }),

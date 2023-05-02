@@ -11,7 +11,7 @@ import { Container } from 'components/containers'
  * Mentios légales page
  */
 export default function MentionsLegalesIndexPage(): React.ReactElement {
-    const { title, appName } = useMentionsLegalesIndex()
+    const { title, appName, appUrl } = useMentionsLegalesIndex()
 
     return (
         <>
@@ -39,7 +39,7 @@ export default function MentionsLegalesIndexPage(): React.ReactElement {
                                     '@type': 'ListItem',
                                     position: 1,
                                     name: title,
-                                    item: '/mentions-legales',
+                                    item: `${appUrl}/mentions-legales`,
                                 },
                             ],
                         }),

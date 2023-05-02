@@ -7,6 +7,8 @@ export type UseMnetionsLegalesIndexReturns = {
     title: string
     /** appName */
     appName: string
+    /** appUrl */
+    appUrl: string
 }
 
 /**
@@ -23,5 +25,6 @@ export default function useMentionsLegalesIndex() {
     return {
         title,
         appName: publicRuntimeConfig.appName,
+        appUrl: publicRuntimeConfig.appUrl,
     }
 }
