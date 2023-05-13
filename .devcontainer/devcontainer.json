@@ -4,14 +4,19 @@
   "postCreateCommand": "bash .devcontainer/init.sh",
   "service": "kiriancaumes_container",
   "workspaceFolder": "/app_kiriancaumes",
-  "extensions": [
-    "gruntfuggly.todo-tree",
-    "sibiraj-s.vscode-scss-formatter",
-    "firefox-devtools.vscode-firefox-debug",
-    "msjsdiag.debugger-for-chrome",
-    "davidanson.vscode-markdownlint",
-    "dbaeumer.vscode-eslint",
-    "stylelint.vscode-stylelint",
-    "pflannery.vscode-versionlens"
-  ]
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "gruntfuggly.todo-tree",
+        "sibiraj-s.vscode-scss-formatter",
+        "davidanson.vscode-markdownlint",
+        "dbaeumer.vscode-eslint",
+        "stylelint.vscode-stylelint",
+        "pflannery.vscode-versionlens",
+        "esbenp.prettier-vscode",
+        "webben.browserslist",
+        "ms-azuretools.vscode-docker"
+      ]
+    }
+  }
 }

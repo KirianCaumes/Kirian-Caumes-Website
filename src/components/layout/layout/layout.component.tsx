@@ -24,13 +24,15 @@ export default function Layout({ children }: LayoutProps): React.ReactElement {
                     <Navbar
                         itemHome={{
                             href: '/#intro',
-                            children: <Image
-                                // eslint-disable-next-line global-require, import/no-absolute-path
-                                src={require('/public/icons/favicon-96x96.png')}
-                                alt="Kirian Caumes"
-                                width={19}
-                                height={19}
-                            />,
+                            children: (
+                                <Image
+                                    // eslint-disable-next-line global-require, import/no-absolute-path
+                                    src={require('/public/icons/favicon-96x96.png')}
+                                    alt="Kirian Caumes"
+                                    width={19}
+                                    height={19}
+                                />
+                            ),
 
                             // <Img
                             //     src={{
@@ -73,7 +75,6 @@ export default function Layout({ children }: LayoutProps): React.ReactElement {
                                 href: '/#contact',
                                 children: 'Contact',
                             },
-
                         ]}
                     />
                 </Container>
@@ -82,16 +83,7 @@ export default function Layout({ children }: LayoutProps): React.ReactElement {
             <footer>
                 <Container>
                     <p>
-                        ©
-                        {' '}
-                        {(new Date().getFullYear())}
-                        {' '}
-                        -
-                        {' '}
-                        {publicRuntimeConfig.appName}
-                        {' '}
-                        -
-                        {' '}
+                        © {new Date().getFullYear()} - {publicRuntimeConfig.appName} -{' '}
                         <Link href="/mentions-legales">Mentions légales</Link>
                     </p>
                 </Container>

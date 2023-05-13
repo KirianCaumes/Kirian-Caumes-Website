@@ -31,9 +31,7 @@ export type CareerCardProps = {
 /**
  * A career card
  */
-export default function CareerCard({
-    period, title, location, missions,
-}: CareerCardProps): React.ReactElement {
+export default function CareerCard({ period, title, location, missions }: CareerCardProps): React.ReactElement {
     const { periodEnd, periodStart } = useCareercard({ period })
 
     return (
@@ -41,26 +39,11 @@ export default function CareerCard({
             <div className={styles['careercard-body']}>
                 <p className={styles['careercard-period']}>
                     {periodStart}
-                    {!!periodEnd && (
-                        <>
-                            {' '}
-                            -
-                            {' '}
-                            {periodEnd}
-                        </>
-                    )}
+                    {!!periodEnd && <> - {periodEnd}</>}
                 </p>
-                <p className={styles['careercard-title']}>
-                    {title}
-                </p>
+                <p className={styles['careercard-title']}>{title}</p>
                 <p className={styles['careercard-place']}>
-                    {!location?.url && !!location?.company && (
-                        <>
-                            {location?.company}
-                            ,
-                            {' '}
-                        </>
-                    )}
+                    {!location?.url && !!location?.company && <>{location?.company}, </>}
                     {!!location?.url && !!location?.company && (
                         <>
                             <a
@@ -70,8 +53,7 @@ export default function CareerCard({
                             >
                                 {location?.company}
                             </a>
-                            ,
-                            {' '}
+                            ,{' '}
                         </>
                     )}
                     {location?.city}
@@ -81,12 +63,8 @@ export default function CareerCard({
                         // eslint-disable-next-line react/no-array-index-key
                         key={`mission-${i}`}
                     >
-                        <p className={styles['careercard-mission-title']}>
-                            {mission.title}
-                        </p>
-                        <p className={styles['careercard-mission-desc']}>
-                            {mission.desc}
-                        </p>
+                        <p className={styles['careercard-mission-title']}>{mission.title}</p>
+                        <p className={styles['careercard-mission-desc']}>{mission.desc}</p>
                     </React.Fragment>
                 ))}
             </div>

@@ -50,11 +50,13 @@ export default function useGdprBanner(): UseGdprBannerHookReturns {
     useEffect(() => {
         const cookie = Cookie.get(ACCEPT_COOKIE_NAME)
 
-        if (!cookie)
+        if (!cookie) {
             setIsVisible(true)
+        }
 
-        if (cookie === 'true')
+        if (cookie === 'true') {
             onAccept()
+        }
     }, [onAccept])
 
     return {

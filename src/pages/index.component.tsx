@@ -11,14 +11,14 @@ import { Columns, Container, Tag } from 'components/containers'
 import { Border, Icon, Title } from 'components/elements'
 import { Button } from 'components/inputs'
 import Image from 'next/image'
-import {
-    CareerCard, FlatCard, Skillcard, IconCard,
-} from 'components/containers/cards'
+import { CareerCard, FlatCard, Skillcard, IconCard } from 'components/containers/cards'
 
-const Fade = RevealFade as React.FC<import('react-awesome-reveal').FadeProps & {
-    /** Children */
-    children: React.ReactNode
-}>
+const Fade = RevealFade as React.FC<
+    import('react-awesome-reveal').FadeProps & {
+        /** Children */
+        children: React.ReactNode
+    }
+>
 
 /**
  * Home page
@@ -54,72 +54,31 @@ export default function Index(): JSX.Element {
                 />
             </Head>
 
-            <main
-                className={styles['index-page']}
-            >
+            <main className={styles['index-page']}>
                 <div
                     id="intro"
                     className={classNames(styles.row, styles['row-intro'])}
                 >
                     <Container>
-                        <Title
-                            level={1}
-                        >
-                            Kirian CAUMES
-                        </Title>
+                        <Title level={1}>Kirian CAUMES</Title>
                         <Columns>
                             <Columns.Column>
                                 <p>
-                                    Développeur full stack âgé de
-                                    {' '}
-                                    <b>
-                                        {age}
-                                        {' '}
-                                        ans
-                                    </b>
-                                    , je suis situé aux abords de la ville de
-                                    {' '}
-                                    <b>Nantes</b>
-                                    {' '}
-                                    et titulaire du
-                                    {' '}
-                                    <b>permis B</b>
+                                    Développeur full stack âgé de <b>{age} ans</b>, je suis situé aux abords de la ville de <b>Nantes</b> et
+                                    titulaire du <b>permis B</b>
                                     .
                                     <br />
                                     <br />
-                                    Dans le domaine de l'informatique depuis maintenant plus de 5 ans, mes études à Ynov Nantes avec l'obtention de mon mastère «
-                                    {' '}
-                                    <b>Expert Développement Web</b>
-                                    {' '}
-                                    » et du titre RNCP «
-                                    {' '}
-                                    <b>Expert Informatique et Systèmes d'Information</b>
-                                    {' '}
-                                    », ainsi que mon
-                                    {' '}
-                                    <Link href="/#career">
-                                        parcours professionnel
-                                    </Link>
-                                    , m'ont permis l'acquisition de
-                                    {' '}
-                                    <Link href="/#skills">
-                                        compétences
-                                    </Link>
-                                    {' '}
-                                    solides et adaptatives.
+                                    Dans le domaine de l'informatique depuis maintenant plus de 5 ans, mes études à Ynov Nantes avec
+                                    l'obtention de mon mastère « <b>Expert Développement Web</b> » et du titre RNCP «{' '}
+                                    <b>Expert Informatique et Systèmes d'Information</b> », ainsi que mon{' '}
+                                    <Link href="/#career">parcours professionnel</Link>, m'ont permis l'acquisition de{' '}
+                                    <Link href="/#skills">compétences</Link> solides et adaptatives.
                                     <br />
                                     <br />
                                     Ce savoir-faire technique, acquis également grâce à ma bonne compréhension de l'
-                                    <b>anglais</b>
-                                    , se sera exprimé autour de la réalisation (notamment) d'
-                                    <b>applications web métier</b>
-                                    {' '}
-                                    mais aussi de la
-                                    {' '}
-                                    <b>gestion de projets</b>
-                                    {' '}
-                                    et de la
-                                    {' '}
+                                    <b>anglais</b>, se sera exprimé autour de la réalisation (notamment) d'
+                                    <b>applications web métier</b> mais aussi de la <b>gestion de projets</b> et de la{' '}
                                     <b>relation client</b>
                                     .
                                     <br />
@@ -137,9 +96,7 @@ export default function Index(): JSX.Element {
                                         >
                                             Mon CV *
                                         </Button>
-                                        <p className={classNames(styles['last-update'])}>
-                                            * Dernière mise à jour : janvier 2018
-                                        </p>
+                                        <p className={classNames(styles['last-update'])}>* Dernière mise à jour : janvier 2018</p>
                                     </Columns.Column>
                                     <Columns.Column>
                                         <Button
@@ -188,9 +145,7 @@ export default function Index(): JSX.Element {
                                     />
                                 </a>
                             </Columns.Column>
-                            <Columns.Column
-                                align="center"
-                            >
+                            <Columns.Column align="center">
                                 <Fade
                                     direction="right"
                                     triggerOnce
@@ -303,10 +258,7 @@ export default function Index(): JSX.Element {
                             <Columns>
                                 <Columns.Column sizes={['one-quarter-widescreen', 'half-desktop', 'half-tablet']}>
                                     <Skillcard
-                                        title={[
-                                            'NodeJs',
-                                            'Javascript/Typescript',
-                                        ]}
+                                        title={['NodeJs', 'Javascript/Typescript']}
                                         score={4}
                                         rows={[
                                             { title: 'Express', score: 4 },
@@ -402,7 +354,6 @@ export default function Index(): JSX.Element {
                                             { title: 'Computed Types', score: 4 },
                                             { title: 'Oak', score: 3 },
                                             { title: 'Djwt', score: 3 },
-
                                         ]}
                                         color="pink"
                                     />
@@ -674,36 +625,17 @@ export default function Index(): JSX.Element {
                             </Columns.Column>
                             <Columns.Column>
                                 <p>
-                                    Le site que vous êtes en train de visiter a été entièrement réalisé par mes soins. Celui-ci repose sur
-                                    {' '}
-                                    <b>Next.js</b>
-                                    {' '}
-                                    : un Framework
-                                    {' '}
-                                    <b>React</b>
-                                    {' '}
-                                    permettant notamment la mise en place d'un rendu des composants côté serveur ou, dans le cas de ce site, la génération d'application statique.
+                                    Le site que vous êtes en train de visiter a été entièrement réalisé par mes soins. Celui-ci repose sur{' '}
+                                    <b>Next.js</b> : un Framework <b>React</b> permettant notamment la mise en place d'un rendu des
+                                    composants côté serveur ou, dans le cas de ce site, la génération d'application statique.
                                     <br />
-                                    Pour un simple projet tel que celui-ci,
-                                    {' '}
-                                    <b>Next.js</b>
-                                    {' '}
-                                    est "overkill", et un site sans Framework serait plus optimal. Mais ici, ce choix résulte d'une volonté personnelle de démontrer mes compétences en
-                                    {' '}
+                                    Pour un simple projet tel que celui-ci, <b>Next.js</b> est "overkill", et un site sans Framework serait
+                                    plus optimal. Mais ici, ce choix résulte d'une volonté personnelle de démontrer mes compétences en{' '}
                                     <b>React</b>
                                     .
-                                    <br />
-                                    À travers ce projet, une partie de mes compétences auront pu être exprimées. Allant de la phase de
-                                    {' '}
-                                    <b>conception</b>
-                                    {' '}
-                                    (recherche d'idées, mockup, etc.) à l'
-                                    <b>hébergement</b>
-                                    {' '}
-                                    (déploiement continu, etc.) en passant bien sûr par la phase de
-                                    {' '}
-                                    <b>développement</b>
-                                    {' '}
+                                    <br />À travers ce projet, une partie de mes compétences auront pu être exprimées. Allant de la phase de{' '}
+                                    <b>conception</b> (recherche d'idées, mockup, etc.) à l'
+                                    <b>hébergement</b> (déploiement continu, etc.) en passant bien sûr par la phase de <b>développement</b>{' '}
                                     (découpage des composants, logique fonctionnelle, etc.).
                                     <br />
                                     <Tag color="blue">#Next.ss</Tag>
@@ -726,18 +658,14 @@ export default function Index(): JSX.Element {
                         </Columns>
                     </Container>
                 </div>
-                <div
-                    className={classNames(styles.row, styles['row-quote'])}
-                >
+                <div className={classNames(styles.row, styles['row-quote'])}>
                     <figure>
                         <blockquote>
                             Il est parfois sensé d'
-                            <strong>être insensé</strong>
-                            .
+                            <strong>être insensé</strong>.
                         </blockquote>
                         <figcaption>
-                            Jérémie Belpois,
-                            {' '}
+                            Jérémie Belpois,{' '}
                             <cite>
                                 <a
                                     href="https://youtu.be/G5Q9CVbo67o?t=1348"
@@ -751,9 +679,11 @@ export default function Index(): JSX.Element {
                     </figure>
                     <hr />
                     <p>
-                        Une simple locution qui, bien que provenant d'un dessin animé, m'a toujours inspiré et notamment aujourd'hui dans mes projets personnels de développements informatiques.
+                        Une simple locution qui, bien que provenant d'un dessin animé, m'a toujours inspiré et notamment aujourd'hui dans
+                        mes projets personnels de développements informatiques.
                         <br />
-                        Même si une idée me parait farfelue, peu utile ou encore ayant de faibles chances d'aboutir ; j'aime me lancer des défis et explorer des solutions originales dans le but d'expérimenter mais aussi d'apprendre.
+                        Même si une idée me parait farfelue, peu utile ou encore ayant de faibles chances d'aboutir ; j'aime me lancer des
+                        défis et explorer des solutions originales dans le but d'expérimenter mais aussi d'apprendre.
                     </p>
                 </div>
                 <div
@@ -784,9 +714,10 @@ export default function Index(): JSX.Element {
                                     <FlatCard
                                         imageSrc="/images/handball.jpg"
                                         title="Handball"
-                                        content={(
+                                        content={
                                             <>
-                                                Joueur de Handball au poste de gardien de but, à ma treizième année au club de Thouaré sur Loire, puis de Carquefou.
+                                                Joueur de Handball au poste de gardien de but, à ma treizième année au club de Thouaré sur
+                                                Loire, puis de Carquefou.
                                                 <br />
                                                 <br />
                                                 J'y ai développé de vrais liens humains dans un projet d'équipe ayant un objectif commun.
@@ -794,7 +725,7 @@ export default function Index(): JSX.Element {
                                                 <br />
                                                 Fidèle supporter du HBC Nantes et de l'équipe de France.
                                             </>
-                                        )}
+                                        }
                                     />
                                 </Fade>
                             </Columns.Column>
@@ -806,13 +737,15 @@ export default function Index(): JSX.Element {
                                     <FlatCard
                                         imageSrc="/images/ajesterscollection.png"
                                         title="Collections"
-                                        content={(
+                                        content={
                                             <>
-                                                Collectionneur depuis toujours d'objets en tous genres (pièces d'euros, timbres, fèves, jeux vidéo, etc.), j'y voue une véritable passion.
+                                                Collectionneur depuis toujours d'objets en tous genres (pièces d'euros, timbres, fèves, jeux
+                                                vidéo, etc.), j'y voue une véritable passion.
                                                 <br />
                                                 <br />
-                                                Aujourd'hui la collection vers laquelle je suis principalement tourné concerne le groupe de musique In Flames avec un ensemble de CD, vinyl et autres. Je partage également cette passion sur internet sous le pseudonyme :
-                                                {' '}
+                                                Aujourd'hui la collection vers laquelle je suis principalement tourné concerne le groupe de
+                                                musique In Flames avec un ensemble de CD, vinyl et autres. Je partage également cette
+                                                passion sur internet sous le pseudonyme :{' '}
                                                 <a
                                                     href="https://www.instagram.com/jesters_collection/"
                                                     target="_blank"
@@ -822,7 +755,7 @@ export default function Index(): JSX.Element {
                                                 </a>
                                                 .
                                             </>
-                                        )}
+                                        }
                                     />
                                 </Fade>
                             </Columns.Column>
@@ -834,9 +767,11 @@ export default function Index(): JSX.Element {
                                     <FlatCard
                                         imageSrc="/images/developpement.jpg"
                                         title="Développement"
-                                        content={(
+                                        content={
                                             <>
-                                                Plus qu'un métier, le développement est également une passion. Je m'amuse fréquemment à développer différents projets, qu'ils soient Open Source, ou bien directement pour mon usage personnel (
+                                                Plus qu'un métier, le développement est également une passion. Je m'amuse fréquemment à
+                                                développer différents projets, qu'ils soient Open Source, ou bien directement pour mon usage
+                                                personnel (
                                                 <a
                                                     href="https://github.com/KirianCaumes"
                                                     target="_blank"
@@ -847,9 +782,10 @@ export default function Index(): JSX.Element {
                                                 ).
                                                 <br />
                                                 <br />
-                                                Ainsi, je peux me permettre d'expérimenter de mon côté pour proposer des solutions innovantes lors de projets professionnels.
+                                                Ainsi, je peux me permettre d'expérimenter de mon côté pour proposer des solutions
+                                                innovantes lors de projets professionnels.
                                             </>
-                                        )}
+                                        }
                                     />
                                 </Fade>
                             </Columns.Column>
@@ -885,13 +821,7 @@ export default function Index(): JSX.Element {
                                     <IconCard
                                         iconName="mail"
                                         title="Par mail"
-                                        content={(
-                                            <a
-                                                href="mailto:kirian.caumes@gmail.com"
-                                            >
-                                                kirian.caumes@gmail.com
-                                            </a>
-                                        )}
+                                        content={<a href="mailto:kirian.caumes@gmail.com">kirian.caumes@gmail.com</a>}
                                         color="pink"
                                         align="center"
                                     />
@@ -905,7 +835,7 @@ export default function Index(): JSX.Element {
                                     <IconCard
                                         iconName="linkedin"
                                         title="Par Linkedin"
-                                        content={(
+                                        content={
                                             <a
                                                 href="https://www.linkedin.com/in/kirian-caumes"
                                                 rel="noopener noreferrer"
@@ -913,7 +843,7 @@ export default function Index(): JSX.Element {
                                             >
                                                 linkedin.com
                                             </a>
-                                        )}
+                                        }
                                         color="purple"
                                         align="center"
                                     />

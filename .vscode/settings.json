@@ -1,47 +1,33 @@
 {
-    "editor.formatOnSave": true,
-    "[typescript]": {
-        "editor.tabSize": 4,
-        "editor.detectIndentation": false,
-    },
-    "[javascript]": {
-        "editor.tabSize": 4,
-        "editor.detectIndentation": false,
-    },
-    "[scss]": {
-        "editor.tabSize": 2,
-        "editor.detectIndentation": false,
-        "editor.defaultFormatter": "stylelint.vscode-stylelint",
-    },
-    "editor.codeActionsOnSave": {
-        "source.fixAll": true
-    },
-    "eslint.workingDirectories": [
-        "./"
-    ],
-    "eslint.alwaysShowStatus": true,
-    "css.validate": false,
-    "less.validate": false,
-    "scss.validate": false,
-    "stylelint.validate": [
-        "css",
-        "postcss",
-        "sass",
-        "scss",
-    ],
-    "stylelint.configFile": ".stylelintrc.json",
-    "versionlens.suggestions.showOnStartup": true,
-    "terminal.integrated.defaultProfile.linux": "bash",
-    "terminal.integrated.profiles.linux": {
-        "bash": {
-            "path": "/bin/bash",
-            "icon": "terminal-bash"
-        },
-    },
-    "html.format.wrapAttributes": "force-expand-multiline",
-    "markdownlint.config": {
-        "MD024": {
-            "siblings_only": true
-        }
+  "editor.formatOnSave": true,
+  "[typescriptreact][typescript][javascript][css][scss][html][json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+  "eslint.workingDirectories": ["./"],
+  "prettier.documentSelectors": ["**/*.svg"],
+  "prettier.requireConfig": true,
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+  "json.format.enable": false,
+  "stylelint.validate": ["css", "postcss", "sass", "scss"],
+  "versionlens.suggestions.showOnStartup": true,
+  "terminal.integrated.defaultProfile.linux": "bash",
+  "terminal.integrated.profiles.linux": {
+    "bash": {
+      "path": "/bin/bash",
+      "icon": "terminal-bash"
     }
+  },
+  "markdownlint.config": {
+    "MD024": {
+      "siblings_only": true
+    }
+  }
 }

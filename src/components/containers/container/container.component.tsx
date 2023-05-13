@@ -10,9 +10,5 @@ export type ContainerProps = {
  * A container for element
  */
 export default function Container({ children }: ContainerProps): React.ReactElement {
-    return (
-        <div className={styles.container}>
-            {children}
-        </div>
-    )
+    return <div className={styles.container}>{children}</div>
 }

@@ -1,8 +1,6 @@
 // eslint-disable-next-line max-classes-per-file
 import React from 'react'
-import Document, {
-    Html, Head, Main, NextScript,
-} from 'next/document'
+import Document, { Html, Head, Main, NextScript } from 'next/document'
 import getConfig from 'next/config'
 import type { PublicRuntimeConfigType } from 'types'
 
@@ -37,9 +35,7 @@ export default class MyDocument extends Document {
         }
 
         return (
-            <Html
-                lang={publicRuntimeConfig.appLang}
-            >
+            <Html lang={publicRuntimeConfig.appLang}>
                 <DocumentHead>
                     <meta charSet="UTF-8" />
                     <link
@@ -141,9 +137,7 @@ export default class MyDocument extends Document {
                                             contentUrl: `${publicRuntimeConfig.appUrl}/_next/image?url=%2Fimages%2Fkirian_caumes.jpg&w=640&q=75`,
                                         },
                                         url: publicRuntimeConfig.appUrl,
-                                        jobTitle: [
-                                            'Développeur Web Full Stack',
-                                        ],
+                                        jobTitle: ['Développeur Web Full Stack'],
                                         email: 'mailto:kirian.caumes@gmail.com',
                                         sameAs: [
                                             'https://linkedin.com/in/kirian-caumes',

@@ -24,15 +24,17 @@ export default function useCareercard({ period }: UseCareerCardHookParams): UseC
 
     /** End date clean */
     const periodEnd = useMemo(() => {
-        if (!period[1])
+        if (!period[1]) {
             return ''
+        }
 
         if (
-            period[1]?.getDate() === (new Date()).getDate()
-            && period[1]?.getMonth() === (new Date()).getMonth()
-            && period[1]?.getFullYear() === (new Date()).getFullYear()
-        )
+            period[1]?.getDate() === new Date().getDate() &&
+            period[1]?.getMonth() === new Date().getMonth() &&
+            period[1]?.getFullYear() === new Date().getFullYear()
+        ) {
             return "Aujourd'hui"
+        }
 
         const val = period?.[1]?.toLocaleDateString('fr-FR', { month: 'long', year: 'numeric' })
         return `${val?.charAt(0)?.toUpperCase()}${val?.slice(1)}`

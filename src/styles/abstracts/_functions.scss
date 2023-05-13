@@ -1,13 +1,13 @@
 @use 'sass:math';
+@use 'sass:map';
+@use 'sass:color';
 @use '../abstracts/variables';
 
 /** Find invert color **/
 @function find-color-invert($color) {
   @if luminance($color) > 0.55 {
     @return variables.$black;
-  }
-
-  @else {
+  } @else {
     @return variables.$white;
   }
 }
@@ -15,9 +15,9 @@
 /** Get luminance value of a color **/
 @function luminance($color) {
   $colors: (
-    'red': red($color),
-    'green': green($color),
-    'blue': blue($color),
+    'red': color.red($color),
+    'green': color.green($color),
+    'blue': color.blue($color),
   );
 
   @each $name, $value in $colors {
@@ -27,29 +27,28 @@
     /* stylelint-disable-next-line number-max-precision */
     @if $value < 0.03928 {
       $value: $value / 12.92;
-    }
-
-    @else {
+    } @else {
       $value: math.div($value + 0.055, 1.055);
       $value: pow($value, 2.4);
     }
 
-    $colors: map-merge($colors, ($name: $value));
+    $colors: map.merge(
+      $colors,
+      (
+        $name: $value,
+      )
+    );
   }
-
-  @return (map-get($colors, 'red') * 0.2126) + (map-get($colors, 'green') * 0.7152) +
-    (map-get($colors, 'blue') * 0.0722);
+  @return (map-get($colors, 'red') * 0.2126) + (map-get($colors, 'green') * 0.7152) + (map-get($colors, 'blue') * 0.0722);
 }
 
 /** Number to pow **/
 @function pow($number, $exponent) {
   $value: 1;
-
   @if $exponent > 0 {
     @for $i from 1 through ceil($exponent) {
       $value: $value * $number;
     }
   }
-
   @return $value;
 }

@@ -1,6 +1,7 @@
 @use 'styles/abstracts/mixins';
 @use 'styles/abstracts/functions';
 @use 'styles/abstracts/variables';
+@use 'sass:color';
 
 .button {
   align-items: center;
@@ -29,7 +30,7 @@
       color: functions.find-color-invert($color);
 
       &:hover {
-        background-color: darken($color, 2.5%);
+        background-color: color.adjust($color, $lightness: -2.5%);
         border-color: transparent;
         color: functions.find-color-invert($color);
       }
@@ -44,7 +45,7 @@
       }
 
       &:active {
-        background-color: darken($color, 5%);
+        background-color: color.adjust($color, $lightness: -5%);
         border-color: transparent;
         color: functions.find-color-invert($color);
       }

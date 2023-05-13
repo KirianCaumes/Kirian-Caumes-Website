@@ -23,14 +23,10 @@ export type FlatCardProps = {
 /**
  * A skill card
  */
-export default function FlatCard({
-    imageSrc, title, content, align = 'justify',
-}: FlatCardProps): React.ReactElement {
+export default function FlatCard({ imageSrc, title, content, align = 'justify' }: FlatCardProps): React.ReactElement {
     return (
         <div className={styles.flatcard}>
-            <div
-                className={styles['flatcard-image']}
-            >
+            <div className={styles['flatcard-image']}>
                 <Image
                     src={imageSrc}
                     alt={title}
@@ -38,16 +34,8 @@ export default function FlatCard({
                     height={180}
                 />
             </div>
-            <p
-                className={styles['flatcard-title']}
-            >
-                {title}
-            </p>
-            <p
-                className={classNames(styles['flatcard-content'], styles[`is-content-${align}`])}
-            >
-                {content}
-            </p>
+            <p className={styles['flatcard-title']}>{title}</p>
+            <p className={classNames(styles['flatcard-content'], styles[`is-content-${align}`])}>{content}</p>
         </div>
     )
 }

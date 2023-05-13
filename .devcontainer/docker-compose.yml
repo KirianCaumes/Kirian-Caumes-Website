@@ -18,4 +18,4 @@ services:
 
 networks:
   kiriancaumes_network:
-    driver: "bridge"
+    driver: 'bridge'

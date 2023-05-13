@@ -24,9 +24,7 @@ export type NavbarProps = {
  * A navbar
  */
 export default function Navbar({ itemsMain, itemsEnd = [], itemHome }: NavbarProps): React.ReactElement {
-    const {
-        hash, isOpen, ref, setIsOpen,
-    } = useNavbar()
+    const { hash, isOpen, ref, setIsOpen } = useNavbar()
 
     return (
         <nav
@@ -36,7 +34,9 @@ export default function Navbar({ itemsMain, itemsEnd = [], itemHome }: NavbarPro
             <div className={styles['navbar-icon']}>
                 <Link
                     href={itemHome.href}
-                    className={classNames(styles['navbar-item'], { [styles['is-active']]: hash === itemHome.href?.replace('#', '')?.replace('/', '') })}
+                    className={classNames(styles['navbar-item'], {
+                        [styles['is-active']]: hash === itemHome.href?.replace('#', '')?.replace('/', ''),
+                    })}
                 >
                     {itemHome.children}
                 </Link>
@@ -52,13 +52,11 @@ export default function Navbar({ itemsMain, itemsEnd = [], itemHome }: NavbarPro
                             <li
                                 // eslint-disable-next-line react/no-array-index-key
                                 key={`navbaritem_${i}`}
-                                className={classNames(styles['navbar-item'], { [styles['is-active']]: hash === item.href?.replace('#', '')?.replace('/', '') })}
+                                className={classNames(styles['navbar-item'], {
+                                    [styles['is-active']]: hash === item.href?.replace('#', '')?.replace('/', ''),
+                                })}
                             >
-                                <Link
-                                    href={item.href}
-                                >
-                                    {item.children}
-                                </Link>
+                                <Link href={item.href}>{item.children}</Link>
                             </li>
                         ))}
                     </ul>

@@ -13,9 +13,5 @@ export type TagProps = {
  * A tag
  */
 export default function Tag({ children, color }: TagProps): React.ReactElement {
-    return (
-        <span className={classNames(styles.tag, styles[`is-${color}`])}>
-            {children}
-        </span>
-    )
+    return <span className={classNames(styles.tag, styles[`is-${color}`])}>{children}</span>
 }

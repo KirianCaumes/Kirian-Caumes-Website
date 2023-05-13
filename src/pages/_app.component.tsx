@@ -4,7 +4,7 @@ import { GdprBanner, Layout } from 'components/layout'
 import getConfig from 'next/config'
 import { useRouter } from 'next/router'
 import { useEffect, useRef } from 'react'
-import { Montserrat } from '@next/font/google'
+import { Montserrat } from "next/font/google"
 import type { PublicRuntimeConfigType } from 'types'
 
 const montserrat = Montserrat({
@@ -27,10 +27,9 @@ function useApp() {
 
     // Add comment on the top of the page
     useEffect(() => {
-        document.querySelector('html')?.parentNode?.insertBefore(
-            document.createComment(publicRuntimeConfig.appComment),
-            document.querySelector('html'),
-        )
+        document
+            .querySelector('html')
+            ?.parentNode?.insertBefore(document.createComment(publicRuntimeConfig.appComment), document.querySelector('html'))
     }, [publicRuntimeConfig])
 
     /**
@@ -69,9 +68,9 @@ export default function App({ Component, pageProps }: AppProps) {
                 global
             >
                 {`
-                  html {
-                    font-family: ${montserrat.style.fontFamily}, sans-serif;
-                  }
+                    html {
+                        font-family: ${montserrat.style.fontFamily}, sans-serif;
+                    }
                 `}
             </style>
             <Layout>

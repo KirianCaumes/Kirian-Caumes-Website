@@ -44,10 +44,15 @@ export default function Button({
     title = '',
     children,
 }: ButtonProps): React.ReactElement {
-    if (href && !isDisabled)
+    if (href && !isDisabled) {
         return (
             <Link
-                className={classNames(styles.button, { [styles['is-fullwidth']]: isFullWidth }, { [styles['is-outlined']]: isOutlined }, styles[`is-${color}`])}
+                className={classNames(
+                    styles.button,
+                    { [styles['is-fullwidth']]: isFullWidth },
+                    { [styles['is-outlined']]: isOutlined },
+                    styles[`is-${color}`],
+                )}
                 onClick={onClick}
                 rel={rel}
                 target={target}
@@ -57,10 +62,16 @@ export default function Button({
                 {children}
             </Link>
         )
+    }
 
     return (
         <button
-            className={classNames(styles.button, { [styles['is-fullwidth']]: isFullWidth }, { [styles['is-outlined']]: isOutlined }, styles[`is-${color}`])}
+            className={classNames(
+                styles.button,
+                { [styles['is-fullwidth']]: isFullWidth },
+                { [styles['is-outlined']]: isOutlined },
+                styles[`is-${color}`],
+            )}
             // eslint-disable-next-line react/button-has-type
             type={type}
             onClick={onClick}
