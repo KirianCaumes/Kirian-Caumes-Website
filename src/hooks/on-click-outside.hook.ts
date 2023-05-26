@@ -1,5 +1,5 @@
-import type { MutableRefObject } from 'react'
 import { useEffect } from 'react'
+import type { MutableRefObject } from 'react'
 
 /**
  * Use On ClickOutside

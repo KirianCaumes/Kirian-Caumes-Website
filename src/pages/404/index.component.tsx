@@ -10,7 +10,7 @@ import { Button } from 'components/inputs'
  * 404 page
  */
 export default function My404(): JSX.Element {
-    const { title, router, appUrl } = useNotFound()
+    const { title, router, publicRuntimeConfig } = useNotFound()
 
     return (
         <>
@@ -36,7 +36,7 @@ export default function My404(): JSX.Element {
                                     '@type': 'ListItem',
                                     position: 1,
                                     name: title,
-                                    item: `${appUrl}/404`,
+                                    item: `${publicRuntimeConfig.appUrl}/404`,
                                 },
                             ],
                         }),

@@ -1,6 +1,6 @@
 import React from 'react'
-import styles from 'components/containers/cards/skill-card/skill-card.module.scss'
 import classNames from 'classnames'
+import styles from 'components/containers/cards/skill-card/skill-card.module.scss'
 
 export type ScoreProps = {
     /** value */
@@ -26,20 +26,18 @@ function Score({ value, max = 5, icon = '★', unselectedIcon = '☆' }: ScorePr
     )
 }
 
-export type SkillRowType = {
-    /** title */
-    title: string
-    /** score */
-    score: number
-}
-
 export type SkillcardProps = {
     /** title */
     title: string | string[]
     /** score */
     score: number
     /** rows */
-    rows: SkillRowType[]
+    rows: {
+        /** title */
+        title: string
+        /** score */
+        score: number
+    }[]
     /** color */
     color: 'yellow' | 'pink' | 'purple' | 'blue'
 }

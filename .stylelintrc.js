@@ -10,6 +10,7 @@ module.exports = {
         },
     ],
     extends: ['stylelint-config-standard', 'stylelint-config-sass-guidelines'],
+    plugins: ['stylelint-order'],
     rules: {
         'max-nesting-depth': 10,
         'selector-max-compound-selectors': 10,
@@ -36,5 +37,29 @@ module.exports = {
             },
         ],
         'at-rule-empty-line-before': null,
+        /** {@link https://github.com/bjankord/stylelint-config-sass-guidelines/pull/278} */
+        'order/order': [
+            [
+                'custom-properties',
+                'dollar-variables',
+                {
+                    type: 'at-rule',
+                    name: 'extend',
+                },
+                {
+                    type: 'at-rule',
+                    name: 'include',
+                    hasBlock: false,
+                },
+                'declarations',
+                {
+                    type: 'at-rule',
+                    name: 'include',
+                    hasBlock: true,
+                },
+                'rules',
+            ],
+        ],
+        'order/properties-alphabetical-order': true,
     },
 }

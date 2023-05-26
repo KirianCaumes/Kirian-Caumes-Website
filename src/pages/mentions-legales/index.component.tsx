@@ -1,8 +1,7 @@
-/* eslint-disable max-len */
 import React from 'react'
 import Head from 'next/head'
-import styles from 'pages/mentions-legales/index.module.scss'
 import Link from 'next/link'
+import styles from 'pages/mentions-legales/index.module.scss'
 import useMentionsLegalesIndex from 'pages/mentions-legales/index.hook'
 import { Title } from 'components/elements'
 import { Container } from 'components/containers'
@@ -11,7 +10,7 @@ import { Container } from 'components/containers'
  * Mentios légales page
  */
 export default function MentionsLegalesIndexPage(): React.ReactElement {
-    const { title, appName, appUrl } = useMentionsLegalesIndex()
+    const { title, publicRuntimeConfig } = useMentionsLegalesIndex()
 
     return (
         <>
@@ -19,7 +18,7 @@ export default function MentionsLegalesIndexPage(): React.ReactElement {
                 <title>{title}</title>
                 <meta
                     name="description"
-                    content={`Mentions legales du site ${appName}`}
+                    content={`Mentions legales du site ${publicRuntimeConfig.appName}`}
                 />
                 <meta
                     name="robots"
@@ -37,7 +36,7 @@ export default function MentionsLegalesIndexPage(): React.ReactElement {
                                     '@type': 'ListItem',
                                     position: 1,
                                     name: title,
-                                    item: `${appUrl}/mentions-legales`,
+                                    item: `${publicRuntimeConfig.appUrl}/mentions-legales`,
                                 },
                             ],
                         }),
@@ -97,8 +96,8 @@ export default function MentionsLegalesIndexPage(): React.ReactElement {
                     <br />
                     <Title level={2}>Cookies et traceurs</Title>
                     <p>
-                        Le site internet {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                        <Link href="https://kiriancaumes.fr">kiriancaumes.fr</Link> possède un système de mesure d'audience.
+                        Le site internet <Link href="https://kiriancaumes.fr">kiriancaumes.fr</Link> possède un système de mesure
+                        d'audience.
                     </p>
                     <br />
                     <p>
@@ -124,7 +123,6 @@ export default function MentionsLegalesIndexPage(): React.ReactElement {
                     <Title level={2}>Liens hypertextes</Title>
                     <p>
                         Ce site internet contient un certain nombre de liens hypertextes vers d'autres sites. Cependant,{' '}
-                        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                         <Link href="https://kiriancaumes.fr">kiriancaumes.fr</Link> n'a pas la possibilité de suivre et vérifier le contenu
                         de ces sites, et n'assumera en conséquence aucune responsabilité de ce fait.
                     </p>

@@ -1,20 +1,19 @@
-/* eslint-disable max-len */
-
 import React from 'react'
 import Head from 'next/head'
-import styles from 'pages/index.module.scss'
 import classNames from 'classnames'
 import { Fade as RevealFade } from 'react-awesome-reveal'
 import Link from 'next/link'
+import Image from 'next/image'
+import styles from 'pages/index.module.scss'
 import useIndex from 'pages/index.hook'
 import { Columns, Container, Tag } from 'components/containers'
 import { Border, Icon, Title } from 'components/elements'
 import { Button } from 'components/inputs'
-import Image from 'next/image'
 import { CareerCard, FlatCard, Skillcard, IconCard } from 'components/containers/cards'
+import type { FadeProps } from 'react-awesome-reveal'
 
 const Fade = RevealFade as React.FC<
-    import('react-awesome-reveal').FadeProps & {
+    FadeProps & {
         /** Children */
         children: React.ReactNode
     }
@@ -192,10 +191,12 @@ export default function Index(): JSX.Element {
                                     <IconCard
                                         iconName="balloon_laughing"
                                         title="Sérieux sans se prendre au sérieux"
-                                        content="Sérieux dans le travail, mais avec une pointe d'humour suffisante pour rendre une journée moins monotone."
                                         color="yellow"
                                         isIconBorder
-                                    />
+                                    >
+                                        Sérieux dans le travail, mais avec une pointe d'humour suffisante pour rendre une journée moins
+                                        monotone.
+                                    </IconCard>
                                 </Fade>
                             </Columns.Column>
                             <Columns.Column>
@@ -207,10 +208,12 @@ export default function Index(): JSX.Element {
                                     <IconCard
                                         iconName="balloon_naughty"
                                         title="Calme mais pas amorphe"
-                                        content="Concentré sur un projet pour qu'il puisse aboutir, sans être un simple robot uniquement coincé derrière son écran."
                                         color="pink"
                                         isIconBorder
-                                    />
+                                    >
+                                        Concentré sur un projet pour qu'il puisse aboutir, sans être un simple robot uniquement coincé
+                                        derrière son écran.
+                                    </IconCard>
                                 </Fade>
                             </Columns.Column>
                             <Columns.Column>
@@ -222,10 +225,12 @@ export default function Index(): JSX.Element {
                                     <IconCard
                                         iconName="balloon_dead"
                                         title="Passionné et patient"
-                                        content="Mordu depuis plusieurs années par l'informatique, savoir faire face à des problèmes et s'impliquer pour les résoudre est un objectif du quotidien."
                                         color="purple"
                                         isIconBorder
-                                    />
+                                    >
+                                        Mordu depuis plusieurs années par l'informatique, savoir faire face à des problèmes et s'impliquer
+                                        pour les résoudre est un objectif du quotidien.
+                                    </IconCard>
                                 </Fade>
                             </Columns.Column>
                         </Columns>
@@ -465,120 +470,132 @@ export default function Index(): JSX.Element {
                                     title="CDI développeur full stack"
                                     location={{
                                         company: 'Nextdecision',
-                                        url: 'https://www.next-decision.fr/',
+                                        href: 'https://www.next-decision.fr/',
                                         city: 'Nantes',
                                     }}
                                     period={[new Date(2021, 8), new Date()]}
                                     missions={[
                                         {
                                             title: "Développement d'applications web métier",
-                                            desc: "Mise en place et maintenance d'applications web : Frontend, Backend (API) et Base de données",
+                                            description:
+                                                "Mise en place et maintenance d'applications web : Frontend, Backend (API) et Base de données",
                                         },
                                         {
                                             title: 'Gestion du client',
-                                            desc: 'Élaboration de cahiers des charges, TMA, gestion de projets et relation client',
+                                            description: 'Élaboration de cahiers des charges, TMA, gestion de projets et relation client',
                                         },
                                         {
                                             title: 'Création de programmes/scripts/outils divers',
-                                            desc: "Génération de PDF, mise en place d'environnements (Azure, VM), etc.",
+                                            description: "Mise en place d'environnements (Azure, VM), génération de PDF, etc.",
                                         },
                                     ]}
                                 />
                                 <CareerCard
-                                    title="Alternance en développement d'applications web (B3 à M2)"
+                                    title="Alternance en développement d'applications web (Bachelor 3 à Mastère 2)"
                                     location={{
                                         company: 'Nextdecision',
-                                        url: 'https://www.next-decision.fr/',
+                                        href: 'https://www.next-decision.fr/',
                                         city: 'Nantes',
                                     }}
                                     period={[new Date(2018, 8), new Date(2021, 8)]}
                                     missions={[
                                         {
                                             title: "Développement d'applications web métier",
-                                            desc: "Interventions aux différents niveaux d'une application web : Frontend, Backend (API) et Base de données",
+                                            description:
+                                                "Interventions aux différents niveaux d'une application web : Frontend, Backend (API) et Base de données",
                                         },
                                         {
                                             title: 'Gestion du client',
-                                            desc: 'Élaboration de cahiers des charges, TMA, gestion de projets et relation client',
+                                            description: 'Élaboration de cahiers des charges, TMA, gestion de projets et relation client',
                                         },
                                     ]}
                                 />
                                 <CareerCard
-                                    title="Stage en développement d'applications web (B2)"
+                                    title="Stage en développement d'applications web (Bachelor 2)"
                                     location={{
                                         company: 'Nextdecision',
-                                        url: 'https://www.next-decision.fr/',
+                                        href: 'https://www.next-decision.fr/',
                                         city: 'Nantes',
                                     }}
                                     period={[new Date(2018, 6), new Date(2018, 7)]}
                                     missions={[
                                         {
                                             title: "Développement d'applications web métier",
-                                            desc: "Réalisation de fonctionnalités & corrections de bugs d'applications existantes",
+                                            description: "Réalisation de fonctionnalités & corrections de bugs d'applications existantes",
                                         },
                                     ]}
                                 />
                                 <CareerCard
-                                    title="Stage en développement web (B1)"
+                                    title="Stage en développement web (Bachelor 1)"
                                     location={{
                                         city: 'Nantes',
                                         company: 'Label Communication',
-                                        url: 'https://www.labelcommunication.net/',
+                                        href: 'https://www.labelcommunication.net/',
                                     }}
                                     period={[new Date(2017, 6), new Date(2017, 7)]}
                                     missions={[
                                         {
                                             title: 'Réalisation de sites vitrines',
-                                            desc: 'Apprentissage de Wordpress et son environnement (WooComerce, etc.)',
+                                            description: 'Apprentissage de Wordpress et son environnement (WooComerce, etc.)',
                                         },
                                     ]}
                                 />
                                 <CareerCard
-                                    title="Diplôme d'expert développement web"
+                                    title="Études supérieures Développeur Informatique Ingésup"
                                     location={{
                                         city: 'Nantes',
                                         company: 'Ynov',
-                                        url: 'https://www.ynov.com/campus/nantes/',
+                                        href: 'https://www.ynov.com/campus/nantes/',
                                     }}
                                     period={[new Date(2016, 8), new Date(2021, 7)]}
                                     missions={[
                                         {
                                             title: '2 années de Mastères',
-                                            desc: 'Spécialisation expert développement web',
+                                            description:
+                                                "Diplômes : (RNCP) Expert Informatique et Systèmes d'Information et Mastère Expert Développement Web",
                                         },
                                         {
                                             title: '3 années de Bachelor',
-                                            desc: "Apprentissage général de l'informatique : développement, réseau et culture générale",
+                                            description:
+                                                "Apprentissage général de l'informatique : développement, réseau et culture générale",
                                         },
                                     ]}
                                 />
                                 <CareerCard
-                                    title="Diplôme Bac. Scientifique SVT, mention assez bien (13.5/20)"
+                                    title="Études Baccalauréat"
                                     location={{
                                         city: 'Nantes',
                                         company: 'Lycée Notre-Dame de Toutes-Aides',
-                                        url: 'http://ndtoutesaides.fr/',
+                                        href: 'http://ndtoutesaides.fr/',
                                     }}
-                                    period={[new Date(2015, 8), new Date(2016, 5)]}
+                                    period={[new Date(2012, 8), new Date(2016, 5)]}
                                     missions={[
                                         {
-                                            title: 'Projet Bac ISN (spécialité informatique)',
-                                            desc: "Réalisation d'un jeu vidéo sous Processing 3 : 20/20 obtenu",
+                                            title: 'Études Scientifiques',
+                                            description: 'Diplôme : Baccalauréat Scientifique SVT, mention assez bien',
+                                        },
+                                        {
+                                            title: 'Projet Bac. ISN (spécialité informatique)',
+                                            description: "Réalisation d'un jeu vidéo sous Processing 3",
                                         },
                                     ]}
                                 />
                                 <CareerCard
-                                    title="Stage d'observation (3e, Lycée)"
+                                    title={
+                                        <>
+                                            Stage d'observation (3<sup>ème</sup>, Lycée)
+                                        </>
+                                    }
                                     location={{
                                         city: 'Nantes',
                                         company: 'Parabellum Geographic Insight',
-                                        url: 'https://www.pginsight.com/',
+                                        href: 'https://www.pginsight.com/',
                                     }}
                                     period={[new Date(2011, 11)]}
                                     missions={[
                                         {
                                             title: "Observation des métiers de l'informatique",
-                                            desc: 'Observation de problématiques réseaux et développements',
+                                            description: 'Observation de problématiques réseaux et développements',
                                         },
                                     ]}
                                 />
@@ -714,19 +731,16 @@ export default function Index(): JSX.Element {
                                     <FlatCard
                                         imageSrc="/images/handball.jpg"
                                         title="Handball"
-                                        content={
-                                            <>
-                                                Joueur de Handball au poste de gardien de but, à ma treizième année au club de Thouaré sur
-                                                Loire, puis de Carquefou.
-                                                <br />
-                                                <br />
-                                                J'y ai développé de vrais liens humains dans un projet d'équipe ayant un objectif commun.
-                                                <br />
-                                                <br />
-                                                Fidèle supporter du HBC Nantes et de l'équipe de France.
-                                            </>
-                                        }
-                                    />
+                                    >
+                                        Joueur de Handball au poste de gardien de but, à ma treizième année au club de Thouaré sur Loire,
+                                        puis de Carquefou.
+                                        <br />
+                                        <br />
+                                        J'y ai développé de vrais liens humains dans un projet d'équipe ayant un objectif commun.
+                                        <br />
+                                        <br />
+                                        Fidèle supporter du HBC Nantes et de l'équipe de France.
+                                    </FlatCard>
                                 </Fade>
                             </Columns.Column>
                             <Columns.Column sizes={['one-third-desktop', 'full-tablet']}>
@@ -737,26 +751,23 @@ export default function Index(): JSX.Element {
                                     <FlatCard
                                         imageSrc="/images/ajesterscollection.png"
                                         title="Collections"
-                                        content={
-                                            <>
-                                                Collectionneur depuis toujours d'objets en tous genres (pièces d'euros, timbres, fèves, jeux
-                                                vidéo, etc.), j'y voue une véritable passion.
-                                                <br />
-                                                <br />
-                                                Aujourd'hui la collection vers laquelle je suis principalement tourné concerne le groupe de
-                                                musique In Flames avec un ensemble de CD, vinyl et autres. Je partage également cette
-                                                passion sur internet sous le pseudonyme :{' '}
-                                                <a
-                                                    href="https://www.instagram.com/jesters_collection/"
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                >
-                                                    A Jester's Collection
-                                                </a>
-                                                .
-                                            </>
-                                        }
-                                    />
+                                    >
+                                        Collectionneur depuis toujours d'objets en tous genres (pièces d'euros, timbres, fèves, jeux vidéo,
+                                        etc.), j'y voue une véritable passion.
+                                        <br />
+                                        <br />
+                                        Aujourd'hui la collection vers laquelle je suis principalement tourné concerne le groupe de musique
+                                        In Flames avec un ensemble de CD, vinyl et autres. Je partage également cette passion sur internet
+                                        sous le pseudonyme :{' '}
+                                        <a
+                                            href="https://www.instagram.com/jesters_collection/"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            A Jester's Collection
+                                        </a>
+                                        .
+                                    </FlatCard>
                                 </Fade>
                             </Columns.Column>
                             <Columns.Column sizes={['one-third-desktop', 'full-tablet']}>
@@ -767,26 +778,22 @@ export default function Index(): JSX.Element {
                                     <FlatCard
                                         imageSrc="/images/developpement.jpg"
                                         title="Développement"
-                                        content={
-                                            <>
-                                                Plus qu'un métier, le développement est également une passion. Je m'amuse fréquemment à
-                                                développer différents projets, qu'ils soient Open Source, ou bien directement pour mon usage
-                                                personnel (
-                                                <a
-                                                    href="https://github.com/KirianCaumes"
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                >
-                                                    Github
-                                                </a>
-                                                ).
-                                                <br />
-                                                <br />
-                                                Ainsi, je peux me permettre d'expérimenter de mon côté pour proposer des solutions
-                                                innovantes lors de projets professionnels.
-                                            </>
-                                        }
-                                    />
+                                    >
+                                        Plus qu'un métier, le développement est également une passion. Je m'amuse fréquemment à développer
+                                        différents projets, qu'ils soient Open Source, ou bien directement pour mon usage personnel (
+                                        <a
+                                            href="https://github.com/KirianCaumes"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            Github
+                                        </a>
+                                        ).
+                                        <br />
+                                        <br />
+                                        Ainsi, je peux me permettre d'expérimenter de mon côté pour proposer des solutions innovantes lors
+                                        de projets professionnels.
+                                    </FlatCard>
                                 </Fade>
                             </Columns.Column>
                         </Columns>
@@ -821,10 +828,11 @@ export default function Index(): JSX.Element {
                                     <IconCard
                                         iconName="mail"
                                         title="Par mail"
-                                        content={<a href="mailto:kirian.caumes@gmail.com">kirian.caumes@gmail.com</a>}
                                         color="pink"
                                         align="center"
-                                    />
+                                    >
+                                        <a href="mailto:kirian.caumes@gmail.com">kirian.caumes@gmail.com</a>
+                                    </IconCard>
                                 </Fade>
                             </Columns.Column>
                             <Columns.Column>
@@ -835,18 +843,18 @@ export default function Index(): JSX.Element {
                                     <IconCard
                                         iconName="linkedin"
                                         title="Par Linkedin"
-                                        content={
-                                            <a
-                                                href="https://www.linkedin.com/in/kirian-caumes"
-                                                rel="noopener noreferrer"
-                                                target="_blank"
-                                            >
-                                                linkedin.com
-                                            </a>
-                                        }
                                         color="purple"
                                         align="center"
-                                    />
+                                    >
+                                        {' '}
+                                        <a
+                                            href="https://www.linkedin.com/in/kirian-caumes"
+                                            rel="noopener noreferrer"
+                                            target="_blank"
+                                        >
+                                            linkedin.com
+                                        </a>
+                                    </IconCard>
                                 </Fade>
                             </Columns.Column>
                         </Columns>

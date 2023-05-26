@@ -1,15 +1,12 @@
 import React from 'react'
-import styles from 'components/layout/layout/layout.module.scss'
 import Link from 'next/link'
+import Image from 'next/image'
+import styles from 'components/layout/layout/layout.module.scss'
 import useLayout from 'components/layout/layout/layout.hook'
 import Navbar from 'components/layout/navbar/navbar.component'
 import { Container } from 'components/containers'
-import Image from 'next/image'
 
-export type LayoutProps = {
-    /** Children */
-    children: React.ReactNode
-}
+export type LayoutProps = Pick<React.HTMLAttributes<HTMLDivElement>, 'children'>
 
 /**
  * App layout

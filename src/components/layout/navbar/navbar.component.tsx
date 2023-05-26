@@ -1,15 +1,13 @@
 import React from 'react'
-import styles from 'components/layout/navbar/navbar.module.scss'
 import classNames from 'classnames'
-import useNavbar from 'components/layout/navbar/navbar.hook'
 import Link from 'next/link'
+import styles from 'components/layout/navbar/navbar.module.scss'
+import useNavbar from 'components/layout/navbar/navbar.hook'
 
 export type NavbarItemType = {
     /** href */
     href: string
-    /** children */
-    children?: React.ReactNode
-}
+} & Pick<Parameters<typeof Link>[0], 'children'>
 
 export type NavbarProps = {
     /** itemHome */
@@ -62,7 +60,6 @@ export default function Navbar({ itemsMain, itemsEnd = [], itemHome }: NavbarPro
                     </ul>
                 ))}
             </div>
-            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
             <button
                 className={classNames(styles['navbar-burger'], { [styles['is-active']]: isOpen })}
                 onClick={() => setIsOpen(!isOpen)}

@@ -1,22 +1,20 @@
 import React from 'react'
-import styles from 'components/containers/cards/icon-card/icon-card.module.scss'
 import classNames from 'classnames'
+import styles from 'components/containers/cards/icon-card/icon-card.module.scss'
 import { Icon } from 'components/elements'
 
 export type IconCardProps = {
     /** iconName */
-    iconName: import('components/elements/icon/icon.component').IconNameType
+    iconName: Parameters<typeof Icon>[0]['name']
     /** title */
-    title: string | string[]
-    /** content */
-    content: React.ReactElement | string
+    title: React.HTMLAttributes<HTMLParagraphElement>['children']
     /** color */
     color: 'yellow' | 'pink' | 'purple' | 'blue'
     /** isIconBorder */
     isIconBorder?: boolean
     /** align */
     align?: 'center' | 'justify'
-}
+} & Pick<React.HTMLAttributes<HTMLParagraphElement>, 'children'>
 
 /**
  * A card with icon
@@ -24,7 +22,7 @@ export type IconCardProps = {
 export default function IconCard({
     iconName,
     title,
-    content,
+    children,
     color,
     isIconBorder = false,
     align = 'justify',
@@ -36,7 +34,7 @@ export default function IconCard({
             </div>
             <div className={classNames(styles['iconcard-body'], styles[`is-${color}`])}>
                 <p className={styles['iconcard-title']}>{title}</p>
-                <p className={classNames(styles['iconcard-content'], styles[`is-content-${align}`])}>{content}</p>
+                <p className={classNames(styles['iconcard-content'], styles[`is-content-${align}`])}>{children}</p>
             </div>
         </div>
     )

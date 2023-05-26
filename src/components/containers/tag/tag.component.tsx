@@ -1,13 +1,11 @@
 import React from 'react'
-import styles from 'components/containers/tag/tag.module.scss'
 import classNames from 'classnames'
+import styles from 'components/containers/tag/tag.module.scss'
 
 export type TagProps = {
     /** color */
     color: 'yellow' | 'pink' | 'purple' | 'blue'
-    /** children */
-    children: React.ReactNode
-}
+} & Pick<React.HTMLAttributes<HTMLSpanElement>, 'children'>
 
 /**
  * A tag

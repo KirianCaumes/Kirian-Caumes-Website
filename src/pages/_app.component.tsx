@@ -1,11 +1,11 @@
-import type { AppProps } from 'next/app'
 import 'styles/index.scss'
-import { GdprBanner, Layout } from 'components/layout'
 import getConfig from 'next/config'
 import { useRouter } from 'next/router'
 import { useEffect, useRef } from 'react'
-import { Montserrat } from "next/font/google"
+import { Montserrat } from 'next/font/google'
+import { GdprBanner, Layout } from 'components/layout'
 import type { PublicRuntimeConfigType } from 'types'
+import type { AppProps } from 'next/app'
 
 const montserrat = Montserrat({
     subsets: ['latin'],

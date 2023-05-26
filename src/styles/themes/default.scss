@@ -23,6 +23,11 @@ html {
       font-weight: bold;
     }
 
+    sup {
+      font-size: smaller;
+      vertical-align: super;
+    }
+
     p,
     figcaption {
       line-height: 1.5rem;

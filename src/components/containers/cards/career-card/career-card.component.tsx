@@ -2,37 +2,34 @@ import React from 'react'
 import styles from 'components/containers/cards/career-card/career-card.module.scss'
 import useCareercard from 'components/containers/cards/career-card/career-card.hook'
 
-export type MissionType = {
-    /** title */
-    title: string
-    /** desc */
-    desc: string
-}
-export type LocationType = {
-    /** company */
-    company?: string
-    /** url */
-    url?: string
-    /** city */
-    city: string
-}
-
 export type CareerCardProps = {
     /** period */
     period: [Date] | [Date, Date]
     /** title */
-    title: string
+    title: React.HTMLAttributes<HTMLParagraphElement>['children']
     /** location */
-    location: LocationType
+    location: {
+        /** company */
+        company?: React.LinkHTMLAttributes<HTMLLinkElement>['children']
+        /** href */
+        href?: React.LinkHTMLAttributes<HTMLLinkElement>['href']
+        /** city */
+        city: React.HTMLAttributes<HTMLParagraphElement>['children']
+    }
     /** missions */
-    missions: MissionType[]
+    missions: {
+        /** title */
+        title: React.HTMLAttributes<HTMLParagraphElement>['children']
+        /** description */
+        description: React.HTMLAttributes<HTMLParagraphElement>['children']
+    }[]
 }
 
 /**
  * A career card
  */
 export default function CareerCard({ period, title, location, missions }: CareerCardProps): React.ReactElement {
-    const { periodEnd, periodStart } = useCareercard({ period })
+    const { periodEnd, periodStart, duration } = useCareercard({ period })
 
     return (
         <div className={styles.careercard}>
@@ -40,14 +37,15 @@ export default function CareerCard({ period, title, location, missions }: Career
                 <p className={styles['careercard-period']}>
                     {periodStart}
                     {!!periodEnd && <> - {periodEnd}</>}
+                    {duration && <> ({duration})</>}
                 </p>
                 <p className={styles['careercard-title']}>{title}</p>
                 <p className={styles['careercard-place']}>
-                    {!location?.url && !!location?.company && <>{location?.company}, </>}
-                    {!!location?.url && !!location?.company && (
+                    {!location?.href && !!location?.company && <>{location?.company}, </>}
+                    {!!location?.href && !!location?.company && (
                         <>
                             <a
-                                href={location?.url}
+                                href={location?.href}
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
@@ -64,7 +62,7 @@ export default function CareerCard({ period, title, location, missions }: Career
                         key={`mission-${i}`}
                     >
                         <p className={styles['careercard-mission-title']}>{mission.title}</p>
-                        <p className={styles['careercard-mission-desc']}>{mission.desc}</p>
+                        <p className={styles['careercard-mission-description']}>{mission.description}</p>
                     </React.Fragment>
                 ))}
             </div>

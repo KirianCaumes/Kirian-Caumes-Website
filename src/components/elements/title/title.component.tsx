@@ -1,6 +1,6 @@
 import React from 'react'
-import styles from 'components/elements/title/title.module.scss'
 import classNames from 'classnames'
+import styles from 'components/elements/title/title.module.scss'
 
 export type TitleProps = {
     /** level */
@@ -9,9 +9,7 @@ export type TitleProps = {
     isSubtitle?: boolean
     /** isCentered */
     isCentered?: boolean
-    /** children */
-    children?: React.ReactNode
-}
+} & Pick<React.HTMLAttributes<HTMLTitleElement>, 'children'>
 
 /**
  * A title

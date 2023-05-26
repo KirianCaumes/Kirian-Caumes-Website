@@ -43,7 +43,6 @@ export default class MyDocument extends Document {
                         href="https://kiriancaumes.fr"
                     />
                     <link
-                        // eslint-disable-next-line react/no-invalid-html-attribute
                         rel="shortcut icon"
                         href="/favicon.ico"
                     />
@@ -53,7 +52,6 @@ export default class MyDocument extends Document {
                         type="image/svg+xml"
                     />
                     <link
-                        // eslint-disable-next-line react/no-invalid-html-attribute
                         rel="apple-touch-icon"
                         href="/apple-touch-icon.png"
                     />

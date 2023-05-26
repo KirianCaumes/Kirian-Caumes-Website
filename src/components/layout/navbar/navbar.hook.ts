@@ -1,7 +1,7 @@
-import { useOnClickOutside } from 'hooks'
 import { useRouter } from 'next/router'
-import type { MutableRefObject, Dispatch, SetStateAction } from 'react'
 import { useRef, useState, useEffect } from 'react'
+import { useOnClickOutside } from 'hooks'
+import type { MutableRefObject, Dispatch, SetStateAction } from 'react'
 
 export type UseNavbarHookReturns = {
     /** isOpen */

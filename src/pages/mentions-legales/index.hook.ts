@@ -5,10 +5,8 @@ import type { PublicRuntimeConfigType } from 'types'
 export type UseMnetionsLegalesIndexReturns = {
     /** title */
     title: string
-    /** appName */
-    appName: string
-    /** appUrl */
-    appUrl: string
+    /** publicRuntimeConfig */
+    publicRuntimeConfig: PublicRuntimeConfigType
 }
 
 /**
@@ -24,7 +22,6 @@ export default function useMentionsLegalesIndex() {
 
     return {
         title,
-        appName: publicRuntimeConfig.appName,
-        appUrl: publicRuntimeConfig.appUrl,
+        publicRuntimeConfig,
     }
 }

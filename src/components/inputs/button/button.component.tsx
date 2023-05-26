@@ -1,7 +1,7 @@
 import React from 'react'
-import styles from 'components/inputs/button/button.module.scss'
 import classNames from 'classnames'
 import Link from 'next/link'
+import styles from 'components/inputs/button/button.module.scss'
 
 export type ButtonProps = {
     /** type */
@@ -16,17 +16,8 @@ export type ButtonProps = {
     isDisabled?: boolean
     /** isOutlined */
     isOutlined?: boolean
-    /** href */
-    href?: string
-    /** rel */
-    rel?: string
-    /** target */
-    target?: string
-    /** title */
-    title?: string
-    /** children */
-    children: React.ReactNode
-}
+} & Pick<React.HTMLAttributes<HTMLElement>, 'children' | 'title'> &
+    Pick<React.AnchorHTMLAttributes<HTMLLinkElement>, 'rel' | 'href' | 'target'>
 
 /**
  * A button

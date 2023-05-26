@@ -1,7 +1,6 @@
-/* eslint-disable max-len */
 import React from 'react'
-import styles from 'components/containers/columns/columns.module.scss'
 import classNames from 'classnames'
+import styles from 'components/containers/columns/columns.module.scss'
 
 export type ColumnsProps = {
     /** children */
@@ -21,7 +20,6 @@ export type ColumnProps = {
     /** Vertical align */
     vAlign?: 'top' | 'center' | 'bottom'
     /** Sizes */
-    // eslint-disable-next-line max-len
     sizes?: (
         | 'full'
         | 'three-quarters'
@@ -64,11 +62,7 @@ export type ColumnProps = {
         | 'three-fifths-widescreen'
         | 'four-fifths-widescreen'
     )[]
-    /** ClassName */
-    className?: string
-    /** Children */
-    children?: React.ReactNode
-}
+} & Pick<React.HTMLAttributes<HTMLParagraphElement>, 'children' | 'className'>
 
 /**
  * A column

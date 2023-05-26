@@ -11,102 +11,14 @@ $margin-top: 2rem;
   display: flex;
   justify-content: center;
 
-  &:nth-child(odd) {
-    $color: variables.$pink;
-
-    flex-direction: row-reverse;
-    text-align: left;
-
-    .careercard-body {
-      padding-left: calc(#{$padding} * 2);
-
-      .careercard-title {
-        color: $color;
-      }
-
-      &::before {
-        left: calc(#{$padding} - (#{$line-width} / 2));
-      }
-
-      &::after {
-        background-color: $color;
-        left: calc(#{$padding} + (#{$line-width} * (-#{$circle-ratio} / 2)) - #{$circle-border});
-      }
-    }
-
-    /* stylelint-disable-next-line order/order */
-    @include mixins.until(variables.$tablet) {
-      margin-top: $margin-top;
-
-      .careercard-body {
-        padding-left: $padding;
-
-        &::before {
-          left: calc((#{$padding} / 2) - (#{$line-width} / 2));
-        }
-
-        &::after {
-          left: calc((#{$padding} / 2) + (#{$line-width} * (-#{$circle-ratio} / 2)) - #{$circle-border});
-        }
-      }
-    }
-  }
-
-  &:nth-child(even) {
-    $color: variables.$purple;
-
-    flex-direction: row;
-    text-align: right;
-
-    .careercard-body {
-      padding-right: calc(#{$padding} * 2);
-
-      .careercard-title {
-        color: $color;
-      }
-
-      &::before {
-        right: calc(#{$padding} - (#{$line-width} / 2));
-      }
-
-      &::after {
-        background-color: $color;
-        right: calc(#{$padding} + (#{$line-width} * (-#{$circle-ratio} / 2)) - #{$circle-border});
-      }
-    }
-
-    /* stylelint-disable-next-line order/order */
-    @include mixins.until(variables.$tablet) {
-      flex-direction: row-reverse;
-      margin-top: $margin-top;
-      text-align: left;
-
-      .careercard-body {
-        padding-left: $padding;
-        padding-right: 0;
-
-        &::before {
-          left: calc((#{$padding} / 2) - (#{$line-width} / 2));
-        }
-
-        &::after {
-          left: calc((#{$padding} / 2) + (#{$line-width} * (-#{$circle-ratio} / 2)) - #{$circle-border});
-        }
-      }
-    }
-  }
-
-  /* stylelint-disable-next-line no-descending-specificity */
   .careercard-body,
   .careercard-void {
     flex: 1;
   }
 
-  /* stylelint-disable-next-line no-descending-specificity */
   .careercard-body {
     position: relative;
 
-    /* stylelint-disable-next-line no-descending-specificity */
     &::before {
       background-color: variables.$blue;
       content: '';
@@ -116,7 +28,6 @@ $margin-top: 2rem;
       width: $line-width;
     }
 
-    /* stylelint-disable-next-line no-descending-specificity */
     &::after {
       border: $circle-border solid variables.$grey;
       border-radius: 50%;
@@ -133,7 +44,6 @@ $margin-top: 2rem;
       margin-bottom: 0.75em;
     }
 
-    /* stylelint-disable-next-line no-descending-specificity */
     .careercard-title {
       font-size: 1em;
       font-weight: bold;
@@ -155,12 +65,95 @@ $margin-top: 2rem;
       font-weight: 700;
     }
 
-    .careercard-mission-desc {
+    .careercard-mission-description {
       font-size: 0.85em;
       line-height: 1.25em;
 
       &:not(:last-child) {
         margin-bottom: 0.25em;
+      }
+    }
+  }
+
+  &:nth-child(odd) {
+    $color: variables.$pink;
+
+    flex-direction: row-reverse;
+    text-align: left;
+
+    @include mixins.until(variables.$tablet) {
+      margin-top: $margin-top;
+
+      .careercard-body {
+        padding-left: $padding;
+
+        &::before {
+          left: calc((#{$padding} / 2) - (#{$line-width} / 2));
+        }
+
+        &::after {
+          left: calc((#{$padding} / 2) + (#{$line-width} * (-#{$circle-ratio} / 2)) - #{$circle-border});
+        }
+      }
+    }
+
+    .careercard-body {
+      padding-left: calc(#{$padding} * 2);
+
+      .careercard-title {
+        color: $color;
+      }
+
+      &::before {
+        left: calc(#{$padding} - (#{$line-width} / 2));
+      }
+
+      &::after {
+        background-color: $color;
+        left: calc(#{$padding} + (#{$line-width} * (-#{$circle-ratio} / 2)) - #{$circle-border});
+      }
+    }
+  }
+
+  &:nth-child(even) {
+    $color: variables.$purple;
+
+    flex-direction: row;
+    text-align: right;
+
+    @include mixins.until(variables.$tablet) {
+      flex-direction: row-reverse;
+      margin-top: $margin-top;
+      text-align: left;
+
+      .careercard-body {
+        padding-left: $padding;
+        padding-right: 0;
+
+        &::before {
+          left: calc((#{$padding} / 2) - (#{$line-width} / 2));
+        }
+
+        &::after {
+          left: calc((#{$padding} / 2) + (#{$line-width} * (-#{$circle-ratio} / 2)) - #{$circle-border});
+        }
+      }
+    }
+
+    .careercard-body {
+      padding-right: calc(#{$padding} * 2);
+
+      .careercard-title {
+        color: $color;
+      }
+
+      &::before {
+        right: calc(#{$padding} - (#{$line-width} / 2));
+      }
+
+      &::after {
+        background-color: $color;
+        right: calc(#{$padding} + (#{$line-width} * (-#{$circle-ratio} / 2)) - #{$circle-border});
       }
     }
   }

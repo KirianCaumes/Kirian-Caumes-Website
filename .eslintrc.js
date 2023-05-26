@@ -39,7 +39,7 @@ module.exports = {
             },
             { selector: 'typeAlias', format: ['PascalCase'], suffix: ['Type', 'State', 'Props', 'Returns', 'Params'] },
         ],
-        '@typescript-eslint/consistent-type-imports': ['error', { disallowTypeAnnotations: false }],
+        '@typescript-eslint/consistent-type-imports': ['error'],
         'jsdoc/require-jsdoc': [
             'warn',
             {
@@ -68,6 +68,7 @@ module.exports = {
         ],
         'jsdoc/require-param-description': ['warn', { contexts: ['any'] }],
         'jsdoc/require-param': ['warn', { checkDestructuredRoots: false }],
+        'import/order': ['error', { groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index', 'object', 'type'] }],
         // 'capitalized-comments': ['warn', 'always'], // Not always usefull as it also fix comment with code
         camelcase: ['error', { allow: [] }],
         'no-underscore-dangle': ['error', { allow: ['_id', '__WB_MANIFEST'] }],
@@ -84,5 +85,11 @@ module.exports = {
         'react/prop-types': 'off',
         'react/require-default-props': ['error', { functions: 'defaultArguments' }],
         'no-unused-vars': ['warn', { vars: 'all', args: 'after-used', ignoreRestSiblings: true }], // Must be at the end
+    },
+    /** {@link https://github.com/import-js/eslint-plugin-import/issues/1485} */
+    settings: {
+        'import/resolver': {
+            typescript: {},
+        },
     },
 }

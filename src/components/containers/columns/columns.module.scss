@@ -25,10 +25,7 @@ $column-gap: 0.75rem;
 .column {
   box-sizing: inherit;
   display: block;
-  flex-basis: 0;
-  flex-grow: 1;
-  /* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties */
-  flex-shrink: 1;
+  flex: 1 1 0;
   padding: $column-gap;
 
   @include mixins.tablet {
