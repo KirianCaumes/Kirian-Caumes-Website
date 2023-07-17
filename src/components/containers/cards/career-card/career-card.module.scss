@@ -100,17 +100,37 @@ $margin-top: 2rem;
     .careercard-body {
       padding-left: calc(#{$padding} * 2);
 
+      @include mixins.until(variables.$tablet) {
+        padding-left: $padding;
+
+        &::before {
+          left: calc((#{$padding} / 2) - (#{$line-width} / 2));
+        }
+
+        &::after {
+          left: calc((#{$padding} / 2) + (#{$line-width} * (-#{$circle-ratio} / 2)) - #{$circle-border});
+        }
+      }
+
       .careercard-title {
         color: $color;
       }
 
       &::before {
         left: calc(#{$padding} - (#{$line-width} / 2));
+
+        @include mixins.until(variables.$tablet) {
+          left: calc((#{$padding} / 2) - (#{$line-width} / 2));
+        }
       }
 
       &::after {
         background-color: $color;
         left: calc(#{$padding} + (#{$line-width} * (-#{$circle-ratio} / 2)) - #{$circle-border});
+
+        @include mixins.until(variables.$tablet) {
+          left: calc((#{$padding} / 2) + (#{$line-width} * (-#{$circle-ratio} / 2)) - #{$circle-border});
+        }
       }
     }
   }
