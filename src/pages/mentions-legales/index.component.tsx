@@ -70,7 +70,7 @@ export default function MentionsLegalesIndexPage(): React.ReactElement {
                         <a
                             href="https://www.ovh.com/fr/"
                             target="_blank"
-                            rel="noopener noreferrer"
+                            rel="noopener noreferrer nofollow"
                         >
                             ovh.com
                         </a>
@@ -137,7 +137,7 @@ export default function MentionsLegalesIndexPage(): React.ReactElement {
                                 Photo de Antonio Batinić :{' '}
                                 <a
                                     href="https://www.pexels.com/photo/internet-technologie-ordinateur-texte-4164418/"
-                                    rel="noopener noreferrer"
+                                    rel="noopener noreferrer nofollow"
                                     target="_blank"
                                 >
                                     Pexels
@@ -153,7 +153,7 @@ export default function MentionsLegalesIndexPage(): React.ReactElement {
                                 Balloon Emoticons de AomAm :{' '}
                                 <a
                                     href="https://thenounproject.com/aomam/collection/balloon-emoticons-line/"
-                                    rel="noopener noreferrer"
+                                    rel="noopener noreferrer nofollow"
                                     target="_blank"
                                 >
                                     The Noun Project
@@ -165,7 +165,7 @@ export default function MentionsLegalesIndexPage(): React.ReactElement {
                                 Letter de Vladimir Belochkin :{' '}
                                 <a
                                     href="https://thenounproject.com/search/?q=letter&i=2157680"
-                                    rel="noopener noreferrer"
+                                    rel="noopener noreferrer nofollow"
                                     target="_blank"
                                 >
                                     The Noun Project

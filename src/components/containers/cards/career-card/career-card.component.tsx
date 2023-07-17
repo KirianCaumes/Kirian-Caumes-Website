@@ -47,7 +47,7 @@ export default function CareerCard({ period, title, location, missions }: Career
                             <a
                                 href={location?.href}
                                 target="_blank"
-                                rel="noopener noreferrer"
+                                rel="noopener noreferrer nofollow"
                             >
                                 {location?.company}
                             </a>

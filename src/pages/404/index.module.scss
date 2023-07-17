@@ -1,7 +1,8 @@
 @use 'styles/abstracts/variables';
+@use 'styles/abstracts/mixins';
 
 .not-found {
-  @include variables.bg-one;
+  @include mixins.background-primary;
 
   display: flex;
   flex-direction: column;

@@ -14,7 +14,7 @@
 
   .skillcard-body {
     background: variables.$white;
-    box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.02);
+    box-shadow: variables.$shadow;
     display: flex;
     height: 100%;
     justify-content: center;
@@ -48,6 +48,7 @@
       justify-content: center;
 
       .skillcard-title {
+        cursor: help;
         font-weight: bold;
         overflow: hidden;
         text-align: center;
@@ -80,6 +81,7 @@
         text-align: left;
 
         li {
+          cursor: help;
           display: flex;
           justify-content: space-between;
 

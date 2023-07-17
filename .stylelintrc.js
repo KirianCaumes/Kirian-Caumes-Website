@@ -25,18 +25,11 @@ module.exports = {
         'function-no-unknown': [
             true,
             {
-                ignoreFunctions: [
-                    'color.adjust',
-                    'math.div',
-                    'map.merge',
-                    'color.red',
-                    'color.green',
-                    'color.blue',
-                    'functions.find-color-invert',
-                ],
+                ignoreFunctions: ['adjust', 'div', 'merge', 'red', 'green', 'blue', 'find-color-invert'],
             },
         ],
-        'at-rule-empty-line-before': null,
+        // Conflict with prettier
+        'scss/dollar-variable-colon-space-after': null,
         /** {@link https://github.com/bjankord/stylelint-config-sass-guidelines/pull/278} */
         'order/order': [
             [

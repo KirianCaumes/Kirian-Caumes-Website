@@ -88,7 +88,7 @@ export default function Index(): JSX.Element {
                                     <Columns.Column>
                                         <Button
                                             href="/documents/Kirian-CAUMES-CV.pdf"
-                                            rel="noopener"
+                                            rel="noopener noreferrer"
                                             target="_blank"
                                             color="yellow"
                                             isFullWidth
@@ -194,8 +194,9 @@ export default function Index(): JSX.Element {
                                         color="yellow"
                                         isIconBorder
                                     >
-                                        Sérieux dans le travail, mais avec une pointe d'humour suffisante pour rendre une journée moins
-                                        monotone.
+                                        Doté d'un sérieux indéniable dans l'accomplissement de mes tâches professionnelles, j'aime néanmoins
+                                        chercher à distiller une légère touche d'humour au long de la journée, apportant ainsi une brise
+                                        rafraîchissante dans l'atmosphère de travail.
                                     </IconCard>
                                 </Fade>
                             </Columns.Column>
@@ -211,8 +212,9 @@ export default function Index(): JSX.Element {
                                         color="pink"
                                         isIconBorder
                                     >
-                                        Concentré sur un projet pour qu'il puisse aboutir, sans être un simple robot uniquement coincé
-                                        derrière son écran.
+                                        Mon attention est pleinement dédiée à chaque projet pour assurer son succès, tout en préservant un
+                                        certain équilibre pour éviter de me confiner à un rôle monotone derrière un écran. L'implication et
+                                        une approche humaine sont des aspects que j'estime importants dans mon travail.
                                     </IconCard>
                                 </Fade>
                             </Columns.Column>
@@ -228,8 +230,9 @@ export default function Index(): JSX.Element {
                                         color="purple"
                                         isIconBorder
                                     >
-                                        Mordu depuis plusieurs années par l'informatique, savoir faire face à des problèmes et s'impliquer
-                                        pour les résoudre est un objectif du quotidien.
+                                        Mordu depuis des années par l'informatique, mon objectif quotidien est de faire face aux problèmes
+                                        et de m'impliquer activement pour les résoudre. Cette volonté de résoudre les défis informatiques
+                                        est au cœur de mon engagement au quotidien.
                                     </IconCard>
                                 </Fade>
                             </Columns.Column>
@@ -252,7 +255,7 @@ export default function Index(): JSX.Element {
                             isSubtitle
                             isCentered
                         >
-                            Mon savoir-faire (non exhaustif) de développeur full stack
+                            Mon savoir-faire (non exhaustif et ardu à organiser) de développeur full stack
                         </Title>
                         <br />
                         <Fade
@@ -266,12 +269,13 @@ export default function Index(): JSX.Element {
                                         title={['NodeJs', 'Javascript/Typescript']}
                                         score={4}
                                         rows={[
-                                            { title: 'Express', score: 4 },
                                             { title: 'Nest', score: 4 },
+                                            { title: 'Express', score: 4 },
                                             { title: 'ORM (Mongoose/Prisma/TypeOrm)', score: 4 },
-                                            { title: 'Playwright/Puppeteer', score: 3 },
+                                            { title: 'ESLint/Prettier/Stylelint', score: 4 },
+                                            { title: 'Playwright/Puppeteer', score: 4 },
                                             { title: 'Jest', score: 3 },
-                                            { title: 'Babel', score: 3 },
+                                            { title: 'Babel/Rollup/WebPack/SWC', score: 3 },
                                         ]}
                                         color="yellow"
                                     />
@@ -281,8 +285,8 @@ export default function Index(): JSX.Element {
                                         title={['FrontEnd', 'Framework JS']}
                                         score={4}
                                         rows={[
-                                            { title: 'Vanilla', score: 4 },
-                                            { title: 'React', score: 4 },
+                                            { title: 'Vanilla (ECMAScript)', score: 4 },
+                                            { title: 'React (Vite/Redux/ReactQuery)', score: 4 },
                                             { title: 'Next.js', score: 3 },
                                             { title: 'Angular', score: 2 },
                                             { title: 'jQuery', score: 2 },
@@ -390,7 +394,7 @@ export default function Index(): JSX.Element {
                                         title="Mobile"
                                         score={2}
                                         rows={[
-                                            { title: 'PWA', score: 3 },
+                                            { title: 'PWA', score: 4 },
                                             { title: 'Ionic 3/4', score: 2 },
                                             { title: 'Android Studio', score: 1 },
                                             { title: 'React Native', score: 1 },
@@ -403,9 +407,9 @@ export default function Index(): JSX.Element {
                                         title="Divers"
                                         score={0}
                                         rows={[
+                                            { title: 'Python', score: 3 },
                                             { title: 'Bash', score: 3 },
                                             { title: 'Java', score: 2 },
-                                            { title: 'Python', score: 2 },
                                             { title: 'C/C++', score: 1 },
                                             { title: 'Cisco', score: 1 },
                                         ]}
@@ -418,8 +422,8 @@ export default function Index(): JSX.Element {
                                         score={0}
                                         rows={[
                                             { title: 'Heroku', score: 3 },
-                                            { title: 'Azure', score: 3 },
                                             { title: 'Ubuntu/Debian', score: 3 },
+                                            { title: 'Azure', score: 3 },
                                             { title: 'OMV', score: 3 },
                                             { title: 'Win. Server', score: 2 },
                                         ]}
@@ -476,17 +480,22 @@ export default function Index(): JSX.Element {
                                     period={[new Date(2021, 8), new Date()]}
                                     missions={[
                                         {
-                                            title: "Développement d'applications web métier",
+                                            title: "Conception et création d'applications web métier sur mesure",
                                             description:
-                                                "Mise en place et maintenance d'applications web : Frontend, Backend (API) et Base de données",
+                                                // eslint-disable-next-line max-len
+                                                'Gestion complète de projets web : développement, maintenance et optimisation du Frontend, du Backend (API) et de la Base de données',
                                         },
                                         {
-                                            title: 'Gestion du client',
-                                            description: 'Élaboration de cahiers des charges, TMA, gestion de projets et relation client',
+                                            title: 'Assurer le suivi technique du client et de son projet tout au long du processus de réalisation',
+                                            description:
+                                                // eslint-disable-next-line max-len
+                                                'Rédaction de spécifications fonctionnelles, prise en charge des demandes évolutives, coordination de projets et suivi avec les clients',
                                         },
                                         {
-                                            title: 'Création de programmes/scripts/outils divers',
-                                            description: "Mise en place d'environnements (Azure, VM), génération de PDF, etc.",
+                                            title: 'Développement de programmes, scripts et outils variés pour répondre à des besoins spécifiques',
+                                            description:
+                                                // eslint-disable-next-line max-len
+                                                "Mise en place d'environnements sur Azure et machines virtuelles, modules génération de PDF, outils de synchronisation de bases de données, création de scripts de calcul de données, etc.",
                                         },
                                     ]}
                                 />
@@ -500,13 +509,16 @@ export default function Index(): JSX.Element {
                                     period={[new Date(2018, 8), new Date(2021, 8)]}
                                     missions={[
                                         {
-                                            title: "Développement d'applications web métier",
+                                            title: "Création d'applications web adaptées aux processus métier",
                                             description:
-                                                "Interventions aux différents niveaux d'une application web : Frontend, Backend (API) et Base de données",
+                                                // eslint-disable-next-line max-len
+                                                "Prise en charge complète d'applications web : du Frontend au Backend (API) et à la gestion de la Base de données, incluant maintenance et améliorations",
                                         },
                                         {
-                                            title: 'Gestion du client',
-                                            description: 'Élaboration de cahiers des charges, TMA, gestion de projets et relation client',
+                                            title: 'Gestion et suivi technique du client et son projet',
+                                            description:
+                                                // eslint-disable-next-line max-len
+                                                'Création de documents de spécifications, maintenance applicative, pilotage de projets et gestion de la relation client',
                                         },
                                     ]}
                                 />
@@ -520,8 +532,10 @@ export default function Index(): JSX.Element {
                                     period={[new Date(2018, 6), new Date(2018, 7)]}
                                     missions={[
                                         {
-                                            title: "Développement d'applications web métier",
-                                            description: "Réalisation de fonctionnalités & corrections de bugs d'applications existantes",
+                                            title: "Création d'applications web fonctionnelles et spécialisées pour les entreprises",
+                                            description:
+                                                // eslint-disable-next-line max-len
+                                                'Implémentation de nouvelles fonctionnalités et résolution des anomalies présentes dans des applications existantes',
                                         },
                                     ]}
                                 />
@@ -535,8 +549,10 @@ export default function Index(): JSX.Element {
                                     period={[new Date(2017, 6), new Date(2017, 7)]}
                                     missions={[
                                         {
-                                            title: 'Réalisation de sites vitrines',
-                                            description: 'Apprentissage de Wordpress et son environnement (WooComerce, etc.)',
+                                            title: 'Développement de sites web vitrines modernes et ergonomiques',
+                                            description:
+                                                // eslint-disable-next-line max-len
+                                                'Apprentissage de WordPress ainsi que de son écosystème étendu, englobant WooComerce et autres plugins pertinents',
                                         },
                                     ]}
                                 />
@@ -643,19 +659,19 @@ export default function Index(): JSX.Element {
                             <Columns.Column>
                                 <p>
                                     Le site que vous êtes en train de visiter a été entièrement réalisé par mes soins. Celui-ci repose sur{' '}
-                                    <b>Next.js</b> : un Framework <b>React</b> permettant notamment la mise en place d'un rendu des
-                                    composants côté serveur ou, dans le cas de ce site, la génération d'application statique.
+                                    <b>Next.js</b> : un Framework <b>React</b> permettant, notamment, la mise en place d'un rendu des
+                                    composants côté serveur ou encore la génération d'applications statiques.
                                     <br />
-                                    Pour un simple projet tel que celui-ci, <b>Next.js</b> est "overkill", et un site sans Framework serait
-                                    plus optimal. Mais ici, ce choix résulte d'une volonté personnelle de démontrer mes compétences en{' '}
-                                    <b>React</b>
+                                    Pour un simple projet comme celui-ci, <b>Next.js</b> est "overkill", et un site sans un tel Framework
+                                    serait surement plus optimal. Mais ici, ce choix résulte d'une volonté personnelle de démontrer mes
+                                    compétences en <b>React</b>
                                     .
                                     <br />À travers ce projet, une partie de mes compétences auront pu être exprimées. Allant de la phase de{' '}
                                     <b>conception</b> (recherche d'idées, mockup, etc.) à l'
                                     <b>hébergement</b> (déploiement continu, etc.) en passant bien sûr par la phase de <b>développement</b>{' '}
                                     (découpage des composants, logique fonctionnelle, etc.).
                                     <br />
-                                    <Tag color="blue">#Next.ss</Tag>
+                                    <Tag color="blue">#Next.js</Tag>
                                     <Tag color="blue">#React</Tag>
                                     <Tag color="blue">#SCSS</Tag>
                                     <Tag color="blue">#PWA</Tag>
@@ -666,7 +682,7 @@ export default function Index(): JSX.Element {
                                     href="https://github.com/KirianCaumes/Kirian-Caumes-Website"
                                     color="purple"
                                     isOutlined
-                                    rel="noopener"
+                                    rel="noopener noreferrer"
                                     target="_blank"
                                 >
                                     Voir sur Github
@@ -687,7 +703,7 @@ export default function Index(): JSX.Element {
                                 <a
                                     href="https://youtu.be/G5Q9CVbo67o?t=1348"
                                     target="_blank"
-                                    rel="noopener noreferrer"
+                                    rel="noopener noreferrer nofollow"
                                 >
                                     Code Lyoko
                                 </a>
@@ -732,14 +748,23 @@ export default function Index(): JSX.Element {
                                         imageSrc="/images/handball.jpg"
                                         title="Handball"
                                     >
-                                        Joueur de Handball au poste de gardien de but, à ma treizième année au club de Thouaré sur Loire,
-                                        puis de Carquefou.
+                                        Joueur de Handball au poste de gardien de but, à ma quinzième année au club de Carquefou et
+                                        anciennement Thouaré sur Loire.
                                         <br />
                                         <br />
-                                        J'y ai développé de vrais liens humains dans un projet d'équipe ayant un objectif commun.
+                                        J'y ai développé de vrais liens humains, dans un projet d'équipe ayant un objectif commun : gagner
+                                        ensemble, en cultivant l'unité et l'entraide.
                                         <br />
                                         <br />
-                                        Fidèle supporter du HBC Nantes et de l'équipe de France.
+                                        Fidèle supporter du{' '}
+                                        <a
+                                            href="https://hbcnantes.com/"
+                                            target="_blank"
+                                            rel="noopener noreferrer nofollow"
+                                        >
+                                            HBC Nantes
+                                        </a>{' '}
+                                        et de l'équipe de France.
                                     </FlatCard>
                                 </Fade>
                             </Columns.Column>
@@ -756,13 +781,20 @@ export default function Index(): JSX.Element {
                                         etc.), j'y voue une véritable passion.
                                         <br />
                                         <br />
-                                        Aujourd'hui la collection vers laquelle je suis principalement tourné concerne le groupe de musique
-                                        In Flames avec un ensemble de CD, vinyl et autres. Je partage également cette passion sur internet
-                                        sous le pseudonyme :{' '}
+                                        Aujourd'hui la collection vers laquelle je suis principalement tourné concerne le groupe de musique{' '}
+                                        <a
+                                            href="https://www.inflames.com/"
+                                            target="_blank"
+                                            rel="noopener noreferrer nofollow"
+                                        >
+                                            In Flames
+                                        </a>{' '}
+                                        avec un ensemble de CD, vinyl et autres. Je partage également cette passion sur internet sous le
+                                        pseudonyme :{' '}
                                         <a
                                             href="https://www.instagram.com/jesters_collection/"
                                             target="_blank"
-                                            rel="noopener noreferrer"
+                                            rel="noopener noreferrer nofollow"
                                         >
                                             A Jester's Collection
                                         </a>
@@ -791,8 +823,9 @@ export default function Index(): JSX.Element {
                                         ).
                                         <br />
                                         <br />
-                                        Ainsi, je peux me permettre d'expérimenter de mon côté pour proposer des solutions innovantes lors
-                                        de projets professionnels.
+                                        Ainsi, je peux me permettre d'explorer différentes voies de mon côté, afin de proposer, lors de mes
+                                        projets professionnels, des solutions novatrices et innovantes, résultant d'expérimentations
+                                        personnelles.
                                     </FlatCard>
                                 </Fade>
                             </Columns.Column>
