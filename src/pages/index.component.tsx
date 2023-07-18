@@ -195,8 +195,8 @@ export default function Index(): JSX.Element {
                                         isIconBorder
                                     >
                                         Doté d'un sérieux indéniable dans l'accomplissement de mes tâches professionnelles, j'aime néanmoins
-                                        chercher à distiller une légère touche d'humour au long de la journée, apportant ainsi une brise
-                                        rafraîchissante dans l'atmosphère de travail.
+                                        chercher à distiller une légère touche d'humour tout au long de la journée, apportant ainsi une
+                                        brise rafraîchissante dans une atmosphère de travail.
                                     </IconCard>
                                 </Fade>
                             </Columns.Column>
@@ -231,8 +231,8 @@ export default function Index(): JSX.Element {
                                         isIconBorder
                                     >
                                         Mordu depuis des années par l'informatique, mon objectif quotidien est de faire face aux problèmes
-                                        et de m'impliquer activement pour les résoudre. Cette volonté de résoudre les défis informatiques
-                                        est au cœur de mon engagement au quotidien.
+                                        et de m'impliquer activement pour trouver les meilleures solutions. Cette volonté de résoudre les
+                                        défis informatiques est au cœur de mes engagements.
                                     </IconCard>
                                 </Fade>
                             </Columns.Column>
@@ -483,19 +483,19 @@ export default function Index(): JSX.Element {
                                             title: "Conception et création d'applications web métier sur mesure",
                                             description:
                                                 // eslint-disable-next-line max-len
-                                                'Gestion complète de projets web : développement, maintenance et optimisation du Frontend, du Backend (API) et de la Base de données',
+                                                'Gestion complète de projets web : développement, optimisation, maintenance et évolutions du Frontend, du Backend (API) et de la Base de données',
                                         },
                                         {
                                             title: 'Assurer le suivi technique du client et de son projet tout au long du processus de réalisation',
                                             description:
                                                 // eslint-disable-next-line max-len
-                                                'Rédaction de spécifications fonctionnelles, prise en charge des demandes évolutives, coordination de projets et suivi avec les clients',
+                                                'Rédaction de spécifications fonctionnelles, prise en charge des demandes évolutives, coordination de projets et suivi avec le client',
                                         },
                                         {
                                             title: 'Développement de programmes, scripts et outils variés pour répondre à des besoins spécifiques',
                                             description:
                                                 // eslint-disable-next-line max-len
-                                                "Mise en place d'environnements sur Azure et machines virtuelles, modules génération de PDF, outils de synchronisation de bases de données, création de scripts de calcul de données, etc.",
+                                                "Mise en place d'environnements sur Azure et machines virtuelles, modules de génération de PDF, outils de synchronisation de bases de données, création de scripts de calcul de données, etc.",
                                         },
                                     ]}
                                 />
@@ -512,7 +512,7 @@ export default function Index(): JSX.Element {
                                             title: "Création d'applications web adaptées aux processus métier",
                                             description:
                                                 // eslint-disable-next-line max-len
-                                                "Prise en charge complète d'applications web : du Frontend au Backend (API) et à la gestion de la Base de données, incluant maintenance et améliorations",
+                                                "Prise en charge complète d'applications web : du Frontend au Backend (API) et à la gestion de la Base de données, incluant maintenance et évolutions",
                                         },
                                         {
                                             title: 'Gestion et suivi technique du client et son projet',
@@ -552,7 +552,7 @@ export default function Index(): JSX.Element {
                                             title: 'Développement de sites web vitrines modernes et ergonomiques',
                                             description:
                                                 // eslint-disable-next-line max-len
-                                                'Apprentissage de WordPress ainsi que de son écosystème étendu, englobant WooComerce et autres plugins pertinents',
+                                                "Apprentissage de WordPress et de son écosystème, incluant WooComerce et autres plugins gravitants dans l'écosystème du CMS",
                                         },
                                     ]}
                                 />
@@ -660,17 +660,23 @@ export default function Index(): JSX.Element {
                                 <p>
                                     Le site que vous êtes en train de visiter a été entièrement réalisé par mes soins. Celui-ci repose sur{' '}
                                     <b>Next.js</b> : un Framework <b>React</b> permettant, notamment, la mise en place d'un rendu des
-                                    composants côté serveur ou encore la génération d'applications statiques.
-                                    <br />
+                                    composants côté serveur.
+                                </p>
+                                <br />
+                                <p>
                                     Pour un simple projet comme celui-ci, <b>Next.js</b> est "overkill", et un site sans un tel Framework
                                     serait surement plus optimal. Mais ici, ce choix résulte d'une volonté personnelle de démontrer mes
-                                    compétences en <b>React</b>
-                                    .
-                                    <br />À travers ce projet, une partie de mes compétences auront pu être exprimées. Allant de la phase de{' '}
+                                    compétences en <b>React</b>.
+                                </p>
+                                <br />
+                                <p>
+                                    À travers ce projet, une partie de mes compétences auront pu être exprimées. Allant de la phase de{' '}
                                     <b>conception</b> (recherche d'idées, mockup, etc.) à l'
                                     <b>hébergement</b> (déploiement continu, etc.) en passant bien sûr par la phase de <b>développement</b>{' '}
                                     (découpage des composants, logique fonctionnelle, etc.).
-                                    <br />
+                                </p>
+                                <br />
+                                <p>
                                     <Tag color="blue">#Next.js</Tag>
                                     <Tag color="blue">#React</Tag>
                                     <Tag color="blue">#SCSS</Tag>
@@ -714,7 +720,9 @@ export default function Index(): JSX.Element {
                     <p>
                         Une simple locution qui, bien que provenant d'un dessin animé, m'a toujours inspiré et notamment aujourd'hui dans
                         mes projets personnels de développements informatiques.
-                        <br />
+                    </p>
+                    <br />
+                    <p>
                         Même si une idée me parait farfelue, peu utile ou encore ayant de faibles chances d'aboutir ; j'aime me lancer des
                         défis et explorer des solutions originales dans le but d'expérimenter mais aussi d'apprendre.
                     </p>
@@ -756,15 +764,7 @@ export default function Index(): JSX.Element {
                                         ensemble, en cultivant l'unité et l'entraide.
                                         <br />
                                         <br />
-                                        Fidèle supporter du{' '}
-                                        <a
-                                            href="https://hbcnantes.com/"
-                                            target="_blank"
-                                            rel="noopener noreferrer nofollow"
-                                        >
-                                            HBC Nantes
-                                        </a>{' '}
-                                        et de l'équipe de France.
+                                        Fidèle supporter du HBC Nantes et de l'équipe de France.
                                     </FlatCard>
                                 </Fade>
                             </Columns.Column>
@@ -781,16 +781,9 @@ export default function Index(): JSX.Element {
                                         etc.), j'y voue une véritable passion.
                                         <br />
                                         <br />
-                                        Aujourd'hui la collection vers laquelle je suis principalement tourné concerne le groupe de musique{' '}
-                                        <a
-                                            href="https://www.inflames.com/"
-                                            target="_blank"
-                                            rel="noopener noreferrer nofollow"
-                                        >
-                                            In Flames
-                                        </a>{' '}
-                                        avec un ensemble de CD, vinyl et autres. Je partage également cette passion sur internet sous le
-                                        pseudonyme :{' '}
+                                        Aujourd'hui la collection vers laquelle je suis principalement tourné concerne le groupe de musique
+                                        In Flames avec un ensemble de CD, vinyl et autres. Je partage également cette passion sur internet
+                                        sous le pseudonyme :{' '}
                                         <a
                                             href="https://www.instagram.com/jesters_collection/"
                                             target="_blank"
