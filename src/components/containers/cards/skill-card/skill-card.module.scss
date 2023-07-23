@@ -1,5 +1,6 @@
 @use 'styles/abstracts/variables';
 @use 'styles/abstracts/mixins';
+@use 'sass:map';
 
 .skillcard {
   display: flex;
@@ -13,7 +14,7 @@
   }
 
   .skillcard-body {
-    background: variables.$white;
+    background: map.get(variables.$colors, 'white');
     box-shadow: variables.$shadow;
     display: flex;
     height: 100%;

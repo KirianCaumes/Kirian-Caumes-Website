@@ -4,7 +4,7 @@ import styles from 'components/containers/tag/tag.module.scss'
 
 export type TagProps = {
     /** color */
-    color: 'yellow' | 'pink' | 'purple' | 'blue'
+    color: 'tertiary' | 'secondary' | 'primary' | 'primary-dark'
 } & Pick<React.HTMLAttributes<HTMLSpanElement>, 'children'>
 
 /**

@@ -1,13 +1,14 @@
 @use 'styles/abstracts/variables';
+@use 'sass:map';
 
 svg.icon {
-  fill: variables.$white;
+  fill: map.get(variables.$colors, 'white');
   padding: 1em;
   transition: fill 0.2s;
 
   &.is-colored {
     &[data-iconname='linkedin'] {
-      fill: variables.$blue;
+      fill: map.get(variables.$colors, 'primary-dark');
 
       &:hover {
         fill: variables.$brand-linkedin;
@@ -15,7 +16,7 @@ svg.icon {
     }
 
     &[data-iconname='github'] {
-      fill: variables.$blue;
+      fill: map.get(variables.$colors, 'primary-dark');
 
       &:hover {
         fill: variables.$brand-github;
@@ -23,7 +24,7 @@ svg.icon {
     }
 
     &[data-iconname='medium'] {
-      fill: variables.$blue;
+      fill: map.get(variables.$colors, 'primary-dark');
 
       &:hover {
         fill: variables.$brand-medium;

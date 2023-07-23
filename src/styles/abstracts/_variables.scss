@@ -22,31 +22,21 @@ $fullhd-enabled: true;
 ********* Colors 🎨 ********
 ***************************/
 
-$yellow: #f0b068;
-$pink: #df6a7c;
-$purple: #7f5587;
-$blue: #263547;
-
-$white: #fff;
-$grey: #f3f3f3;
-$medium-grey: #757575;
-$black: #3f3f3f;
-$dark: #000;
-
+// https://colorhunt.co/palette/16213e0f3460533483e94560 & https://colorhunt.co/palette/522d5bd7385efb7b6be7d39f
 $colors: (
-  'yellow': $yellow,
-  'pink': $pink,
-  'purple': $purple,
-  'blue': $blue,
-  'white': $white,
-  'grey': $grey,
-  'medium-grey': $medium-grey,
-  'black': $black,
+  'tertiary': #fb7b6b,
+  'secondary': #d7385e,
+  'primary': #0f3460,
+  'primary-dark': #16213e,
+  'white': #fff,
+  'grey': #f3f3f3,
+  'grey-medium': #757575,
+  'black': #3f3f3f,
 );
 
 $brand-linkedin: #007bb6;
-$brand-github: $white;
-$brand-medium: $dark;
+$brand-github: #fff;
+$brand-medium: #000;
 
 $shadow:
   0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),

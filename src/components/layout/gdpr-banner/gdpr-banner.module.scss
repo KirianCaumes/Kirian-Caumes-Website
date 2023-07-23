@@ -1,5 +1,6 @@
 @use 'styles/abstracts/variables';
 @use 'styles/abstracts/mixins';
+@use 'sass:map';
 
 .gdpr-banner {
   background-color: rgba(0, 0, 0, 0.75);
@@ -21,13 +22,13 @@
 
   p.gdpr-banner-content {
     align-self: center;
-    color: variables.$white;
+    color: map.get(variables.$colors, 'white');
     display: inline-block;
     padding: 0 1em;
     text-align: center;
 
     a {
-      color: variables.$medium-grey;
+      color: map.get(variables.$colors, 'grey-medium');
     }
   }
 

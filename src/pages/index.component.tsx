@@ -23,7 +23,7 @@ const Fade = RevealFade as React.FC<
  * Home page
  */
 export default function Index(): JSX.Element {
-    const { publicRuntimeConfig, age } = useIndex()
+    const { publicRuntimeConfig, age, workingYears } = useIndex()
 
     return (
         <>
@@ -68,10 +68,10 @@ export default function Index(): JSX.Element {
                                     .
                                     <br />
                                     <br />
-                                    Dans le domaine de l'informatique depuis maintenant plus de 5 ans, mes études à Ynov Nantes avec
-                                    l'obtention de mon mastère « <b>Expert Développement Web</b> » et du titre RNCP «{' '}
-                                    <b>Expert Informatique et Systèmes d'Information</b> », ainsi que mon{' '}
-                                    <Link href="/#career">parcours professionnel</Link>, m'ont permis l'acquisition de{' '}
+                                    Dans le domaine de l'informatique depuis maintenant plus de {workingYears} ans, mon{' '}
+                                    <Link href="/#career">parcours professionnel</Link>, ainsi que mes études à Ynov Nantes avec l'obtention
+                                    de mon mastère « <b>Expert Développement Web</b> » et du titre RNCP «{' '}
+                                    <b>Expert Informatique et Systèmes d'Information</b> », m'ont permis l'acquisition de{' '}
                                     <Link href="/#skills">compétences</Link> solides et adaptatives.
                                     <br />
                                     <br />
@@ -90,7 +90,7 @@ export default function Index(): JSX.Element {
                                             href="/documents/Kirian-CAUMES-CV.pdf"
                                             rel="noopener noreferrer"
                                             target="_blank"
-                                            color="yellow"
+                                            color="secondary"
                                             isFullWidth
                                         >
                                             Mon CV *
@@ -100,7 +100,7 @@ export default function Index(): JSX.Element {
                                     <Columns.Column>
                                         <Button
                                             href="/#contact"
-                                            color="purple"
+                                            color="primary"
                                             isFullWidth
                                         >
                                             Me contacter
@@ -191,7 +191,7 @@ export default function Index(): JSX.Element {
                                     <IconCard
                                         iconName="balloon_laughing"
                                         title="Sérieux sans se prendre au sérieux"
-                                        color="yellow"
+                                        color="tertiary"
                                         isIconBorder
                                     >
                                         Doté d'un sérieux indéniable dans l'accomplissement de mes tâches professionnelles, j'aime néanmoins
@@ -209,7 +209,7 @@ export default function Index(): JSX.Element {
                                     <IconCard
                                         iconName="balloon_naughty"
                                         title="Calme mais pas amorphe"
-                                        color="pink"
+                                        color="secondary"
                                         isIconBorder
                                     >
                                         Mon attention est pleinement dédiée à chaque projet pour assurer son succès, tout en préservant un
@@ -227,7 +227,7 @@ export default function Index(): JSX.Element {
                                     <IconCard
                                         iconName="balloon_dead"
                                         title="Passionné et patient"
-                                        color="purple"
+                                        color="primary"
                                         isIconBorder
                                     >
                                         Mordu depuis des années par l'informatique, mon objectif quotidien est de faire face aux problèmes
@@ -277,7 +277,7 @@ export default function Index(): JSX.Element {
                                             { title: 'Jest', score: 3 },
                                             { title: 'Babel/Rollup/WebPack/SWC', score: 3 },
                                         ]}
-                                        color="yellow"
+                                        color="tertiary"
                                     />
                                 </Columns.Column>
                                 <Columns.Column sizes={['one-quarter-widescreen', 'half-desktop', 'half-tablet']}>
@@ -292,7 +292,7 @@ export default function Index(): JSX.Element {
                                             { title: 'jQuery', score: 2 },
                                             { title: 'VueJs', score: 1 },
                                         ]}
-                                        color="yellow"
+                                        color="tertiary"
                                     />
                                 </Columns.Column>
                                 <Columns.Column sizes={['one-quarter-widescreen', 'half-desktop', 'half-tablet']}>
@@ -307,7 +307,7 @@ export default function Index(): JSX.Element {
                                             { title: 'SQLite', score: 2 },
                                             { title: 'ElasticSearch', score: 2 },
                                         ]}
-                                        color="yellow"
+                                        color="tertiary"
                                     />
                                 </Columns.Column>
                                 <Columns.Column sizes={['one-quarter-widescreen', 'half-desktop', 'half-tablet']}>
@@ -319,7 +319,7 @@ export default function Index(): JSX.Element {
                                             { title: 'AspNetCore.Mvc', score: 3 },
                                             { title: 'Entity Framework', score: 3 },
                                         ]}
-                                        color="yellow"
+                                        color="tertiary"
                                     />
                                 </Columns.Column>
                             </Columns>
@@ -340,7 +340,7 @@ export default function Index(): JSX.Element {
                                             { title: 'Material Design', score: 1 },
                                             { title: 'Web component', score: 1 },
                                         ]}
-                                        color="pink"
+                                        color="secondary"
                                     />
                                 </Columns.Column>
                                 <Columns.Column sizes={['one-quarter-widescreen', 'half-desktop', 'half-tablet']}>
@@ -352,7 +352,7 @@ export default function Index(): JSX.Element {
                                             { title: 'Sass', score: 4 },
                                             { title: 'Less', score: 1 },
                                         ]}
-                                        color="pink"
+                                        color="secondary"
                                     />
                                 </Columns.Column>
                                 <Columns.Column sizes={['one-quarter-widescreen', 'half-desktop', 'half-tablet']}>
@@ -364,7 +364,7 @@ export default function Index(): JSX.Element {
                                             { title: 'Oak', score: 3 },
                                             { title: 'Djwt', score: 3 },
                                         ]}
-                                        color="pink"
+                                        color="secondary"
                                     />
                                 </Columns.Column>
                                 <Columns.Column sizes={['one-quarter-widescreen', 'half-desktop', 'half-tablet']}>
@@ -378,7 +378,7 @@ export default function Index(): JSX.Element {
                                             { title: 'Twig', score: 3 },
                                             { title: 'PHPUnit', score: 2 },
                                         ]}
-                                        color="pink"
+                                        color="secondary"
                                     />
                                 </Columns.Column>
                             </Columns>
@@ -399,7 +399,7 @@ export default function Index(): JSX.Element {
                                             { title: 'Android Studio', score: 1 },
                                             { title: 'React Native', score: 1 },
                                         ]}
-                                        color="purple"
+                                        color="primary"
                                     />
                                 </Columns.Column>
                                 <Columns.Column sizes={['one-quarter-widescreen', 'half-desktop', 'half-tablet']}>
@@ -413,7 +413,7 @@ export default function Index(): JSX.Element {
                                             { title: 'C/C++', score: 1 },
                                             { title: 'Cisco', score: 1 },
                                         ]}
-                                        color="purple"
+                                        color="primary"
                                     />
                                 </Columns.Column>
                                 <Columns.Column sizes={['one-quarter-widescreen', 'half-desktop', 'half-tablet']}>
@@ -427,7 +427,7 @@ export default function Index(): JSX.Element {
                                             { title: 'OMV', score: 3 },
                                             { title: 'Win. Server', score: 2 },
                                         ]}
-                                        color="purple"
+                                        color="primary"
                                     />
                                 </Columns.Column>
                                 <Columns.Column sizes={['one-quarter-widescreen', 'half-desktop', 'half-tablet']}>
@@ -439,7 +439,7 @@ export default function Index(): JSX.Element {
                                             { title: 'Agile', score: 3 },
                                             { title: 'UML', score: 2 },
                                         ]}
-                                        color="purple"
+                                        color="primary"
                                     />
                                 </Columns.Column>
                             </Columns>
@@ -677,16 +677,16 @@ export default function Index(): JSX.Element {
                                 </p>
                                 <br />
                                 <p>
-                                    <Tag color="blue">#Next.js</Tag>
-                                    <Tag color="blue">#React</Tag>
-                                    <Tag color="blue">#SCSS</Tag>
-                                    <Tag color="blue">#PWA</Tag>
-                                    <Tag color="blue">#Docker</Tag>
+                                    <Tag color="primary-dark">#Next.js</Tag>
+                                    <Tag color="primary-dark">#React</Tag>
+                                    <Tag color="primary-dark">#SCSS</Tag>
+                                    <Tag color="primary-dark">#PWA</Tag>
+                                    <Tag color="primary-dark">#Docker</Tag>
                                 </p>
                                 <br />
                                 <Button
                                     href="https://github.com/KirianCaumes/Kirian-Caumes-Website"
-                                    color="purple"
+                                    color="primary"
                                     isOutlined
                                     rel="noopener noreferrer"
                                     target="_blank"
@@ -854,7 +854,7 @@ export default function Index(): JSX.Element {
                                     <IconCard
                                         iconName="mail"
                                         title="Par mail"
-                                        color="pink"
+                                        color="secondary"
                                         align="center"
                                     >
                                         <a href="mailto:kirian.caumes@gmail.com">kirian.caumes@gmail.com</a>
@@ -869,7 +869,7 @@ export default function Index(): JSX.Element {
                                     <IconCard
                                         iconName="linkedin"
                                         title="Par Linkedin"
-                                        color="purple"
+                                        color="primary"
                                         align="center"
                                     >
                                         {' '}

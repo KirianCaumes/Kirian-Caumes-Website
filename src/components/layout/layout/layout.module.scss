@@ -1,8 +1,9 @@
 @use 'styles/abstracts/variables';
+@use 'sass:map';
 
 .layout {
   header {
-    background-color: variables.$grey;
+    background-color: map.get(variables.$colors, 'grey');
     box-shadow: variables.$shadow;
     height: variables.$header-height;
     left: 0;
@@ -13,8 +14,8 @@
   }
 
   footer {
-    background-color: variables.$black;
-    color: variables.$white;
+    background-color: map.get(variables.$colors, 'black');
+    color: map.get(variables.$colors, 'white');
     height: variables.$footer-height;
     padding: 0 1em;
 
@@ -26,7 +27,7 @@
       justify-content: center;
 
       a {
-        color: variables.$white;
+        color: map.get(variables.$colors, 'white');
       }
     }
   }

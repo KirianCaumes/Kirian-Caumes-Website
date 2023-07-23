@@ -2,15 +2,16 @@
 @use 'styles/abstracts/functions';
 @use 'styles/abstracts/variables';
 @use 'sass:color';
+@use 'sass:map';
 
 .button {
   align-items: center;
-  background-color: variables.$white;
+  background-color: map.get(variables.$colors, 'white');
   border: 1px solid transparent;
-  border-color: variables.$grey;
+  border-color: map.get(variables.$colors, 'grey');
   border-radius: 0.375em;
   border-width: 1px;
-  color: variables.$black;
+  color: map.get(variables.$colors, 'black');
   cursor: pointer;
   display: inline-flex;
   font-size: 1em;

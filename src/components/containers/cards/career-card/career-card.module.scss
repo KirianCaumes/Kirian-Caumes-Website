@@ -1,5 +1,6 @@
 @use 'styles/abstracts/variables';
 @use 'styles/abstracts/mixins';
+@use 'sass:map';
 
 $padding: 2.5em;
 $line-width: 3px;
@@ -20,7 +21,7 @@ $margin-top: 2rem;
     position: relative;
 
     &::before {
-      background-color: variables.$blue;
+      background-color: map.get(variables.$colors, 'primary-dark');
       content: '';
       height: 150%;
       position: absolute;
@@ -29,7 +30,7 @@ $margin-top: 2rem;
     }
 
     &::after {
-      border: $circle-border solid variables.$grey;
+      border: $circle-border solid map.get(variables.$colors, 'grey');
       border-radius: 50%;
       content: '';
       height: calc(#{$line-width} * #{$circle-ratio});
@@ -50,12 +51,12 @@ $margin-top: 2rem;
     }
 
     .careercard-place {
-      color: variables.$medium-grey;
+      color: map.get(variables.$colors, 'grey-medium');
       font-size: 0.65em;
       margin-bottom: 0.5em;
 
       a {
-        color: variables.$medium-grey;
+        color: map.get(variables.$colors, 'grey-medium');
         text-decoration: none;
       }
     }
@@ -76,8 +77,6 @@ $margin-top: 2rem;
   }
 
   &:nth-child(odd) {
-    $color: variables.$pink;
-
     flex-direction: row-reverse;
     text-align: left;
 
@@ -113,7 +112,7 @@ $margin-top: 2rem;
       }
 
       .careercard-title {
-        color: $color;
+        color: map.get(variables.$colors, 'secondary');
       }
 
       &::before {
@@ -125,7 +124,7 @@ $margin-top: 2rem;
       }
 
       &::after {
-        background-color: $color;
+        background-color: map.get(variables.$colors, 'secondary');
         left: calc(#{$padding} + (#{$line-width} * (-#{$circle-ratio} / 2)) - #{$circle-border});
 
         @include mixins.until(variables.$tablet) {
@@ -136,8 +135,6 @@ $margin-top: 2rem;
   }
 
   &:nth-child(even) {
-    $color: variables.$purple;
-
     flex-direction: row;
     text-align: right;
 
@@ -164,7 +161,7 @@ $margin-top: 2rem;
       padding-right: calc(#{$padding} * 2);
 
       .careercard-title {
-        color: $color;
+        color: map.get(variables.$colors, 'primary');
       }
 
       &::before {
@@ -172,7 +169,7 @@ $margin-top: 2rem;
       }
 
       &::after {
-        background-color: $color;
+        background-color: map.get(variables.$colors, 'primary');
         right: calc(#{$padding} + (#{$line-width} * (-#{$circle-ratio} / 2)) - #{$circle-border});
       }
     }

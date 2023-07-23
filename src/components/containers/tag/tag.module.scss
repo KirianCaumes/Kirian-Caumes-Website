@@ -1,11 +1,12 @@
 @use 'styles/abstracts/variables';
 @use 'styles/abstracts/functions';
+@use 'sass:map';
 
 .tag {
   align-items: center;
-  background-color: variables.$blue;
+  background-color: map.get(variables.$colors, 'primary-dark');
   border-radius: 0.375em;
-  color: variables.$white;
+  color: map.get(variables.$colors, 'white');
   display: inline-flex;
   font-size: 0.75rem;
   height: 2em;

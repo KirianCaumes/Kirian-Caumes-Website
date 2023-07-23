@@ -9,7 +9,7 @@ export type ButtonProps = {
     /** onClick */
     onClick?: (ev: React.MouseEvent<unknown, MouseEvent>) => void
     /** color */
-    color?: 'yellow' | 'pink' | 'purple' | 'blue'
+    color?: 'tertiary' | 'secondary' | 'primary' | 'primary-dark'
     /** isFullWidth */
     isFullWidth?: boolean
     /** isDisabled */
@@ -25,7 +25,7 @@ export type ButtonProps = {
 export default function Button({
     type = 'button',
     onClick = () => null,
-    color = 'blue',
+    color = 'primary-dark',
     isFullWidth = false,
     isDisabled = false,
     isOutlined = false,

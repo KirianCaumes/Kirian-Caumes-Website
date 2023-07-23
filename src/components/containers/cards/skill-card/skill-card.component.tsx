@@ -39,7 +39,7 @@ export type SkillcardProps = {
         score: number
     }[]
     /** color */
-    color: 'yellow' | 'pink' | 'purple' | 'blue'
+    color: 'tertiary' | 'secondary' | 'primary' | 'primary-dark'
 }
 
 /**

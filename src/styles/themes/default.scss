@@ -1,8 +1,9 @@
 @use '../abstracts/variables';
+@use 'sass:map';
 
 html {
-  background-color: variables.$white;
-  color: variables.$black;
+  background-color: map.get(variables.$colors, 'white');
+  color: map.get(variables.$colors, 'black');
   overflow-x: hidden;
   scroll-behavior: smooth !important;
 
@@ -33,7 +34,7 @@ html {
       line-height: 1.5rem;
 
       a {
-        color: variables.$blue;
+        color: map.get(variables.$colors, 'primary-dark');
         text-decoration: underline;
         text-underline-offset: 1px;
 

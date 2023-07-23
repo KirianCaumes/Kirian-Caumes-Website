@@ -9,7 +9,7 @@ export type IconCardProps = {
     /** title */
     title: React.HTMLAttributes<HTMLParagraphElement>['children']
     /** color */
-    color: 'yellow' | 'pink' | 'purple' | 'blue'
+    color: 'tertiary' | 'secondary' | 'primary' | 'primary-dark'
     /** isIconBorder */
     isIconBorder?: boolean
     /** align */

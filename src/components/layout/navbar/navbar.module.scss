@@ -1,5 +1,6 @@
 @use 'styles/abstracts/mixins';
 @use 'styles/abstracts/variables';
+@use 'sass:map';
 
 nav.navbar {
   display: flex;
@@ -21,7 +22,7 @@ nav.navbar {
     width: 100%;
 
     @include mixins.until(variables.$tablet) {
-      background: variables.$grey;
+      background: map.get(variables.$colors, 'grey');
       display: none;
       flex-direction: column;
       left: 0;
@@ -90,19 +91,19 @@ nav.navbar {
 
           &:nth-child(1n + 1) {
             &::after {
-              background-color: variables.$yellow;
+              background-color: map.get(variables.$colors, 'tertiary');
             }
           }
 
           &:nth-child(2n + 1) {
             &::after {
-              background-color: variables.$pink;
+              background-color: map.get(variables.$colors, 'secondary');
             }
           }
 
           &:nth-child(3n + 1) {
             &::after {
-              background-color: variables.$purple;
+              background-color: map.get(variables.$colors, 'primary');
             }
           }
         }
@@ -135,7 +136,7 @@ nav.navbar {
 
     &:hover {
       background-color: rgba(0, 0, 0, 0.05);
-      color: variables.$black;
+      color: map.get(variables.$colors, 'black');
     }
 
     span {
