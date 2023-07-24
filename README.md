@@ -2,7 +2,7 @@
 
 My (wonderful) website! ⚡
 
-![Example](https://user-images.githubusercontent.com/24525092/220759992-b7ce3ffe-6819-414d-96fe-5996a3ad459b.png)
+![Example](https://github.com/KirianCaumes/Kirian-Caumes-Website/assets/24525092/2771f8a7-460a-4324-9c83-86d5bb9c0958)
 
 ## How to deploy in production
 
@@ -52,7 +52,7 @@ Additionally, the app is configured to function as a PWA (Progressive Web App). 
 
 For a simple project like this, Next.Js is "overkill", and a site without a framework would be more optimal. But here, this choice results from a personal desire to demonstrate my skills in React.
 
-Audit result with [Ligthhouse](https://user-images.githubusercontent.com/24525092/167707338-d42ea1da-7c4f-47da-acae-68936876cf2e.png).
+Audit result with [Ligthhouse](https://github.com/KirianCaumes/Kirian-Caumes-Website/assets/24525092/980e2416-9ff6-4072-8949-2cdddc035b89).
 
 ### Project structure
 
