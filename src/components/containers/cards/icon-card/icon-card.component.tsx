@@ -1,7 +1,7 @@
 import React from 'react'
 import classNames from 'classnames'
 import styles from 'components/containers/cards/icon-card/icon-card.module.scss'
-import { Icon } from 'components/elements'
+import { Icon, Title } from 'components/elements'
 
 export type IconCardProps = {
     /** iconName */
@@ -33,7 +33,13 @@ export default function IconCard({
                 <Icon name={iconName} />
             </div>
             <div className={classNames(styles['iconcard-body'], styles[`is-${color}`])}>
-                <p className={styles['iconcard-title']}>{title}</p>
+                <Title
+                    level={4}
+                    isCentered
+                    className={styles['iconcard-title']}
+                >
+                    {title}
+                </Title>
                 <p className={classNames(styles['iconcard-content'], styles[`is-content-${align}`])}>{children}</p>
             </div>
         </div>

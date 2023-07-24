@@ -9,7 +9,7 @@ import type { AppProps } from 'next/app'
 
 const montserrat = Montserrat({
     subsets: ['latin'],
-    weight: ['400'],
+    weight: ['400', '600', '700'],
     style: ['normal', 'italic'],
 })
 

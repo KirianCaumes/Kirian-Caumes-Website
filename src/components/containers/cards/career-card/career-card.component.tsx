@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from 'components/containers/cards/career-card/career-card.module.scss'
 import useCareercard from 'components/containers/cards/career-card/career-card.hook'
+import { Title } from 'components/elements'
 
 export type CareerCardProps = {
     /** period */
@@ -39,7 +40,12 @@ export default function CareerCard({ period, title, location, missions }: Career
                     {!!periodEnd && <> - {periodEnd}</>}
                     {duration && <> ({duration})</>}
                 </p>
-                <p className={styles['careercard-title']}>{title}</p>
+                <Title
+                    level={4}
+                    className={styles['careercard-title']}
+                >
+                    {title}
+                </Title>
                 <p className={styles['careercard-place']}>
                     {!location?.href && !!location?.company && <>{location?.company}, </>}
                     {!!location?.href && !!location?.company && (

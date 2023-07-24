@@ -1,6 +1,7 @@
 import classNames from 'classnames'
 import Image from 'next/image'
 import styles from 'components/containers/cards/flat-card/flat-card.module.scss'
+import { Title } from 'components/elements'
 
 export type FlatCardProps = {
     /** imageSrc */
@@ -25,7 +26,12 @@ export default function FlatCard({ imageSrc, title, children, align = 'justify' 
                     height={180}
                 />
             </div>
-            <p className={styles['flatcard-title']}>{title}</p>
+            <Title
+                level={4}
+                className={styles['flatcard-title']}
+            >
+                {title}
+            </Title>
             <p className={classNames(styles['flatcard-content'], styles[`is-content-${align}`])}>{children}</p>
         </div>
     )

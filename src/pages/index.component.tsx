@@ -878,7 +878,7 @@ export default function Index(): JSX.Element {
                                             rel="noopener noreferrer"
                                             target="_blank"
                                         >
-                                            linkedin.com
+                                            linkedin.com/in/kirian-caumes
                                         </a>
                                     </IconCard>
                                 </Fade>
