@@ -651,8 +651,8 @@ export default function Index(): JSX.Element {
                                     <Image
                                         src="/images/website.png"
                                         alt="kiriancaumes.fr"
-                                        width={320}
-                                        height={180}
+                                        width={300}
+                                        height={200}
                                     />
                                 </Fade>
                             </Columns.Column>

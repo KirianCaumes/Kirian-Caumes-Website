@@ -43,9 +43,9 @@ export default function useCareercard({ period }: UseCareerCardHookParams): UseC
     const duration = useMemo(() => {
         const monthDiff = (period[1]?.getMonth() ?? 0) - (period[0]?.getMonth() ?? 0)
         const yearDiff = (period[1]?.getFullYear() ?? 0) - (period[0]?.getFullYear() ?? 0)
-        const diff = monthDiff + yearDiff * 12 + 1
+        const diff = monthDiff + yearDiff * 12
 
-        if (diff <= 1) {
+        if (diff <= 0) {
             return ''
         }
 
@@ -57,7 +57,7 @@ export default function useCareercard({ period }: UseCareerCardHookParams): UseC
             return `${years} an`
         }
 
-        return `${diff} mois`
+        return `${diff + 1} mois`
     }, [period])
 
     return {

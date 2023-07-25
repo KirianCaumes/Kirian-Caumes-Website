@@ -22,8 +22,8 @@ export default function FlatCard({ imageSrc, title, children, align = 'justify' 
                 <Image
                     src={imageSrc}
                     alt={title}
-                    width={320}
-                    height={180}
+                    fill
+                    objectFit="cover"
                 />
             </div>
             <Title

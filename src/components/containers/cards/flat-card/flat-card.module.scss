@@ -13,8 +13,18 @@
     padding: 0;
   }
 
-  // .flatcard-image {
-  // }
+  .flatcard-image {
+    height: 180px;
+    margin: 0 auto;
+    max-width: 100%;
+    position: relative;
+    width: 320px;
+
+    img {
+      border-radius: 0.375em;
+      box-shadow: variables.$shadow;
+    }
+  }
 
   .flatcard-title {
     font-weight: 700;
