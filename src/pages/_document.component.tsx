@@ -20,24 +20,13 @@ export default class MyDocument extends Document {
      * Render
      */
     render() {
-        /**
-         * Handle bug with multplecharSet
-         * {@link https://github.com/vercel/next.js/issues/9794#issuecomment-903107184}
-         */
-        const DocumentHead = class extends Head {
-            /**
-             * Render
-             */
-            render() {
-                this.context.head = this.context.head?.filter(item => !item?.props?.charSet)
-                return super.render()
-            }
-        }
-
         return (
             <Html lang={publicRuntimeConfig.appLang}>
-                <DocumentHead>
-                    <meta charSet="UTF-8" />
+                <Head>
+                    <meta
+                        key="charset"
+                        charSet="utf-8"
+                    />
                     <link
                         rel="canonical"
                         href="https://kiriancaumes.fr"
@@ -132,6 +121,7 @@ export default class MyDocument extends Document {
                                         birthDate: '1997-02-21',
                                         image: {
                                             '@type': 'ImageObject',
+                                            /* cspell:disable-next-line */
                                             contentUrl: `${publicRuntimeConfig.appUrl}/_next/image?url=%2Fimages%2Fkirian_caumes.jpg&w=640&q=75`,
                                         },
                                         url: publicRuntimeConfig.appUrl,
@@ -151,7 +141,7 @@ export default class MyDocument extends Document {
                                         knowsLanguage: [
                                             {
                                                 '@type': 'Language',
-                                                name: 'Francais',
+                                                name: 'Français',
                                             },
                                             {
                                                 '@type': 'Language',
@@ -259,7 +249,7 @@ export default class MyDocument extends Document {
                             }),
                         }}
                     />
-                </DocumentHead>
+                </Head>
                 <body>
                     <Main />
                     <NextScript />

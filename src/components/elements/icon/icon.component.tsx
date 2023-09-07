@@ -19,7 +19,7 @@ export default function Icon({ name, isColored = false }: IconProps): React.Reac
             return (
                 <svg
                     className={classNames(styles.icon, { [styles['is-colored']]: isColored })}
-                    data-iconname="linkedin"
+                    data-icon-name="linkedin"
                     xmlns="http://www.w3.org/2000/svg"
                     width="50"
                     height="50"
@@ -33,7 +33,7 @@ export default function Icon({ name, isColored = false }: IconProps): React.Reac
             return (
                 <svg
                     className={classNames(styles.icon, { [styles['is-colored']]: isColored })}
-                    data-iconname="github"
+                    data-icon-name="github"
                     height="50"
                     viewBox="0 0 16 16"
                     version="1.1"
@@ -50,7 +50,7 @@ export default function Icon({ name, isColored = false }: IconProps): React.Reac
             return (
                 <svg
                     className={classNames(styles.icon, { [styles['is-colored']]: isColored })}
-                    data-iconname="medium"
+                    data-icon-name="medium"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 1043.63 592.71"
                     aria-hidden="true"
@@ -67,7 +67,7 @@ export default function Icon({ name, isColored = false }: IconProps): React.Reac
             return (
                 <svg
                     className={classNames(styles.icon, { [styles['is-colored']]: isColored })}
-                    data-iconname="balloon_laughing"
+                    data-icon-name="balloon_laughing"
                     xmlns="http://www.w3.org/2000/svg"
                     xmlnsXlink="http://www.w3.org/1999/xlink"
                     viewBox="0 0 100 100"
@@ -92,7 +92,7 @@ export default function Icon({ name, isColored = false }: IconProps): React.Reac
             return (
                 <svg
                     className={classNames(styles.icon, { [styles['is-colored']]: isColored })}
-                    data-iconname="balloon_naughty"
+                    data-icon-name="balloon_naughty"
                     xmlns="http://www.w3.org/2000/svg"
                     xmlnsXlink="http://www.w3.org/1999/xlink"
                     viewBox="0 0 100 100"
@@ -117,7 +117,7 @@ export default function Icon({ name, isColored = false }: IconProps): React.Reac
             return (
                 <svg
                     className={classNames(styles.icon, { [styles['is-colored']]: isColored })}
-                    data-iconname="balloon_dead"
+                    data-icon-name="balloon_dead"
                     xmlns="http://www.w3.org/2000/svg"
                     xmlnsXlink="http://www.w3.org/1999/xlink"
                     viewBox="0 0 100 100"
@@ -142,7 +142,7 @@ export default function Icon({ name, isColored = false }: IconProps): React.Reac
             return (
                 <svg
                     className={classNames(styles.icon, { [styles['is-colored']]: isColored })}
-                    data-iconname="mail"
+                    data-icon-name="mail"
                     xmlns="http://www.w3.org/2000/svg"
                     xmlnsXlink="http://www.w3.org/1999/xlink"
                     version="1.1"

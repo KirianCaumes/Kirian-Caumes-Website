@@ -17,22 +17,22 @@ export type FlatCardProps = {
  */
 export default function FlatCard({ imageSrc, title, children, align = 'justify' }: FlatCardProps): React.ReactElement {
     return (
-        <div className={styles.flatcard}>
-            <div className={styles['flatcard-image']}>
+        <div className={styles['flat-card']}>
+            <div className={styles['flat-card-image']}>
                 <Image
                     src={imageSrc}
                     alt={title}
                     fill
-                    objectFit="cover"
+                    // objectFit="cover"
                 />
             </div>
             <Title
                 level={4}
-                className={styles['flatcard-title']}
+                className={styles['flat-card-title']}
             >
                 {title}
             </Title>
-            <p className={classNames(styles['flatcard-content'], styles[`is-content-${align}`])}>{children}</p>
+            <p className={classNames(styles['flat-card-content'], styles[`is-content-${align}`])}>{children}</p>
         </div>
     )
 }

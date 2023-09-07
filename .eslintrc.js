@@ -40,6 +40,8 @@ module.exports = {
             { selector: 'typeAlias', format: ['PascalCase'], suffix: ['Type', 'State', 'Props', 'Returns', 'Params'] },
         ],
         '@typescript-eslint/consistent-type-imports': ['error'],
+        /** {@link https://tkdodo.eu/blog/array-types-in-type-script} */
+        '@typescript-eslint/array-type': ['error', { default: 'generic' }],
         'jsdoc/require-jsdoc': [
             'warn',
             {
@@ -69,7 +71,7 @@ module.exports = {
         'jsdoc/require-param-description': ['warn', { contexts: ['any'] }],
         'jsdoc/require-param': ['warn', { checkDestructuredRoots: false }],
         'import/order': ['error', { groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index', 'object', 'type'] }],
-        // 'capitalized-comments': ['warn', 'always'], // Not always usefull as it also fix comment with code
+        // 'capitalized-comments': ['warn', 'always'], // Not always useful as it also fix comment with code
         camelcase: ['error', { allow: [] }],
         'no-underscore-dangle': ['error', { allow: ['_id', '__WB_MANIFEST'] }],
         curly: ['warn', 'all'],
@@ -78,7 +80,7 @@ module.exports = {
         'no-restricted-imports': ['error', { patterns: ['../*', './*'] }],
         'no-restricted-modules': ['error', { patterns: ['../*', './*'] }],
         'no-extra-boolean-cast': ['error', { enforceForLogicalOperands: true }],
-        'react/react-in-jsx-scope': 0, // Not usefull as vite auto add react in scope
+        'react/react-in-jsx-scope': 0, // Not useful as vite auto add react in scope
         'react/function-component-definition': [2, { namedComponents: 'function-declaration' }],
         'react/jsx-filename-extension': ['error', { extensions: ['.tsx', '.jsx'] }],
         'react/no-unescaped-entities': ['warn', { forbid: ['>', '}'] }],
@@ -86,6 +88,7 @@ module.exports = {
         'react/require-default-props': ['error', { functions: 'defaultArguments' }],
         'no-unused-vars': ['warn', { vars: 'all', args: 'after-used', ignoreRestSiblings: true }], // Must be at the end
     },
+    ignorePatterns: ['!.lintstagedrc.js', '!.stylelintrc.js'],
     /** {@link https://github.com/import-js/eslint-plugin-import/issues/1485} */
     settings: {
         'import/resolver': {

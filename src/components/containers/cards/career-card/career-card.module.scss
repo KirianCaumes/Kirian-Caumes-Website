@@ -8,16 +8,16 @@ $circle-ratio: 4;
 $circle-border: 3px;
 $margin-top: 2rem;
 
-.careercard {
+.career-card {
   display: flex;
   justify-content: center;
 
-  .careercard-body,
-  .careercard-void {
+  .career-card-body,
+  .career-card-void {
     flex: 1;
   }
 
-  .careercard-body {
+  .career-card-body {
     position: relative;
 
     &::before {
@@ -39,17 +39,17 @@ $margin-top: 2rem;
       width: calc(#{$line-width} * #{$circle-ratio});
     }
 
-    .careercard-period {
+    .career-card-period {
       font-size: 0.75em;
       font-weight: 700;
       margin-bottom: 0.75em;
     }
 
-    .careercard-title {
+    .career-card-title {
       margin: 0;
     }
 
-    .careercard-place {
+    .career-card-place {
       color: map.get(variables.$colors, 'grey-medium');
       font-size: 0.65em;
       margin-bottom: 0.5em;
@@ -60,12 +60,12 @@ $margin-top: 2rem;
       }
     }
 
-    .careercard-mission-title {
+    .career-card-mission-title {
       font-size: 0.95em;
       font-weight: 700;
     }
 
-    .careercard-mission-description {
+    .career-card-mission-description {
       font-size: 0.85em;
       line-height: 1.25em;
 
@@ -82,7 +82,7 @@ $margin-top: 2rem;
     @include mixins.until(variables.$tablet) {
       margin-top: $margin-top;
 
-      .careercard-body {
+      .career-card-body {
         padding-left: $padding;
 
         &::before {
@@ -95,7 +95,7 @@ $margin-top: 2rem;
       }
     }
 
-    .careercard-body {
+    .career-card-body {
       padding-left: calc(#{$padding} * 2);
 
       @include mixins.until(variables.$tablet) {
@@ -110,7 +110,7 @@ $margin-top: 2rem;
         }
       }
 
-      .careercard-title {
+      .career-card-title {
         color: map.get(variables.$colors, 'secondary');
       }
 
@@ -142,7 +142,7 @@ $margin-top: 2rem;
       margin-top: $margin-top;
       text-align: left;
 
-      .careercard-body {
+      .career-card-body {
         padding-left: $padding;
         padding-right: 0;
 
@@ -156,10 +156,10 @@ $margin-top: 2rem;
       }
     }
 
-    .careercard-body {
+    .career-card-body {
       padding-right: calc(#{$padding} * 2);
 
-      .careercard-title {
+      .career-card-title {
         color: map.get(variables.$colors, 'primary');
       }
 
@@ -174,7 +174,7 @@ $margin-top: 2rem;
     }
   }
 
-  .careercard-void {
+  .career-card-void {
     @include mixins.until(variables.$tablet) {
       display: none;
     }

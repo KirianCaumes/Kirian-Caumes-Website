@@ -13,9 +13,9 @@ export type NavbarProps = {
     /** itemHome */
     itemHome: NavbarItemType
     /** itemsMain */
-    itemsMain: NavbarItemType[]
+    itemsMain: Array<NavbarItemType>
     /** itemsEnd */
-    itemsEnd?: NavbarItemType[]
+    itemsEnd?: Array<NavbarItemType>
 }
 
 /**
@@ -44,12 +44,12 @@ export default function Navbar({ itemsMain, itemsEnd = [], itemHome }: NavbarPro
                     <ul
                         className={styles['navbar-list']}
                         // eslint-disable-next-line react/no-array-index-key
-                        key={`navbaritem_list_${y}`}
+                        key={`navbar-item_list_${y}`}
                     >
                         {list?.map((item, i) => (
                             <li
                                 // eslint-disable-next-line react/no-array-index-key
-                                key={`navbaritem_${i}`}
+                                key={`navbar-item_${i}`}
                                 className={classNames(styles['navbar-item'], {
                                     [styles['is-active']]: hash === item.href?.replace('#', '')?.replace('/', ''),
                                 })}

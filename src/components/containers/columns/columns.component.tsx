@@ -20,7 +20,7 @@ export type ColumnProps = {
     /** Vertical align */
     vAlign?: 'top' | 'center' | 'bottom'
     /** Sizes */
-    sizes?: (
+    sizes?: Array<
         | 'full'
         | 'three-quarters'
         | 'two-thirds'
@@ -61,7 +61,7 @@ export type ColumnProps = {
         | 'two-fifths-widescreen'
         | 'three-fifths-widescreen'
         | 'four-fifths-widescreen'
-    )[]
+    >
 } & Pick<React.HTMLAttributes<HTMLParagraphElement>, 'children' | 'className'>
 
 /**
@@ -80,7 +80,8 @@ Columns.Column = function Column({
                 styles.column,
                 className,
                 { [styles[`is-${align}`]]: align },
-                { [styles[`is-v-${vAlign}`]]: !!vAlign },
+                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                { [styles[`is-v-${vAlign!}`]]: !!vAlign },
                 ...(sizes?.map(size => [styles[`is-${size}`]]) ?? [{}]),
             )}
         >

@@ -1,7 +1,7 @@
 @use 'styles/abstracts/mixins';
 @use 'styles/abstracts/variables';
 
-.flatcard {
+.flat-card {
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -13,7 +13,7 @@
     padding: 0;
   }
 
-  .flatcard-image {
+  .flat-card-image {
     height: 180px;
     margin: 0 auto;
     max-width: 100%;
@@ -23,16 +23,17 @@
     img {
       border-radius: 0.375em;
       box-shadow: variables.$shadow;
+      object-fit: cover;
     }
   }
 
-  .flatcard-title {
+  .flat-card-title {
     font-weight: 700;
     margin: 1em 0 0.5em;
     text-align: center;
   }
 
-  .flatcard-content {
+  .flat-card-content {
     font-size: 0.85em;
 
     &.is-content-center {

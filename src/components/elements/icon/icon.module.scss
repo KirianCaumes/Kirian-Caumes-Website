@@ -7,7 +7,7 @@ svg.icon {
   transition: fill 0.2s;
 
   &.is-colored {
-    &[data-iconname='linkedin'] {
+    &[data-icon-name='linkedin'] {
       fill: map.get(variables.$colors, 'primary-dark');
 
       &:hover {
@@ -15,7 +15,7 @@ svg.icon {
       }
     }
 
-    &[data-iconname='github'] {
+    &[data-icon-name='github'] {
       fill: map.get(variables.$colors, 'primary-dark');
 
       &:hover {
@@ -23,7 +23,7 @@ svg.icon {
       }
     }
 
-    &[data-iconname='medium'] {
+    &[data-icon-name='medium'] {
       fill: map.get(variables.$colors, 'primary-dark');
 
       &:hover {

@@ -15,7 +15,7 @@ export type UseCareerCardHookReturns = {
 /**
  * Use CareerCard hook
  */
-export default function useCareercard({ period }: UseCareerCardHookParams): UseCareerCardHookReturns {
+export default function useCareerCard({ period }: UseCareerCardHookParams): UseCareerCardHookReturns {
     /** Start date clean */
     const periodStart = useMemo(() => {
         const val = period?.[0]?.toLocaleDateString('fr-FR', { month: 'long', year: 'numeric' })

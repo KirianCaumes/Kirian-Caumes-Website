@@ -15,7 +15,9 @@
         "pflannery.vscode-versionlens",
         "esbenp.prettier-vscode",
         "webben.browserslist",
-        "ms-azuretools.vscode-docker"
+        "ms-azuretools.vscode-docker",
+        "streetsidesoftware.code-spell-checker",
+        "streetsidesoftware.code-spell-checker-french"
       ]
     }
   }

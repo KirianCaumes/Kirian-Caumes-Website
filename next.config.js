@@ -22,6 +22,7 @@ const nextConfig = {
             'Kirian Caumes, développeur full stack passionné de développement informatique. Féru de Javascript, Typescript, Node, Nest, PWA, Next.js et autre !',
         appComment:
             '👉 If you are able to see this, feel free to check out the source code of my website: https://github.com/KirianCaumes/Kirian-Caumes-Website 👈',
+        /* cspell:disable-next-line */
         gtmId: 'G-C3SCVG7W7N',
     },
 }

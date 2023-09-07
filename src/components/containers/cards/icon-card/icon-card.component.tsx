@@ -28,19 +28,19 @@ export default function IconCard({
     align = 'justify',
 }: IconCardProps): React.ReactElement {
     return (
-        <div className={styles.iconcard}>
-            <div className={classNames(styles['iconcard-icon'], styles[`is-${color}`], { [styles['is-icon-border']]: isIconBorder })}>
+        <div className={styles['icon-card']}>
+            <div className={classNames(styles['icon-card-icon'], styles[`is-${color}`], { [styles['is-icon-border']]: isIconBorder })}>
                 <Icon name={iconName} />
             </div>
-            <div className={classNames(styles['iconcard-body'], styles[`is-${color}`])}>
+            <div className={classNames(styles['icon-card-body'], styles[`is-${color}`])}>
                 <Title
                     level={4}
                     isCentered
-                    className={styles['iconcard-title']}
+                    className={styles['icon-card-title']}
                 >
                     {title}
                 </Title>
-                <p className={classNames(styles['iconcard-content'], styles[`is-content-${align}`])}>{children}</p>
+                <p className={classNames(styles['icon-card-content'], styles[`is-content-${align}`])}>{children}</p>
             </div>
         </div>
     )

@@ -9,7 +9,7 @@ import useIndex from 'pages/index.hook'
 import { Columns, Container, Tag } from 'components/containers'
 import { Border, Icon, Title } from 'components/elements'
 import { Button } from 'components/inputs'
-import { CareerCard, FlatCard, Skillcard, IconCard } from 'components/containers/cards'
+import { CareerCard, FlatCard, SkillCard, IconCard } from 'components/containers/cards'
 import type { FadeProps } from 'react-awesome-reveal'
 
 const Fade = RevealFade as React.FC<
@@ -265,7 +265,7 @@ export default function Index(): JSX.Element {
                         >
                             <Columns>
                                 <Columns.Column sizes={['one-quarter-widescreen', 'half-desktop', 'half-tablet']}>
-                                    <Skillcard
+                                    <SkillCard
                                         title={['NodeJs', 'Javascript/Typescript']}
                                         score={4}
                                         rows={[
@@ -281,7 +281,7 @@ export default function Index(): JSX.Element {
                                     />
                                 </Columns.Column>
                                 <Columns.Column sizes={['one-quarter-widescreen', 'half-desktop', 'half-tablet']}>
-                                    <Skillcard
+                                    <SkillCard
                                         title={['FrontEnd', 'Framework JS']}
                                         score={4}
                                         rows={[
@@ -296,22 +296,22 @@ export default function Index(): JSX.Element {
                                     />
                                 </Columns.Column>
                                 <Columns.Column sizes={['one-quarter-widescreen', 'half-desktop', 'half-tablet']}>
-                                    <Skillcard
+                                    <SkillCard
                                         title="BDD"
                                         score={3}
                                         rows={[
-                                            { title: 'TSQL', score: 3 },
+                                            { title: 'T-SQL', score: 3 },
+                                            { title: 'PostgreSQL', score: 3 },
                                             { title: 'MySQL', score: 3 },
                                             { title: 'MongoDB', score: 3 },
-                                            { title: 'PostgreSQL', score: 3 },
+                                            { title: 'ElasticSearch', score: 3 },
                                             { title: 'SQLite', score: 2 },
-                                            { title: 'ElasticSearch', score: 2 },
                                         ]}
                                         color="tertiary"
                                     />
                                 </Columns.Column>
                                 <Columns.Column sizes={['one-quarter-widescreen', 'half-desktop', 'half-tablet']}>
-                                    <Skillcard
+                                    <SkillCard
                                         title=".NET Core"
                                         score={2}
                                         rows={[
@@ -331,7 +331,7 @@ export default function Index(): JSX.Element {
                         >
                             <Columns>
                                 <Columns.Column sizes={['one-quarter-widescreen', 'half-desktop', 'half-tablet']}>
-                                    <Skillcard
+                                    <SkillCard
                                         title="HTML/CSS"
                                         score={4}
                                         rows={[
@@ -344,7 +344,7 @@ export default function Index(): JSX.Element {
                                     />
                                 </Columns.Column>
                                 <Columns.Column sizes={['one-quarter-widescreen', 'half-desktop', 'half-tablet']}>
-                                    <Skillcard
+                                    <SkillCard
                                         title="CSS"
                                         score={4}
                                         rows={[
@@ -356,7 +356,7 @@ export default function Index(): JSX.Element {
                                     />
                                 </Columns.Column>
                                 <Columns.Column sizes={['one-quarter-widescreen', 'half-desktop', 'half-tablet']}>
-                                    <Skillcard
+                                    <SkillCard
                                         title={['Deno', 'Typescript']}
                                         score={3}
                                         rows={[
@@ -368,12 +368,12 @@ export default function Index(): JSX.Element {
                                     />
                                 </Columns.Column>
                                 <Columns.Column sizes={['one-quarter-widescreen', 'half-desktop', 'half-tablet']}>
-                                    <Skillcard
+                                    <SkillCard
                                         title="PHP"
                                         score={3}
                                         rows={[
-                                            { title: 'Symfony 4/5', score: 4 },
-                                            { title: 'Wordpress', score: 3 },
+                                            { title: 'Symfony 4/5', score: 3 },
+                                            { title: 'WordPress', score: 3 },
                                             { title: 'Doctrine', score: 3 },
                                             { title: 'Twig', score: 3 },
                                             { title: 'PHPUnit', score: 2 },
@@ -390,7 +390,7 @@ export default function Index(): JSX.Element {
                         >
                             <Columns>
                                 <Columns.Column sizes={['one-quarter-widescreen', 'half-desktop', 'half-tablet']}>
-                                    <Skillcard
+                                    <SkillCard
                                         title="Mobile"
                                         score={2}
                                         rows={[
@@ -403,7 +403,7 @@ export default function Index(): JSX.Element {
                                     />
                                 </Columns.Column>
                                 <Columns.Column sizes={['one-quarter-widescreen', 'half-desktop', 'half-tablet']}>
-                                    <Skillcard
+                                    <SkillCard
                                         title="Divers"
                                         score={0}
                                         rows={[
@@ -417,7 +417,7 @@ export default function Index(): JSX.Element {
                                     />
                                 </Columns.Column>
                                 <Columns.Column sizes={['one-quarter-widescreen', 'half-desktop', 'half-tablet']}>
-                                    <Skillcard
+                                    <SkillCard
                                         title="Env."
                                         score={0}
                                         rows={[
@@ -431,7 +431,7 @@ export default function Index(): JSX.Element {
                                     />
                                 </Columns.Column>
                                 <Columns.Column sizes={['one-quarter-widescreen', 'half-desktop', 'half-tablet']}>
-                                    <Skillcard
+                                    <SkillCard
                                         title="Transverse"
                                         score={0}
                                         rows={[
@@ -462,7 +462,7 @@ export default function Index(): JSX.Element {
                             isSubtitle
                             isCentered
                         >
-                            La petite histoire de mon cheminent profesionnel
+                            La petite histoire de mon cheminent professionnel
                         </Title>
                         <br />
                         <Fade
@@ -473,7 +473,7 @@ export default function Index(): JSX.Element {
                                 <CareerCard
                                     title="CDI développeur full stack"
                                     location={{
-                                        company: 'Nextdecision',
+                                        company: 'Next Decision',
                                         href: 'https://www.next-decision.fr/',
                                         city: 'Nantes',
                                     }}
@@ -502,7 +502,6 @@ export default function Index(): JSX.Element {
                                 <CareerCard
                                     title="Alternance en développement d'applications web (Bachelor 3 à Mastère 2)"
                                     location={{
-                                        company: 'Nextdecision',
                                         href: 'https://www.next-decision.fr/',
                                         city: 'Nantes',
                                     }}
@@ -524,11 +523,7 @@ export default function Index(): JSX.Element {
                                 />
                                 <CareerCard
                                     title="Stage en développement d'applications web (Bachelor 2)"
-                                    location={{
-                                        company: 'Nextdecision',
-                                        href: 'https://www.next-decision.fr/',
-                                        city: 'Nantes',
-                                    }}
+                                    location={{ company: 'Next Decision', href: 'https://www.next-decision.fr/', city: 'Nantes' }}
                                     period={[new Date(2018, 6), new Date(2018, 7)]}
                                     missions={[
                                         {
@@ -552,7 +547,7 @@ export default function Index(): JSX.Element {
                                             title: 'Développement de sites web vitrines modernes et ergonomiques',
                                             description:
                                                 // eslint-disable-next-line max-len
-                                                "Apprentissage de WordPress et de son écosystème, incluant WooComerce et autres plugins gravitants dans l'écosystème du CMS",
+                                                "Apprentissage de WordPress et de son écosystème, incluant WooCommerce et autres plugins gravitants dans l'écosystème du CMS",
                                         },
                                     ]}
                                 />
@@ -665,7 +660,7 @@ export default function Index(): JSX.Element {
                                 <br />
                                 <p>
                                     Pour un simple projet comme celui-ci, <b>Next.js</b> est "overkill", et un site sans un tel Framework
-                                    serait surement plus optimal. Mais ici, ce choix résulte d'une volonté personnelle de démontrer mes
+                                    serait sûrement plus optimal. Mais ici, ce choix résulte d'une volonté personnelle de démontrer mes
                                     compétences en <b>React</b>.
                                 </p>
                                 <br />
@@ -729,7 +724,7 @@ export default function Index(): JSX.Element {
                 </div>
                 <div
                     id="passions"
-                    className={classNames(styles.row, styles['row-passions'])}
+                    className={classNames(styles.row)}
                 >
                     <Container>
                         <Title
@@ -757,7 +752,7 @@ export default function Index(): JSX.Element {
                                         title="Handball"
                                     >
                                         Joueur de Handball au poste de gardien de but, à ma quinzième année au club de Carquefou et
-                                        anciennement Thouaré sur Loire.
+                                        anciennement Thouaré-sur-Loire.
                                         <br />
                                         <br />
                                         J'y ai développé de vrais liens humains, dans un projet d'équipe ayant un objectif commun : gagner
@@ -801,7 +796,7 @@ export default function Index(): JSX.Element {
                                     triggerOnce
                                 >
                                     <FlatCard
-                                        imageSrc="/images/developpement.jpg"
+                                        imageSrc="/images/development.jpg"
                                         title="Développement"
                                     >
                                         Plus qu'un métier, le développement est également une passion. Je m'amuse fréquemment à développer
@@ -827,7 +822,7 @@ export default function Index(): JSX.Element {
                 </div>
                 <div
                     id="contact"
-                    className={classNames(styles.row, styles['row-contact'])}
+                    className={classNames(styles.row)}
                 >
                     <Container>
                         <Title

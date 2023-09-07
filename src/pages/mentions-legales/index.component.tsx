@@ -7,7 +7,7 @@ import { Title } from 'components/elements'
 import { Container } from 'components/containers'
 
 /**
- * Mentios légales page
+ * Mentions légales page
  */
 export default function MentionsLegalesIndexPage(): React.ReactElement {
     const { title, publicRuntimeConfig } = useMentionsLegalesIndex()
@@ -18,7 +18,7 @@ export default function MentionsLegalesIndexPage(): React.ReactElement {
                 <title>{title}</title>
                 <meta
                     name="description"
-                    content={`Mentions legales du site ${publicRuntimeConfig.appName}`}
+                    content={`Mentions légales du site ${publicRuntimeConfig.appName}`}
                 />
                 <meta
                     name="robots"
@@ -74,7 +74,7 @@ export default function MentionsLegalesIndexPage(): React.ReactElement {
                         >
                             ovh.com
                         </a>
-                        , qui est domicilé 2 rue Kellermann / 59100 Roubaix / France et joignable par téléphone au 1007.
+                        , qui est domicilié 2 rue Kellermann / 59100 Roubaix / France et joignable par téléphone au 1007.
                     </p>
                     <br />
                     <Title level={2}>Propriété intellectuelle et contrefaçons</Title>
@@ -113,7 +113,7 @@ export default function MentionsLegalesIndexPage(): React.ReactElement {
                     <br />
                     <Title level={3}>Mesure d'audience</Title>
                     <p>
-                        Les cookies de mesure d'audience sont de petits fichiers qui permettent de connaitre et d'analyser les statistiques
+                        Les cookies de mesure d'audience sont de petits fichiers qui permettent de connaître et d'analyser les statistiques
                         de trafic sur le site internet : les pages visitées, le nombre de visites, le taux de rebond, la provenance des
                         visites,... Les cookies de mesure d'audience sont totalement anonymes.
                     </p>
@@ -146,7 +146,7 @@ export default function MentionsLegalesIndexPage(): React.ReactElement {
                         </li>
                     </ul>
                     <br />
-                    <Title level={3}>Icones</Title>
+                    <Title level={3}>Icônes</Title>
                     <ul>
                         <li>
                             <p>

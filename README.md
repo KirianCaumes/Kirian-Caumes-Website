@@ -8,7 +8,7 @@ My (wonderful) website! ⚡
 
 *Continuous deployment is setup and connected to this repository via Github Webhook linked to a VPS server, but you can build the app manually.*
 
-Install dependecies with:
+Install dependencies with:
 
 ```sh
 npm install
@@ -24,13 +24,13 @@ npm start
 
 There is a [devcontainer](https://code.visualstudio.com/docs/devcontainers/containers) on that project already configured, feel free to use it.
 
-Install dependecies with:
+Install dependencies with:
 
 ```sh
 npm install
 ```
 
-Start the script with the debuger or with:
+Start the script with the debugger or with:
 
 ```sh
 npm run dev
@@ -52,7 +52,7 @@ Additionally, the app is configured to function as a PWA (Progressive Web App). 
 
 For a simple project like this, Next.Js is "overkill", and a site without a framework would be more optimal. But here, this choice results from a personal desire to demonstrate my skills in React.
 
-Audit result with [Ligthhouse](https://github.com/KirianCaumes/Kirian-Caumes-Website/assets/24525092/980e2416-9ff6-4072-8949-2cdddc035b89).
+Audit result with [LightHouse](https://github.com/KirianCaumes/Kirian-Caumes-Website/assets/24525092/980e2416-9ff6-4072-8949-2cdddc035b89).
 
 ### Project structure
 
@@ -71,9 +71,9 @@ kirian-caumes-fr
 │   ├── docker-compose.yml      //Docker-compose for VS Code Container
 │   └── Dockerfile              //Docker for VS Code Container
 ├── .vscode                     //About VS Code
-│   ├── launch.json             //Debbugers
+│   ├── launch.json             //Debuggers
 │   ├── settings.json           //Settings for VS Code
-│   └── tasks.json              //Tasks that can be run by debbuggers
+│   └── tasks.json              //Tasks that can be run by debuggers
 ├── components                  //React components
 ├── hooks                       //React hooks
 ├── node_modules

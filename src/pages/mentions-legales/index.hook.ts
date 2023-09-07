@@ -2,7 +2,7 @@ import getConfig from 'next/config'
 import { useMemo } from 'react'
 import type { PublicRuntimeConfigType } from 'types'
 
-export type UseMnetionsLegalesIndexReturns = {
+export type UseMentionsLegalesIndexReturns = {
     /** title */
     title: string
     /** publicRuntimeConfig */
@@ -12,13 +12,13 @@ export type UseMnetionsLegalesIndexReturns = {
 /**
  * Use MentionsLegales page hook
  */
-export default function useMentionsLegalesIndex() {
+export default function useMentionsLegalesIndex(): UseMentionsLegalesIndexReturns {
     const { publicRuntimeConfig } = getConfig() as {
         /** PublicRuntimeConfig */
         publicRuntimeConfig: PublicRuntimeConfigType
     }
 
-    const title = useMemo(() => `Mentions legales - ${publicRuntimeConfig.appName}`, [publicRuntimeConfig.appName])
+    const title = useMemo(() => `Mentions légales - ${publicRuntimeConfig.appName}`, [publicRuntimeConfig.appName])
 
     return {
         title,

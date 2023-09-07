@@ -16,6 +16,16 @@
     "incremental": true,
     "baseUrl": "./src"
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".eslintrc.js", "next.config.js", "next-sitemap.config.js"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".eslintrc.js",
+    "next.config.js",
+    "next-sitemap.config.js",
+    "cspell.config.js",
+    ".stylelintrc.js",
+    ".lintstagedrc.js"
+  ],
   "exclude": ["node_modules"]
 }
