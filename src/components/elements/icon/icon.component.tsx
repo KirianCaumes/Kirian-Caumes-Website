@@ -3,7 +3,7 @@ import React from 'react'
 import classNames from 'classnames'
 import styles from 'components/elements/icon/icon.module.scss'
 
-export type IconProps = {
+export interface IconProps {
     /** name */
     name: 'linkedin' | 'github' | 'medium' | 'balloon_laughing' | 'balloon_naughty' | 'balloon_dead' | 'mail'
     /** isColored */

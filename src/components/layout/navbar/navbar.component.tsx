@@ -4,18 +4,18 @@ import Link from 'next/link'
 import styles from 'components/layout/navbar/navbar.module.scss'
 import useNavbar from 'components/layout/navbar/navbar.hook'
 
-export type NavbarItemType = {
+export interface NavbarItem extends Pick<Parameters<typeof Link>[0], 'children'> {
     /** href */
     href: string
-} & Pick<Parameters<typeof Link>[0], 'children'>
+}
 
-export type NavbarProps = {
+export interface NavbarProps {
     /** itemHome */
-    itemHome: NavbarItemType
+    itemHome: NavbarItem
     /** itemsMain */
-    itemsMain: Array<NavbarItemType>
+    itemsMain: Array<NavbarItem>
     /** itemsEnd */
-    itemsEnd?: Array<NavbarItemType>
+    itemsEnd?: Array<NavbarItem>
 }
 
 /**

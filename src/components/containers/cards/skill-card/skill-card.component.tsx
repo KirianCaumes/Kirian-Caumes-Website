@@ -2,7 +2,7 @@ import React from 'react'
 import classNames from 'classnames'
 import styles from 'components/containers/cards/skill-card/skill-card.module.scss'
 
-export type ScoreProps = {
+export interface ScoreProps {
     /** value */
     value: number
     /** max */
@@ -26,7 +26,7 @@ function Score({ value, max = 5, icon = '★', unselectedIcon = '☆' }: ScorePr
     )
 }
 
-export type SkillCardProps = {
+export interface SkillCardProps {
     /** title */
     title: string | Array<string>
     /** score */

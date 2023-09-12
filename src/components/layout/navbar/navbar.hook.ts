@@ -3,7 +3,7 @@ import { useRef, useState, useEffect } from 'react'
 import { useOnClickOutside } from 'hooks'
 import type { MutableRefObject, Dispatch, SetStateAction } from 'react'
 
-export type UseNavbarHookReturns = {
+export interface UseNavbarHookReturns {
     /** isOpen */
     isOpen: boolean
     /** hash */

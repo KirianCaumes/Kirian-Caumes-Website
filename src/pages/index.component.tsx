@@ -724,7 +724,7 @@ export default function Index(): JSX.Element {
                 </div>
                 <div
                     id="passions"
-                    className={classNames(styles.row)}
+                    className={classNames(styles.row, styles['row-passions'])}
                 >
                     <Container>
                         <Title
@@ -741,8 +741,8 @@ export default function Index(): JSX.Element {
                             Mes passes-temps et hobbies
                         </Title>
                         <br />
-                        <Columns>
-                            <Columns.Column sizes={['one-third-desktop', 'full-tablet']}>
+                        <Columns className={classNames(styles['row-passions-columns'])}>
+                            <Columns.Column sizes={['one-third-desktop', 'half-tablet']}>
                                 <Fade
                                     direction="left"
                                     triggerOnce
@@ -751,8 +751,8 @@ export default function Index(): JSX.Element {
                                         imageSrc="/images/handball.jpg"
                                         title="Handball"
                                     >
-                                        Joueur de Handball au poste de gardien de but, à ma quinzième année au club de Carquefou et
-                                        anciennement Thouaré-sur-Loire.
+                                        Joueur de Handball au poste de gardien de but, cumulant quinze saisons aux clubs de Carquefou et
+                                        anciennement Thouaré-sur-Loire. Également, coach et entraîneur d'une équipe d'U16M à Carquefou.
                                         <br />
                                         <br />
                                         J'y ai développé de vrais liens humains, dans un projet d'équipe ayant un objectif commun : gagner
@@ -763,7 +763,7 @@ export default function Index(): JSX.Element {
                                     </FlatCard>
                                 </Fade>
                             </Columns.Column>
-                            <Columns.Column sizes={['one-third-desktop', 'full-tablet']}>
+                            <Columns.Column sizes={['one-third-desktop', 'half-tablet']}>
                                 <Fade
                                     direction="up"
                                     triggerOnce
@@ -772,8 +772,8 @@ export default function Index(): JSX.Element {
                                         imageSrc="/images/ajesterscollection.png"
                                         title="Collections"
                                     >
-                                        Collectionneur depuis toujours d'objets en tous genres (pièces d'euros, timbres, fèves, jeux vidéo,
-                                        etc.), j'y voue une véritable passion.
+                                        Collectionneur passionné depuis mon plus jeune âge, je me suis toujours adonné à la quête d'objets
+                                        variés, tels que des pièces d'euros, des timbres, des fèves, des jeux vidéo, et bien d'autres.
                                         <br />
                                         <br />
                                         Aujourd'hui la collection vers laquelle je suis principalement tourné concerne le groupe de musique
@@ -790,7 +790,7 @@ export default function Index(): JSX.Element {
                                     </FlatCard>
                                 </Fade>
                             </Columns.Column>
-                            <Columns.Column sizes={['one-third-desktop', 'full-tablet']}>
+                            <Columns.Column sizes={['one-third-desktop', 'half-tablet']}>
                                 <Fade
                                     direction="right"
                                     triggerOnce
@@ -811,9 +811,9 @@ export default function Index(): JSX.Element {
                                         ).
                                         <br />
                                         <br />
-                                        Ainsi, je peux me permettre d'explorer différentes voies de mon côté, afin de proposer, lors de mes
-                                        projets professionnels, des solutions novatrices et innovantes, résultant d'expérimentations
-                                        personnelles.
+                                        Cette approche plus personnel me permet d'explorer de nouvelles options de mon coté, afin de
+                                        proposer, lors de mes projets professionnels, des solutions novatrices et innovantes qui résultent
+                                        de mes propres recherches, expériences et découvertes .
                                     </FlatCard>
                                 </Fade>
                             </Columns.Column>

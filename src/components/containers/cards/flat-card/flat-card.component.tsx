@@ -2,15 +2,16 @@ import classNames from 'classnames'
 import Image from 'next/image'
 import styles from 'components/containers/cards/flat-card/flat-card.module.scss'
 import { Title } from 'components/elements'
+import type { ComponentProps } from 'react'
 
-export type FlatCardProps = {
+export interface FlatCardProps extends Pick<ComponentProps<'p'>, 'children'> {
     /** imageSrc */
     imageSrc: Parameters<typeof Image>[0]['src']
     /** title */
     title: Parameters<typeof Image>[0]['alt']
     /** align */
     align?: 'center' | 'justify'
-} & Pick<React.HTMLAttributes<HTMLParagraphElement>, 'children'>
+}
 
 /**
  * A skill card

@@ -4,7 +4,7 @@ import { useMemo } from 'react'
 import type { NextRouter } from 'next/router'
 import type { PublicRuntimeConfigType } from 'types'
 
-export type UseNotFoundHookReturns = {
+export interface UseNotFoundHookReturns {
     /** title */
     title: string
     /** router */

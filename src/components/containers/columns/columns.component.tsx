@@ -1,8 +1,9 @@
 import React from 'react'
 import classNames from 'classnames'
 import styles from 'components/containers/columns/columns.module.scss'
+import type { ComponentProps } from 'react'
 
-export type ColumnsProps = {
+export interface ColumnsProps extends Pick<ComponentProps<'div'>, 'className'> {
     /** children */
     children: React.ReactNode
 }
@@ -10,11 +11,11 @@ export type ColumnsProps = {
 /**
  * A columns
  */
-function Columns({ children }: ColumnsProps): React.ReactElement {
-    return <div className={styles.columns}>{children}</div>
+function Columns({ children, className }: ColumnsProps): React.ReactElement {
+    return <div className={classNames(styles.columns, className)}>{children}</div>
 }
 
-export type ColumnProps = {
+export interface ColumnProps extends Pick<ComponentProps<'p'>, 'children' | 'className'> {
     /** Align */
     align?: 'left' | 'center' | 'right'
     /** Vertical align */
@@ -62,7 +63,7 @@ export type ColumnProps = {
         | 'three-fifths-widescreen'
         | 'four-fifths-widescreen'
     >
-} & Pick<React.HTMLAttributes<HTMLParagraphElement>, 'children' | 'className'>
+}
 
 /**
  * A column

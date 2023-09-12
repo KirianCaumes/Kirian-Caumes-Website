@@ -5,8 +5,9 @@ import styles from 'components/layout/layout/layout.module.scss'
 import useLayout from 'components/layout/layout/layout.hook'
 import Navbar from 'components/layout/navbar/navbar.component'
 import { Container } from 'components/containers'
+import type { ComponentProps } from 'react'
 
-export type LayoutProps = Pick<React.HTMLAttributes<HTMLDivElement>, 'children'>
+export interface LayoutProps extends Pick<ComponentProps<'div'>, 'children'> {}
 
 /**
  * App layout

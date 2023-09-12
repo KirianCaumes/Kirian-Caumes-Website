@@ -2,27 +2,28 @@ import React from 'react'
 import styles from 'components/containers/cards/career-card/career-card.module.scss'
 import useCareerCard from 'components/containers/cards/career-card/career-card.hook'
 import { Title } from 'components/elements'
+import type { ComponentProps } from 'react'
 
-export type CareerCardProps = {
+export interface CareerCardProps {
     /** period */
     period: [Date] | [Date, Date]
     /** title */
-    title: React.HTMLAttributes<HTMLParagraphElement>['children']
+    title: ComponentProps<'p'>['children']
     /** location */
     location: {
         /** company */
-        company?: React.LinkHTMLAttributes<HTMLLinkElement>['children']
+        company?: ComponentProps<'a'>['children']
         /** href */
-        href?: React.LinkHTMLAttributes<HTMLLinkElement>['href']
+        href?: ComponentProps<'a'>['href']
         /** city */
-        city: React.HTMLAttributes<HTMLParagraphElement>['children']
+        city: ComponentProps<'p'>['children']
     }
     /** missions */
     missions: Array<{
         /** title */
-        title: React.HTMLAttributes<HTMLParagraphElement>['children']
+        title: ComponentProps<'p'>['children']
         /** description */
-        description: React.HTMLAttributes<HTMLParagraphElement>['children']
+        description: ComponentProps<'p'>['children']
     }>
 }
 

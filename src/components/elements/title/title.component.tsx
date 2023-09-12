@@ -1,15 +1,16 @@
 import React from 'react'
 import classNames from 'classnames'
 import styles from 'components/elements/title/title.module.scss'
+import type { ComponentProps } from 'react'
 
-export type TitleProps = {
+export interface TitleProps extends Pick<ComponentProps<'h1'>, 'children' | 'className'> {
     /** level */
     level?: number
     /** isSubtitle */
     isSubtitle?: boolean
     /** isCentered */
     isCentered?: boolean
-} & Pick<React.HTMLAttributes<HTMLTitleElement>, 'children' | 'className'>
+}
 
 /**
  * A title

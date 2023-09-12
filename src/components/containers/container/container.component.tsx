@@ -1,7 +1,8 @@
 import React from 'react'
 import styles from 'components/containers/container/container.module.scss'
+import type { ComponentProps } from 'react'
 
-export type ContainerProps = Pick<React.HTMLAttributes<HTMLParagraphElement>, 'children'>
+export interface ContainerProps extends Pick<ComponentProps<'p'>, 'children'> {}
 
 /**
  * A container for element

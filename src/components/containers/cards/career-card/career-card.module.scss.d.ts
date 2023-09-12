@@ -1,5 +1,5 @@
-/* eslint-disable jsdoc/require-jsdoc */
-export type StylesType = {
+/* eslint-disable jsdoc/require-jsdoc, @typescript-eslint/consistent-type-definitions */
+export type Styles = {
     'career-card': string
     'career-card-body': string
     'career-card-mission-description': string
@@ -10,8 +10,8 @@ export type StylesType = {
     'career-card-void': string
 }
 
-export type ClassNamesType = keyof StylesType
+export type ClassNames = keyof Styles
 
-declare const styles: StylesType
+declare const styles: Styles
 
 export default styles

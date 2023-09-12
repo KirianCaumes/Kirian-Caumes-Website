@@ -2,8 +2,11 @@ import React from 'react'
 import classNames from 'classnames'
 import Link from 'next/link'
 import styles from 'components/inputs/button/button.module.scss'
+import type { ComponentProps } from 'react'
 
-export type ButtonProps = {
+export interface ButtonProps
+    extends Pick<ComponentProps<'div'>, 'children' | 'title'>,
+        Pick<ComponentProps<'a'>, 'rel' | 'href' | 'target'> {
     /** type */
     type?: 'button' | 'submit' | 'reset'
     /** onClick */
@@ -16,8 +19,7 @@ export type ButtonProps = {
     isDisabled?: boolean
     /** isOutlined */
     isOutlined?: boolean
-} & Pick<React.HTMLAttributes<HTMLElement>, 'children' | 'title'> &
-    Pick<React.AnchorHTMLAttributes<HTMLLinkElement>, 'rel' | 'href' | 'target'>
+}
 
 /**
  * A button

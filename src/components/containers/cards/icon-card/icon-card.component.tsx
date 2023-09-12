@@ -2,19 +2,20 @@ import React from 'react'
 import classNames from 'classnames'
 import styles from 'components/containers/cards/icon-card/icon-card.module.scss'
 import { Icon, Title } from 'components/elements'
+import type { ComponentProps } from 'react'
 
-export type IconCardProps = {
+export interface IconCardProps extends Pick<ComponentProps<'p'>, 'children'> {
     /** iconName */
     iconName: Parameters<typeof Icon>[0]['name']
     /** title */
-    title: React.HTMLAttributes<HTMLParagraphElement>['children']
+    title: ComponentProps<'p'>['children']
     /** color */
     color: 'tertiary' | 'secondary' | 'primary' | 'primary-dark'
     /** isIconBorder */
     isIconBorder?: boolean
     /** align */
     align?: 'center' | 'justify'
-} & Pick<React.HTMLAttributes<HTMLParagraphElement>, 'children'>
+}
 
 /**
  * A card with icon

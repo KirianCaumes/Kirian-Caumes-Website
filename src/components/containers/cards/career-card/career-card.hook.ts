@@ -3,7 +3,7 @@ import type { CareerCardProps } from 'components/containers/cards/career-card/ca
 
 export type UseCareerCardHookParams = Pick<CareerCardProps, 'period'>
 
-export type UseCareerCardHookReturns = {
+export interface UseCareerCardHookReturns {
     /** periodStart */
     periodStart: string
     /** periodEnd */

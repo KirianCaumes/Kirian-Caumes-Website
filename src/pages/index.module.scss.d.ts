@@ -1,5 +1,5 @@
-/* eslint-disable jsdoc/require-jsdoc */
-export type StylesType = {
+/* eslint-disable jsdoc/require-jsdoc, @typescript-eslint/consistent-type-definitions */
+export type Styles = {
     'index-page': string
     'last-update': string
     row: string
@@ -7,14 +7,16 @@ export type StylesType = {
     'row-about-fade-container': string
     'row-career': string
     'row-intro': string
+    'row-passions': string
+    'row-passions-columns': string
     'row-productions': string
     'row-quote': string
     'row-skills': string
     'row-skills-fade-container': string
 }
 
-export type ClassNamesType = keyof StylesType
+export type ClassNames = keyof Styles
 
-declare const styles: StylesType
+declare const styles: Styles
 
 export default styles

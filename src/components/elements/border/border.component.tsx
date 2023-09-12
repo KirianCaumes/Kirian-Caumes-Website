@@ -2,7 +2,7 @@ import classNames from 'classnames'
 import React from 'react'
 import styles from 'components/elements/border/border.module.scss'
 
-export type BorderProps = {
+export interface BorderProps {
     /** color */
     color?: 'white' | 'grey'
     /** position */

@@ -1,4 +1,4 @@
-type PublicRuntimeConfigType = {
+interface PublicRuntimeConfigType {
     /** appLang */
     appLang: string
     /** appColor */

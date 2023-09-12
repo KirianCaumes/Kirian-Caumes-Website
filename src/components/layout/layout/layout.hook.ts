@@ -1,7 +1,7 @@
 import getConfig from 'next/config'
 import type { PublicRuntimeConfigType } from 'types'
 
-export type UseLayoutHookReturns = {
+export interface UseLayoutHookReturns {
     /** publicRuntimeConfig */
     publicRuntimeConfig: PublicRuntimeConfigType
 }

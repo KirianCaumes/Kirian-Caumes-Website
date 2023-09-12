@@ -2,7 +2,7 @@ import getConfig from 'next/config'
 import { useMemo } from 'react'
 import type { PublicRuntimeConfigType } from 'types'
 
-export type UseMentionsLegalesIndexReturns = {
+export interface UseMentionsLegalesIndexReturns {
     /** title */
     title: string
     /** publicRuntimeConfig */

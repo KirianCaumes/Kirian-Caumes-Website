@@ -52,6 +52,13 @@
     }
 
     &.row-productions {
+      @include mixins.tablet-only() {
+        p {
+          margin: 0 auto;
+          max-width: 764px;
+        }
+      }
+
       p {
         text-align: justify;
       }
@@ -107,8 +114,15 @@
       }
     }
 
-    // &.row-passions {
-    // }
+    &.row-passions {
+      .row-passions-columns {
+        > div:last-child {
+          @include mixins.tablet-only() {
+            margin: auto;
+          }
+        }
+      }
+    }
 
     // &.row-contact {
     // }

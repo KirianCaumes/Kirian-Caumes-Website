@@ -2,7 +2,7 @@ import getConfig from 'next/config'
 import { useMemo } from 'react'
 import type { PublicRuntimeConfigType } from 'types'
 
-export type UseIndexHookReturns = {
+export interface UseIndexHookReturns {
     /** PublicRuntimeConfig */
     publicRuntimeConfig: PublicRuntimeConfigType
     /** Age */

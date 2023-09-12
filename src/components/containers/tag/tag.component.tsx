@@ -1,11 +1,12 @@
 import React from 'react'
 import classNames from 'classnames'
 import styles from 'components/containers/tag/tag.module.scss'
+import type { ComponentProps } from 'react'
 
-export type TagProps = {
+export interface TagProps extends Pick<ComponentProps<'span'>, 'children'> {
     /** color */
     color: 'tertiary' | 'secondary' | 'primary' | 'primary-dark'
-} & Pick<React.HTMLAttributes<HTMLSpanElement>, 'children'>
+}
 
 /**
  * A tag

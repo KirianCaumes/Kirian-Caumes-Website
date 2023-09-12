@@ -1,6 +1,6 @@
 import React from 'react'
 
-export type EmojiProps = {
+export interface EmojiProps {
     /** label */
     label: string
     /** emoji */

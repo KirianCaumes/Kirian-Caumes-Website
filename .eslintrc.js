@@ -26,18 +26,17 @@ module.exports = {
     },
     plugins: ['jsdoc'],
     rules: {
-        '@typescript-eslint/consistent-type-definitions': ['warn', 'type'],
+        /** {@link https://github.com/microsoft/TypeScript/wiki/Performance#preferring-interfaces-over-intersections} */
+        '@typescript-eslint/consistent-type-definitions': ['warn', 'interface'],
         '@typescript-eslint/naming-convention': [
-            'error',
-            { selector: 'interface', format: ['PascalCase'], custom: { regex: '^I[A-Z]', match: true } },
-            { selector: 'enum', format: ['PascalCase'], custom: { regex: '^E[A-Z]', match: true } },
+            // eslint-disable-next-line global-require, @typescript-eslint/no-var-requires
+            ...require('eslint-config-airbnb-typescript/lib/shared').rules['@typescript-eslint/naming-convention'],
             {
                 selector: 'variable',
                 types: ['boolean'],
                 format: ['PascalCase'],
                 prefix: ['is', 'should', 'has', 'can', 'did', 'will'],
             },
-            { selector: 'typeAlias', format: ['PascalCase'], suffix: ['Type', 'State', 'Props', 'Returns', 'Params'] },
         ],
         '@typescript-eslint/consistent-type-imports': ['error'],
         /** {@link https://tkdodo.eu/blog/array-types-in-type-script} */

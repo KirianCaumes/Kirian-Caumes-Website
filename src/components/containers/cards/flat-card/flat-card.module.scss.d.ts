@@ -1,5 +1,5 @@
-/* eslint-disable jsdoc/require-jsdoc */
-export type StylesType = {
+/* eslint-disable jsdoc/require-jsdoc, @typescript-eslint/consistent-type-definitions */
+export type Styles = {
     'flat-card': string
     'flat-card-content': string
     'flat-card-image': string
@@ -8,8 +8,8 @@ export type StylesType = {
     'is-content-justify': string
 }
 
-export type ClassNamesType = keyof StylesType
+export type ClassNames = keyof Styles
 
-declare const styles: StylesType
+declare const styles: Styles
 
 export default styles

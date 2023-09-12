@@ -1,5 +1,5 @@
-/* eslint-disable jsdoc/require-jsdoc */
-export type StylesType = {
+/* eslint-disable jsdoc/require-jsdoc, @typescript-eslint/consistent-type-definitions */
+export type Styles = {
     column: string
     columns: string
     'is-center': string
@@ -50,8 +50,8 @@ export type StylesType = {
     'is-v-top': string
 }
 
-export type ClassNamesType = keyof StylesType
+export type ClassNames = keyof Styles
 
-declare const styles: StylesType
+declare const styles: Styles
 
 export default styles

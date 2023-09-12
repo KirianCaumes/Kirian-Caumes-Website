@@ -1,5 +1,5 @@
-/* eslint-disable jsdoc/require-jsdoc */
-export type StylesType = {
+/* eslint-disable jsdoc/require-jsdoc, @typescript-eslint/consistent-type-definitions */
+export type Styles = {
     border: string
     'is-black': string
     'is-bottom': string
@@ -13,8 +13,8 @@ export type StylesType = {
     'is-white': string
 }
 
-export type ClassNamesType = keyof StylesType
+export type ClassNames = keyof Styles
 
-declare const styles: StylesType
+declare const styles: Styles
 
 export default styles

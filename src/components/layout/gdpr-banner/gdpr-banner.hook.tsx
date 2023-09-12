@@ -6,7 +6,7 @@ import type { PublicRuntimeConfigType } from 'types'
 
 const ACCEPT_COOKIE_NAME = 'accept_cookies'
 
-export type UseGdprBannerHookReturns = {
+export interface UseGdprBannerHookReturns {
     /** isVisible */
     isVisible: boolean
     /** onAccept */
