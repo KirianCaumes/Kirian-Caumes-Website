@@ -94,17 +94,6 @@
               overflow: hidden;
               text-overflow: ellipsis;
               white-space: nowrap;
-
-              @include mixins.until(variables.$tablet) {
-                max-width: 50%;
-              }
-            }
-
-            &:last-child {
-              @include mixins.until(variables.$tablet) {
-                max-width: 50%;
-                overflow: hidden;
-              }
             }
           }
         }

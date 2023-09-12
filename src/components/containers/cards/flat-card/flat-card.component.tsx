@@ -24,7 +24,7 @@ export default function FlatCard({ imageSrc, title, children, align = 'justify' 
                     src={imageSrc}
                     alt={title}
                     fill
-                    // objectFit="cover"
+                    sizes="(max-width: 767px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
             </div>
             <Title
