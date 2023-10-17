@@ -3,13 +3,16 @@
   "configurations": [
     {
       "name": "⚛️ Next",
-      "type": "chrome",
+      "type": "node-terminal",
       "request": "launch",
-      "url": "http://localhost:3000",
-      "webRoot": "${workspaceFolder}/app",
-      "preLaunchTask": "⚛️ Next",
-      "postDebugTask": "terminate task",
-      "runtimeArgs": ["--start-maximized", "--auto-open-devtools-for-tabs"]
+      "command": "npm run dev",
+      "serverReadyAction": {
+        "pattern": "- Local:.+(https?://.+)",
+        "uriFormat": "%s",
+        "action": "debugWithChrome",
+        "killOnServerStop": true
+      }
+      // "runtimeArgs": ["--start-maximized", "--auto-open-devtools-for-tabs"]
     }
   ]
 }
