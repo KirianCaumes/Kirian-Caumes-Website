@@ -7,7 +7,7 @@ const withPWA = require('next-pwa')
 const nextConfig = {
     reactStrictMode: true,
     swcMinify: true,
-    pageExtensions: ['component.tsx'],
+    pageExtensions: ['component.tsx', 'route.ts'],
     // Will only be available on the server side
     serverRuntimeConfig: {},
     // Will be available on both server and client
