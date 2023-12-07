@@ -1,11 +1,26 @@
-<svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="750.000000pt" height="750.000000pt" viewBox="0 0 750.000000 750.000000" preserveAspectRatio="xMidYMid meet">
+<svg
+    version="1.0"
+    xmlns="http://www.w3.org/2000/svg"
+    width="750.000000pt"
+    height="750.000000pt"
+    viewBox="0 0 750.000000 750.000000"
+    preserveAspectRatio="xMidYMid meet"
+>
     <style>
         @media (prefers-color-scheme: dark) {
-            .fillable { fill: white }
+            .fillable {
+                fill: white;
+            }
         }
     </style>
-    <g transform="translate(0.000000,750.000000) scale(0.100000,-0.100000)" stroke="none">
-        <path class="fillable" fill="black" d="M336 7243 c-2 -10 -7 -72 -11 -138 -3 -66 -8 -128 -11 -137 -4 -15
+    <g
+        transform="translate(0.000000,750.000000) scale(0.100000,-0.100000)"
+        stroke="none"
+    >
+        <path
+            class="fillable"
+            fill="black"
+            d="M336 7243 c-2 -10 -7 -72 -11 -138 -3 -66 -8 -128 -11 -137 -4 -15
 14 -17 203 -20 197 -3 210 -4 239 -25 107 -76 119 -318 110 -2148 -6 -1199
 -14 -1552 -36 -1635 -8 -31 -17 -41 -43 -49 -71 -22 -117 -31 -242 -46 -141
 -17 -181 -28 -195 -56 -6 -10 -10 -72 -10 -138 l0 -121 994 0 993 0 7 93 c4
@@ -30,6 +45,7 @@ l-3 765 133 -2 c161 -3 224 -15 303 -57 122 -64 226 -191 531 -646 l186 -277
 315 -168 3 -92 -494 -740 -929 -1211 -205 -223 -296 -298 -345 -283 -30 10
 -57 82 -68 186 -12 121 -12 1043 0 1174 18 181 50 248 135 281 36 13 81 17
 226 18 l181 1 -6 60 c-3 33 -8 104 -12 158 l-7 97 -993 0 c-937 0 -993 -1
--998 -17z" />
+-998 -17z"
+        />
     </g>
 </svg>
