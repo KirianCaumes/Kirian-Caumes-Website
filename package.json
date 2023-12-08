@@ -18,7 +18,7 @@
     "prettier:fix": "npx prettier --write .",
     "prettier": "npx prettier --check .",
     "cspell": "npx cspell ./ --no-progress --dot --gitignore",
-    "typed-scss-modules": "npx typed-scss-modules src --nameFormat none --exportType default --banner \"/* eslint-disable jsdoc/require-jsdoc, @typescript-eslint/consistent-type-definitions */\" --logLevel info --exportTypeName ClassNames --exportTypeInterface Styles",
+    "typed-scss-modules": "npx typed-scss-modules src --nameFormat none --exportType default --banner \"/* eslint-disable jsdoc/require-jsdoc, @typescript-eslint/consistent-type-definitions */\" --logLevel info --exportTypeName ClassNames --exportTypeInterface Styles --ignore \"**/styles/index.scss\"",
     "prepare": "husky install",
     "knip": "NODE_OPTIONS=\"--max-old-space-size=8192\" npx knip"
   },
