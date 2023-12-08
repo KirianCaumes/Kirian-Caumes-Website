@@ -25,7 +25,8 @@
     "next-sitemap.config.js",
     "cspell.config.js",
     ".stylelintrc.js",
-    ".lintstagedrc.js"
+    ".lintstagedrc.js",
+    "knip.js"
   ],
   "exclude": ["node_modules"]
 }

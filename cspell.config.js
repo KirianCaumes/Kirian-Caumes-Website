@@ -28,6 +28,7 @@ module.exports = {
         'airbnb',
         'lintstagedrc',
         'stylelintrc',
+        'knip',
     ],
     words: [
         // Specific to the project

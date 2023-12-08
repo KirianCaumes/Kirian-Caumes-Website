@@ -87,7 +87,7 @@ module.exports = {
         'react/require-default-props': ['error', { functions: 'defaultArguments' }],
         'no-unused-vars': ['warn', { vars: 'all', args: 'after-used', ignoreRestSiblings: true }], // Must be at the end
     },
-    ignorePatterns: ['!.lintstagedrc.js', '!.stylelintrc.js'],
+    ignorePatterns: ['!.lintstagedrc.js', '!.stylelintrc.js', '!knip.js'],
     /** {@link https://github.com/import-js/eslint-plugin-import/issues/1485} */
     settings: {
         'import/resolver': {
