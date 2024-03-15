@@ -1,8 +1,9 @@
 import 'styles/index.scss'
 import getConfig from 'next/config'
 import { useRouter } from 'next/router'
-import { useEffect, useRef } from 'react'
+import { useRef } from 'react'
 import { Montserrat } from 'next/font/google'
+import { useMount, useUnmount } from 'react-use'
 import { GdprBanner, Layout } from 'components/layout'
 import type { PublicRuntimeConfigType } from 'types'
 import type { AppProps } from 'next/app'
@@ -25,18 +26,16 @@ function useApp() {
 
     const timer = useRef<NodeJS.Timeout>()
 
-    // Add comment on the top of the page
-    useEffect(() => {
+    useMount(() => {
+        // Add comment on the top of the page
         document
             .querySelector('html')
             ?.parentNode?.insertBefore(document.createComment(publicRuntimeConfig.appComment), document.querySelector('html'))
-    }, [publicRuntimeConfig])
 
-    /**
-     * Workaround to disabled smooth scroll
-     * {@link https://github.com/vercel/next.js/issues/20125}
-     */
-    useEffect(() => {
+        // See: https://github.com/vercel/next.js/issues/40196
+        document.querySelector('#__next')?.setAttribute('role', 'presentation')
+
+        // Workaround to disabled smooth scroll, see https://github.com/vercel/next.js/issues/20125
         router.events.on('routeChangeStart', () => {
             document.documentElement.setAttribute('data-scroll-behavior', 'auto')
         })
@@ -44,10 +43,11 @@ function useApp() {
             clearTimeout(timer.current)
             timer.current = setTimeout(() => document.documentElement.removeAttribute('data-scroll-behavior'), 100)
         })
-        return () => {
-            clearTimeout(timer.current)
-        }
-    }, [router.events])
+    })
+
+    useUnmount(() => {
+        clearTimeout(timer.current)
+    })
 
     return {}
 }

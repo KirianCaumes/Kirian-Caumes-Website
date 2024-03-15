@@ -43,5 +43,10 @@ html {
         }
       }
     }
+
+    // See: https://github.com/vercel/next.js/discussions/48097
+    next-route-announcer {
+      display: none;
+    }
   }
 }

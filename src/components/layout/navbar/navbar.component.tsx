@@ -22,7 +22,7 @@ export interface NavbarProps {
  * A navbar
  */
 export default function Navbar({ itemsMain, itemsEnd = [], itemHome }: NavbarProps): React.ReactElement {
-    const { hash, isOpen, ref, setIsOpen } = useNavbar()
+    const { hash, isOpen, ref, toggleIsOpen, onClickLink } = useNavbar()
 
     return (
         <nav
@@ -35,6 +35,7 @@ export default function Navbar({ itemsMain, itemsEnd = [], itemHome }: NavbarPro
                     className={classNames(styles['navbar-item'], {
                         [styles['is-active']]: hash === itemHome.href?.replace('#', '')?.replace('/', ''),
                     })}
+                    onClick={onClickLink}
                 >
                     {itemHome.children}
                 </Link>
@@ -54,7 +55,12 @@ export default function Navbar({ itemsMain, itemsEnd = [], itemHome }: NavbarPro
                                     [styles['is-active']]: hash === item.href?.replace('#', '')?.replace('/', ''),
                                 })}
                             >
-                                <Link href={item.href}>{item.children}</Link>
+                                <Link
+                                    href={item.href}
+                                    onClick={onClickLink}
+                                >
+                                    {item.children}
+                                </Link>
                             </li>
                         ))}
                     </ul>
@@ -62,7 +68,7 @@ export default function Navbar({ itemsMain, itemsEnd = [], itemHome }: NavbarPro
             </div>
             <button
                 className={classNames(styles['navbar-burger'], { [styles['is-active']]: isOpen })}
-                onClick={() => setIsOpen(!isOpen)}
+                onClick={toggleIsOpen}
                 aria-label="menu"
                 aria-expanded={isOpen}
                 tabIndex={0}

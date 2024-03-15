@@ -151,6 +151,7 @@ export default function Icon({ name, isColored = false }: IconProps): React.Reac
                     viewBox="0 0 100 100"
                     enableBackground="new 0 0 100 100"
                     xmlSpace="preserve"
+                    aria-hidden="true"
                 >
                     <g>
                         <g>

@@ -1,7 +1,8 @@
-import { useEffect, useState, useCallback } from 'react'
+import { useState, useCallback } from 'react'
 import Cookie from 'js-cookie'
 import ReactGA from 'react-ga4'
 import getConfig from 'next/config'
+import { useMount } from 'react-use'
 import type { PublicRuntimeConfigType } from 'types'
 
 const ACCEPT_COOKIE_NAME = 'accept_cookies'
@@ -47,7 +48,7 @@ export default function useGdprBanner(): UseGdprBannerHookReturns {
         Cookie.remove('_gid')
     }, [])
 
-    useEffect(() => {
+    useMount(() => {
         const cookie = Cookie.get(ACCEPT_COOKIE_NAME)
 
         if (!cookie) {
@@ -57,7 +58,7 @@ export default function useGdprBanner(): UseGdprBannerHookReturns {
         if (cookie === 'true') {
             onAccept()
         }
-    }, [onAccept])
+    })
 
     return {
         isVisible,

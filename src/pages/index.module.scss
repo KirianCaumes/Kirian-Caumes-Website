@@ -29,6 +29,10 @@
         border-radius: 0.375em;
         box-shadow: variables.$shadow;
       }
+
+      a[aria-label] {
+        display: inline-block;
+      }
     }
 
     &.row-about {
