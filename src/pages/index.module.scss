@@ -30,7 +30,7 @@
         box-shadow: variables.$shadow;
       }
 
-      a[aria-label] {
+      a[aria-label]:not([aria-label*='pdf']) {
         display: inline-block;
       }
     }

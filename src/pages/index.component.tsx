@@ -54,22 +54,22 @@ export default function Index(): JSX.Element {
                         <Columns>
                             <Columns.Column>
                                 <p>
-                                    Développeur full stack âgé de <b>{age} ans</b>, je suis situé aux abords de la ville de <b>Nantes</b> et
-                                    titulaire du <b>permis B</b>
+                                    Développeur full stack âgé de <em>{age} ans</em>, je suis situé aux abords de la ville de{' '}
+                                    <em>Nantes</em> et titulaire du <em>permis B</em>
                                     .
                                     <br />
                                     <br />
                                     Dans le domaine de l'informatique depuis maintenant plus de {workingYears} ans, mon{' '}
                                     <Link href="/#career">parcours professionnel</Link>, ainsi que mes études à Ynov Nantes avec l'obtention
-                                    de mon mastère « <b>Expert Développement Web</b> » et du titre RNCP «{' '}
-                                    <b>Expert Informatique et Systèmes d'Information</b> », m'ont permis l'acquisition de{' '}
+                                    de mon mastère « <em>Expert Développement Web</em> » et du titre RNCP «{' '}
+                                    <em>Expert Informatique et Systèmes d'Information</em> », m'ont permis l'acquisition de{' '}
                                     <Link href="/#skills">compétences</Link> solides et adaptatives.
                                     <br />
                                     <br />
                                     Ce savoir-faire technique, acquis également grâce à ma bonne compréhension de l'
-                                    <b>anglais</b>, se sera exprimé autour de la réalisation (notamment) d'
-                                    <b>applications web métier</b> mais aussi de la <b>gestion de projets</b> et de la{' '}
-                                    <b>relation client</b>
+                                    <em>anglais</em>, se sera exprimé autour de la réalisation (notamment) d'
+                                    <em>applications web métier</em> mais aussi de la <em>gestion de projets</em> et de la{' '}
+                                    <em>relation client</em>
                                     .
                                     <br />
                                     <br />
@@ -646,21 +646,21 @@ export default function Index(): JSX.Element {
                             <Columns.Column>
                                 <p>
                                     Le site que vous êtes en train de visiter a été entièrement réalisé par mes soins. Celui-ci repose sur{' '}
-                                    <b>Next.js</b> : un Framework <b>React</b> permettant, notamment, la mise en place d'un rendu des
+                                    <em>Next.js</em> : un Framework <em>React</em> permettant, notamment, la mise en place d'un rendu des
                                     composants côté serveur.
                                 </p>
                                 <br />
                                 <p>
-                                    Pour un simple projet comme celui-ci, <b>Next.js</b> est "overkill", et un site sans un tel Framework
+                                    Pour un simple projet comme celui-ci, <em>Next.js</em> est "overkill", et un site sans un tel Framework
                                     serait sûrement plus optimal. Mais ici, ce choix résulte d'une volonté personnelle de démontrer mes
-                                    compétences en <b>React</b>.
+                                    compétences en <em>React</em>.
                                 </p>
                                 <br />
                                 <p>
                                     À travers ce projet, une partie de mes compétences auront pu être exprimées. Allant de la phase de{' '}
-                                    <b>conception</b> (recherche d'idées, mockup, etc.) à l'
-                                    <b>hébergement</b> (déploiement continu, etc.) en passant bien sûr par la phase de <b>développement</b>{' '}
-                                    (architecture en composants, style, accessibilité, performance, etc.).
+                                    <em>conception</em> (recherche d'idées, mockup, etc.) à l'
+                                    <em>hébergement</em> (déploiement continu, etc.) en passant bien sûr par la phase de{' '}
+                                    <em>développement</em> (architecture en composants, style, accessibilité, performance, etc.).
                                 </p>
                                 <br />
                                 <p>

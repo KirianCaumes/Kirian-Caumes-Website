@@ -81,7 +81,6 @@ Columns.Column = function Column({
                 styles.column,
                 className,
                 { [styles[`is-${align}`]]: align },
-                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                 { [styles[`is-v-${vAlign!}`]]: !!vAlign },
                 ...(sizes?.map(size => [styles[`is-${size}`]]) ?? [{}]),
             )}
