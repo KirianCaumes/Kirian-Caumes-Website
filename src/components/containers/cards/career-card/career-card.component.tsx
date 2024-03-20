@@ -55,6 +55,7 @@ export default function CareerCard({ period, title, location, missions }: Career
                                 href={location?.href}
                                 target="_blank"
                                 rel="noopener noreferrer nofollow"
+                                aria-label={`${location?.company}, ouvre dans un nouvel onglet`}
                             >
                                 {location?.company}
                             </a>

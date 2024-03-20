@@ -1,17 +1,17 @@
 /* eslint-disable jsdoc/require-jsdoc, @typescript-eslint/consistent-type-definitions */
 export type Styles = {
     'index-page': string
-    'last-update': string
-    row: string
-    'row-about': string
+    'index-page-row': string
+    'is-about': string
+    'is-career': string
+    'is-intro': string
+    'is-last-update': string
+    'is-passions': string
+    'is-productions': string
+    'is-quote': string
+    'is-skills': string
     'row-about-fade-container': string
-    'row-career': string
-    'row-intro': string
-    'row-passions': string
     'row-passions-columns': string
-    'row-productions': string
-    'row-quote': string
-    'row-skills': string
     'row-skills-fade-container': string
 }
 

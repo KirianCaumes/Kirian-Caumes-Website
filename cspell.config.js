@@ -55,6 +55,10 @@ module.exports = {
         'balsamiq',
         'smacss',
         'firefox',
+        'youtu',
+        'instagram',
+        'thenounproject',
+        'aomam',
         // Common
         'devcontainer',
         'esnext',

@@ -25,6 +25,7 @@ module.exports = {
         sourceType: 'module',
     },
     plugins: ['jsdoc'],
+    reportUnusedDisableDirectives: true,
     rules: {
         /** {@link https://github.com/microsoft/TypeScript/wiki/Performance#preferring-interfaces-over-intersections} */
         '@typescript-eslint/consistent-type-definitions': ['warn', 'interface'],

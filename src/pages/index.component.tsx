@@ -1,23 +1,14 @@
 import React from 'react'
 import Head from 'next/head'
 import classNames from 'classnames'
-import { Fade as RevealFade } from 'react-awesome-reveal'
 import Link from 'next/link'
 import Image from 'next/image'
 import styles from 'pages/index.module.scss'
 import useIndex from 'pages/index.hook'
-import { Columns, Container, Tag } from 'components/containers'
+import { Columns, Container, Fade, Tag } from 'components/containers'
 import { Border, Icon, Title } from 'components/elements'
 import { Button } from 'components/inputs'
 import { CareerCard, FlatCard, SkillCard, IconCard } from 'components/containers/cards'
-import type { FadeProps } from 'react-awesome-reveal'
-
-const Fade = RevealFade as React.FC<
-    FadeProps & {
-        /** Children */
-        children: React.ReactNode
-    }
->
 
 /**
  * Home page
@@ -56,7 +47,7 @@ export default function Index(): JSX.Element {
             <main className={styles['index-page']}>
                 <div
                     id="intro"
-                    className={classNames(styles.row, styles['row-intro'])}
+                    className={classNames(styles['index-page-row'], styles['is-intro'])}
                 >
                     <Container>
                         <Title level={1}>Kirian CAUMES</Title>
@@ -90,12 +81,13 @@ export default function Index(): JSX.Element {
                                             href="/documents/Kirian-CAUMES-CV.pdf"
                                             rel="noopener noreferrer"
                                             target="_blank"
+                                            aria-label="Kirian-CAUMES-CV.pdf, ouvre dans un nouvel onglet"
                                             color="secondary"
                                             isFullWidth
                                         >
                                             Mon CV *
                                         </Button>
-                                        <p className={classNames(styles['last-update'])}>* Dernière mise à jour : janvier 2018</p>
+                                        <p className={styles['is-last-update']}>* Dernière mise à jour : janvier 2018</p>
                                     </Columns.Column>
                                     <Columns.Column>
                                         <Button
@@ -111,7 +103,7 @@ export default function Index(): JSX.Element {
                                     href="https://www.linkedin.com/in/kirian-caumes"
                                     rel="noopener noreferrer"
                                     target="_blank"
-                                    aria-label="Linkedin"
+                                    aria-label="linkedin.com/in/kirian-caumes, ouvre dans un nouvel onglet"
                                     title="Linkedin"
                                 >
                                     <Icon
@@ -123,7 +115,7 @@ export default function Index(): JSX.Element {
                                     href="https://github.com/KirianCaumes"
                                     rel="noopener noreferrer"
                                     target="_blank"
-                                    aria-label="Github"
+                                    aria-label="github.com/KirianCaumes, ouvre dans un nouvel onglet"
                                     title="Github"
                                 >
                                     <Icon
@@ -135,7 +127,7 @@ export default function Index(): JSX.Element {
                                     href="https://medium.com/@kirian.caumes"
                                     rel="noopener noreferrer"
                                     target="_blank"
-                                    aria-label="Medium"
+                                    aria-label="medium.com/@kirian.caumes, ouvre dans un nouvel onglet"
                                     title="Medium"
                                 >
                                     <Icon
@@ -151,7 +143,7 @@ export default function Index(): JSX.Element {
                                 >
                                     <Image
                                         src="/images/kirian_caumes.jpg"
-                                        alt="kirian caumes"
+                                        alt="Photo de profil de Kirian Caumes"
                                         width={300}
                                         height={300}
                                     />
@@ -163,7 +155,7 @@ export default function Index(): JSX.Element {
                 </div>
                 <div
                     id="about"
-                    className={classNames(styles.row, styles['row-about'])}
+                    className={classNames(styles['index-page-row'], styles['is-about'])}
                 >
                     <Container>
                         <Title
@@ -241,7 +233,7 @@ export default function Index(): JSX.Element {
                 </div>
                 <div
                     id="skills"
-                    className={classNames(styles.row, styles['row-skills'])}
+                    className={classNames(styles['index-page-row'], styles['is-skills'])}
                 >
                     <Container>
                         <Title
@@ -448,7 +440,7 @@ export default function Index(): JSX.Element {
                 </div>
                 <div
                     id="career"
-                    className={classNames(styles.row, styles['row-career'])}
+                    className={classNames(styles['index-page-row'], styles['is-career'])}
                 >
                     <Container>
                         <Title
@@ -616,7 +608,7 @@ export default function Index(): JSX.Element {
                 </div>
                 <div
                     id="productions"
-                    className={classNames(styles.row, styles['row-productions'])}
+                    className={classNames(styles['index-page-row'], styles['is-productions'])}
                 >
                     <Container>
                         <Title
@@ -668,7 +660,7 @@ export default function Index(): JSX.Element {
                                     À travers ce projet, une partie de mes compétences auront pu être exprimées. Allant de la phase de{' '}
                                     <b>conception</b> (recherche d'idées, mockup, etc.) à l'
                                     <b>hébergement</b> (déploiement continu, etc.) en passant bien sûr par la phase de <b>développement</b>{' '}
-                                    (découpage des composants, logique fonctionnelle, etc.).
+                                    (architecture en composants, style, accessibilité, performance, etc.).
                                 </p>
                                 <br />
                                 <p>
@@ -685,6 +677,7 @@ export default function Index(): JSX.Element {
                                     isOutlined
                                     rel="noopener noreferrer"
                                     target="_blank"
+                                    aria-label="github.com/KirianCaumes/Kirian-Caumes-Website, ouvre dans un nouvel onglet"
                                 >
                                     Voir sur Github
                                 </Button>
@@ -692,11 +685,11 @@ export default function Index(): JSX.Element {
                         </Columns>
                     </Container>
                 </div>
-                <div className={classNames(styles.row, styles['row-quote'])}>
+                <div className={classNames(styles['index-page-row'], styles['is-quote'])}>
                     <figure>
                         <blockquote>
                             Il est parfois sensé d'
-                            <strong>être insensé</strong>.
+                            <span>être insensé</span>.
                         </blockquote>
                         <figcaption>
                             Jérémie Belpois,{' '}
@@ -704,6 +697,7 @@ export default function Index(): JSX.Element {
                                 <a
                                     href="https://youtu.be/G5Q9CVbo67o?t=1348"
                                     target="_blank"
+                                    aria-label="youtu.be/G5Q9CVbo67o?t=1348, ouvre dans un nouvel onglet"
                                     rel="noopener noreferrer nofollow"
                                 >
                                     Code Lyoko
@@ -724,7 +718,7 @@ export default function Index(): JSX.Element {
                 </div>
                 <div
                     id="passions"
-                    className={classNames(styles.row, styles['row-passions'])}
+                    className={classNames(styles['index-page-row'], styles['is-passions'])}
                 >
                     <Container>
                         <Title
@@ -750,6 +744,7 @@ export default function Index(): JSX.Element {
                                     <FlatCard
                                         imageSrc="/images/handball.jpg"
                                         title="Handball"
+                                        alt="Équipe de Handball du Thouaré Handball"
                                     >
                                         Joueur de Handball au poste de gardien de but, cumulant quinze saisons aux clubs de Carquefou et
                                         anciennement Thouaré-sur-Loire. Également, coach et entraîneur d'une équipe d'U16M à Carquefou.
@@ -771,6 +766,7 @@ export default function Index(): JSX.Element {
                                     <FlatCard
                                         imageSrc="/images/ajesterscollection.png"
                                         title="Collections"
+                                        alt="Collections Vinyls d'In Flames - A Jester's Collection"
                                     >
                                         Collectionneur passionné depuis mon plus jeune âge, je me suis toujours adonné à la quête d'objets
                                         variés, tels que des pièces d'euros, des timbres, des fèves, des jeux vidéo, et bien d'autres.
@@ -782,6 +778,7 @@ export default function Index(): JSX.Element {
                                         <a
                                             href="https://www.instagram.com/jesters_collection/"
                                             target="_blank"
+                                            aria-label="instagram.com/jesters_collection, ouvre dans un nouvel onglet"
                                             rel="noopener noreferrer nofollow"
                                         >
                                             A Jester's Collection
@@ -798,12 +795,14 @@ export default function Index(): JSX.Element {
                                     <FlatCard
                                         imageSrc="/images/development.jpg"
                                         title="Développement"
+                                        alt="Développement et exemple de code React"
                                     >
                                         Plus qu'un métier, le développement est également une passion. Je m'amuse fréquemment à développer
                                         différents projets, qu'ils soient Open Source, ou bien directement pour mon usage personnel (
                                         <a
                                             href="https://github.com/KirianCaumes"
                                             target="_blank"
+                                            aria-label="github.com/KirianCaumes, ouvre dans un nouvel onglet"
                                             rel="noopener noreferrer"
                                         >
                                             Github
@@ -822,7 +821,7 @@ export default function Index(): JSX.Element {
                 </div>
                 <div
                     id="contact"
-                    className={classNames(styles.row)}
+                    className={classNames(styles['index-page-row'])}
                 >
                     <Container>
                         <Title
@@ -872,6 +871,7 @@ export default function Index(): JSX.Element {
                                             href="https://www.linkedin.com/in/kirian-caumes"
                                             rel="noopener noreferrer"
                                             target="_blank"
+                                            aria-label="linkedin.com/in/kirian-caumes, ouvre dans un nouvel onglet"
                                         >
                                             linkedin.com/in/kirian-caumes
                                         </a>

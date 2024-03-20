@@ -1,4 +1,3 @@
-// eslint-disable-next-line max-classes-per-file
 import React from 'react'
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import getConfig from 'next/config'
@@ -11,9 +10,7 @@ const { publicRuntimeConfig } = getConfig() as {
 
 /**
  * Base component to render base HTML
- * @augments {Document}
  * {@link https://nextjs.org/docs/advanced-features/custom-document}
- * @returns {JSX.Element} Content
  */
 export default class MyDocument extends Document {
     /**
@@ -23,10 +20,6 @@ export default class MyDocument extends Document {
         return (
             <Html lang={publicRuntimeConfig.appLang}>
                 <Head>
-                    <meta
-                        key="charset"
-                        charSet="utf-8"
-                    />
                     <link
                         rel="canonical"
                         href="https://kiriancaumes.fr"

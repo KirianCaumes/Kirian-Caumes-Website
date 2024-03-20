@@ -5,7 +5,7 @@ import styles from 'components/inputs/button/button.module.scss'
 import type { ComponentProps } from 'react'
 
 export interface ButtonProps
-    extends Pick<ComponentProps<'div'>, 'children' | 'title'>,
+    extends Pick<ComponentProps<'div'>, 'children' | 'title' | 'className' | 'aria-label'>,
         Pick<ComponentProps<'a'>, 'rel' | 'href' | 'target'> {
     /** type */
     type?: 'button' | 'submit' | 'reset'
@@ -33,9 +33,11 @@ export default function Button({
     isOutlined = false,
     href = '',
     rel = 'noopener',
-    target = '',
-    title = '',
+    target,
+    title,
     children,
+    className,
+    'aria-label': ariaLabel,
 }: ButtonProps): React.ReactElement {
     if (href && !isDisabled) {
         return (
@@ -45,12 +47,14 @@ export default function Button({
                     { [styles['is-fullwidth']]: isFullWidth },
                     { [styles['is-outlined']]: isOutlined },
                     styles[`is-${color}`],
+                    className,
                 )}
                 onClick={onClick}
                 rel={rel}
                 target={target}
                 title={title}
                 href={href}
+                aria-label={ariaLabel}
             >
                 {children}
             </Link>
@@ -64,12 +68,14 @@ export default function Button({
                 { [styles['is-fullwidth']]: isFullWidth },
                 { [styles['is-outlined']]: isOutlined },
                 styles[`is-${color}`],
+                className,
             )}
             // eslint-disable-next-line react/button-has-type
             type={type}
             onClick={onClick}
             disabled={isDisabled}
             title={title}
+            aria-label={ariaLabel}
         >
             {children}
         </button>

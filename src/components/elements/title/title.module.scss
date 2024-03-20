@@ -1,22 +1,6 @@
 @use 'styles/abstracts/variables';
 @use 'sass:map';
 
-h1.title {
-  font-size: 2rem;
-}
-
-h2.title {
-  font-size: 1.5rem;
-}
-
-h3.title {
-  font-size: 1rem;
-}
-
-h4.title {
-  font-size: 1rem;
-}
-
 .title {
   color: map.get(variables.$colors, 'black');
   font-size: 2rem;
@@ -24,6 +8,22 @@ h4.title {
   line-height: 1.125;
   margin-bottom: 1.5rem;
   word-break: break-word;
+
+  &:is(h1) {
+    font-size: 2rem;
+  }
+
+  &:is(h2) {
+    font-size: 1.5rem;
+  }
+
+  &:is(h3) {
+    font-size: 1rem;
+  }
+
+  &:is(h4) {
+    font-size: 1rem;
+  }
 
   &.is-centered {
     text-align: center;

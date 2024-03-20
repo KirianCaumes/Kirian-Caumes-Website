@@ -3,7 +3,7 @@
 @use 'sass:map';
 
 .index-page {
-  div.row {
+  div.index-page-row {
     padding: 6em 1em;
     position: relative;
     scroll-margin-top: variables.$header-height;
@@ -12,13 +12,13 @@
       background-color: map.get(variables.$colors, 'grey');
     }
 
-    &.row-intro {
+    &.is-intro {
       @include mixins.background-primary;
 
       p {
         text-align: justify;
 
-        &.last-update {
+        &.is-last-update {
           font-size: 0.66rem;
           font-style: italic;
           margin-top: 0.25rem;
@@ -35,19 +35,19 @@
       }
     }
 
-    &.row-about {
+    &.is-about {
       div.row-about-fade-container {
         height: 100%;
       }
     }
 
-    &.row-skills {
+    &.is-skills {
       div.row-skills-fade-container {
         margin-bottom: 0.75em;
       }
     }
 
-    &.row-career {
+    &.is-career {
       @include mixins.background-secondary;
 
       > div {
@@ -55,7 +55,7 @@
       }
     }
 
-    &.row-productions {
+    &.is-productions {
       @include mixins.tablet-only() {
         p {
           margin: 0 auto;
@@ -68,7 +68,7 @@
       }
     }
 
-    &.row-quote {
+    &.is-quote {
       $width: 37rem;
 
       figure {
@@ -118,7 +118,7 @@
       }
     }
 
-    &.row-passions {
+    &.is-passions {
       .row-passions-columns {
         > div:last-child {
           @include mixins.tablet-only() {
@@ -128,7 +128,7 @@
       }
     }
 
-    // &.row-contact {
+    // &.is-contact {
     // }
   }
 }

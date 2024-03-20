@@ -17,8 +17,8 @@
   padding-right: 0.75em;
   white-space: nowrap;
 
-  @each $name, $value in variables.$colors {
-    &.is-#{$name} {
+  @each $key, $value in variables.$colors {
+    &.is-#{$key} {
       background-color: $value;
       color: functions.find-color-invert($value);
     }
