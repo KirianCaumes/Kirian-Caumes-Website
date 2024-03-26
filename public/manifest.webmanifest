@@ -87,5 +87,49 @@
             "sizes": "16x16"
         }
     ],
+    "screenshots": [
+        {
+            "src": "/screenshots/screenshot_home_narrow.png",
+            "sizes": "375x812",
+            "type": "image/png",
+            "form_factor": "narrow",
+            "label": "Home"
+        },
+        {
+            "src": "/screenshots/screenshot_about_narrow.png",
+            "sizes": "375x812",
+            "type": "image/png",
+            "form_factor": "narrow",
+            "label": "About"
+        },
+        {
+            "src": "/screenshots/screenshot_skills_narrow.png",
+            "sizes": "375x812",
+            "type": "image/png",
+            "form_factor": "narrow",
+            "label": "Skills"
+        },
+        {
+            "src": "/screenshots/screenshot_home_wide.png",
+            "sizes": "1920x919",
+            "type": "image/png",
+            "form_factor": "wide",
+            "label": "Home"
+        },
+        {
+            "src": "/screenshots/screenshot_about_wide.png",
+            "sizes": "1920x919",
+            "type": "image/png",
+            "form_factor": "wide",
+            "label": "About"
+        },
+        {
+            "src": "/screenshots/screenshot_skills_wide.png",
+            "sizes": "1920x919",
+            "type": "image/png",
+            "form_factor": "wide",
+            "label": "Skills"
+        }
+    ],
     "prefer_related_applications": false
 }
