@@ -87,6 +87,32 @@
             "sizes": "16x16"
         }
     ],
+    "shortcuts": [
+        {
+            "name": "Home",
+            "url": "/",
+            "description": "Home",
+            "icons": [{ "src": "/icons/favicon-96x96.png", "sizes": "96x96" }]
+        },
+        {
+            "name": "À propos",
+            "url": "/#about",
+            "description": "À propos",
+            "icons": [{ "src": "/icons/favicon-96x96.png", "sizes": "96x96" }]
+        },
+        {
+            "name": "Mes compétences",
+            "url": "/#skills",
+            "description": "Mes compétences",
+            "icons": [{ "src": "/icons/favicon-96x96.png", "sizes": "96x96" }]
+        },
+        {
+            "name": "Mon parcours",
+            "url": "/#career",
+            "description": "Mon parcours",
+            "icons": [{ "src": "/icons/favicon-96x96.png", "sizes": "96x96" }]
+        }
+    ],
     "screenshots": [
         {
             "src": "/screenshots/screenshot_home_narrow.png",
