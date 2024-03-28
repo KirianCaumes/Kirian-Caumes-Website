@@ -54,7 +54,7 @@ export default function Index(): JSX.Element {
                         <Columns>
                             <Columns.Column>
                                 <p>
-                                    Développeur full stack âgé de <em>{age} ans</em>, je suis situé aux abords de la ville de{' '}
+                                    Lead Tech / Développeur Full Stack âgé de <em>{age} ans</em>, je suis situé aux abords de la ville de{' '}
                                     <em>Nantes</em> et titulaire du <em>permis B</em>
                                     .
                                     <br />
@@ -247,7 +247,7 @@ export default function Index(): JSX.Element {
                             isSubtitle
                             isCentered
                         >
-                            Mon savoir-faire (non exhaustif et ardu à organiser) de développeur full stack
+                            Mon savoir-faire (non exhaustif et ardu à organiser) de développeur
                         </Title>
                         <br />
                         <Fade
@@ -258,13 +258,12 @@ export default function Index(): JSX.Element {
                             <Columns>
                                 <Columns.Column sizes={['one-quarter-widescreen', 'half-desktop', 'half-tablet']}>
                                     <SkillCard
-                                        title={['NodeJs', 'Javascript/Typescript']}
+                                        title={['NodeJs', 'JavaScript/TypeScript']}
                                         score={4}
                                         rows={[
-                                            { title: 'Nest', score: 4 },
-                                            { title: 'Express', score: 4 },
+                                            { title: 'Nest/Express', score: 4 },
                                             { title: 'ORM (Mongoose/Prisma/TypeOrm)', score: 4 },
-                                            { title: 'ESLint/Prettier/Stylelint', score: 4 },
+                                            { title: 'ESLint/Prettier/Stylelint/CSpell', score: 4 },
                                             { title: 'Playwright/Puppeteer', score: 4 },
                                             { title: 'Jest', score: 3 },
                                             { title: 'Babel/Rollup/WebPack/SWC', score: 3 },
@@ -289,6 +288,19 @@ export default function Index(): JSX.Element {
                                 </Columns.Column>
                                 <Columns.Column sizes={['one-quarter-widescreen', 'half-desktop', 'half-tablet']}>
                                     <SkillCard
+                                        title="Python"
+                                        score={3}
+                                        rows={[
+                                            { title: 'Llamaindex', score: 3 },
+                                            { title: 'FastAPI', score: 3 },
+                                            { title: 'Sympy', score: 2 },
+                                            { title: 'SQLAlchemy', score: 2 },
+                                        ]}
+                                        color="tertiary"
+                                    />
+                                </Columns.Column>
+                                <Columns.Column sizes={['one-quarter-widescreen', 'half-desktop', 'half-tablet']}>
+                                    <SkillCard
                                         title="BDD"
                                         score={3}
                                         rows={[
@@ -298,18 +310,6 @@ export default function Index(): JSX.Element {
                                             { title: 'MongoDB', score: 3 },
                                             { title: 'ElasticSearch', score: 3 },
                                             { title: 'SQLite', score: 2 },
-                                        ]}
-                                        color="tertiary"
-                                    />
-                                </Columns.Column>
-                                <Columns.Column sizes={['one-quarter-widescreen', 'half-desktop', 'half-tablet']}>
-                                    <SkillCard
-                                        title=".NET Core"
-                                        score={2}
-                                        rows={[
-                                            { title: 'C#', score: 3 },
-                                            { title: 'AspNetCore.Mvc', score: 3 },
-                                            { title: 'Entity Framework', score: 3 },
                                         ]}
                                         color="tertiary"
                                     />
@@ -324,9 +324,10 @@ export default function Index(): JSX.Element {
                             <Columns>
                                 <Columns.Column sizes={['one-quarter-widescreen', 'half-desktop', 'half-tablet']}>
                                     <SkillCard
-                                        title="HTML/CSS"
+                                        title={['HTML/CSS', 'et composants']}
                                         score={4}
                                         rows={[
+                                            { title: 'Fluent UI', score: 4 },
                                             { title: 'Bulma', score: 4 },
                                             { title: 'Bootstrap', score: 2 },
                                             { title: 'Material Design', score: 1 },
@@ -340,8 +341,8 @@ export default function Index(): JSX.Element {
                                         title="CSS"
                                         score={4}
                                         rows={[
-                                            { title: 'SCSS', score: 4 },
-                                            { title: 'Sass', score: 4 },
+                                            { title: 'Vanilla', score: 4 },
+                                            { title: 'SCSS/Sass', score: 4 },
                                             { title: 'Less', score: 1 },
                                         ]}
                                         color="secondary"
@@ -349,12 +350,12 @@ export default function Index(): JSX.Element {
                                 </Columns.Column>
                                 <Columns.Column sizes={['one-quarter-widescreen', 'half-desktop', 'half-tablet']}>
                                     <SkillCard
-                                        title={['Deno', 'Typescript']}
-                                        score={3}
+                                        title=".NET Core"
+                                        score={2}
                                         rows={[
-                                            { title: 'Computed Types', score: 4 },
-                                            { title: 'Oak', score: 3 },
-                                            { title: 'Djwt', score: 3 },
+                                            { title: 'C#', score: 3 },
+                                            { title: 'AspNetCore.Mvc', score: 3 },
+                                            { title: 'Entity Framework', score: 3 },
                                         ]}
                                         color="secondary"
                                     />
@@ -399,9 +400,10 @@ export default function Index(): JSX.Element {
                                         title="Divers"
                                         score={0}
                                         rows={[
-                                            { title: 'Python', score: 3 },
                                             { title: 'Bash', score: 3 },
+                                            { title: 'Deno/Bun', score: 2 },
                                             { title: 'Java', score: 2 },
+                                            { title: 'Merise/UML', score: 2 },
                                             { title: 'C/C++', score: 1 },
                                             { title: 'Cisco', score: 1 },
                                         ]}
@@ -410,12 +412,12 @@ export default function Index(): JSX.Element {
                                 </Columns.Column>
                                 <Columns.Column sizes={['one-quarter-widescreen', 'half-desktop', 'half-tablet']}>
                                     <SkillCard
-                                        title="Env."
+                                        title={['Système', "d'exploitation"]}
                                         score={0}
                                         rows={[
+                                            { title: 'Azure', score: 4 },
+                                            { title: 'Ubuntu/Debian', score: 4 },
                                             { title: 'Heroku', score: 3 },
-                                            { title: 'Ubuntu/Debian', score: 3 },
-                                            { title: 'Azure', score: 3 },
                                             { title: 'OMV', score: 3 },
                                             { title: 'Win. Server', score: 2 },
                                         ]}
@@ -424,12 +426,14 @@ export default function Index(): JSX.Element {
                                 </Columns.Column>
                                 <Columns.Column sizes={['one-quarter-widescreen', 'half-desktop', 'half-tablet']}>
                                     <SkillCard
-                                        title="Transverse"
-                                        score={0}
+                                        title={['Gestion', 'de projet']}
+                                        score={3}
                                         rows={[
-                                            { title: 'Merise', score: 3 },
-                                            { title: 'Agile', score: 3 },
-                                            { title: 'UML', score: 2 },
+                                            { title: 'Lead Tech', score: 4 },
+                                            { title: 'Pilotage dev.', score: 4 },
+                                            { title: 'Code reviewer', score: 4 },
+                                            { title: 'Suivi client', score: 4 },
+                                            { title: 'Commerce', score: 2 },
                                         ]}
                                         color="primary"
                                     />
@@ -463,7 +467,7 @@ export default function Index(): JSX.Element {
                         >
                             <>
                                 <CareerCard
-                                    title="CDI développeur full stack"
+                                    title="CDI Lead Tech / Développeur Full Stack"
                                     location={{
                                         company: 'Next Decision',
                                         href: 'https://www.next-decision.fr/',

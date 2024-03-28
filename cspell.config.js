@@ -59,6 +59,8 @@ module.exports = {
         'instagram',
         'thenounproject',
         'aomam',
+        'sympy',
+        'llamaindex',
         // Common
         'devcontainer',
         'esnext',

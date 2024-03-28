@@ -18,8 +18,7 @@ const nextConfig = {
         appName: 'Kirian Caumes',
         appTitle: 'Kirian Caumes - Développeur Web Full Stack Nantes',
         appDescription:
-            // eslint-disable-next-line max-len
-            'Kirian Caumes, développeur full stack passionné de développement informatique. Féru de Javascript, Typescript, Node, Nest, PWA, Next.js et autre !',
+            "Kirian Caumes, Lead Tech / Développeur Full Stack passionné d'informatique. Féru de Javascript, Typescript, Node, Nest, PWA, Next.js et autre !",
         appComment:
             '👉 If you are able to see this, feel free to check out the source code of my website: https://github.com/KirianCaumes/Kirian-Caumes-Website 👈',
         /* cspell:disable-next-line */
