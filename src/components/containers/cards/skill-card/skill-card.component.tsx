@@ -1,27 +1,46 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import classNames from 'classnames'
 import styles from 'components/containers/cards/skill-card/skill-card.module.scss'
+import { Icon } from 'components/elements'
+import type { ReactElement } from 'react'
 
 export interface ScoreProps {
     /** value */
     value: number
     /** max */
     max?: number
-    /** icon */
-    icon?: string
-    /** unselectedIcon */
-    unselectedIcon?: string
+    /** fullIcon */
+    fullIcon?: ReactElement
+    /** emptyIcon */
+    emptyIcon?: ReactElement
+    /** halfIcon */
+    halfIcon?: ReactElement
 }
 /**
  * Score with stars
  */
-function Score({ value, max = 5, icon = '★', unselectedIcon = '☆' }: ScoreProps): React.ReactElement {
+function Score({
+    value,
+    max = 5,
+    fullIcon = <Icon name="star_full" />,
+    emptyIcon = <Icon name="star_empty" />,
+    halfIcon = <Icon name="star_half" />,
+}: ScoreProps): React.ReactElement {
+    const full = Math.floor(value)
+    const half = value - full > 0 && value - full < 1 ? 1 : 0
+    const empty = max - full - half
+
     return (
         <span className={styles['skill-card-stars']}>
-            {new Array(max)
-                .fill({})
-                .map((_, i) => (i + 1 <= value ? icon : unselectedIcon))
-                .join('')}
+            {Array.from({ length: full }, (_, i) => (
+                <Fragment key={i}>{fullIcon}</Fragment>
+            ))}
+            {Array.from({ length: half }, (_, i) => (
+                <Fragment key={i}>{halfIcon}</Fragment>
+            ))}
+            {Array.from({ length: empty }, (_, i) => (
+                <Fragment key={i}>{emptyIcon}</Fragment>
+            ))}
         </span>
     )
 }

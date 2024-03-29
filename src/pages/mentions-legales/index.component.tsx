@@ -172,6 +172,18 @@ export default function MentionsLegalesIndexPage(): React.ReactElement {
                                 </a>
                             </p>
                         </li>
+                        <li>
+                            <p>
+                                Stars de Sophia :{' '}
+                                <a
+                                    href="https://thenounproject.com/sophiabai/"
+                                    rel="noopener noreferrer nofollow"
+                                    target="_blank"
+                                >
+                                    The Noun Project
+                                </a>
+                            </p>
+                        </li>
                     </ul>
                 </Container>
             </main>

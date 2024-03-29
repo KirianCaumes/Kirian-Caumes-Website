@@ -262,11 +262,11 @@ export default function Index(): JSX.Element {
                                         score={4}
                                         rows={[
                                             { title: 'Nest/Express', score: 4 },
-                                            { title: 'ORM (Mongoose/Prisma/TypeOrm)', score: 4 },
+                                            { title: 'ORM (Prisma/Mongoose)', score: 4 },
                                             { title: 'ESLint/Prettier/Stylelint/CSpell', score: 4 },
-                                            { title: 'Playwright/Puppeteer', score: 4 },
+                                            { title: 'Playwright/Puppeteer', score: 3.5 },
                                             { title: 'Jest', score: 3 },
-                                            { title: 'Babel/Rollup/WebPack/SWC', score: 3 },
+                                            { title: 'Babel/Rollup/WebPack/SWC', score: 2.5 },
                                         ]}
                                         color="tertiary"
                                     />
@@ -302,12 +302,12 @@ export default function Index(): JSX.Element {
                                 <Columns.Column sizes={['one-quarter-widescreen', 'half-desktop', 'half-tablet']}>
                                     <SkillCard
                                         title="BDD"
-                                        score={3}
+                                        score={3.5}
                                         rows={[
-                                            { title: 'T-SQL', score: 3 },
-                                            { title: 'PostgreSQL', score: 3 },
+                                            { title: 'T-SQL', score: 3.5 },
+                                            { title: 'PostgreSQL', score: 3.5 },
+                                            { title: 'MongoDB', score: 3.5 },
                                             { title: 'MySQL', score: 3 },
-                                            { title: 'MongoDB', score: 3 },
                                             { title: 'ElasticSearch', score: 3 },
                                             { title: 'SQLite', score: 2 },
                                         ]}
@@ -385,7 +385,7 @@ export default function Index(): JSX.Element {
                                 <Columns.Column sizes={['one-quarter-widescreen', 'half-desktop', 'half-tablet']}>
                                     <SkillCard
                                         title="Mobile"
-                                        score={2}
+                                        score={2.5}
                                         rows={[
                                             { title: 'PWA', score: 4 },
                                             { title: 'Ionic 3/4', score: 2 },
@@ -412,13 +412,13 @@ export default function Index(): JSX.Element {
                                 </Columns.Column>
                                 <Columns.Column sizes={['one-quarter-widescreen', 'half-desktop', 'half-tablet']}>
                                     <SkillCard
-                                        title={['Système', "d'exploitation"]}
+                                        title="Systèmes"
                                         score={0}
                                         rows={[
                                             { title: 'Azure', score: 4 },
-                                            { title: 'Ubuntu/Debian', score: 4 },
+                                            { title: 'Docker', score: 3.5 },
+                                            { title: 'Linux', score: 3.5 },
                                             { title: 'Heroku', score: 3 },
-                                            { title: 'OMV', score: 3 },
                                             { title: 'Win. Server', score: 2 },
                                         ]}
                                         color="primary"
@@ -427,7 +427,7 @@ export default function Index(): JSX.Element {
                                 <Columns.Column sizes={['one-quarter-widescreen', 'half-desktop', 'half-tablet']}>
                                     <SkillCard
                                         title={['Gestion', 'de projet']}
-                                        score={3}
+                                        score={3.5}
                                         rows={[
                                             { title: 'Lead Tech', score: 4 },
                                             { title: 'Pilotage dev.', score: 4 },

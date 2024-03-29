@@ -81,8 +81,7 @@ export default function Layout({ children }: LayoutProps): React.ReactElement {
             <footer>
                 <Container>
                     <p>
-                        © {new Date().getFullYear()} - {publicRuntimeConfig.appName} -{' '}
-                        <Link href="/mentions-legales">Mentions légales</Link>
+                        © 2021 - {publicRuntimeConfig.appName} - <Link href="/mentions-legales">Mentions légales</Link>
                     </p>
                 </Container>
             </footer>

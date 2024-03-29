@@ -11,6 +11,11 @@
   .skill-card-stars {
     font-weight: 400;
     line-height: 16px;
+    white-space: nowrap;
+
+    svg {
+      width: 0.75rem;
+    }
   }
 
   .skill-card-body {
@@ -84,6 +89,7 @@
         li {
           cursor: help;
           display: flex;
+          height: 1rem;
           justify-content: space-between;
 
           /* stylelint-disable-next-line no-descending-specificity */

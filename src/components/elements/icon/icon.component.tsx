@@ -5,7 +5,17 @@ import styles from 'components/elements/icon/icon.module.scss'
 
 export interface IconProps {
     /** name */
-    name: 'linkedin' | 'github' | 'medium' | 'balloon_laughing' | 'balloon_naughty' | 'balloon_dead' | 'mail'
+    name:
+        | 'linkedin'
+        | 'github'
+        | 'medium'
+        | 'balloon_laughing'
+        | 'balloon_naughty'
+        | 'balloon_dead'
+        | 'mail'
+        | 'star_full'
+        | 'star_half'
+        | 'star_empty'
     /** isColored */
     isColored?: boolean
 }
@@ -168,6 +178,42 @@ export default function Icon({ name, isColored = false }: IconProps): React.Reac
                             </g>
                         </g>
                     </g>
+                </svg>
+            )
+        case 'star_full':
+            // Made by Sophia: https://thenounproject.com/icon/star-filled-1919309/
+            return (
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    x="0px"
+                    y="0px"
+                >
+                    <path d="M12,2,9.06108,7.95492l-6.57164.95492,4.75528,4.63525L6.12215,20.09017,12,17l5.87785,3.09016-1.12257-6.54508,4.75528-4.63525-6.57164-.95492L12,2Z" />
+                </svg>
+            )
+        case 'star_half':
+            // Made by Sophia: https://thenounproject.com/icon/star-half-1919335/
+            return (
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    x="0px"
+                    y="0px"
+                >
+                    <path d="M12,4.25956l2.04218,4.13792.23268.47145.52026.0756,4.56647.66355L16.05727,12.829l-.37647.367.08887.51817.78,4.548-4.08436-2.14728L12,15.87023V4.25956M12,2,9.06108,7.95492l-6.57164.95492,4.75528,4.63525L6.12215,20.09017,12,17l5.87785,3.09016-1.12257-6.54508,4.75528-4.63525-6.57164-.95492L12,2Z" />
+                </svg>
+            )
+        case 'star_empty':
+            // Made by Sophia: https://thenounproject.com/icon/star-1919306/
+            return (
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    x="0px"
+                    y="0px"
+                >
+                    <path d="M12,4.25956l2.04218,4.13792.23268.47145.52026.0756,4.56647.66355L16.05727,12.829l-.37647.367.08887.51817.78,4.548-4.08436-2.14728L12,15.87023l-.46535.24465L7.45029,18.26216l.78-4.548L8.3192,13.196l-.37647-.367L4.63841,9.60808l4.56647-.66355.52026-.0756.23268-.47145L12,4.25956M12,2,9.06108,7.95492l-6.57164.95492,4.75528,4.63525L6.12215,20.09017,12,17l5.87785,3.09016-1.12257-6.54508,4.75528-4.63525-6.57164-.95492L12,2Z" />
                 </svg>
             )
         default:

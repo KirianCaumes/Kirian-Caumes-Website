@@ -16,7 +16,7 @@ const nextConfig = {
         appColor: '#263547',
         appUrl: 'https://kiriancaumes.fr',
         appName: 'Kirian Caumes',
-        appTitle: 'Kirian Caumes - Développeur Web Full Stack Nantes',
+        appTitle: 'Kirian Caumes - Lead Tech / Développeur Full Stack',
         appDescription:
             "Kirian Caumes, Lead Tech / Développeur Full Stack passionné d'informatique. Féru de Javascript, Typescript, Node, Nest, PWA, Next.js et autre !",
         appComment:
