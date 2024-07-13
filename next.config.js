@@ -24,6 +24,7 @@ const nextConfig = {
         /* cspell:disable-next-line */
         gtmId: 'G-C3SCVG7W7N',
     },
+    poweredByHeader: false,
 }
 
 module.exports = () => {

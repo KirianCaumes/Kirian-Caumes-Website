@@ -41,10 +41,6 @@ export default class MyDocument extends Document {
                         rel="manifest"
                         href="/manifest.webmanifest"
                     />
-                    <link
-                        rel="preconnect"
-                        href="https://fonts.googleapis.com"
-                    />
                     <meta
                         name="theme-color"
                         content={publicRuntimeConfig.appColor}
