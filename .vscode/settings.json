@@ -33,6 +33,7 @@
   "editor.codeActionsOnSave": {
     "source.fixAll": "explicit"
   },
+  "editor.lightbulb.enabled": "off",
   "eslint.workingDirectories": ["./"],
   "prettier.documentSelectors": ["**/*.svg"],
   "prettier.requireConfig": true,

@@ -1,4 +1,4 @@
-interface PublicRuntimeConfigType {
+export default interface PublicRuntimeConfigType {
     /** appLang */
     appLang: string
     /** appColor */
@@ -16,5 +16,3 @@ interface PublicRuntimeConfigType {
     /** gtmId */
     gtmId: string
 }
-
-export default PublicRuntimeConfigType

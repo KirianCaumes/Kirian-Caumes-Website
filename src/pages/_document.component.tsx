@@ -16,7 +16,7 @@ export default class MyDocument extends Document {
     /**
      * Render
      */
-    render() {
+    override render() {
         return (
             <Html lang={publicRuntimeConfig.appLang}>
                 <Head>
