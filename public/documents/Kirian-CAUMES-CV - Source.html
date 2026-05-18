@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        />
+        <title>Kirian-CAUMES-CV</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://unpkg.com/lucide@latest"></script>
+        <link
+            rel="preconnect"
+            href="https://fonts.googleapis.com"
+        />
+        <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossorigin
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        fontFamily: { sans: ['Inter', 'sans-serif'] },
+                        colors: {
+                            primary: '#1e2a3a',
+                            'primary-light': '#636e72',
+                            accent: '#4a5e8a',
+                        },
+                    },
+                },
+            }
+        </script>
+        <style>
+            @page {
+                size: A4;
+                margin: 0;
+            }
+
+            @media print {
+                html,
+                body {
+                    width: 210mm;
+                    height: 297mm;
+                    margin: 0;
+                    padding: 0;
+                    -webkit-print-color-adjust: exact;
+                    print-color-adjust: exact;
+                }
+
+                .page {
+                    break-inside: avoid;
+                }
+            }
+
+            .page {
+                width: 210mm;
+                height: 297mm;
+                margin: 0 auto;
+            }
+        </style>
+    </head>
+
+    <body class="bg-gray-300 font-sans text-gray-800 text-justify">
+        <div class="page bg-white shadow-xl flex overflow-hidden">
+            <aside class="w-[30%] bg-[#1e2a3a] text-white flex flex-col">
+                <div class="px-5 pt-5 pb-3 flex flex-col items-center">
+                    <img
+                        src="https://kiriancaumes.fr/_next/image?url=%2Fimages%2Fkirian_caumes.jpg&w=640&q=75"
+                        alt="Kirian CAUMES"
+                        class="w-20 h-20 rounded-full object-cover border-2 border-blue-300 mb-2"
+                    />
+                    <h1 class="text-[1.4rem] font-bold leading-tight text-center">Kirian CAUMES</h1>
+                    <p class="text-[0.8rem] text-blue-300 font-medium mt-0.5 text-center">Lead Tech<br />Développeur Full Stack</p>
+                </div>
+
+                <div class="px-5 flex flex-col gap-4 pb-5">
+                    <div>
+                        <h2 class="text-[0.8rem] font-semibold text-blue-300 mb-2 border-b border-blue-300/30 pb-0.5">Contact</h2>
+                        <ul class="space-y-1.5 text-[0.73rem]">
+                            <li class="flex items-center gap-2">
+                                <i
+                                    data-lucide="map-pin"
+                                    class="w-3 h-3 text-blue-300 shrink-0"
+                                    aria-label="Localisation"
+                                    role="img"
+                                ></i>
+                                <span>Nantes, France</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i
+                                    data-lucide="mail"
+                                    class="w-3 h-3 text-blue-300 shrink-0"
+                                    aria-label="Email"
+                                    role="img"
+                                ></i>
+                                <a
+                                    href="mailto:kirian.caumes@gmail.com"
+                                    class="hover:underline"
+                                    >kirian.caumes@gmail.com</a
+                                >
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i
+                                    data-lucide="phone"
+                                    class="w-3 h-3 text-blue-300 shrink-0"
+                                    aria-label="Téléphone"
+                                    role="img"
+                                ></i>
+                                <a
+                                    href="tel:+33652140142"
+                                    class="hover:underline"
+                                    >06 52 14 01 42</a
+                                >
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <svg
+                                    class="w-3 h-3 text-blue-300 shrink-0 fill-current"
+                                    viewBox="0 0 24 24"
+                                    role="img"
+                                    aria-label="LinkedIn"
+                                >
+                                    <path
+                                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                                    />
+                                </svg>
+                                <a
+                                    href="https://www.linkedin.com/in/kirian-caumes"
+                                    target="_blank"
+                                    class="hover:underline"
+                                    >in/kirian-caumes</a
+                                >
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <svg
+                                    class="w-3 h-3 text-blue-300 shrink-0 fill-current"
+                                    viewBox="0 0 24 24"
+                                    role="img"
+                                    aria-label="GitHub"
+                                >
+                                    <path
+                                        d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+                                    />
+                                </svg>
+                                <a
+                                    href="https://github.com/KirianCaumes"
+                                    target="_blank"
+                                    class="hover:underline"
+                                    >KirianCaumes</a
+                                >
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i
+                                    data-lucide="globe"
+                                    class="w-3 h-3 text-blue-300 shrink-0"
+                                    aria-label="Site web"
+                                    role="img"
+                                ></i>
+                                <a
+                                    href="https://kiriancaumes.fr"
+                                    target="_blank"
+                                    class="hover:underline"
+                                    >kiriancaumes.fr</a
+                                >
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i
+                                    data-lucide="car"
+                                    class="w-3 h-3 text-blue-300 shrink-0"
+                                    aria-label="Permis de conduire"
+                                    role="img"
+                                ></i>
+                                <span>Permis B</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h2 class="text-[0.8rem] font-semibold text-blue-300 mb-2 border-b border-blue-300/30 pb-0.5">Compétences clés</h2>
+
+                        <ul class="text-[0.73rem] space-y-1">
+                            <li class="flex items-center gap-1.5">
+                                <span class="w-1.5 h-1.5 bg-blue-300 rounded-sm shrink-0"></span>
+                                TypeScript, JavaScript
+                            </li>
+                            <li class="flex items-center gap-1.5">
+                                <span class="w-1.5 h-1.5 bg-blue-300 rounded-sm shrink-0"></span>
+                                React
+                            </li>
+                            <li class="flex items-center gap-1.5">
+                                <span class="w-1.5 h-1.5 bg-blue-300 rounded-sm shrink-0"></span>
+                                NestJS, Node.js
+                            </li>
+                            <li class="flex items-center gap-1.5">
+                                <span class="w-1.5 h-1.5 bg-blue-300 rounded-sm shrink-0"></span>
+                                Docker, Azure, CI/CD
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h2 class="text-[0.8rem] font-semibold text-blue-300 mb-2 border-b border-blue-300/30 pb-0.5">Langues</h2>
+                        <div class="space-y-1.5 text-[0.73rem]">
+                            <div class="flex justify-between items-center">
+                                <span>Français</span>
+                                <span class="text-blue-300 font-medium">Natif</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span>Anglais</span>
+                                <span class="text-blue-300 font-medium">B2</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h2 class="text-[0.8rem] font-semibold text-blue-300 mb-2 border-b border-blue-300/30 pb-0.5">Qualités</h2>
+                        <ul class="text-[0.73rem] space-y-1">
+                            <li class="flex items-center gap-1.5">
+                                <span class="w-1.5 h-1.5 bg-blue-300 rounded-sm shrink-0"></span>
+                                Rigueur & qualité logicielle
+                            </li>
+                            <li class="flex items-center gap-1.5">
+                                <span class="w-1.5 h-1.5 bg-blue-300 rounded-sm shrink-0"></span>
+                                Relation client
+                            </li>
+                            <li class="flex items-center gap-1.5">
+                                <span class="w-1.5 h-1.5 bg-blue-300 rounded-sm shrink-0"></span>
+                                Leadership technique
+                            </li>
+                            <li class="flex items-center gap-1.5">
+                                <span class="w-1.5 h-1.5 bg-blue-300 rounded-sm shrink-0"></span>
+                                Mentorat & accompagnement
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h2 class="text-[0.8rem] font-semibold text-blue-300 mb-2 border-b border-blue-300/30 pb-0.5">Centres d'intérêt</h2>
+                        <ul class="text-[0.73rem] space-y-1.5">
+                            <li class="flex items-center gap-1.5">
+                                <span class="w-1.5 h-1.5 bg-blue-300 rounded-sm shrink-0"></span>
+                                <span>Handball : gardien en compétition</span>
+                            </li>
+                            <li class="flex items-center gap-1.5">
+                                <span class="w-1.5 h-1.5 bg-blue-300 rounded-sm shrink-0"></span>
+                                <span>Side projects & veille active</span>
+                            </li>
+                            <li class="flex items-center gap-1.5">
+                                <span class="w-1.5 h-1.5 bg-blue-300 rounded-sm shrink-0"></span>
+                                <span>Concerts & Collection CD/Vinyles</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+
+            <main class="flex-1 px-6 py-5 flex flex-col gap-3">
+                <div>
+                    <h2 class="text-[1rem] font-semibold text-accent mb-1">Profil</h2>
+                    <p class="text-[0.72rem] text-gray-600 leading-relaxed">
+                        Lead Tech / Développeur Full Stack avec plus de <strong>8 ans d'expérience</strong> dans la
+                        <strong>conception d'applications web métier</strong> sur mesure et performantes. Spécialisé en
+                        <strong>TypeScript</strong>, <strong>React</strong> et <strong>Node.js/NestJS</strong>, avec une expertise couvrant
+                        l'<strong>architecture logicielle</strong>, le développement full stack, l'automatisation <strong>CI/CD</strong>, le
+                        cloud <strong>Azure</strong> et l'<strong>accompagnement technique d'équipes</strong>. Habitué aux environnements
+                        multi-projets et aux échanges directs avec les clients métiers, du cadrage fonctionnel initial jusqu'à la mise en
+                        production.
+                    </p>
+                </div>
+
+                <div>
+                    <h2 class="text-[1rem] font-semibold text-accent mb-1.5">Expérience professionnelle</h2>
+
+                    <div class="mb-2">
+                        <div class="flex justify-between items-baseline">
+                            <h3 class="text-[0.82rem] font-bold text-gray-800">Lead Tech / Développeur Full Stack</h3>
+                            <span class="text-[0.68rem] text-gray-400 shrink-0 ml-2">sept. 2021 - aujourd'hui</span>
+                        </div>
+                        <p class="text-[0.73rem] text-primary-light font-medium">
+                            <a
+                                href="https://www.next-decision.fr/"
+                                target="_blank"
+                                class="hover:underline"
+                                >Next Decision</a
+                            >, Nantes
+                        </p>
+
+                        <p class="text-[0.66rem] text-gray-600 mt-0.5 leading-snug">
+                            Responsable de la conception technique et de l'évolution d'applications métier pour PME et grands groupes dans
+                            les secteurs du recrutement, du transport, l'immobilier, de l'informatique, etc.
+                        </p>
+
+                        <p class="text-[0.66rem] font-semibold text-gray-700 mt-1">Responsabilités</p>
+
+                        <ul class="text-[0.66rem] text-gray-600 mt-0.5 ml-3 space-y-0.5 list-disc list-outside leading-snug">
+                            <li>
+                                <strong>Référent technique</strong> garantissant la qualité, la maintenabilité et les bonnes pratiques de
+                                développement via la mise en place de <strong>standards de qualité logicielle</strong> pour fiabiliser les
+                                livraisons
+                            </li>
+                            <li>
+                                Définition d'architectures full stack scalables et maintenables pour
+                                <strong>applications métier</strong> critiques en <strong>React</strong> et
+                                <strong>NestJS</strong> (principalement)
+                            </li>
+                            <li>
+                                Animation d'<strong>ateliers de cadrage fonctionnel</strong> et <strong>pilotage</strong>
+                                des décisions techniques avec les parties prenantes métier
+                            </li>
+                            <li>
+                                <strong>Mentorat</strong> sur plusieurs projets avec montée en compétence de développeurs juniors (<strong
+                                    >code reviews</strong
+                                >, <strong>pair programming</strong>, animation d'ateliers techniques)
+                            </li>
+                            <li>
+                                Définition et mise en œuvre d'<strong>architectures cloud</strong> <strong>Azure</strong>/<strong
+                                    >On-Premise</strong
+                                >
+                                (AKS, CI/CD, conteneurisation, haute disponibilité)
+                            </li>
+                        </ul>
+
+                        <p class="text-[0.66rem] font-semibold text-gray-700 mt-1">Quelques réalisations essentielles</p>
+                        <ul class="text-[0.66rem] text-gray-600 mt-0.5 ml-3 space-y-0.5 list-disc list-outside leading-snug">
+                            <li>
+                                Logiciel ATS (Recrutement) : Architecture et développement d'un outil de gestion des candidatures avec
+                                workflow de recrutement et <strong>parsing de CV par IA</strong>;
+                                <strong>réduisant de moitié le temps de traitement</strong>
+                                administratif des recruteurs
+                            </li>
+                            <li>
+                                Écosystème Voirie Routière : Conception d'une suite applicative de <strong>calculs scientifiques</strong> et
+                                de génération de devis, automatisant de manière unique sur le marché des processus complexes pour garantir
+                                une rapidité et une fiabilité ayant déjà <strong>conquis plus de 40 clients en 2 ans</strong>
+                            </li>
+                            <li>
+                                Portail Transport : Conception et déploiement d'une plateforme de prise de commande client pour un groupe de
+                                transport, sur une <strong>infrastructure Azure (AKS)</strong>, garantissant une
+                                <strong>haute disponibilité</strong> et une <strong>scalabilité optimale</strong> des services critiques
+                                face aux fortes variations de flux
+                            </li>
+                            <li>
+                                Panneau de Contrôle Cloud : Création d'une interface de suivi de commandes, facturation et activités pour
+                                les clients d'un infogérant, <strong>réduisant largement les sollicitations du support client</strong> et
+                                améliorant significativement la transparence perçue par les utilisateurs finaux
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mb-2">
+                        <div class="flex justify-between items-baseline">
+                            <h3 class="text-[0.82rem] font-bold text-gray-800">Alternance Développeur Full Stack</h3>
+                            <span class="text-[0.68rem] text-gray-400 shrink-0 ml-2">juil. 2018 - août 2021</span>
+                        </div>
+                        <p class="text-[0.73rem] text-primary-light font-medium">
+                            <a
+                                href="https://www.next-decision.fr/"
+                                target="_blank"
+                                class="hover:underline"
+                                >Next Decision</a
+                            >, Nantes
+                        </p>
+
+                        <ul class="text-[0.66rem] text-gray-600 mt-0.5 ml-3 space-y-0.5 list-disc list-outside leading-snug">
+                            <li>Développement d'<strong>applications métier web</strong> pour des PME et grands groupes</li>
+                            <li>Mise en place d'<strong>API REST sécurisées</strong> avec documentation des flux</li>
+                            <li>Conception d'<strong>architectures</strong> et déploiement d'<strong>environnements cloud</strong></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between items-baseline">
+                            <h3 class="text-[0.82rem] font-bold text-gray-800">Stage Développeur Web</h3>
+                            <span class="text-[0.68rem] text-gray-400 shrink-0 ml-2">juin - août 2017</span>
+                        </div>
+                        <p class="text-[0.73rem] text-primary-light font-medium">
+                            <a
+                                href="https://www.labelcommunication.net/"
+                                target="_blank"
+                                class="hover:underline"
+                                >Label Communication</a
+                            >, Nantes
+                        </p>
+                        <ul class="text-[0.66rem] text-gray-600 mt-0.5 ml-3 list-disc list-outside leading-snug">
+                            <li>Développement de sites web <strong>WordPress</strong> et optimisation <strong>SEO</strong></li>
+                            <li>Intégration <strong>responsive</strong> et amélioration de l'<strong>expérience utilisateur</strong></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div>
+                    <h2 class="text-[1rem] font-semibold text-accent mb-1">Formation</h2>
+                    <div class="space-y-1">
+                        <div>
+                            <div class="flex justify-between items-baseline">
+                                <h3 class="text-[0.78rem] font-bold text-gray-800">Mastère Expert Développement Web</h3>
+                                <span class="text-[0.68rem] text-gray-400 shrink-0 ml-2">sept. 2016 - août 2021</span>
+                            </div>
+                            <p class="text-[0.73rem] text-primary-light font-medium">Ynov Nantes</p>
+                            <p class="text-[0.66rem] text-gray-500">RNCP Expert Informatique et SI - Bachelor + Mastère (5 ans)</p>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-baseline">
+                                <h3 class="text-[0.78rem] font-bold text-gray-800">Baccalauréat Scientifique SVT</h3>
+                                <span class="text-[0.68rem] text-gray-400 shrink-0 ml-2">sept. 2012 - juin 2016</span>
+                            </div>
+                            <p class="text-[0.73rem] text-primary-light font-medium">Lycée Notre-Dame de Toutes-Aides, Nantes</p>
+                            <p class="text-[0.66rem] text-gray-500">Spécialité Informatique et Sciences du Numérique</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h2 class="text-[1rem] font-semibold text-accent mb-1">Projets personnels</h2>
+                    <ul class="text-[0.66rem] text-gray-600 ml-3 space-y-0.5 list-disc list-outside leading-snug">
+                        <li>
+                            <strong>Emptio</strong> : <strong>PWA</strong> agrégateur de marketplaces avec
+                            <strong>scraping automatisé</strong> de plus de 20 plateformes : recherche multi-sources, suivi de prix,
+                            notifications push et authentification <strong>WebAuthn</strong>.
+                        </li>
+                        <li>
+                            <strong
+                                ><a
+                                    href="https://github.com/KirianCaumes/Discogs-Marketplace-API-NodeJS"
+                                    target="_blank"
+                                    class="hover:underline"
+                                    >Discogs Marketplace API</a
+                                ></strong
+                            >
+                            : <strong>Client open source</strong> permettant l'extraction et l'exploitation de données marketplace de la
+                            plateforme Discogs.
+                        </li>
+                        <li>
+                            <strong
+                                ><a
+                                    href="https://github.com/KirianCaumes/FFHB-Championship-Calendar-Generator"
+                                    target="_blank"
+                                    class="hover:underline"
+                                    >FFHB Calendar Generator</a
+                                ></strong
+                            >
+                            : <strong>Générateur de calendriers</strong> synchronisables pour les matchs de handball amateur.
+                        </li>
+                    </ul>
+                </div>
+            </main>
+        </div>
+
+        <script>
+            lucide.createIcons()
+        </script>
+    </body>
+</html>

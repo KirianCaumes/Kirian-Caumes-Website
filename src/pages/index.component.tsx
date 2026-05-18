@@ -96,7 +96,7 @@ export default function Index() {
                                         >
                                             Mon CV *
                                         </Button>
-                                        <p className={styles['is-last-update']}>* Dernière mise à jour : janvier 2018</p>
+                                        <p className={styles['is-last-update']}>* Dernière mise à jour : mai 2026</p>
                                     </Columns.Column>
                                     <Columns.Column>
                                         <Button

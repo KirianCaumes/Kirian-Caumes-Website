@@ -16,6 +16,7 @@ module.exports = {
         '**/.devcontainer/**',
         '.github/**',
         '.git/**',
+        'public/documents/**',
     ],
     ignoreWords: [
         // About libraries
