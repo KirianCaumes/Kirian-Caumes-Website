@@ -5,23 +5,25 @@ import styles from 'components/layout/navbar/navbar.module.scss'
 import useNavbar from 'components/layout/navbar/navbar.hook'
 
 export interface NavbarItem extends Pick<Parameters<typeof Link>[0], 'children'> {
-    /** href */
+    /** Href */
     href: string
 }
 
 export interface NavbarProps {
-    /** itemHome */
-    itemHome: NavbarItem
-    /** itemsMain */
-    itemsMain: Array<NavbarItem>
-    /** itemsEnd */
-    itemsEnd?: Array<NavbarItem>
+    /** ItemHome */
+    readonly itemHome: NavbarItem
+    /** ItemsMain */
+    readonly itemsMain: Array<NavbarItem>
+    /** ItemsEnd */
+    readonly itemsEnd?: Array<NavbarItem>
 }
 
 /**
  * A navbar
+ * @returns JSX.Element
  */
-export default function Navbar({ itemsMain, itemsEnd = [], itemHome }: NavbarProps): React.ReactElement {
+// eslint-disable-next-line react/require-default-props
+export default function Navbar({ itemsMain, itemsEnd, itemHome }: NavbarProps) {
     const { hash, isOpen, ref, toggleIsOpen, onClickLink } = useNavbar()
 
     return (
@@ -31,10 +33,10 @@ export default function Navbar({ itemsMain, itemsEnd = [], itemHome }: NavbarPro
         >
             <div className={styles['navbar-icon']}>
                 <Link
-                    href={itemHome.href}
                     className={classNames(styles['navbar-item'], {
-                        [styles['is-active']]: hash === itemHome.href?.replace('#', '')?.replace('/', ''),
+                        [styles['is-active']]: hash === itemHome.href.replace('#', '').replace('/', ''),
                     })}
+                    href={itemHome.href}
                     onClick={onClickLink}
                 >
                     {itemHome.children}
@@ -49,11 +51,11 @@ export default function Navbar({ itemsMain, itemsEnd = [], itemHome }: NavbarPro
                     >
                         {list?.map((item, i) => (
                             <li
+                                className={classNames(styles['navbar-item'], {
+                                    [styles['is-active']]: hash === item.href.replace('#', '').replace('/', ''),
+                                })}
                                 // eslint-disable-next-line react/no-array-index-key
                                 key={`navbar-item_${i}`}
-                                className={classNames(styles['navbar-item'], {
-                                    [styles['is-active']]: hash === item.href?.replace('#', '')?.replace('/', ''),
-                                })}
                             >
                                 <Link
                                     href={item.href}
@@ -67,10 +69,10 @@ export default function Navbar({ itemsMain, itemsEnd = [], itemHome }: NavbarPro
                 ))}
             </div>
             <button
+                aria-expanded={isOpen}
+                aria-label="menu"
                 className={classNames(styles['navbar-burger'], { [styles['is-active']]: isOpen })}
                 onClick={toggleIsOpen}
-                aria-label="menu"
-                aria-expanded={isOpen}
                 tabIndex={0}
                 type="button"
             >

@@ -1,12 +1,6 @@
 import React from 'react'
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-import getConfig from 'next/config'
-import type { PublicRuntimeConfigType } from 'types'
-
-const { publicRuntimeConfig } = getConfig() as {
-    /** PublicRuntimeConfig */
-    publicRuntimeConfig: PublicRuntimeConfigType
-}
+import { publicRuntimeConfig } from 'config'
 
 /**
  * Base component to render base HTML
@@ -15,89 +9,89 @@ const { publicRuntimeConfig } = getConfig() as {
 export default class MyDocument extends Document {
     /**
      * Render
+     * @returns JSX.Element
      */
     override render() {
         return (
             <Html lang={publicRuntimeConfig.appLang}>
                 <Head>
                     <link
-                        rel="canonical"
                         href="https://kiriancaumes.fr"
+                        rel="canonical"
                     />
                     <link
-                        rel="shortcut icon"
                         href="/favicon.ico"
+                        rel="shortcut icon"
                     />
                     <link
-                        rel="icon"
                         href="/icon.svg"
+                        rel="icon"
                         type="image/svg+xml"
                     />
                     <link
-                        rel="apple-touch-icon"
                         href="/apple-touch-icon.png"
+                        rel="apple-touch-icon"
                     />
                     <link
-                        rel="manifest"
                         href="/manifest.webmanifest"
+                        rel="manifest"
                     />
                     <meta
-                        name="theme-color"
                         content={publicRuntimeConfig.appColor}
+                        name="theme-color"
                     />
 
                     <meta
-                        property="og:type"
                         content="website"
+                        property="og:type"
                     />
                     <meta
-                        property="og:locale"
                         content={publicRuntimeConfig.appLang}
+                        property="og:locale"
                     />
                     <meta
-                        property="og:title"
                         content={publicRuntimeConfig.appTitle}
+                        property="og:title"
                     />
                     <meta
-                        property="og:description"
                         content={publicRuntimeConfig.appDescription}
+                        property="og:description"
                     />
                     <meta
-                        property="og:url"
                         content={publicRuntimeConfig.appUrl}
+                        property="og:url"
                     />
                     <meta
-                        property="og:site_name"
                         content={publicRuntimeConfig.appName}
+                        property="og:site_name"
                     />
                     <meta
-                        property="og:image"
                         content={`${publicRuntimeConfig.appUrl}/images/kirian_caumes.jpg`}
+                        property="og:image"
                     />
 
                     <meta
-                        property="twitter:title"
                         content={publicRuntimeConfig.appTitle}
+                        property="twitter:title"
                     />
                     <meta
-                        property="twitter:description"
                         content={publicRuntimeConfig.appDescription}
+                        property="twitter:description"
                     />
                     <meta
-                        property="twitter:card"
                         content="summary"
+                        property="twitter:card"
                     />
                     <meta
-                        property="twitter:image"
                         content={`${publicRuntimeConfig.appUrl}/images/kirian_caumes.jpg`}
+                        property="twitter:image"
                     />
                     <meta
-                        property="twitter:url"
                         content={publicRuntimeConfig.appUrl}
+                        property="twitter:url"
                     />
 
                     <script
-                        type="application/ld+json"
                         // eslint-disable-next-line react/no-danger
                         dangerouslySetInnerHTML={{
                             __html: JSON.stringify({
@@ -237,6 +231,7 @@ export default class MyDocument extends Document {
                                 ],
                             }),
                         }}
+                        type="application/ld+json"
                     />
                 </Head>
                 <body>

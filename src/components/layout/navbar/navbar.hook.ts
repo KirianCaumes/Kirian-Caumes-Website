@@ -1,25 +1,12 @@
 import { useRouter } from 'next/router'
 import { useRef, useState, useEffect, useCallback } from 'react'
 import { useClickAway, useToggle } from 'react-use'
-import type { MutableRefObject } from 'react'
-
-export interface UseNavbarHookReturns {
-    /** isOpen */
-    isOpen: boolean
-    /** hash */
-    hash: string
-    /** ref */
-    ref: MutableRefObject<HTMLElement | null>
-    /** toggleIsOpen */
-    toggleIsOpen: () => void
-    /** onClickLink */
-    onClickLink: () => void
-}
 
 /**
  * Use Navbar hook
+ * @returns UseNavbarHookReturns
  */
-export default function useNavbar(): UseNavbarHookReturns {
+export default function useNavbar() {
     const router = useRouter()
 
     /** Is burger menu open? */
@@ -31,16 +18,23 @@ export default function useNavbar(): UseNavbarHookReturns {
     const ref = useRef<HTMLElement>(null)
 
     /** Callback when user click a link */
-    const onClickLink = useCallback(() => toggleIsOpen(false), [toggleIsOpen])
+    const onClickLink = useCallback(() => {
+        toggleIsOpen(false)
+    }, [toggleIsOpen])
 
     // Handle click outside
-    useClickAway(ref, () => toggleIsOpen(false))
+    useClickAway(ref, () => {
+        toggleIsOpen(false)
+    })
 
     /**
      * Handle init router to setup first hash.
      * I don't like using an `useEffect` for this, but it seems to be easiest way to avoid the error: "Warning: Prop className did not match. Server:..."
      */
-    useEffect(() => setHash(router?.asPath?.replace('#', '')?.replace('/', '')), [router?.asPath])
+    useEffect(() => {
+        // eslint-disable-next-line react-hooks/set-state-in-effect, react-you-might-not-need-an-effect/no-derived-state
+        setHash(router.asPath.replace('#', '').replace('/', ''))
+    }, [router.asPath])
 
     return {
         isOpen,

@@ -1,10 +1,11 @@
 import Link from 'next/link'
 import styles from 'components/layout/gdpr-banner/gdpr-banner.module.scss'
 import useGdprBanner from 'components/layout/gdpr-banner/gdpr-banner.hook'
-import { Button } from 'components/inputs'
+import Button from 'components/inputs/button/button.component'
 
 /**
  * GdprBanner
+ * @returns JSX.Element
  */
 export default function GdprBanner(): React.ReactElement {
     const { isVisible, onAccept, onRefuse } = useGdprBanner()
@@ -20,8 +21,20 @@ export default function GdprBanner(): React.ReactElement {
                 pouvez les accepter pour nous permettre d'améliorer votre expérience ou les refuser.
             </p>
             <div className={styles['gdpr-banner-buttons']}>
-                <Button onClick={() => onAccept()}>Accepter les cookies</Button>
-                <Button onClick={() => onRefuse()}>Refuser les cookies</Button>
+                <Button
+                    onClick={() => {
+                        onAccept()
+                    }}
+                >
+                    Accepter les cookies
+                </Button>
+                <Button
+                    onClick={() => {
+                        onRefuse()
+                    }}
+                >
+                    Refuser les cookies
+                </Button>
             </div>
         </div>
     )

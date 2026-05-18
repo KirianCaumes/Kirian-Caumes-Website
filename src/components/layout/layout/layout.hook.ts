@@ -1,17 +1,10 @@
-import getConfig from 'next/config'
-import type { PublicRuntimeConfigType } from 'types'
-
-export interface UseLayoutHookReturns {
-    /** publicRuntimeConfig */
-    publicRuntimeConfig: PublicRuntimeConfigType
-}
+import { publicRuntimeConfig } from 'config'
 
 /**
  * Use Layout hook
+ * @returns JSX.Element
  */
-export default function useLayout(): UseLayoutHookReturns {
-    const { publicRuntimeConfig } = getConfig()
-
+export default function useLayout() {
     return {
         publicRuntimeConfig,
     }

@@ -1,6 +1,6 @@
 /**
  * {@link https://cspell.org/configuration/document-settings/} Documentation
- * @type {import('cspell').Settings}
+ * @type {import('@cspell/cspell-types').Settings}
  */
 module.exports = {
     version: '0.2',
@@ -29,6 +29,8 @@ module.exports = {
         'lintstagedrc',
         'stylelintrc',
         'knip',
+        'stylelintcache',
+        'turbopack',
     ],
     words: [
         // Specific to the project

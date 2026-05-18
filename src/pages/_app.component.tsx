@@ -1,11 +1,11 @@
 import 'styles/index.scss'
-import getConfig from 'next/config'
 import { useRouter } from 'next/router'
 import { useRef } from 'react'
 import { Montserrat } from 'next/font/google'
 import { useMount, useUnmount } from 'react-use'
-import { GdprBanner, Layout } from 'components/layout'
-import type { PublicRuntimeConfigType } from 'types'
+import { publicRuntimeConfig } from 'config'
+import Layout from 'components/layout/layout/layout.component'
+import GdprBanner from 'components/layout/gdpr-banner/gdpr-banner.component'
 import type { AppProps } from 'next/app'
 
 const montserrat = Montserrat({
@@ -18,13 +18,9 @@ const montserrat = Montserrat({
  * Use App hook
  */
 function useApp() {
-    const { publicRuntimeConfig } = getConfig() as {
-        /** PublicRuntimeConfig */
-        publicRuntimeConfig: PublicRuntimeConfigType
-    }
     const router = useRouter()
 
-    const timer = useRef<NodeJS.Timeout>()
+    const timer = useRef<NodeJS.Timeout>(null)
 
     useMount(() => {
         // Add comment on the top of the page
@@ -40,44 +36,33 @@ function useApp() {
             document.documentElement.setAttribute('data-scroll-behavior', 'auto')
         })
         router.events.on('routeChangeComplete', () => {
-            clearTimeout(timer.current)
-            timer.current = setTimeout(() => document.documentElement.removeAttribute('data-scroll-behavior'), 100)
+            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+            clearTimeout(timer.current!)
+            timer.current = setTimeout(() => {
+                document.documentElement.removeAttribute('data-scroll-behavior')
+            }, 100)
         })
     })
 
     useUnmount(() => {
-        clearTimeout(timer.current)
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        clearTimeout(timer.current!)
     })
-
-    return {}
 }
 
 /**
  * App
  * {@link https://nextjs.org/docs/advanced-features/custom-app}
+ * @returns JSX.Element
  */
 export default function App({ Component, pageProps }: AppProps) {
     useApp()
 
     return (
-        <>
-            <style
-                // eslint-disable-next-line react/no-unknown-property
-                jsx
-                // eslint-disable-next-line react/no-unknown-property
-                global
-            >
-                {`
-                    html {
-                        font-family: ${montserrat.style.fontFamily}, sans-serif;
-                    }
-                `}
-            </style>
-            <Layout>
-                <GdprBanner />
-                {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-                <Component {...pageProps} />
-            </Layout>
-        </>
+        <Layout className={montserrat.className}>
+            <GdprBanner />
+            {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+            <Component {...pageProps} />
+        </Layout>
     )
 }

@@ -1,33 +1,28 @@
 import React from 'react'
 import classNames from 'classnames'
 import styles from 'components/containers/cards/icon-card/icon-card.module.scss'
-import { Icon, Title } from 'components/elements'
+import Title from 'components/elements/title/title.component'
+import Icon from 'components/elements/icon/icon.component'
 import type { ComponentProps } from 'react'
 
 export interface IconCardProps extends Pick<ComponentProps<'p'>, 'children'> {
-    /** iconName */
-    iconName: Parameters<typeof Icon>[0]['name']
-    /** title */
-    title: ComponentProps<'p'>['children']
-    /** color */
-    color: 'tertiary' | 'secondary' | 'primary' | 'primary-dark'
-    /** isIconBorder */
-    isIconBorder?: boolean
-    /** align */
-    align?: 'center' | 'justify'
+    /** IconName */
+    readonly iconName: Parameters<typeof Icon>[0]['name']
+    /** Title */
+    readonly title: ComponentProps<'p'>['children']
+    /** Color */
+    readonly color: 'tertiary' | 'secondary' | 'primary' | 'primary-dark'
+    /** IsIconBorder */
+    readonly isIconBorder?: boolean
+    /** Align */
+    readonly align?: 'center' | 'justify'
 }
 
 /**
  * A card with icon
+ * @returns JSX.Element
  */
-export default function IconCard({
-    iconName,
-    title,
-    children,
-    color,
-    isIconBorder = false,
-    align = 'justify',
-}: IconCardProps): React.ReactElement {
+export default function IconCard({ iconName, title, children, color, isIconBorder = false, align = 'justify' }: IconCardProps) {
     return (
         <div className={styles['icon-card']}>
             <div className={classNames(styles['icon-card-icon'], styles[`is-${color}`], { [styles['is-icon-border']]: isIconBorder })}>
@@ -35,9 +30,9 @@ export default function IconCard({
             </div>
             <div className={classNames(styles['icon-card-body'], styles[`is-${color}`])}>
                 <Title
-                    level={4}
-                    isCentered
                     className={styles['icon-card-title']}
+                    isCentered
+                    level={4}
                 >
                     {title}
                 </Title>

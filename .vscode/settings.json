@@ -1,5 +1,14 @@
 {
   "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "file",
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.stylelint": "explicit"
+  },
+  "files.associations": {
+    "*.mjs": "javascript"
+  },
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -27,21 +36,31 @@
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[markdown]": {
     "editor.defaultFormatter": "vscode.markdown-language-features"
   },
-  "editor.codeActionsOnSave": {
-    "source.fixAll": "explicit"
-  },
   "editor.lightbulb.enabled": "off",
   "eslint.workingDirectories": ["./"],
+  "eslint.execArgv": ["--max-old-space-size=8192"],
+  "eslint.run": "onSave",
+  "eslint.options": {
+    "cache": true,
+    "cacheLocation": ".eslintcache"
+  },
+  "eslint.runtime": "node",
+  "eslint.nodeEnv": null,
   "prettier.documentSelectors": ["**/*.svg"],
   "prettier.requireConfig": true,
+  "prettier.useEditorConfig": false,
+  "prettier.ignorePath": ".prettierignore",
   "css.validate": false,
   "less.validate": false,
   "scss.validate": false,
   "json.format.enable": false,
-  "stylelint.validate": ["css", "postcss", "sass", "scss"],
+  "stylelint.validate": ["css", "scss"],
   "versionlens.suggestions.showOnStartup": true,
   "terminal.integrated.defaultProfile.linux": "bash",
   "terminal.integrated.profiles.linux": {
@@ -55,6 +74,30 @@
       "siblings_only": true
     }
   },
-  "typescript.preferences.importModuleSpecifier": "non-relative",
-  "javascript.preferences.importModuleSpecifier": "non-relative"
+  "js/ts.preferences.importModuleSpecifier": "non-relative",
+  "editor.minimap.renderCharacters": false,
+  "js/ts.tsdk.path": "back/node_modules/typescript/lib",
+  "git.ignoreLimitWarning": true,
+  "js/ts.preferences.includePackageJsonAutoImports": "off",
+  "js/ts.suggest.autoImports": true,
+  "js/ts.suggest.enabled": true,
+  "js/ts.updateImportsOnFileMove.enabled": "prompt",
+  "files.watcherExclude": {
+    "**/.git/**": true,
+    "**/node_modules/**": true,
+    "**/dist/**": true,
+    "**/build/**": true,
+    "**/.eslintcache": true,
+    "**/.stylelintcache": true,
+    "**/log/**": true,
+    "**/data/**": true
+  },
+  "js/ts.tsserver.node.path": "/usr/bin/node",
+  "js/ts.tsserver.maxMemory": 8192,
+  "search.exclude": {
+    "front/src/requests/types/specs.ts": true,
+    "sample/**": true,
+    "todo.md": true,
+    "**/package-lock.json": true
+  }
 }

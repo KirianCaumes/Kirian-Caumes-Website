@@ -1,21 +1,22 @@
 import React from 'react'
 
 export interface EmojiProps {
-    /** label */
-    label: string
-    /** emoji */
-    emoji: string
+    /** Label */
+    readonly label: string
+    /** Emoji */
+    readonly emoji: string
 }
 
 /**
  * An emoji
+ * @returns JSX.Element
  */
-export default function Emoji({ label, emoji }: EmojiProps): React.ReactElement {
+export default function Emoji({ label, emoji }: EmojiProps) {
     return (
         <span
-            role="img"
-            aria-label={label || ''}
             aria-hidden={label ? 'false' : 'true'}
+            aria-label={label || ''}
+            role="img"
         >
             {emoji}
         </span>

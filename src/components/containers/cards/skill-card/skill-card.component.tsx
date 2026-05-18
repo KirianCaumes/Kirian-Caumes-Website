@@ -1,31 +1,31 @@
 import React, { Fragment } from 'react'
 import classNames from 'classnames'
 import styles from 'components/containers/cards/skill-card/skill-card.module.scss'
-import { Icon } from 'components/elements'
+import Icon from 'components/elements/icon/icon.component'
 import type { ReactElement } from 'react'
 
+const FULL_ICON = <Icon name="star_full" />
+const EMPTY_ICON = <Icon name="star_empty" />
+const HALF_ICON = <Icon name="star_half" />
+
 export interface ScoreProps {
-    /** value */
-    value: number
-    /** max */
-    max?: number
-    /** fullIcon */
-    fullIcon?: ReactElement
-    /** emptyIcon */
-    emptyIcon?: ReactElement
-    /** halfIcon */
-    halfIcon?: ReactElement
+    /** Value */
+    readonly value: number
+    /** Max */
+    readonly max?: number
+    /** FullIcon */
+    readonly fullIcon?: ReactElement
+    /** EmptyIcon */
+    readonly emptyIcon?: ReactElement
+    /** HalfIcon */
+    readonly halfIcon?: ReactElement
 }
+
 /**
  * Score with stars
+ * @returns JSX.Element
  */
-function Score({
-    value,
-    max = 5,
-    fullIcon = <Icon name="star_full" />,
-    emptyIcon = <Icon name="star_empty" />,
-    halfIcon = <Icon name="star_half" />,
-}: ScoreProps): React.ReactElement {
+function Score({ value, max = 5, fullIcon = FULL_ICON, emptyIcon = EMPTY_ICON, halfIcon = HALF_ICON }: ScoreProps) {
     const full = Math.floor(value)
     const half = value - full > 0 && value - full < 1 ? 1 : 0
     const empty = max - full - half
@@ -46,25 +46,26 @@ function Score({
 }
 
 export interface SkillCardProps {
-    /** title */
-    title: string | Array<string>
-    /** score */
-    score: number
-    /** rows */
-    rows: Array<{
-        /** title */
+    /** Title */
+    readonly title: string | Array<string>
+    /** Score */
+    readonly score: number
+    /** Rows */
+    readonly rows: Array<{
+        /** Title */
         title: string
-        /** score */
+        /** Score */
         score: number
     }>
-    /** color */
-    color: 'tertiary' | 'secondary' | 'primary' | 'primary-dark'
+    /** Color */
+    readonly color: 'tertiary' | 'secondary' | 'primary' | 'primary-dark'
 }
 
 /**
  * A skill card
+ * @returns JSX.Element
  */
-export default function SkillCard({ title, score, rows, color }: SkillCardProps): React.ReactElement {
+export default function SkillCard({ title, score, rows, color }: SkillCardProps) {
     return (
         <div className={styles['skill-card']}>
             <div className={classNames(styles['skill-card-body'], styles[`is-${color}`])}>

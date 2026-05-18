@@ -1,29 +1,15 @@
-import getConfig from 'next/config'
 import { useRouter } from 'next/router'
 import { useMemo } from 'react'
-import type { NextRouter } from 'next/router'
-import type { PublicRuntimeConfigType } from 'types'
-
-export interface UseNotFoundHookReturns {
-    /** title */
-    title: string
-    /** router */
-    router: NextRouter
-    /** PublicRuntimeConfigType */
-    publicRuntimeConfig: PublicRuntimeConfigType
-}
+import { publicRuntimeConfig } from 'config'
 
 /**
  * Use 404 page hook
+ * @returns UseNotFoundHookReturns
  */
-export default function useNotFound(): UseNotFoundHookReturns {
-    const { publicRuntimeConfig } = getConfig() as {
-        /** PublicRuntimeConfig */
-        publicRuntimeConfig: PublicRuntimeConfigType
-    }
+export default function useNotFound() {
     const router = useRouter()
 
-    const title = useMemo(() => `404 - ${publicRuntimeConfig.appName}`, [publicRuntimeConfig.appName])
+    const title = useMemo(() => `404 - ${publicRuntimeConfig.appName}`, [])
 
     return {
         title,

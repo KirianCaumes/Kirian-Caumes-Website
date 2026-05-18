@@ -3,13 +3,14 @@ import Head from 'next/head'
 import Link from 'next/link'
 import styles from 'pages/mentions-legales/index.module.scss'
 import useMentionsLegalesIndex from 'pages/mentions-legales/index.hook'
-import { Title } from 'components/elements'
-import { Container } from 'components/containers'
+import Container from 'components/containers/container/container.component'
+import Title from 'components/elements/title/title.component'
 
 /**
  * Mentions légales page
+ * @returns JSX.Element
  */
-export default function MentionsLegalesIndexPage(): React.ReactElement {
+export default function MentionsLegalesIndexPage() {
     const { title, publicRuntimeConfig } = useMentionsLegalesIndex()
 
     return (
@@ -17,15 +18,14 @@ export default function MentionsLegalesIndexPage(): React.ReactElement {
             <Head>
                 <title>{title}</title>
                 <meta
-                    name="description"
                     content={`Mentions légales du site ${publicRuntimeConfig.appName}`}
+                    name="description"
                 />
                 <meta
-                    name="robots"
                     content="noindex"
+                    name="robots"
                 />
                 <script
-                    type="application/ld+json"
                     // eslint-disable-next-line react/no-danger
                     dangerouslySetInnerHTML={{
                         __html: JSON.stringify({
@@ -41,6 +41,7 @@ export default function MentionsLegalesIndexPage(): React.ReactElement {
                             ],
                         }),
                     }}
+                    type="application/ld+json"
                 />
             </Head>
 
@@ -69,8 +70,8 @@ export default function MentionsLegalesIndexPage(): React.ReactElement {
                         Hébergeur du site:{' '}
                         <a
                             href="https://www.ovh.com/fr/"
-                            target="_blank"
                             rel="noopener noreferrer nofollow"
+                            target="_blank"
                         >
                             ovh.com
                         </a>

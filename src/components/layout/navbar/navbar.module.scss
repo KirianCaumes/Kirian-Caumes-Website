@@ -135,7 +135,7 @@ nav.navbar {
     }
 
     &:hover {
-      background-color: rgba(0, 0, 0, 0.05);
+      background-color: rgb(0, 0, 0, 0.05);
       color: map.get(variables.$colors, 'black');
     }
 

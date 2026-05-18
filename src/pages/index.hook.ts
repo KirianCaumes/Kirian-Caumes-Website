@@ -1,26 +1,15 @@
-import getConfig from 'next/config'
 import { useMemo } from 'react'
-import type { PublicRuntimeConfigType } from 'types'
-
-export interface UseIndexHookReturns {
-    /** PublicRuntimeConfig */
-    publicRuntimeConfig: PublicRuntimeConfigType
-    /** Age */
-    age: number
-    /** WorkingYears */
-    workingYears: number
-}
+import { publicRuntimeConfig } from 'config'
 
 /**
  * Use Index page hook
+ * @returns UseIndexHookReturns
  */
-export default function useIndex(): UseIndexHookReturns {
-    const { publicRuntimeConfig } = getConfig()
-
-    const age = useMemo(() => Math.abs(new Date(Date.now() - new Date(1997, 1, 21).getTime()).getUTCFullYear() - 1970), [])
+export default function useIndex() {
+    const age = useMemo(() => Math.abs(new Date(new Date().getTime() - new Date(1997, 1, 21).getTime()).getUTCFullYear() - 1970), [])
     const workingYears = useMemo(() => {
-        const monthDiff = (new Date()?.getMonth() ?? 0) - (new Date(2016, 8)?.getMonth() ?? 0)
-        const yearDiff = (new Date()?.getFullYear() ?? 0) - (new Date(2016, 8)?.getFullYear() ?? 0)
+        const monthDiff = new Date().getMonth() - new Date(2016, 8).getMonth()
+        const yearDiff = new Date().getFullYear() - new Date(2016, 8).getFullYear()
         const diff = monthDiff + yearDiff * 12
         return Math.ceil(diff / 12)
     }, [])

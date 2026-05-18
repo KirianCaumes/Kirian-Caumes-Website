@@ -4,24 +4,25 @@ import styles from 'components/containers/columns/columns.module.scss'
 import type { ComponentProps } from 'react'
 
 export interface ColumnsProps extends Pick<ComponentProps<'div'>, 'className'> {
-    /** children */
-    children: React.ReactNode
+    /** Children */
+    readonly children: React.ReactNode
 }
 
 /**
  * A columns
+ * @returns JSX.Element
  */
-function Columns({ children, className }: ColumnsProps): React.ReactElement {
+function Columns({ children, className }: ColumnsProps) {
     return <div className={classNames(styles.columns, className)}>{children}</div>
 }
 
 export interface ColumnProps extends Pick<ComponentProps<'p'>, 'children' | 'className'> {
     /** Align */
-    align?: 'left' | 'center' | 'right'
+    readonly align?: 'left' | 'center' | 'right'
     /** Vertical align */
-    vAlign?: 'top' | 'center' | 'bottom'
+    readonly vAlign?: 'top' | 'center' | 'bottom'
     /** Sizes */
-    sizes?: Array<
+    readonly sizes?: Array<
         | 'full'
         | 'three-quarters'
         | 'two-thirds'
@@ -65,24 +66,23 @@ export interface ColumnProps extends Pick<ComponentProps<'p'>, 'children' | 'cla
     >
 }
 
+const DEFAULT_SIZES: ColumnProps['sizes'] = []
+
 /**
  * A column
+ * @returns JSX.Element
  */
-Columns.Column = function Column({
-    align = 'left',
-    vAlign = undefined,
-    sizes = [],
-    className = '',
-    children = undefined,
-}: ColumnProps): JSX.Element {
+// eslint-disable-next-line react/require-default-props
+Columns.Column = function Column({ align = 'left', vAlign, sizes = DEFAULT_SIZES, className = '', children }: ColumnProps) {
     return (
         <div
             className={classNames(
                 styles.column,
                 className,
                 { [styles[`is-${align}`]]: align },
+                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                 { [styles[`is-v-${vAlign!}`]]: !!vAlign },
-                ...(sizes?.map(size => [styles[`is-${size}`]]) ?? [{}]),
+                ...sizes.map(size => [styles[`is-${size}`]]),
             )}
         >
             {children}

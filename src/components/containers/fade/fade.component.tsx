@@ -4,12 +4,14 @@ import Head from 'next/head'
 import classNames from 'classnames'
 import type { FadeProps as RevealFadeProps } from 'react-awesome-reveal'
 
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 interface FadeProps extends RevealFadeProps {}
 
 const DISABLE_ANIMATION_NO_JS = 'disable-animation-no-js'
 
 /**
  * Fade
+ * @returns JSX.Element
  */
 export default function Fade({ children, className, ...props }: FadeProps) {
     return (

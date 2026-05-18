@@ -1,22 +1,25 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import classNames from 'classnames'
 import styles from 'components/layout/layout/layout.module.scss'
 import useLayout from 'components/layout/layout/layout.hook'
 import Navbar from 'components/layout/navbar/navbar.component'
-import { Container } from 'components/containers'
+import Container from 'components/containers/container/container.component'
 import type { ComponentProps } from 'react'
 
-export interface LayoutProps extends Pick<ComponentProps<'div'>, 'children'> {}
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
+export interface LayoutProps extends Pick<ComponentProps<'div'>, 'children' | 'className'> {}
 
 /**
  * App layout
+ * @returns JSX.Element
  */
-export default function Layout({ children }: LayoutProps): React.ReactElement {
+export default function Layout({ children, className }: LayoutProps) {
     const { publicRuntimeConfig } = useLayout()
 
     return (
-        <div className={styles.layout}>
+        <div className={classNames(styles.layout, className)}>
             <header>
                 <Container>
                     <Navbar
@@ -24,28 +27,33 @@ export default function Layout({ children }: LayoutProps): React.ReactElement {
                             href: '/#intro',
                             children: (
                                 <Image
-                                    // eslint-disable-next-line global-require, import/no-absolute-path
-                                    src={require('/public/icons/favicon-96x96.png')}
                                     alt="Kirian Caumes"
-                                    width={19}
                                     height={19}
+                                    src="/icons/favicon-96x96.png"
+                                    width={19}
                                 />
                             ),
 
                             // <Img
-                            //     src={{
+                            //     Src={{
                             //         // eslint-disable-next-line import/no-absolute-path, import/no-unresolved
-                            //         normal: require('/public/icons/favicon-96x96.png?resize'),
+                            //         Normal: require('/public/icons/favicon-96x96.png?resize'),
                             //         // eslint-disable-next-line import/no-absolute-path, import/no-unresolved
-                            //         webp: require('/public/icons/favicon-96x96.png?resize&format=webp'),
+                            //         Webp: require('/public/icons/favicon-96x96.png?resize&format=webp'),
                             //         // eslint-disable-next-line import/no-absolute-path, import/no-unresolved
-                            //         lqip: require('/public/icons/favicon-96x96.png?lqip'),
+                            //         Lqip: require('/public/icons/favicon-96x96.png?lqip'),
                             //     }}
-                            //     alt="kiriancaumes"
-                            //     width={19}
-                            //     height={19}
+                            //     Alt="kiriancaumes"
+                            //     Width={19}
+                            //     Height={19}
                             // />,
                         }}
+                        itemsEnd={[
+                            {
+                                href: '/#contact',
+                                children: 'Contact',
+                            },
+                        ]}
                         itemsMain={[
                             {
                                 href: '/#about',
@@ -66,12 +74,6 @@ export default function Layout({ children }: LayoutProps): React.ReactElement {
                             {
                                 href: '/#passions',
                                 children: 'Passions',
-                            },
-                        ]}
-                        itemsEnd={[
-                            {
-                                href: '/#contact',
-                                children: 'Contact',
                             },
                         ]}
                     />

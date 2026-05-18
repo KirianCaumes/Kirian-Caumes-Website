@@ -1,30 +1,16 @@
 import { useState, useCallback } from 'react'
 import Cookie from 'js-cookie'
 import ReactGA from 'react-ga4'
-import getConfig from 'next/config'
 import { useMount } from 'react-use'
-import type { PublicRuntimeConfigType } from 'types'
+import { publicRuntimeConfig } from 'config'
 
 const ACCEPT_COOKIE_NAME = 'accept_cookies'
 
-export interface UseGdprBannerHookReturns {
-    /** isVisible */
-    isVisible: boolean
-    /** onAccept */
-    onAccept: () => void
-    /** onRefuse */
-    onRefuse: () => void
-}
-
 /**
  * GdprBanner
+ * @returns UseGdprBannerHookReturns
  */
-export default function useGdprBanner(): UseGdprBannerHookReturns {
-    const { publicRuntimeConfig } = getConfig() as {
-        /** PublicRuntimeConfig */
-        publicRuntimeConfig: PublicRuntimeConfigType
-    }
-
+export default function useGdprBanner() {
     /** Is modal visible */
     const [isVisible, setIsVisible] = useState(false)
 
@@ -38,7 +24,7 @@ export default function useGdprBanner(): UseGdprBannerHookReturns {
             sameSite: 'lax',
         })
         setIsVisible(false)
-    }, [publicRuntimeConfig.gtmId])
+    }, [])
 
     const onRefuse = useCallback(() => {
         setIsVisible(false)

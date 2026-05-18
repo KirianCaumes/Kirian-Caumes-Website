@@ -4,15 +4,21 @@
  */
 module.exports = {
     '*': ['cspell --no-progress --dot --gitignore --no-must-find-files'],
-    '*.{ts,tsx,js,jsx}': [
+    '*.{ts,tsx}': [
+        "bash -c 'tsc --noEmit'",
         'prettier --ignore-unknown --check',
-        'eslint --max-warnings=0',
-        'cspell --no-progress --dot --gitignore --no-must-find-files',
+        `eslint --max-warnings=0 --no-warn-ignored --concurrency=auto`,
+        'cspell --no-progress --dot --gitignore --no-must-find-files .',
+    ],
+    '*.{js,jsx,mjs}': [
+        'prettier --ignore-unknown --check',
+        `eslint --max-warnings=0 --no-warn-ignored --concurrency=auto`,
+        'cspell --no-progress --dot --gitignore --no-must-find-files .',
     ],
     '*.{css,scss,sass}': [
         'prettier --ignore-unknown --check',
         'stylelint --max-warnings 0',
-        'cspell --no-progress --dot --gitignore --no-must-find-files',
+        'cspell --no-progress --dot --gitignore --no-must-find-files .',
     ],
-    '*.{html,json,svg,yml,xml}': ['prettier --ignore-unknown --check', 'cspell --no-progress --dot --gitignore'],
+    '*.{html,json,svg,yml,xml}': ['prettier --ignore-unknown --check', 'cspell --no-progress --dot --gitignore --no-must-find-files .'],
 }

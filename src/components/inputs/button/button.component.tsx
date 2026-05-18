@@ -5,28 +5,31 @@ import styles from 'components/inputs/button/button.module.scss'
 import type { ComponentProps } from 'react'
 
 export interface ButtonProps
-    extends Pick<ComponentProps<'div'>, 'children' | 'title' | 'className' | 'aria-label'>,
+    extends
+        Pick<ComponentProps<'div'>, 'children' | 'title' | 'className' | 'aria-label'>,
         Pick<ComponentProps<'a'>, 'rel' | 'href' | 'target'> {
-    /** type */
-    type?: 'button' | 'submit' | 'reset'
-    /** onClick */
-    onClick?: (ev: React.MouseEvent<unknown, MouseEvent>) => void
-    /** color */
-    color?: 'tertiary' | 'secondary' | 'primary' | 'primary-dark'
-    /** isFullWidth */
-    isFullWidth?: boolean
-    /** isDisabled */
-    isDisabled?: boolean
-    /** isOutlined */
-    isOutlined?: boolean
+    /** Type */
+    readonly type?: 'button' | 'submit' | 'reset'
+    /** OnClick */
+    readonly onClick?: (ev: React.MouseEvent<unknown>) => void
+    /** Color */
+    readonly color?: 'tertiary' | 'secondary' | 'primary' | 'primary-dark'
+    /** IsFullWidth */
+    readonly isFullWidth?: boolean
+    /** IsDisabled */
+    readonly isDisabled?: boolean
+    /** IsOutlined */
+    readonly isOutlined?: boolean
 }
 
 /**
  * A button
+ * @returns JSX.Element
  */
 export default function Button({
     type = 'button',
-    onClick = () => null,
+    // eslint-disable-next-line react/require-default-props
+    onClick,
     color = 'primary-dark',
     isFullWidth = false,
     isDisabled = false,
@@ -42,6 +45,7 @@ export default function Button({
     if (href && !isDisabled) {
         return (
             <Link
+                aria-label={ariaLabel}
                 className={classNames(
                     styles.button,
                     { [styles['is-fullwidth']]: isFullWidth },
@@ -49,12 +53,11 @@ export default function Button({
                     styles[`is-${color}`],
                     className,
                 )}
+                href={href}
                 onClick={onClick}
                 rel={rel}
                 target={target}
                 title={title}
-                href={href}
-                aria-label={ariaLabel}
             >
                 {children}
             </Link>
@@ -63,6 +66,7 @@ export default function Button({
 
     return (
         <button
+            aria-label={ariaLabel}
             className={classNames(
                 styles.button,
                 { [styles['is-fullwidth']]: isFullWidth },
@@ -70,12 +74,11 @@ export default function Button({
                 styles[`is-${color}`],
                 className,
             )}
+            disabled={isDisabled}
+            onClick={onClick}
+            title={title}
             // eslint-disable-next-line react/button-has-type
             type={type}
-            onClick={onClick}
-            disabled={isDisabled}
-            title={title}
-            aria-label={ariaLabel}
         >
             {children}
         </button>
