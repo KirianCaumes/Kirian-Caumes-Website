@@ -24,7 +24,7 @@ export interface NavbarProps {
  */
 // eslint-disable-next-line react/require-default-props
 export default function Navbar({ itemsMain, itemsEnd, itemHome }: NavbarProps) {
-    const { hash, isOpen, ref, toggleIsOpen, onClickLink } = useNavbar()
+    const { isOpen, ref, toggleIsOpen, onClickLink } = useNavbar()
 
     return (
         <nav
@@ -33,9 +33,7 @@ export default function Navbar({ itemsMain, itemsEnd, itemHome }: NavbarProps) {
         >
             <div className={styles['navbar-icon']}>
                 <Link
-                    className={classNames(styles['navbar-item'], {
-                        [styles['is-active']]: hash === itemHome.href.replace('#', '').replace('/', ''),
-                    })}
+                    className={classNames(styles['navbar-item'])}
                     href={itemHome.href}
                     onClick={onClickLink}
                 >
@@ -51,9 +49,7 @@ export default function Navbar({ itemsMain, itemsEnd, itemHome }: NavbarProps) {
                     >
                         {list?.map((item, i) => (
                             <li
-                                className={classNames(styles['navbar-item'], {
-                                    [styles['is-active']]: hash === item.href.replace('#', '').replace('/', ''),
-                                })}
+                                className={classNames(styles['navbar-item'])}
                                 // eslint-disable-next-line react/no-array-index-key
                                 key={`navbar-item_${i}`}
                             >

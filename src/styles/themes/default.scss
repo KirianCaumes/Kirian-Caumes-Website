@@ -34,9 +34,11 @@ html {
       line-height: 1.5rem;
 
       a {
-        color: map.get(variables.$colors, 'primary-dark');
-        text-decoration: underline;
         text-underline-offset: 1px;
+
+        &:not([href^='/#']) {
+          color: map.get(variables.$colors, 'link');
+        }
 
         &:hover {
           text-decoration: underline;

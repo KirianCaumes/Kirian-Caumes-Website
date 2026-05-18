@@ -27,7 +27,7 @@
       justify-content: center;
 
       a {
-        color: map.get(variables.$colors, 'white');
+        color: map.get(variables.$colors, 'white') !important;
       }
     }
   }
