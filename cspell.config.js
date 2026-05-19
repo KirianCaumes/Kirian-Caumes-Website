@@ -64,6 +64,7 @@ module.exports = {
         'aomam',
         'sympy',
         'llamaindex',
+        'scalables',
         // Common
         'devcontainer',
         'esnext',

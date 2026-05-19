@@ -7,6 +7,8 @@ import type { ComponentProps } from 'react'
 export interface CareerCardProps {
     /** Period */
     readonly period: [Date] | [Date, Date]
+    /** Duration. If set, will override the calculated duration */
+    readonly duration?: string
     /** Title */
     readonly title: ComponentProps<'p'>['children']
     /** Location */
@@ -31,8 +33,10 @@ export interface CareerCardProps {
  * A career card
  * @returns JSX.Element
  */
-export default function CareerCard({ period, title, location, missions }: CareerCardProps) {
-    const { periodEnd, periodStart, duration } = useCareerCard({ period })
+// eslint-disable-next-line react/require-default-props
+export default function CareerCard({ period, duration: customDuration, title, location, missions }: CareerCardProps) {
+    const { periodEnd, periodStart, duration: calculatedDuration } = useCareerCard({ period })
+    const duration = customDuration ?? calculatedDuration
 
     return (
         <div className={styles['career-card']}>

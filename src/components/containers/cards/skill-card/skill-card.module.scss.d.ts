@@ -10,12 +10,10 @@ export type Styles = {
     'is-white': string
     'skill-card': string
     'skill-card-body': string
-    'skill-card-body-left': string
-    'skill-card-body-right': string
-    'skill-card-content': string
-    'skill-card-stars': string
+    'skill-card-description': string
+    'skill-card-header': string
+    'skill-card-tags': string
     'skill-card-title': string
-    'skill-card-title-subtitle': string
 }
 
 export type ClassNames = keyof Styles

@@ -4,6 +4,7 @@ export type Styles = {
     'index-page-row': string
     'is-about': string
     'is-career': string
+    'is-contact': string
     'is-intro': string
     'is-last-update': string
     'is-passions': string
@@ -11,6 +12,7 @@ export type Styles = {
     'is-quote': string
     'is-skills': string
     'row-about-fade-container': string
+    'row-contact-columns': string
     'row-passions-columns': string
     'row-skills-fade-container': string
 }

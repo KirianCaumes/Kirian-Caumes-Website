@@ -3,7 +3,7 @@
 @use 'sass:map';
 
 .gdpr-banner {
-  background-color: rgb(0, 0, 0, 0.75);
+  background-color: rgb(0, 0, 0, 1);
   bottom: 0;
   display: flex;
   font-size: 0.75rem;
@@ -28,7 +28,7 @@
     text-align: center;
 
     a {
-      color: map.get(variables.$colors, 'grey-medium');
+      color: map.get(variables.$colors, 'white');
     }
   }
 

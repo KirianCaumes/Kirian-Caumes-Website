@@ -44,12 +44,17 @@
     &.is-skills {
       div.row-skills-fade-container {
         margin-bottom: 0.75em;
+
+        > div {
+          justify-content: center;
+        }
       }
     }
 
     &.is-career {
       @include mixins.background-secondary;
 
+      /* stylelint-disable-next-line no-descending-specificity */
       > div {
         overflow-y: hidden;
       }
@@ -65,6 +70,12 @@
 
       p {
         text-align: justify;
+
+        &:last-of-type {
+          @include mixins.until(variables.$desktop) {
+            text-align: center;
+          }
+        }
       }
     }
 
@@ -128,7 +139,11 @@
       }
     }
 
-    // &.is-contact {
-    // }
+    &.is-contact {
+      /* stylelint-disable-next-line no-descending-specificity */
+      > div > div {
+        justify-content: center;
+      }
+    }
   }
 }

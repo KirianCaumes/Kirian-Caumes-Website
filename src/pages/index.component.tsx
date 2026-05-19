@@ -6,6 +6,7 @@ import Image from 'next/image'
 import styles from 'pages/index.module.scss'
 import useIndex from 'pages/index.hook'
 import CareerCard from 'components/containers/cards/career-card/career-card.component'
+import ContactCard from 'components/containers/cards/contact-card/contact-card.component'
 import FlatCard from 'components/containers/cards/flat-card/flat-card.component'
 import IconCard from 'components/containers/cards/icon-card/icon-card.component'
 import SkillCard from 'components/containers/cards/skill-card/skill-card.component'
@@ -64,22 +65,21 @@ export default function Index() {
                             <Columns.Column>
                                 <p>
                                     Lead Tech / Développeur Full Stack âgé de <em>{age} ans</em>, je suis situé aux abords de la ville de{' '}
-                                    <em>Nantes</em> et titulaire du <em>permis B</em>
-                                    .
+                                    <em>Nantes</em> et titulaire du <em>permis B</em>.
                                     <br />
                                     <br />
-                                    Dans le domaine de l'informatique depuis maintenant plus de {workingYears} ans, mon{' '}
-                                    <Link href="/#career">parcours professionnel</Link>, ainsi que mes études à Ynov Nantes avec l'obtention
-                                    de mon mastère « <em>Expert Développement Web</em> » et du titre RNCP «{' '}
-                                    <em>Expert Informatique et Systèmes d'Information</em> », m'ont permis l'acquisition de{' '}
-                                    <Link href="/#skills">compétences</Link> solides et adaptatives.
+                                    Fort de plus de <em>{workingYears} ans d'expérience</em> dans la conception d'
+                                    <em>applications web métier</em> sur mesure et performantes, mon{' '}
+                                    <Link href="/#career">parcours professionnel</Link> m'a permis de développer une expertise couvrant l'
+                                    <em>architecture logicielle</em>, le développement <em>full stack</em>, l'automatisation <em>CI/CD</em>,
+                                    le cloud <em>Azure</em> et l'<em>accompagnement technique d'équipes</em>.
                                     <br />
                                     <br />
-                                    Ce savoir-faire technique, acquis également grâce à ma bonne compréhension de l'
-                                    <em>anglais</em>, se sera exprimé autour de la réalisation (notamment) d'
-                                    <em>applications web métier</em> mais aussi de la <em>gestion de projets</em> et de la{' '}
-                                    <em>relation client</em>
-                                    .
+                                    Spécialisé en <em>TypeScript</em>, <em>React</em> et <em>Node.js/NestJS</em>, j'ai obtenu à Ynov Nantes
+                                    mon mastère « <em>Expert Développement Web</em> » et le titre RNCP «{' '}
+                                    <em>Expert Informatique et Systèmes d'Information</em> ». Habitué aux environnements multi-projets, aux
+                                    échanges directs avec les clients métiers et à la bonne compréhension de l'<em>anglais</em>,
+                                    j'interviens du cadrage fonctionnel initial jusqu'à la mise en production.
                                     <br />
                                     <br />
                                 </p>
@@ -195,9 +195,9 @@ export default function Index() {
                                         isIconBorder
                                         title="Sérieux sans se prendre au sérieux"
                                     >
-                                        Doté d'un sérieux indéniable dans l'accomplissement de mes tâches professionnelles, j'aime néanmoins
-                                        chercher à distiller une légère touche d'humour tout au long de la journée, apportant ainsi une
-                                        brise rafraîchissante dans une atmosphère de travail.
+                                        Rigoureux dans mon travail et exigeant sur la qualité, j'aime néanmoins garder une touche d'humour
+                                        au quotidien. Parce qu'une bonne ambiance de travail, c'est aussi ce qui fait la différence au sein
+                                        d'une équipe.
                                     </IconCard>
                                 </Fade>
                             </Columns.Column>
@@ -213,9 +213,9 @@ export default function Index() {
                                         isIconBorder
                                         title="Calme mais pas amorphe"
                                     >
-                                        Mon attention est pleinement dédiée à chaque projet pour assurer son succès, tout en préservant un
-                                        certain équilibre pour éviter de me confiner à un rôle monotone derrière un écran. L'implication et
-                                        une approche humaine sont des aspects que j'estime importants dans mon travail.
+                                        Je m'investis pleinement dans chaque projet tout en gardant le recul nécessaire pour prendre les
+                                        bonnes décisions. L'humain reste au cœur de mon approche : écoute, implication et relation de
+                                        confiance avec les clients comme avec l'équipe.
                                     </IconCard>
                                 </Fade>
                             </Columns.Column>
@@ -231,9 +231,8 @@ export default function Index() {
                                         isIconBorder
                                         title="Passionné et patient"
                                     >
-                                        Mordu depuis des années par l'informatique, mon objectif quotidien est de faire face aux problèmes
-                                        et de m'impliquer activement pour trouver les meilleures solutions. Cette volonté de résoudre les
-                                        défis informatiques est au cœur de mes engagements.
+                                        Passionné d'informatique depuis toujours, j'aborde chaque problème comme un défi à relever. La
+                                        recherche de la meilleure solution, même lorsque c'est complexe, est ce qui me motive au quotidien.
                                     </IconCard>
                                 </Fade>
                             </Columns.Column>
@@ -256,7 +255,7 @@ export default function Index() {
                             isSubtitle
                             level={3}
                         >
-                            Mon savoir-faire (non exhaustif et ardu à organiser) de développeur
+                            Mon savoir-faire technique et managérial
                         </Title>
                         <br />
                         <Fade
@@ -265,62 +264,53 @@ export default function Index() {
                             triggerOnce
                         >
                             <Columns>
-                                <Columns.Column sizes={['one-quarter-widescreen', 'half-desktop', 'half-tablet']}>
+                                <Columns.Column sizes={['one-third-widescreen', 'one-third-desktop', 'full-tablet']}>
                                     <SkillCard
                                         color="tertiary"
-                                        rows={[
-                                            { title: 'Nest/Express', score: 4 },
-                                            { title: 'ORM (Prisma/Mongoose)', score: 4 },
-                                            { title: 'ESLint/Prettier/Stylelint/CSpell', score: 4 },
-                                            { title: 'Playwright/Puppeteer', score: 3.5 },
-                                            { title: 'Jest', score: 3 },
-                                            { title: 'Babel/Rollup/WebPack/SWC', score: 2.5 },
-                                        ]}
-                                        score={4}
-                                        title={['NodeJs', 'JavaScript/TypeScript']}
+                                        description={
+                                            <>
+                                                Référent technique sur des projets critiques, de la définition de l'
+                                                <strong>architecture</strong> au passage en production. Pilotage des décisions techniques,{' '}
+                                                <strong>animation d'ateliers</strong> de cadrage client, <strong>mentorat</strong> de
+                                                développeurs juniors et mise en place de <strong>standards de qualité</strong> garants de
+                                                livraisons fiables.
+                                            </>
+                                        }
+                                        tags={['Leadership', 'Architecture', 'Mentorat', 'Qualité']}
+                                        title="Lead Tech & Pilotage"
                                     />
                                 </Columns.Column>
-                                <Columns.Column sizes={['one-quarter-widescreen', 'half-desktop', 'half-tablet']}>
+                                <Columns.Column sizes={['one-third-widescreen', 'one-third-desktop', 'half-tablet']}>
                                     <SkillCard
-                                        color="tertiary"
-                                        rows={[
-                                            { title: 'Vanilla (ECMAScript)', score: 4 },
-                                            { title: 'React (Vite/Redux/ReactQuery)', score: 4 },
-                                            { title: 'Next.js', score: 3 },
-                                            { title: 'Angular', score: 2 },
-                                            { title: 'jQuery', score: 2 },
-                                            { title: 'VueJs', score: 1 },
-                                        ]}
-                                        score={4}
-                                        title={['FrontEnd', 'Framework JS']}
+                                        color="secondary"
+                                        description={
+                                            <>
+                                                La base de mon c&oelig;ur de métier : développement <strong>full stack</strong> de A à Z :
+                                                backend robuste avec <strong>NestJS</strong> et <strong>Fastify</strong>, frontend réactif
+                                                avec <strong>React</strong>. Culture forte de la <strong>qualité</strong> : typage strict,
+                                                revues de code, CI, tests unitaires et E2E pour une base de code{' '}
+                                                <strong>maintainable sur la durée</strong>.
+                                            </>
+                                        }
+                                        tags={['TypeScript', 'JavaScript', 'React', 'NestJS']}
+                                        title="JavaScript / TypeScript"
                                     />
                                 </Columns.Column>
-                                <Columns.Column sizes={['one-quarter-widescreen', 'half-desktop', 'half-tablet']}>
+                                <Columns.Column sizes={['one-third-widescreen', 'one-third-desktop', 'half-tablet']}>
                                     <SkillCard
-                                        color="tertiary"
-                                        rows={[
-                                            { title: 'Llamaindex', score: 3 },
-                                            { title: 'FastAPI', score: 3 },
-                                            { title: 'Sympy', score: 2 },
-                                            { title: 'SQLAlchemy', score: 2 },
-                                        ]}
-                                        score={3}
-                                        title="Python"
-                                    />
-                                </Columns.Column>
-                                <Columns.Column sizes={['one-quarter-widescreen', 'half-desktop', 'half-tablet']}>
-                                    <SkillCard
-                                        color="tertiary"
-                                        rows={[
-                                            { title: 'T-SQL', score: 3.5 },
-                                            { title: 'PostgreSQL', score: 3.5 },
-                                            { title: 'MongoDB', score: 3.5 },
-                                            { title: 'MySQL', score: 3 },
-                                            { title: 'ElasticSearch', score: 3 },
-                                            { title: 'SQLite', score: 2 },
-                                        ]}
-                                        score={3.5}
-                                        title="BDD"
+                                        color="secondary"
+                                        description={
+                                            <>
+                                                Architecture et intégration d'interfaces exigeantes : composants{' '}
+                                                <strong>réutilisables</strong>, <strong>design systems</strong>, animations fluides et
+                                                gestion d'état complexe. Sensibilité à l'
+                                                <strong>accessibilité</strong> (WCAG), au <strong>SEO</strong> et aux{' '}
+                                                <strong>Core Web Vitals</strong> pour des applications à la fois esthétiques et
+                                                performantes.
+                                            </>
+                                        }
+                                        tags={['CSS/SCSS', 'Accessibilité', 'SEO']}
+                                        title="Interfaces & UI"
                                     />
                                 </Columns.Column>
                             </Columns>
@@ -331,120 +321,33 @@ export default function Index() {
                             triggerOnce
                         >
                             <Columns>
-                                <Columns.Column sizes={['one-quarter-widescreen', 'half-desktop', 'half-tablet']}>
-                                    <SkillCard
-                                        color="secondary"
-                                        rows={[
-                                            { title: 'Fluent UI', score: 4 },
-                                            { title: 'Bulma', score: 4 },
-                                            { title: 'Bootstrap', score: 2 },
-                                            { title: 'Material Design', score: 1 },
-                                            { title: 'Web component', score: 1 },
-                                        ]}
-                                        score={4}
-                                        title={['HTML/CSS', 'et composants']}
-                                    />
-                                </Columns.Column>
-                                <Columns.Column sizes={['one-quarter-widescreen', 'half-desktop', 'half-tablet']}>
-                                    <SkillCard
-                                        color="secondary"
-                                        rows={[
-                                            { title: 'Vanilla', score: 4 },
-                                            { title: 'SCSS/Sass', score: 4 },
-                                            { title: 'Less', score: 1 },
-                                        ]}
-                                        score={4}
-                                        title="CSS"
-                                    />
-                                </Columns.Column>
-                                <Columns.Column sizes={['one-quarter-widescreen', 'half-desktop', 'half-tablet']}>
-                                    <SkillCard
-                                        color="secondary"
-                                        rows={[
-                                            { title: 'C#', score: 3 },
-                                            { title: 'AspNetCore.Mvc', score: 3 },
-                                            { title: 'Entity Framework', score: 3 },
-                                        ]}
-                                        score={2}
-                                        title=".NET Core"
-                                    />
-                                </Columns.Column>
-                                <Columns.Column sizes={['one-quarter-widescreen', 'half-desktop', 'half-tablet']}>
-                                    <SkillCard
-                                        color="secondary"
-                                        rows={[
-                                            { title: 'Symfony 4/5', score: 3 },
-                                            { title: 'WordPress', score: 3 },
-                                            { title: 'Doctrine', score: 3 },
-                                            { title: 'Twig', score: 3 },
-                                            { title: 'PHPUnit', score: 2 },
-                                        ]}
-                                        score={3}
-                                        title="PHP"
-                                    />
-                                </Columns.Column>
-                            </Columns>
-                        </Fade>
-                        <Fade
-                            className={styles['row-skills-fade-container']}
-                            direction="up"
-                            triggerOnce
-                        >
-                            <Columns>
-                                <Columns.Column sizes={['one-quarter-widescreen', 'half-desktop', 'half-tablet']}>
+                                <Columns.Column sizes={['one-third-widescreen', 'one-third-desktop', 'half-tablet']}>
                                     <SkillCard
                                         color="primary"
-                                        rows={[
-                                            { title: 'PWA', score: 4 },
-                                            { title: 'Ionic 3/4', score: 2 },
-                                            { title: 'Android Studio', score: 1 },
-                                            { title: 'React Native', score: 1 },
-                                        ]}
-                                        score={2.5}
-                                        title="Mobile"
+                                        description={
+                                            <>
+                                                Conception d'<strong>APIs REST</strong> typées et documentées (OpenAPI/Swagger),
+                                                modélisation de schémas relationnels et NoSQL. Du schéma initial aux requêtes optimisées,
+                                                avec un œil constant sur la <strong>cohérence des données</strong>.
+                                            </>
+                                        }
+                                        tags={['PostgreSQL', 'MongoDB', 'ElasticSearch', 'Swagger']}
+                                        title="Données & APIs"
                                     />
                                 </Columns.Column>
-                                <Columns.Column sizes={['one-quarter-widescreen', 'half-desktop', 'half-tablet']}>
+                                <Columns.Column sizes={['one-third-widescreen', 'one-third-desktop', 'half-tablet']}>
                                     <SkillCard
                                         color="primary"
-                                        rows={[
-                                            { title: 'Bash', score: 3 },
-                                            { title: 'Deno/Bun', score: 2 },
-                                            { title: 'Java', score: 2 },
-                                            { title: 'Merise/UML', score: 2 },
-                                            { title: 'C/C++', score: 1 },
-                                            { title: 'Cisco', score: 1 },
-                                        ]}
-                                        score={0}
-                                        title="Divers"
-                                    />
-                                </Columns.Column>
-                                <Columns.Column sizes={['one-quarter-widescreen', 'half-desktop', 'half-tablet']}>
-                                    <SkillCard
-                                        color="primary"
-                                        rows={[
-                                            { title: 'Azure', score: 4 },
-                                            { title: 'Docker', score: 3.5 },
-                                            { title: 'Linux', score: 3.5 },
-                                            { title: 'Heroku', score: 3 },
-                                            { title: 'Win. Server', score: 2 },
-                                        ]}
-                                        score={0}
-                                        title="Systèmes"
-                                    />
-                                </Columns.Column>
-                                <Columns.Column sizes={['one-quarter-widescreen', 'half-desktop', 'half-tablet']}>
-                                    <SkillCard
-                                        color="primary"
-                                        rows={[
-                                            { title: 'Lead Tech', score: 4 },
-                                            { title: 'Pilotage dev.', score: 4 },
-                                            { title: 'Code reviewer', score: 4 },
-                                            { title: 'Suivi client', score: 4 },
-                                            { title: 'Commerce', score: 2 },
-                                        ]}
-                                        score={3.5}
-                                        title={['Gestion', 'de projet']}
+                                        description={
+                                            <>
+                                                Mise en œuvre d'architectures <strong>cloud Azure</strong>, dont <strong>AKS</strong>,
+                                                garantissant <strong>haute disponibilité</strong> et scalabilité. Conteneurisation{' '}
+                                                <strong>Docker</strong>, pipelines <strong>CI/CD</strong> automatisés et administration{' '}
+                                                <strong>Linux</strong> pour des déploiements fiables.
+                                            </>
+                                        }
+                                        tags={['Azure', 'AKS', 'Docker', 'CI/CD', 'Linux']}
+                                        title="DevOps & Cloud"
                                     />
                                 </Columns.Column>
                             </Columns>
@@ -483,48 +386,56 @@ export default function Index() {
                                     }}
                                     missions={[
                                         {
-                                            title: "Conception et création d'applications web métier sur mesure",
+                                            title: 'Référent technique & qualité logicielle',
                                             description:
                                                 // eslint-disable-next-line max-len
-                                                'Gestion complète de projets web : développement, optimisation, maintenance et évolutions du Frontend, du Backend (API) et de la Base de données',
+                                                "Garant de la qualité, de la maintenabilité et des bonnes pratiques de développement via la mise en place de standards de qualité logicielle. Définition d'architectures full stack scalables en React et NestJS pour des applications métier critiques.",
                                         },
                                         {
-                                            title: 'Assurer le suivi technique du client et de son projet tout au long du processus de réalisation',
+                                            title: 'Cadrage fonctionnel & pilotage technique',
                                             description:
                                                 // eslint-disable-next-line max-len
-                                                'Rédaction de spécifications fonctionnelles, prise en charge des demandes évolutives, coordination de projets et suivi avec le client',
+                                                "Animation d'ateliers de cadrage fonctionnel et pilotage des décisions techniques avec les parties prenantes métier dans des secteurs variés : recrutement, transport, immobilier, informatique, etc.",
                                         },
                                         {
-                                            title: 'Développement de programmes, scripts et outils variés pour répondre à des besoins spécifiques',
+                                            title: "Mentorat & accompagnement d'équipes",
                                             description:
                                                 // eslint-disable-next-line max-len
-                                                "Mise en place d'environnements sur Azure et machines virtuelles, modules de génération de PDF, outils de synchronisation de bases de données, création de scripts de calcul de données, etc.",
+                                                "Montée en compétence de développeurs juniors sur plusieurs projets : code reviews, pair programming et animation d'ateliers techniques.",
+                                        },
+                                        {
+                                            title: 'Architecture cloud & DevOps',
+                                            description:
+                                                // eslint-disable-next-line max-len
+                                                "Conception et mise en œuvre d'architectures cloud Azure et On-Premise (AKS), conteneurisation Docker, pipelines CI/CD automatisés et déploiements haute disponibilité.",
                                         },
                                     ]}
                                     period={[new Date(2021, 8), new Date()]}
                                     title="CDI Lead Tech / Développeur Full Stack"
                                 />
                                 <CareerCard
+                                    duration="3 ans"
                                     location={{
+                                        company: 'Next Decision',
                                         href: 'https://www.next-decision.fr/',
                                         city: 'Nantes',
                                     }}
                                     missions={[
                                         {
-                                            title: "Création d'applications web adaptées aux processus métier",
+                                            title: "Développement d'applications web métier pour PME et grands groupes",
                                             description:
                                                 // eslint-disable-next-line max-len
-                                                "Prise en charge complète d'applications web : du Frontend au Backend (API) et à la gestion de la Base de données, incluant maintenance et évolutions",
+                                                "Prise en charge complète d'applications web de A à Z : Frontend, Backend (API REST sécurisées) et Base de données, incluant maintenance et évolutions.",
                                         },
                                         {
-                                            title: 'Gestion et suivi technique du client et son projet',
+                                            title: 'Suivi technique et relation client',
                                             description:
                                                 // eslint-disable-next-line max-len
-                                                'Création de documents de spécifications, maintenance applicative, pilotage de projets et gestion de la relation client',
+                                                "Rédaction de spécifications fonctionnelles, pilotage de projets, coordination avec les clients et conception d'architectures cloud.",
                                         },
                                     ]}
-                                    period={[new Date(2018, 8), new Date(2021, 8)]}
-                                    title="Alternance en développement d'applications web (Bachelor 3 à Mastère 2)"
+                                    period={[new Date(2018, 6), new Date(2021, 7)]}
+                                    title="Alternance Développeur Full Stack (Bachelor 3 à Mastère 2)"
                                 />
                                 <CareerCard
                                     location={{ company: 'Next Decision', href: 'https://www.next-decision.fr/', city: 'Nantes' }}
@@ -658,30 +569,28 @@ export default function Index() {
                             </Columns.Column>
                             <Columns.Column>
                                 <p>
-                                    Le site que vous êtes en train de visiter a été entièrement réalisé par mes soins. Celui-ci repose sur{' '}
-                                    <em>Next.js</em> : un Framework <em>React</em> permettant, notamment, la mise en place d'un rendu des
-                                    composants côté serveur.
+                                    Ce site a été entièrement conçu et développé par mes soins. Il repose sur <em>Next.js</em>, un framework{' '}
+                                    <em>React</em> permettant le rendu côté serveur (SSR) et la génération statique.
                                 </p>
                                 <br />
                                 <p>
-                                    Pour un simple projet comme celui-ci, <em>Next.js</em> est "overkill", et un site sans un tel Framework
-                                    serait sûrement plus optimal. Mais ici, ce choix résulte d'une volonté personnelle de démontrer mes
-                                    compétences en <em>React</em>.
+                                    Pour un projet de cette taille, <em>Next.js</em> est clairement « overkill », un site statique serait
+                                    plus léger. Ce choix est délibéré : il me permet de démontrer concrètement mes compétences essentielles
+                                    en <em>React</em>.
                                 </p>
                                 <br />
                                 <p>
-                                    À travers ce projet, une partie de mes compétences auront pu être exprimées. Allant de la phase de{' '}
-                                    <em>conception</em> (recherche d'idées, mockup, etc.) à l'
-                                    <em>hébergement</em> (déploiement continu, etc.) en passant bien sûr par la phase de{' '}
-                                    <em>développement</em> (architecture en composants, style, accessibilité, performance, etc.).
+                                    Ce projet couvre l'ensemble du cycle de vie d'une application : de la <em>conception</em> (maquettes,
+                                    choix techniques) au <em>déploiement</em> continu, en passant par le <em>développement</em>{' '}
+                                    (architecture en composants, style, accessibilité, performance).
                                 </p>
                                 <br />
                                 <p>
-                                    <Tag color="primary-dark">#Next.js</Tag>
-                                    <Tag color="primary-dark">#React</Tag>
-                                    <Tag color="primary-dark">#SCSS</Tag>
-                                    <Tag color="primary-dark">#PWA</Tag>
-                                    <Tag color="primary-dark">#Docker</Tag>
+                                    <Tag color="primary-dark">Next.js</Tag>
+                                    <Tag color="primary-dark">React</Tag>
+                                    <Tag color="primary-dark">SCSS</Tag>
+                                    <Tag color="primary-dark">PWA</Tag>
+                                    <Tag color="primary-dark">Docker</Tag>
                                 </p>
                                 <br />
                                 <Button
@@ -708,8 +617,8 @@ export default function Index() {
                             Jérémie Belpois,{' '}
                             <cite>
                                 <a
-                                    aria-label="youtu.be/G5Q9CVbo67o?t=1348, ouvre dans un nouvel onglet"
-                                    href="https://youtu.be/G5Q9CVbo67o?t=1348"
+                                    aria-label="youtu.be/G5Q9CVbo67o?t=1303, ouvre dans un nouvel onglet"
+                                    href="https://youtu.be/G5Q9CVbo67o?t=1303"
                                     rel="noopener noreferrer nofollow"
                                     target="_blank"
                                 >
@@ -720,13 +629,13 @@ export default function Index() {
                     </figure>
                     <hr />
                     <p>
-                        Une simple locution qui, bien que provenant d'un dessin animé, m'a toujours inspiré et notamment aujourd'hui dans
-                        mes projets personnels de développements informatiques.
+                        Une simple locution qui, bien que tirée d'un dessin animé, m'a toujours inspiré, notamment dans mes projets
+                        personnels de développement informatique.
                     </p>
                     <br />
                     <p>
-                        Même si une idée me parait farfelue, peu utile ou encore ayant de faibles chances d'aboutir ; j'aime me lancer des
-                        défis et explorer des solutions originales dans le but d'expérimenter mais aussi d'apprendre.
+                        Même si une idée me paraît farfelue, peu utile ou vouée à l'échec, j'aime me lancer des défis et explorer des pistes
+                        originales, autant pour expérimenter que pour apprendre.
                     </p>
                 </div>
                 <div
@@ -759,15 +668,16 @@ export default function Index() {
                                         imageSrc="/images/handball.jpg"
                                         title="Handball"
                                     >
-                                        Joueur de Handball au poste de gardien de but, cumulant quinze saisons aux clubs de Carquefou et
-                                        anciennement Thouaré-sur-Loire. Également, coach et entraîneur d'une équipe d'U16M à Carquefou.
+                                        Gardien de but depuis{' '}
+                                        {new Date(new Date().getTime() - new Date('2008-07-01').getTime()).getUTCFullYear() - 1970} saisons,
+                                        j'évolue aujourd'hui au club de Carquefou.
                                         <br />
                                         <br />
-                                        J'y ai développé de vrais liens humains, dans un projet d'équipe ayant un objectif commun : gagner
-                                        ensemble, en cultivant l'unité et l'entraide.
+                                        Le handball m'a appris l'essentiel : s'investir dans un projet collectif et associatif, cultiver
+                                        l'entraide et gagner ensemble.
                                         <br />
                                         <br />
-                                        Fidèle supporter du HBC Nantes et de l'équipe de France.
+                                        Évidement, fidèle supporter du HBC Nantes et de l'équipe de France.
                                     </FlatCard>
                                 </Fade>
                             </Columns.Column>
@@ -781,13 +691,12 @@ export default function Index() {
                                         imageSrc="/images/ajesterscollection.png"
                                         title="Collections"
                                     >
-                                        Collectionneur passionné depuis mon plus jeune âge, je me suis toujours adonné à la quête d'objets
-                                        variés, tels que des pièces d'euros, des timbres, des fèves, des jeux vidéo, et bien d'autres.
+                                        Collectionneur passionné depuis mon plus jeune âge, j'ai toujours aimé chiner des objets variés :
+                                        pièces d'euros, timbres, fèves, jeux vidéo, et bien d'autres.
                                         <br />
                                         <br />
-                                        Aujourd'hui la collection vers laquelle je suis principalement tourné concerne le groupe de musique
-                                        In Flames avec un ensemble de CD, vinyl et autres. Je partage également cette passion sur internet
-                                        sous le pseudonyme :{' '}
+                                        Aujourd'hui, ma collection principale tourne autour du groupe In Flames : CD, vinyles et autres
+                                        raretés. Je partage cette passion sous le pseudonyme :{' '}
                                         <a
                                             aria-label="instagram.com/jesters_collection, ouvre dans un nouvel onglet"
                                             href="https://www.instagram.com/jesters_collection/"
@@ -810,8 +719,8 @@ export default function Index() {
                                         imageSrc="/images/development.jpg"
                                         title="Développement"
                                     >
-                                        Plus qu'un métier, le développement est également une passion. Je m'amuse fréquemment à développer
-                                        différents projets, qu'ils soient Open Source, ou bien directement pour mon usage personnel (
+                                        Plus qu'un métier, le développement est une véritable passion. Je m'amuse régulièrement à concevoir
+                                        des projets variés, qu'ils soient open source ou pour mon usage personnel (
                                         <a
                                             aria-label="github.com/KirianCaumes, ouvre dans un nouvel onglet"
                                             href="https://github.com/KirianCaumes"
@@ -823,9 +732,8 @@ export default function Index() {
                                         ).
                                         <br />
                                         <br />
-                                        Cette approche plus personnel me permet d'explorer de nouvelles options de mon coté, afin de
-                                        proposer, lors de mes projets professionnels, des solutions novatrices et innovantes qui résultent
-                                        de mes propres recherches, expériences et découvertes .
+                                        Cette démarche me permet d'explorer librement de nouvelles idées et de nourrir mes projets
+                                        professionnels de découvertes issues de mes propres recherches et expériences.
                                     </FlatCard>
                                 </Fade>
                             </Columns.Column>
@@ -833,7 +741,7 @@ export default function Index() {
                     </Container>
                 </div>
                 <div
-                    className={classNames(styles['index-page-row'])}
+                    className={classNames(styles['index-page-row'], styles['is-contact'])}
                     id="contact"
                 >
                     <Container>
@@ -851,44 +759,40 @@ export default function Index() {
                             Une question ? Un projet ? Contactez moi !
                         </Title>
                         <br />
-
                         <Columns>
-                            <Columns.Column>
+                            <Columns.Column sizes={['one-third-widescreen', 'one-third-desktop', 'half-tablet']}>
                                 <Fade
                                     direction="left"
                                     triggerOnce
                                 >
-                                    <IconCard
-                                        align="center"
+                                    <ContactCard
                                         color="secondary"
                                         iconName="mail"
+                                        linkProps={{
+                                            href: 'mailto:kirian.caumes@gmail.com',
+                                            children: 'kirian.caumes@gmail.com',
+                                        }}
                                         title="Par mail"
-                                    >
-                                        <a href="mailto:kirian.caumes@gmail.com">kirian.caumes@gmail.com</a>
-                                    </IconCard>
+                                    />
                                 </Fade>
                             </Columns.Column>
-                            <Columns.Column>
+                            <Columns.Column sizes={['one-third-widescreen', 'one-third-desktop', 'half-tablet']}>
                                 <Fade
                                     direction="right"
                                     triggerOnce
                                 >
-                                    <IconCard
-                                        align="center"
+                                    <ContactCard
                                         color="primary"
                                         iconName="linkedin"
+                                        linkProps={{
+                                            'aria-label': 'linkedin.com/in/kirian-caumes, ouvre dans un nouvel onglet',
+                                            href: 'https://www.linkedin.com/in/kirian-caumes',
+                                            children: 'linkedin.com/in/kirian-caumes',
+                                            target: '_blank',
+                                            rel: 'noopener noreferrer',
+                                        }}
                                         title="Par Linkedin"
-                                    >
-                                        {' '}
-                                        <a
-                                            aria-label="linkedin.com/in/kirian-caumes, ouvre dans un nouvel onglet"
-                                            href="https://www.linkedin.com/in/kirian-caumes"
-                                            rel="noopener noreferrer"
-                                            target="_blank"
-                                        >
-                                            linkedin.com/in/kirian-caumes
-                                        </a>
-                                    </IconCard>
+                                    />
                                 </Fade>
                             </Columns.Column>
                         </Columns>
