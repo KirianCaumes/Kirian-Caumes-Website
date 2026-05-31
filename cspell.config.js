@@ -77,5 +77,6 @@ module.exports = {
         'changefreq',
         'postbuild',
         'pageview',
+        'adduser',
     ],
 }
