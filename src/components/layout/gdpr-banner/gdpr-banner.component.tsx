@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link'
 import styles from 'components/layout/gdpr-banner/gdpr-banner.module.scss'
 import useGdprBanner from 'components/layout/gdpr-banner/gdpr-banner.hook'

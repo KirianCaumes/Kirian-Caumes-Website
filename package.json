@@ -10,7 +10,6 @@
     "build": "next build",
     "cspell": "npx cspell ./ --no-progress --dot --gitignore",
     "dev": "next dev",
-    "postbuild": "npx next-sitemap",
     "prepare": "husky",
     "start": "next start",
     "eslint:fix": "eslint --cache --cache-location .eslintcache --fix --concurrency=auto",
@@ -24,11 +23,9 @@
     "browserslist:update": "update-browserslist-db"
   },
   "dependencies": {
-    "@types/next-pwa": "^5.6.9",
     "classnames": "^2.5.1",
     "js-cookie": "^3.0.7",
     "next": "16.2.6",
-    "next-pwa": "^5.6.0",
     "react": "19.2.6",
     "react-awesome-reveal": "^4.3.1",
     "react-dom": "19.2.6",
@@ -66,7 +63,6 @@
     "husky": "^9.1.7",
     "knip": "^6.14.1",
     "lint-staged": "^17.0.5",
-    "next-sitemap": "^4.2.3",
     "postcss": "^8.5.14",
     "postcss-scss": "^4.0.9",
     "prettier": "^3.8.3",
@@ -80,9 +76,6 @@
   },
   "overrides": {
     "esbuild": "^0.25.0",
-    "@types/next-pwa": {
-      "next": "16.2.6"
-    },
     "serialize-javascript": "^7.0.5"
   }
 }

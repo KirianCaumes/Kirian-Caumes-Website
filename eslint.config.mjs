@@ -91,6 +91,11 @@ export default [
                 },
             ],
             '@typescript-eslint/no-extraneous-class': ['error', { allowWithDecorator: true }],
+            // App Router route files legitimately export metadata/viewport alongside the default component
+            'react-refresh/only-export-components': [
+                'error',
+                { allowExportNames: ['metadata', 'viewport', 'generateMetadata', 'generateViewport', 'generateStaticParams'] },
+            ],
             'jsdoc/require-jsdoc': [
                 'warn',
                 {

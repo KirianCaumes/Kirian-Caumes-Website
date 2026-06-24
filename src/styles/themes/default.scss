@@ -5,11 +5,7 @@ html {
   background-color: map.get(variables.$colors, 'white');
   color: map.get(variables.$colors, 'black');
   overflow-x: hidden;
-  scroll-behavior: smooth !important;
-
-  &[data-scroll-behavior='auto'] {
-    scroll-behavior: auto !important;
-  }
+  scroll-behavior: smooth;
 
   body {
     box-sizing: border-box;

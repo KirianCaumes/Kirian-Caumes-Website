@@ -20,7 +20,12 @@
     "moduleDetection": "force",
     "verbatimModuleSyntax": true,
     "noUncheckedIndexedAccess": true,
-    "noImplicitOverride": true
+    "noImplicitOverride": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
   "include": [
     "./src",
@@ -31,7 +36,8 @@
     ".stylelintrc.js",
     "next.config.js",
     "cspell.config.js",
-    "next-sitemap.config.js"
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts"
   ],
   "exclude": ["node_modules"]
 }
