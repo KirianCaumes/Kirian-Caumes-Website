@@ -1,4 +1,3 @@
-import React from 'react'
 import Head from 'next/head'
 import classNames from 'classnames'
 import Link from 'next/link'
@@ -33,24 +32,6 @@ export default function Index() {
                 <meta
                     content={publicRuntimeConfig.appDescription}
                     name="description"
-                />
-                <script
-                    // eslint-disable-next-line react/no-danger
-                    dangerouslySetInnerHTML={{
-                        __html: JSON.stringify({
-                            '@context': 'https://schema.org/',
-                            '@type': 'BreadcrumbList',
-                            itemListElement: [
-                                {
-                                    '@type': 'ListItem',
-                                    position: 1,
-                                    name: publicRuntimeConfig.appName,
-                                    item: publicRuntimeConfig.appUrl,
-                                },
-                            ],
-                        }),
-                    }}
-                    type="application/ld+json"
                 />
             </Head>
 
@@ -146,17 +127,13 @@ export default function Index() {
                                 </a>
                             </Columns.Column>
                             <Columns.Column align="center">
-                                <Fade
-                                    direction="right"
-                                    triggerOnce
-                                >
-                                    <Image
-                                        alt="Photo de profil de Kirian Caumes"
-                                        height={300}
-                                        src="/images/kirian_caumes.jpg"
-                                        width={300}
-                                    />
-                                </Fade>
+                                <Image
+                                    alt="Photo de profil de Kirian Caumes"
+                                    height={300}
+                                    priority
+                                    src="/images/kirian_caumes.jpg"
+                                    width={300}
+                                />
                             </Columns.Column>
                         </Columns>
                     </Container>
@@ -186,7 +163,7 @@ export default function Index() {
                             <Columns.Column>
                                 <Fade
                                     className={styles['row-about-fade-container']}
-                                    direction="left"
+                                    direction="up"
                                     triggerOnce
                                 >
                                     <IconCard
@@ -222,7 +199,7 @@ export default function Index() {
                             <Columns.Column>
                                 <Fade
                                     className={styles['row-about-fade-container']}
-                                    direction="right"
+                                    direction="up"
                                     triggerOnce
                                 >
                                     <IconCard
@@ -370,7 +347,7 @@ export default function Index() {
                             isSubtitle
                             level={3}
                         >
-                            La petite histoire de mon cheminent professionnel
+                            La petite histoire de mon cheminement professionnel
                         </Title>
                         <br />
                         <Fade
@@ -539,14 +516,14 @@ export default function Index() {
                             isCentered
                             level={2}
                         >
-                            Un exemple de réalisation ?
+                            Mes réalisations
                         </Title>
                         <Title
                             isCentered
                             isSubtitle
                             level={3}
                         >
-                            Vous êtes en train d'en vivre un
+                            Vous êtes en train d'en vivre une
                         </Title>
                         <br />
                         <Columns>
@@ -700,7 +677,7 @@ export default function Index() {
                                         <a
                                             aria-label="instagram.com/jesters_collection, ouvre dans un nouvel onglet"
                                             href="https://www.instagram.com/jesters_collection/"
-                                            rel="noopener noreferrer nofollow"
+                                            rel="noopener noreferrer"
                                             target="_blank"
                                         >
                                             A Jester's Collection
@@ -724,7 +701,8 @@ export default function Index() {
                                         <a
                                             aria-label="github.com/KirianCaumes, ouvre dans un nouvel onglet"
                                             href="https://github.com/KirianCaumes"
-                                            rel="noopener noreferrer"
+                                            // eslint-disable-next-line react/no-invalid-html-attribute
+                                            rel="me noopener noreferrer"
                                             target="_blank"
                                         >
                                             Github

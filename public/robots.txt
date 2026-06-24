@@ -1,14 +1,26 @@
-# *
+# All crawlers
 User-agent: *
 Allow: /
-
-# *
-User-agent: *
 Disallow: /404
 
-# Host
-Host: https://kiriancaumes.fr
+# AI crawlers & answer engines (explicitly allowed)
+User-agent: GPTBot
+Allow: /
 
-# Sitemaps
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Sitemap
 Sitemap: https://kiriancaumes.fr/sitemap.xml
-Sitemap: https://kiriancaumes.fr/sitemap-0.xml

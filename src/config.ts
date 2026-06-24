@@ -1,6 +1,6 @@
 const publicRuntimeConfig = {
-    /** The BCP 47 language tag of the application (e.g. `FR-fr`) */
-    appLang: 'FR-fr',
+    /** The BCP 47 language tag of the application (e.g. `fr-FR`) */
+    appLang: 'fr-FR',
     /** The primary brand color of the application as a hex code (e.g. `#263547`) */
     appColor: '#263547',
     /** The canonical public URL of the application (e.g. `https://kiriancaumes.fr`) */

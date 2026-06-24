@@ -17,6 +17,7 @@ module.exports = {
         '.github/**',
         '.git/**',
         'public/documents/**',
+        'public/llms.txt',
     ],
     ignoreWords: [
         // About libraries
@@ -32,6 +33,7 @@ module.exports = {
         'knip',
         'stylelintcache',
         'turbopack',
+        'llms',
     ],
     words: [
         // Specific to the project

@@ -95,31 +95,52 @@ export default class MyDocument extends Document {
                         // eslint-disable-next-line react/no-danger
                         dangerouslySetInnerHTML={{
                             __html: JSON.stringify({
-                                '@context': 'http://schema.org',
+                                '@context': 'https://schema.org',
                                 '@graph': [
                                     {
+                                        '@type': 'WebSite',
+                                        '@id': `${publicRuntimeConfig.appUrl}/#website`,
+                                        url: publicRuntimeConfig.appUrl,
+                                        name: publicRuntimeConfig.appName,
+                                        description: publicRuntimeConfig.appDescription,
+                                        inLanguage: publicRuntimeConfig.appLang,
+                                        publisher: { '@id': `${publicRuntimeConfig.appUrl}/#person` },
+                                    },
+                                    {
+                                        '@type': 'ProfilePage',
+                                        '@id': `${publicRuntimeConfig.appUrl}/#webpage`,
+                                        url: publicRuntimeConfig.appUrl,
+                                        name: publicRuntimeConfig.appTitle,
+                                        isPartOf: { '@id': `${publicRuntimeConfig.appUrl}/#website` },
+                                        about: { '@id': `${publicRuntimeConfig.appUrl}/#person` },
+                                        primaryImageOfPage: { '@id': `${publicRuntimeConfig.appUrl}/#primary-image` },
+                                        inLanguage: publicRuntimeConfig.appLang,
+                                    },
+                                    {
                                         '@type': 'Person',
+                                        '@id': `${publicRuntimeConfig.appUrl}/#person`,
                                         name: publicRuntimeConfig.appName,
                                         description: publicRuntimeConfig.appDescription,
                                         birthDate: '1997-02-21',
                                         image: {
                                             '@type': 'ImageObject',
+                                            '@id': `${publicRuntimeConfig.appUrl}/#primary-image`,
                                             /* cspell:disable-next-line */
                                             contentUrl: `${publicRuntimeConfig.appUrl}/_next/image?url=%2Fimages%2Fkirian_caumes.jpg&w=640&q=75`,
                                         },
                                         url: publicRuntimeConfig.appUrl,
-                                        jobTitle: ['Développeur Web Full Stack'],
+                                        jobTitle: ['Lead Tech', 'Développeur Full Stack'],
                                         email: 'mailto:kirian.caumes@gmail.com',
                                         sameAs: [
-                                            'https://linkedin.com/in/kirian-caumes',
                                             'https://www.linkedin.com/in/kirian-caumes',
                                             'https://github.com/KirianCaumes',
-                                            'https://www.github.com/KirianCaumes',
+                                            'https://medium.com/@kirian.caumes',
                                         ],
                                         address: {
                                             '@type': 'PostalAddress',
-                                            addressLocality: 'Nantes, France',
-                                            addressCountry: 'FRA',
+                                            addressLocality: 'Nantes',
+                                            addressRegion: 'Pays de la Loire',
+                                            addressCountry: 'FR',
                                         },
                                         knowsLanguage: [
                                             {
@@ -209,9 +230,9 @@ export default class MyDocument extends Document {
                                                 url: 'https://www.next-decision.fr/',
                                                 address: {
                                                     '@type': 'PostalAddress',
-                                                    addressLocality: 'Nantes, Pays de la Loire, France',
+                                                    addressLocality: 'Nantes',
                                                     addressRegion: 'Pays de la Loire',
-                                                    addressCountry: 'FRA',
+                                                    addressCountry: 'FR',
                                                 },
                                                 member: {
                                                     '@type': 'OrganizationRole',
@@ -219,14 +240,6 @@ export default class MyDocument extends Document {
                                                 },
                                             },
                                         ],
-                                    },
-                                    {
-                                        '@type': 'WebPage',
-                                        url: publicRuntimeConfig.appUrl,
-                                        reviewedBy: {
-                                            '@type': 'Person',
-                                            name: 'Kirian Caumes',
-                                        },
                                     },
                                 ],
                             }),

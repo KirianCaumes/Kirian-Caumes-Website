@@ -23,7 +23,7 @@ export default function SkillCard({ title, description, color, tags }: SkillCard
     return (
         <div className={classNames(styles['skill-card'], styles[`is-${color}`])}>
             <div className={styles['skill-card-header']}>
-                <p className={styles['skill-card-title']}>{title}</p>
+                <h3 className={styles['skill-card-title']}>{title}</h3>
             </div>
             <div className={styles['skill-card-body']}>
                 <p className={styles['skill-card-description']}>{description}</p>

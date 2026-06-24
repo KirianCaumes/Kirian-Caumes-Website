@@ -7,5 +7,6 @@ import { publicRuntimeConfig } from 'config'
 export default function useLayout() {
     return {
         publicRuntimeConfig,
+        currentYear: new Date().getFullYear(),
     }
 }

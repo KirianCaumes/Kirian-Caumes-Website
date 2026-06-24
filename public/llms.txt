@@ -1,0 +1,39 @@
+# Kirian Caumes
+
+> Kirian Caumes is a Lead Tech and Full Stack Developer based near Nantes, France. He designs and builds custom, high-performance business web applications, specializing in TypeScript, React and Node.js/NestJS, and works across the full software lifecycle from functional scoping to production deployment.
+
+## About
+
+- Full name: Kirian Caumes
+- Role: Lead Tech / Développeur Full Stack
+- Location: Nantes area, France
+- Born: 1997
+- Languages: French (native), English (professional working proficiency)
+- Employer: Next Decision (since June 2018; Lead Tech since September 2021)
+
+## Expertise
+
+- Software architecture and full stack web development
+- TypeScript, JavaScript, React, Node.js, NestJS, Fastify
+- REST APIs (OpenAPI/Swagger), PostgreSQL, MongoDB, ElasticSearch
+- Cloud Azure (AKS), Docker, CI/CD, Linux
+- Accessibility (WCAG), SEO and Core Web Vitals
+- Technical leadership: architecture decisions, client scoping workshops, mentoring of junior developers, software quality standards
+
+## Education
+
+- Mastère « Expert Développement Web », Ynov Nantes (2021)
+- Titre RNCP « Expert Informatique et Systèmes d'Information » (2021)
+- Baccalauréat Scientifique SVT (2016)
+
+## Links
+
+- Website: https://kiriancaumes.fr
+- LinkedIn: https://www.linkedin.com/in/kirian-caumes
+- GitHub: https://github.com/KirianCaumes
+- Medium: https://medium.com/@kirian.caumes
+- CV (PDF): https://kiriancaumes.fr/documents/Kirian-CAUMES-CV.pdf
+
+## Contact
+
+- Email: kirian.caumes@gmail.com

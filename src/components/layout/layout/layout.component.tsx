@@ -16,7 +16,7 @@ export interface LayoutProps extends Pick<ComponentProps<'div'>, 'children' | 'c
  * @returns JSX.Element
  */
 export default function Layout({ children, className }: LayoutProps) {
-    const { publicRuntimeConfig } = useLayout()
+    const { publicRuntimeConfig, currentYear } = useLayout()
 
     return (
         <div className={classNames(styles.layout, className)}>
@@ -29,6 +29,7 @@ export default function Layout({ children, className }: LayoutProps) {
                                 <Image
                                     alt="Kirian Caumes"
                                     height={19}
+                                    priority
                                     src="/icons/favicon-96x96.png"
                                     width={19}
                                 />
@@ -83,7 +84,7 @@ export default function Layout({ children, className }: LayoutProps) {
             <footer>
                 <Container>
                     <p>
-                        © 2021 - {publicRuntimeConfig.appName} - <Link href="/mentions-legales">Mentions légales</Link>
+                        © 2021 - {currentYear} - {publicRuntimeConfig.appName} - <Link href="/mentions-legales">Mentions légales</Link>
                     </p>
                 </Container>
             </footer>
