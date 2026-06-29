@@ -22,7 +22,7 @@ export const structuredData = {
             url: publicRuntimeConfig.appUrl,
             name: publicRuntimeConfig.appTitle,
             isPartOf: { '@id': `${publicRuntimeConfig.appUrl}/#website` },
-            about: { '@id': `${publicRuntimeConfig.appUrl}/#person` },
+            mainEntity: { '@id': `${publicRuntimeConfig.appUrl}/#person` },
             primaryImageOfPage: { '@id': `${publicRuntimeConfig.appUrl}/#primary-image` },
             inLanguage: publicRuntimeConfig.appLang,
         },
@@ -113,6 +113,8 @@ export const structuredData = {
                     url: 'https://www.next-decision.fr/',
                     address: {
                         '@type': 'PostalAddress',
+                        streetAddress: '8 rue Monteil', // cspell:disable-line
+                        postalCode: '44000',
                         addressLocality: 'Nantes',
                         addressRegion: 'Pays de la Loire',
                         addressCountry: 'FR',
