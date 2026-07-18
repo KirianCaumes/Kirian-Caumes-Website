@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 }
 
 // eslint-disable-next-line react-refresh/only-export-components
-export const revalidate = 7 * 60 * 60 * 24 // Revalidate every 7 days (in seconds)
+export const revalidate = 604800 // Revalidate every 7 days (in seconds)
 
 /**
  * Home route (`/`). Title/description are inherited from the root layout metadata.
