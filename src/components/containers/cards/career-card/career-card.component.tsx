@@ -7,6 +7,8 @@ import type { ComponentProps } from 'react'
 export interface CareerCardProps {
     /** Period */
     readonly period: [Date] | [Date, Date]
+    /** Reference "current" date; when the period ends on it, "Aujourd'hui" is displayed instead of the date */
+    readonly now?: Date
     /** Duration. If set, will override the calculated duration */
     readonly duration?: string
     /** Title */
@@ -34,8 +36,8 @@ export interface CareerCardProps {
  * @returns JSX.Element
  */
 // eslint-disable-next-line react/require-default-props
-export default function CareerCard({ period, duration: customDuration, title, location, missions }: CareerCardProps) {
-    const { periodEnd, periodStart, duration: calculatedDuration } = useCareerCard({ period })
+export default function CareerCard({ period, now, duration: customDuration, title, location, missions }: CareerCardProps) {
+    const { periodEnd, periodStart, duration: calculatedDuration } = useCareerCard({ period, now })
     const duration = customDuration ?? calculatedDuration
 
     return (

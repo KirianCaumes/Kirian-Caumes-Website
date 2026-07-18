@@ -1,7 +1,6 @@
 import 'styles/index.scss'
 import { Montserrat } from 'next/font/google'
 import { publicRuntimeConfig } from 'config'
-import { structuredData } from 'lib/structured-data'
 import Layout from 'components/layout/layout/layout.component'
 import GdprBanner from 'components/layout/gdpr-banner/gdpr-banner.component'
 import { DISABLE_ANIMATION_NO_JS } from 'components/containers/fade/fade.component'
@@ -20,7 +19,6 @@ export const metadata: Metadata = {
     description: publicRuntimeConfig.appDescription,
     applicationName: publicRuntimeConfig.appName,
     manifest: '/manifest.webmanifest',
-    alternates: { canonical: '/' },
     icons: {
         icon: [{ url: '/favicon.ico' }, { url: '/icon.svg', type: 'image/svg+xml' }],
         shortcut: '/favicon.ico',
@@ -69,12 +67,6 @@ export default function RootLayout({ children }: { /** Page content */ readonly 
                 <noscript>
                     <style>{`div.${DISABLE_ANIMATION_NO_JS} { animation: none !important; opacity: 1 !important; }`}</style>
                 </noscript>
-
-                <script
-                    // eslint-disable-next-line react/no-danger
-                    dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-                    type="application/ld+json"
-                />
             </body>
         </html>
     )

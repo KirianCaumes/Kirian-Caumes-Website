@@ -1,13 +1,13 @@
 import { useMemo } from 'react'
 import type { CareerCardProps } from 'components/containers/cards/career-card/career-card.component'
 
-export type UseCareerCardHookParams = Pick<CareerCardProps, 'period'>
+export type UseCareerCardHookParams = Pick<CareerCardProps, 'period' | 'now'>
 
 /**
  * Use CareerCard hook
  * @returns UseCareerCardHookReturns
  */
-export default function useCareerCard({ period }: UseCareerCardHookParams) {
+export default function useCareerCard({ period, now }: UseCareerCardHookParams) {
     /** Start date clean */
     const periodStart = useMemo(() => {
         const val = period[0].toLocaleDateString('fr-FR', { month: 'long', year: 'numeric' })
@@ -20,17 +20,13 @@ export default function useCareerCard({ period }: UseCareerCardHookParams) {
             return ''
         }
 
-        if (
-            period[1].getDate() === new Date().getDate() &&
-            period[1].getMonth() === new Date().getMonth() &&
-            period[1].getFullYear() === new Date().getFullYear()
-        ) {
+        if (period[1].getTime() === now?.getTime()) {
             return "Aujourd'hui"
         }
 
         const val = period[1].toLocaleDateString('fr-FR', { month: 'long', year: 'numeric' })
         return `${val.charAt(0).toUpperCase()}${val.slice(1)}`
-    }, [period])
+    }, [period, now])
 
     const duration = useMemo(() => {
         const monthDiff = (period[1]?.getMonth() ?? 0) - period[0].getMonth()

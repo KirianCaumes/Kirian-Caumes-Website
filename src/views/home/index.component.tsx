@@ -19,12 +19,17 @@ import Button from 'components/inputs/button/button.component'
 import Container from 'components/containers/container/container.component'
 import Fade from 'components/containers/fade/fade.component'
 
+export interface IndexProps {
+    /** Date captured at server (pre)render, reused client-side so date-derived text never mismatches at hydration */
+    readonly now: Date
+}
+
 /**
  * Home page
  * @returns JSX.Element
  */
-export default function Index() {
-    const { age, workingYears } = useIndex()
+export default function Index({ now }: IndexProps) {
+    const { age, workingYears } = useIndex({ now })
 
     return (
         <main className={styles['index-page']}>
@@ -377,7 +382,8 @@ export default function Index() {
                                             "Conception et mise en œuvre d'architectures cloud Azure et On-Premise (AKS), conteneurisation Docker, pipelines CI/CD automatisés et déploiements haute disponibilité.",
                                     },
                                 ]}
-                                period={[new Date(2021, 8), new Date()]}
+                                now={now}
+                                period={[new Date(2021, 8), now]}
                                 title="CDI Lead Tech / Développeur Full Stack"
                             />
                             <CareerCard
@@ -635,8 +641,8 @@ export default function Index() {
                                     title="Handball"
                                 >
                                     Gardien de but depuis{' '}
-                                    {new Date(new Date().getTime() - new Date('2008-07-01').getTime()).getUTCFullYear() - 1970} saisons,
-                                    j'évolue aujourd'hui au club de Carquefou.
+                                    {new Date(now.getTime() - new Date('2008-07-01').getTime()).getUTCFullYear() - 1970} saisons, j'évolue
+                                    aujourd'hui au club de Carquefou.
                                     <br />
                                     <br />
                                     Le handball m'a appris l'essentiel : s'investir dans un projet collectif et associatif, cultiver

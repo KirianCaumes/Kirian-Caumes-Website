@@ -19,7 +19,7 @@ export default function GdprBanner(): React.ReactElement {
     return (
         <div className={styles['gdpr-banner']}>
             <p className={styles['gdpr-banner-content']}>
-                Ce site utilise des <Link href="/general-conditions">cookies</Link> pour analyser vos préférences de manière anonyme. Vous
+                Ce site utilise des <Link href="/mentions-legales">cookies</Link> pour analyser vos préférences de manière anonyme. Vous
                 pouvez les accepter pour nous permettre d'améliorer votre expérience ou les refuser.
             </p>
             <div className={styles['gdpr-banner-buttons']}>

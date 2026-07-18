@@ -1,7 +1,7 @@
 import { publicRuntimeConfig } from 'config'
 
 /**
- * Schema.org JSON-LD (WebSite + ProfilePage + Person) injected in the root layout.
+ * Schema.org JSON-LD (WebSite + ProfilePage + Person) injected on the home page.
  * {@link https://schema.org}
  */
 export const structuredData = {
@@ -25,6 +25,9 @@ export const structuredData = {
             mainEntity: { '@id': `${publicRuntimeConfig.appUrl}/#person` },
             primaryImageOfPage: { '@id': `${publicRuntimeConfig.appUrl}/#primary-image` },
             inLanguage: publicRuntimeConfig.appLang,
+            dateCreated: '2021-01-12',
+            // Evaluated at build time, so it tracks the latest deployment (like sitemap.ts's lastModified)
+            dateModified: new Date().toISOString().split('T')[0],
         },
         {
             '@type': 'Person',
@@ -36,7 +39,9 @@ export const structuredData = {
                 '@type': 'ImageObject',
                 '@id': `${publicRuntimeConfig.appUrl}/#primary-image`,
                 /* cspell:disable-next-line */
-                contentUrl: `${publicRuntimeConfig.appUrl}/_next/image?url=%2Fimages%2Fkirian_caumes.jpg&w=640&q=75`,
+                contentUrl: `${publicRuntimeConfig.appUrl}/images/kirian_caumes.jpg`,
+                width: 2268,
+                height: 2269,
             },
             url: publicRuntimeConfig.appUrl,
             jobTitle: ['Lead Tech', 'Développeur Full Stack'],
@@ -52,18 +57,43 @@ export const structuredData = {
                 { '@type': 'Language', name: 'Français' },
                 { '@type': 'Language', name: 'Anglais' },
             ],
+            knowsAbout: [
+                'JavaScript',
+                'TypeScript',
+                'React',
+                'Next.js',
+                'Node.js',
+                'NestJS',
+                'Fastify',
+                'REST APIs',
+                'PWA',
+                'SCSS',
+                'Docker',
+                'Kubernetes',
+                'Microsoft Azure',
+                'CI/CD',
+                'SEO',
+            ],
             alumniOf: [
                 {
-                    '@type': 'EducationalOrganization',
-                    name: 'Nantes Ynov Campus',
-                    url: 'https://www.ynov.com/campus/nantes/',
-                    member: { '@type': 'OrganizationRole', startDate: '2016-09', endDate: '2021-08' },
+                    '@type': 'OrganizationRole',
+                    alumniOf: {
+                        '@type': 'EducationalOrganization',
+                        name: 'Nantes Ynov Campus',
+                        url: 'https://www.ynov.com/campus/nantes/',
+                    },
+                    startDate: '2016-09',
+                    endDate: '2021-08',
                 },
                 {
-                    '@type': 'EducationalOrganization',
-                    name: 'Lycée Notre Dame de Toutes Aides',
-                    url: 'https://ndtoutesaides.fr/',
-                    member: { '@type': 'OrganizationRole', startDate: '2012-09', endDate: '2016-07' },
+                    '@type': 'OrganizationRole',
+                    alumniOf: {
+                        '@type': 'EducationalOrganization',
+                        name: 'Lycée Notre Dame de Toutes Aides',
+                        url: 'https://ndtoutesaides.fr/',
+                    },
+                    startDate: '2012-09',
+                    endDate: '2016-07',
                 },
             ],
             hasCredential: [
@@ -108,18 +138,22 @@ export const structuredData = {
             ],
             worksFor: [
                 {
-                    '@type': 'Organization',
-                    name: 'Next Decision',
-                    url: 'https://www.next-decision.fr/',
-                    address: {
-                        '@type': 'PostalAddress',
-                        streetAddress: '8 rue Monteil', // cspell:disable-line
-                        postalCode: '44000',
-                        addressLocality: 'Nantes',
-                        addressRegion: 'Pays de la Loire',
-                        addressCountry: 'FR',
+                    '@type': 'OrganizationRole',
+                    worksFor: {
+                        '@type': 'Organization',
+                        name: 'Next Decision',
+                        url: 'https://www.next-decision.fr/',
+                        address: {
+                            '@type': 'PostalAddress',
+                            streetAddress: '8 rue Monteil', // cspell:disable-line
+                            postalCode: '44000',
+                            addressLocality: 'Nantes',
+                            addressRegion: 'Pays de la Loire',
+                            addressCountry: 'FR',
+                        },
                     },
-                    member: { '@type': 'OrganizationRole', startDate: '2018-06' },
+                    roleName: 'Lead Tech / Développeur Full Stack',
+                    startDate: '2018-06',
                 },
             ],
         },

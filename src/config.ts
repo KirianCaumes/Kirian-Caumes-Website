@@ -8,7 +8,7 @@ const publicRuntimeConfig = {
     /** The short display name of the application (e.g. `Kirian Caumes`) */
     appName: 'Kirian Caumes',
     /** The full page title used in `<title>` and Open Graph tags */
-    appTitle: 'Kirian Caumes - Lead Tech / Développeur Full Stack',
+    appTitle: 'Kirian Caumes - Lead Tech / Développeur Full Stack à Nantes',
     /** The meta description used for SEO and social sharing */
     appDescription:
         "Kirian Caumes, Lead Tech / Développeur Full Stack passionné d'informatique. Féru de Javascript, Typescript, Node, Nest, PWA, Next.js et autre !",
