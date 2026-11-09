@@ -34,7 +34,7 @@
     ".lintstagedrc.js",
     ".prettierrc.js",
     ".stylelintrc.js",
-    "next.config.js",
+    "next.config.mjs",
     "cspell.config.js",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts"

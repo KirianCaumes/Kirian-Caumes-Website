@@ -100,7 +100,7 @@ kirian-caumes-fr
 │   └── index.scss              //Common SCSS
 │   .gitignore
 │   jsconfig.json
-│   next.config.js
+│   next.config.mjs
 │   package-lock.json
 │   package.json
 │   README.md

@@ -27,7 +27,7 @@
 
     /* stylelint-disable-next-line number-max-precision */
     @if $value < 0.03928 {
-      $value: $value / 12.92;
+      $value: math.div($value, 12.92);
       /* stylelint-disable-next-line plugin/no-unsupported-browser-features, at-rule-empty-line-before */
     } @else {
       $value: math.div($value + 0.055, 1.055);
