@@ -1,20 +1,20 @@
 /* eslint-disable jsdoc/require-jsdoc, @typescript-eslint/consistent-type-definitions */
+// prettier-ignore
 export type Styles = {
-    'index-page': string
-    'index-page-row': string
-    'is-about': string
-    'is-career': string
-    'is-contact': string
-    'is-intro': string
-    'is-last-update': string
-    'is-passions': string
-    'is-productions': string
-    'is-quote': string
-    'is-skills': string
-    'row-about-fade-container': string
-    'row-contact-columns': string
-    'row-passions-columns': string
-    'row-skills-fade-container': string
+  'index-page': string;
+  'index-page-row': string;
+  'is-about': string;
+  'is-career': string;
+  'is-contact': string;
+  'is-intro': string;
+  'is-last-update': string;
+  'is-passions': string;
+  'is-productions': string;
+  'is-quote': string;
+  'is-skills': string;
+  'row-about-fade-container': string;
+  'row-passions-columns': string;
+  'row-skills-fade-container': string;
 }
 
 export type ClassNames = keyof Styles

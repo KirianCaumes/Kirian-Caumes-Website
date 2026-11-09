@@ -1,6 +1,7 @@
 /* eslint-disable jsdoc/require-jsdoc, @typescript-eslint/consistent-type-definitions */
+// prettier-ignore
 export type Styles = {
-    layout: string
+  'layout': string;
 }
 
 export type ClassNames = keyof Styles

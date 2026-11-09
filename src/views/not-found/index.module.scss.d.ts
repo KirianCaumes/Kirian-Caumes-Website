@@ -1,6 +1,7 @@
 /* eslint-disable jsdoc/require-jsdoc, @typescript-eslint/consistent-type-definitions */
+// prettier-ignore
 export type Styles = {
-    'not-found': string
+  'not-found': string;
 }
 
 export type ClassNames = keyof Styles

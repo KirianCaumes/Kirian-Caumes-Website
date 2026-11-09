@@ -1,8 +1,9 @@
 /* eslint-disable jsdoc/require-jsdoc, @typescript-eslint/consistent-type-definitions */
+// prettier-ignore
 export type Styles = {
-    'gdpr-banner': string
-    'gdpr-banner-buttons': string
-    'gdpr-banner-content': string
+  'gdpr-banner': string;
+  'gdpr-banner-buttons': string;
+  'gdpr-banner-content': string;
 }
 
 export type ClassNames = keyof Styles

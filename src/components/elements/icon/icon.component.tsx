@@ -6,15 +6,7 @@ import styles from 'components/elements/icon/icon.module.scss'
 export interface IconProps {
     /** Name */
     readonly name:
-        | 'linkedin'
-        | 'github'
-        | 'balloon_laughing'
-        | 'balloon_naughty'
-        | 'balloon_dead'
-        | 'mail'
-        | 'star_full'
-        | 'star_half'
-        | 'star_empty'
+        'linkedin' | 'github' | 'balloon_laughing' | 'balloon_naughty' | 'balloon_dead' | 'mail' | 'star_full' | 'star_half' | 'star_empty'
     /** IsColored */
     readonly isColored?: boolean
 }

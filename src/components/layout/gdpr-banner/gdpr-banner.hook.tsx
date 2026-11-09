@@ -38,6 +38,7 @@ export default function useGdprBanner() {
         const cookie = Cookie.get(ACCEPT_COOKIE_NAME)
 
         if (!cookie) {
+            // eslint-disable-next-line react-you-might-not-need-an-effect/no-initialize-state -- the cookie is read after hydration so the SSR markup matches
             setIsVisible(true)
         }
 

@@ -1,8 +1,9 @@
 /* eslint-disable jsdoc/require-jsdoc, @typescript-eslint/consistent-type-definitions */
+// prettier-ignore
 export type Styles = {
-    'is-centered': string
-    subtitle: string
-    title: string
+  'is-centered': string;
+  'subtitle': string;
+  'title': string;
 }
 
 export type ClassNames = keyof Styles

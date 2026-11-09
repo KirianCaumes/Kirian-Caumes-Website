@@ -74,6 +74,8 @@ module.exports = {
             files: ['**/*.scss', '**/*.sass'],
             customSyntax: 'postcss-scss',
             rules: {
+                // Sass @function and @mixin are parsed as the native CSS ones
+                'at-rule-prelude-no-invalid': [true, { ignoreAtRules: ['media', 'function', 'mixin'] }],
                 'plugin/no-unsupported-browser-features': [
                     true,
                     {
