@@ -67,6 +67,15 @@ module.exports = {
         'sympy',
         'llamaindex',
         'scalables',
+        // Claude Code files
+        'gitmoji',
+        'eslintcache',
+        'oneline',
+        'pointerdown',
+        'touchstart',
+        'rgaa',
+        'criteres',
+        'pdfinfo',
         // Common
         'devcontainer',
         'esnext',

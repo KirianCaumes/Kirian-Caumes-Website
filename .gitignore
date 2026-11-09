@@ -45,3 +45,5 @@ public/sitemap-0.xml
 
 .stylelintcache
 .eslintcache
+# claude
+.claude/settings.local.json
