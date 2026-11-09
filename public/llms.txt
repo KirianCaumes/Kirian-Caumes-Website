@@ -19,6 +19,15 @@
 - Cloud Azure (AKS), Docker, CI/CD, Linux
 - Accessibility (WCAG), SEO and Core Web Vitals
 - Technical leadership: architecture decisions, client scoping workshops, mentoring of junior developers, software quality standards
+- AI-assisted development: generative AI integrated across the delivery chain (specification, code, review, acceptance testing, migrations) with Claude Code, agents and MCP; author of a Claude Code project toolkit (agent instructions, code review, acceptance, RGAA audit and migration skills, Azure DevOps integration) reused on new agency projects; Azure OpenAI agents (n8n) for CV parsing and search in client applications
+
+## Projects
+
+- Emptio: marketplace aggregator PWA, scraping 20+ platforms, price tracking, push notifications, WebAuthn (https://github.com/KirianCaumes/Emptio)
+- In Flames Bootlegs: searchable archive of live recordings (https://in-flames-bootlegs.kiriancaumes.fr)
+- Discogs Marketplace API: open source TypeScript client published on npm (https://github.com/KirianCaumes/Discogs-Marketplace-API-NodeJS)
+- FFHB Championship Calendar Generator: synchronizable calendars for amateur handball (https://ffhb-champ-calendar-generator.kiriancaumes.fr)
+- See more on GitHub: https://github.com/KirianCaumes?tab=repositories
 
 ## Education
 
@@ -31,7 +40,6 @@
 - Website: https://kiriancaumes.fr
 - LinkedIn: https://www.linkedin.com/in/kirian-caumes
 - GitHub: https://github.com/KirianCaumes
-- Medium: https://medium.com/@kirian.caumes
 - CV (PDF): https://kiriancaumes.fr/documents/Kirian-CAUMES-CV.pdf
 
 ## Contact

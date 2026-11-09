@@ -44,24 +44,23 @@ export default function Index({ now }: IndexProps) {
                             <p>
                                 Lead Tech / Développeur Full Stack âgé de <em>{age} ans</em>, je suis situé aux abords de la ville de{' '}
                                 <em>Nantes</em> et titulaire du <em>permis B</em>.
-                                <br />
-                                <br />
+                            </p>
+                            <p>
                                 Fort de plus de <em>{workingYears} ans d'expérience</em> dans la conception d'
                                 <em>applications web métier</em> sur mesure et performantes, mon{' '}
                                 <Link href="/#career">parcours professionnel</Link> m'a permis de développer une expertise couvrant l'
                                 <em>architecture logicielle</em>, le développement <em>full stack</em>, l'automatisation <em>CI/CD</em>, le
-                                cloud <em>Azure</em> et l'<em>accompagnement technique d'équipes</em>.
-                                <br />
-                                <br />
+                                cloud <em>Azure</em> et l'<em>accompagnement technique d'équipes</em>. L'<em>IA générative</em> fait
+                                aujourd'hui partie de ma façon de développer : <em>Claude Code</em>, agents et <em>MCP</em> interviennent de
+                                la spécification à la recette, sans rien lâcher sur la qualité.
+                            </p>
+                            <p>
                                 Spécialisé en <em>TypeScript</em>, <em>React</em> et <em>Node.js/NestJS</em>, j'ai obtenu à Ynov Nantes mon
                                 mastère « <em>Expert Développement Web</em> » et le titre RNCP «{' '}
-                                <em>Expert Informatique et Systèmes d'Information</em> ». Habitué aux environnements multi-projets, aux
-                                échanges directs avec les clients métiers et à la bonne compréhension de l'<em>anglais</em>, j'interviens du
+                                <em>Expert Informatique et Systèmes d'Information</em> ». À l'aise dans les environnements multi-projets et
+                                dans l'échange direct avec les clients métiers, en français comme en <em>anglais</em>, j'interviens du
                                 cadrage fonctionnel initial jusqu'à la mise en production.
-                                <br />
-                                <br />
                             </p>
-                            <br />
                             <Columns>
                                 <Columns.Column>
                                     <Button
@@ -74,7 +73,7 @@ export default function Index({ now }: IndexProps) {
                                     >
                                         Mon CV *
                                     </Button>
-                                    <p className={styles['is-last-update']}>* Dernière mise à jour : mai 2026</p>
+                                    <p className={styles['is-last-update']}>* Dernière mise à jour : novembre 2026</p>
                                 </Columns.Column>
                                 <Columns.Column>
                                     <Button
@@ -108,18 +107,6 @@ export default function Index({ now }: IndexProps) {
                                 <Icon
                                     isColored
                                     name="github"
-                                />
-                            </a>
-                            <a
-                                aria-label="medium.com/@kirian.caumes, ouvre dans un nouvel onglet"
-                                href="https://medium.com/@kirian.caumes"
-                                rel="noopener noreferrer"
-                                target="_blank"
-                                title="Medium"
-                            >
-                                <Icon
-                                    isColored
-                                    name="medium"
                                 />
                             </a>
                         </Columns.Column>
@@ -303,8 +290,23 @@ export default function Index({ now }: IndexProps) {
                                             sur la <strong>cohérence des données</strong>.
                                         </>
                                     }
-                                    tags={['PostgreSQL', 'MongoDB', 'ElasticSearch', 'Swagger']}
+                                    tags={['PostgreSQL', 'SQL Server', 'Swagger']}
                                     title="Données & APIs"
+                                />
+                            </Columns.Column>
+                            <Columns.Column sizes={['one-third-widescreen', 'one-third-desktop', 'half-tablet']}>
+                                <SkillCard
+                                    color="primary"
+                                    description={
+                                        <>
+                                            Aller plus loin sans baisser la qualité : avec <strong>Claude Code</strong>, je cadre des{' '}
+                                            <strong>agents</strong> par les conventions du projet pour affiner mes spécifications, pousser
+                                            mon code plus loin et renforcer revue et recette. Je <strong>reste maître</strong> à chaque
+                                            étape : je décide, j'itère et je valide.
+                                        </>
+                                    }
+                                    tags={['Claude Code', 'Agents', 'MCP']}
+                                    title="Développement avec IA"
                                 />
                             </Columns.Column>
                             <Columns.Column sizes={['one-third-widescreen', 'one-third-desktop', 'half-tablet']}>
@@ -349,7 +351,7 @@ export default function Index({ now }: IndexProps) {
                         direction="up"
                         triggerOnce
                     >
-                        <>
+                        <div>
                             <CareerCard
                                 location={{
                                     company: 'Next Decision',
@@ -380,6 +382,12 @@ export default function Index({ now }: IndexProps) {
                                         description:
                                             // eslint-disable-next-line max-len
                                             "Conception et mise en œuvre d'architectures cloud Azure et On-Premise (AKS), conteneurisation Docker, pipelines CI/CD automatisés et déploiements haute disponibilité.",
+                                    },
+                                    {
+                                        title: 'Développement assisté par IA',
+                                        description:
+                                            // eslint-disable-next-line max-len
+                                            "Mise en place du développement assisté par IA sur les projets de l'agence : un outillage Claude Code commun, de la revue de code à la recette, et des agents Azure OpenAI livrés dans les applications clients.",
                                     },
                                 ]}
                                 now={now}
@@ -498,7 +506,7 @@ export default function Index({ now }: IndexProps) {
                                     </>
                                 }
                             />
-                        </>
+                        </div>
                     </Fade>
                 </Container>
             </div>
@@ -532,7 +540,7 @@ export default function Index({ now }: IndexProps) {
                                 triggerOnce
                             >
                                 <Image
-                                    alt="kiriancaumes.fr"
+                                    alt="Capture d'écran du site kiriancaumes.fr"
                                     height={200}
                                     src="/images/website.png"
                                     width={300}
@@ -636,7 +644,7 @@ export default function Index({ now }: IndexProps) {
                                 triggerOnce
                             >
                                 <FlatCard
-                                    alt="Équipe de Handball du Thouaré Handball"
+                                    alt="Kirian Caumes avec son équipe de handball"
                                     imageSrc="/images/handball.jpg"
                                     title="Handball"
                                 >
@@ -649,7 +657,7 @@ export default function Index({ now }: IndexProps) {
                                     l'entraide et gagner ensemble.
                                     <br />
                                     <br />
-                                    Évidement, fidèle supporter du HBC Nantes et de l'équipe de France.
+                                    Évidemment, fidèle supporter du HBC Nantes et de l'équipe de France.
                                 </FlatCard>
                             </Fade>
                         </Columns.Column>
@@ -659,7 +667,7 @@ export default function Index({ now }: IndexProps) {
                                 triggerOnce
                             >
                                 <FlatCard
-                                    alt="Collections Vinyls d'In Flames - A Jester's Collection"
+                                    alt="Collection de vinyles d'In Flames - A Jester's Collection"
                                     imageSrc="/images/ajesterscollection.png"
                                     title="Collections"
                                 >

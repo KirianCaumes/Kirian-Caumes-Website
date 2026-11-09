@@ -16,12 +16,13 @@
       @include mixins.background-primary;
 
       p {
+        margin-bottom: 1.5em;
         text-align: justify;
 
         &.is-last-update {
           font-size: 0.66rem;
           font-style: italic;
-          margin-top: 0.25rem;
+          margin: 0.25rem 0 0;
         }
       }
 

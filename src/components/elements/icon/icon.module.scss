@@ -23,14 +23,6 @@ svg.icon {
       }
     }
 
-    &[data-icon-name='medium'] {
-      fill: map.get(variables.$colors, 'primary-dark');
-
-      &:hover {
-        fill: variables.$brand-medium;
-      }
-    }
-
     &[data-icon-name='mail'] {
       fill: map.get(variables.$colors, 'primary-dark');
 

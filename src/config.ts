@@ -11,7 +11,8 @@ const publicRuntimeConfig = {
     appTitle: 'Kirian Caumes - Lead Tech / Développeur Full Stack à Nantes',
     /** The meta description used for SEO and social sharing */
     appDescription:
-        "Kirian Caumes, Lead Tech / Développeur Full Stack passionné d'informatique. Féru de Javascript, Typescript, Node, Nest, PWA, Next.js et autre !",
+        'Kirian Caumes, Lead Tech / Développeur Full Stack à Nantes. ' +
+        'Applications web métier en TypeScript, React et NestJS, cloud Azure et développement assisté par IA.',
     /** An HTML comment injected into the page source as an Easter egg for developers */
     appComment:
         '👉 If you are able to see this, feel free to check out the source code of my website: https://github.com/KirianCaumes/Kirian-Caumes-Website 👈',

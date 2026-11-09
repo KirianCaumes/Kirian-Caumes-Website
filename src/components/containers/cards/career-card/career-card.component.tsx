@@ -71,15 +71,17 @@ export default function CareerCard({ period, now, duration: customDuration, titl
                     )}
                     {location.city}
                 </p>
-                {missions.map((mission, i) => (
-                    <React.Fragment
-                        // eslint-disable-next-line react/no-array-index-key
-                        key={`mission-${i}`}
-                    >
-                        <p className={styles['career-card-mission-title']}>{mission.title}</p>
-                        <p className={styles['career-card-mission-description']}>{mission.description}</p>
-                    </React.Fragment>
-                ))}
+                <dl>
+                    {missions.map((mission, i) => (
+                        <React.Fragment
+                            // eslint-disable-next-line react/no-array-index-key
+                            key={`mission-${i}`}
+                        >
+                            <dt className={styles['career-card-mission-title']}>{mission.title}</dt>
+                            <dd className={styles['career-card-mission-description']}>{mission.description}</dd>
+                        </React.Fragment>
+                    ))}
+                </dl>
             </div>
             <div className={styles['career-card-void']} />
         </div>

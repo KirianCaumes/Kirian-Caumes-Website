@@ -46,7 +46,7 @@ export const structuredData = {
             url: publicRuntimeConfig.appUrl,
             jobTitle: ['Lead Tech', 'Développeur Full Stack'],
             email: 'mailto:kirian.caumes@gmail.com',
-            sameAs: ['https://www.linkedin.com/in/kirian-caumes', 'https://github.com/KirianCaumes', 'https://medium.com/@kirian.caumes'],
+            sameAs: ['https://www.linkedin.com/in/kirian-caumes', 'https://github.com/KirianCaumes'],
             address: {
                 '@type': 'PostalAddress',
                 addressLocality: 'Nantes',
@@ -73,6 +73,11 @@ export const structuredData = {
                 'Microsoft Azure',
                 'CI/CD',
                 'SEO',
+                'PostgreSQL',
+                'Accessibilité numérique',
+                'Intelligence artificielle générative',
+                'Claude Code',
+                'Azure OpenAI',
             ],
             alumniOf: [
                 {
@@ -153,7 +158,7 @@ export const structuredData = {
                         },
                     },
                     roleName: 'Lead Tech / Développeur Full Stack',
-                    startDate: '2018-06',
+                    startDate: '2018-07',
                 },
             ],
         },

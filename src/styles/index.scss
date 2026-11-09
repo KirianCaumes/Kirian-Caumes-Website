@@ -1,3 +1,11 @@
 @use './bases/reset';
 @use './bases/font';
 @use './themes/default.scss';
+
+// RGAA 13.8: the reveal animations (Fade) stay off when the user asked for less motion
+@media (prefers-reduced-motion: reduce) {
+  div.disable-animation-no-js {
+    animation: none !important;
+    opacity: 1 !important;
+  }
+}

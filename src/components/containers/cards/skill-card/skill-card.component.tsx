@@ -28,16 +28,13 @@ export default function SkillCard({ title, description, color, tags }: SkillCard
             <div className={styles['skill-card-body']}>
                 <p className={styles['skill-card-description']}>{description}</p>
                 {tags && tags.length > 0 && (
-                    <div className={styles['skill-card-tags']}>
+                    <ul className={styles['skill-card-tags']}>
                         {tags.map(tag => (
-                            <Tag
-                                color={color}
-                                key={tag}
-                            >
-                                {tag}
-                            </Tag>
+                            <li key={tag}>
+                                <Tag color={color}>{tag}</Tag>
+                            </li>
                         ))}
-                    </div>
+                    </ul>
                 )}
             </div>
         </div>
