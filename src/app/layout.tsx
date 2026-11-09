@@ -3,7 +3,6 @@ import { Montserrat } from 'next/font/google'
 import { publicRuntimeConfig } from 'config'
 import Layout from 'components/layout/layout/layout.component'
 import GdprBanner from 'components/layout/gdpr-banner/gdpr-banner.component'
-import { DISABLE_ANIMATION_NO_JS } from 'components/containers/fade/fade.component'
 import type { Metadata, Viewport } from 'next'
 import type { ReactNode } from 'react'
 
@@ -62,11 +61,6 @@ export default function RootLayout({ children }: { /** Page content */ readonly 
                     <GdprBanner />
                     {children}
                 </Layout>
-
-                {/* Without JS, react-awesome-reveal would leave faded elements at opacity:0 - keep them visible */}
-                <noscript>
-                    <style>{`div.${DISABLE_ANIMATION_NO_JS} { animation: none !important; opacity: 1 !important; }`}</style>
-                </noscript>
             </body>
         </html>
     )

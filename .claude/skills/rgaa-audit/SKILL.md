@@ -20,7 +20,7 @@ https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/, and what it 
 
 Read the **Accessibility and SEO** block of `AGENTS.md` first: it lists the shared pieces that settle a criterion
 once (`Icon` hidden, the « ouvre dans un nouvel onglet » labels, `Emoji`, `Title` levels, the landmarks of
-`Layout`, the `<noscript>` fallback of `Fade`) and the known debt (`<br />` spacing on the home page). A finding's
+`Layout`, `Reveal` visible without JavaScript) and the known debt (`<br />` spacing on the home page). A finding's
 fix is the existing piece whenever one exists, never a local variant of it.
 
 ## 2. Review
@@ -47,7 +47,7 @@ Leads worth grepping in the scope (a hit is a lead, not a finding):
 | `px` font sizes, fixed `width` / `height` on text                                | 10.4, 10.11, 10.12    |
 | a literal color in SCSS, light text on the `background-primary` SVG              | 3.2, 3.3              |
 | `:hover` revealing content with no `:focus-within` twin (navbar, cards)          | 10.14, 12.11          |
-| a `Fade` / `transition` / `animation` with no `prefers-reduced-motion` guard     | 13.8                  |
+| a `Reveal` / `transition` / `animation` with no `prefers-reduced-motion` guard     | 13.8                  |
 | a `Tag` or color alone carrying a meaning                                        | 3.1                   |
 
 What reading the code cannot settle (an actual contrast ratio on the SVG backgrounds, the rendering at 320px or

@@ -13,7 +13,7 @@ architecture rather than flattening it.
   injects the JSON-LD), `mentions-legales/`, `not-found.tsx`, `robots.ts`, `sitemap.ts`.
 - `src/views/<page>/`: one folder per page, `index.component.tsx` + `index.hook.ts` + `index.module.scss`. The home
   page holds all the profile texts.
-- `src/components/`: `containers/` (cards, columns, container, fade, tag), `elements/` (border, emoji, icon, title),
+- `src/components/`: `containers/` (cards, columns, container, tag), `elements/` (border, emoji, icon, title),
   `inputs/` (button), `layout/` (layout, navbar, gdpr-banner).
 - `src/styles/`: `abstracts/` (`_variables.scss` colors and breakpoints, `_mixins.scss`), `bases/`, `index.scss`.
 - `src/config.ts`: `publicRuntimeConfig` (URL, title, description, GA id). `src/lib/structured-data.ts`: the
@@ -68,8 +68,8 @@ blocks the commit.
 - `'use client'` only on components that use hooks or browser APIs.
 - Date-derived text (age, years of experience, seasons) takes `now` from the server page (`page.tsx` passes
   `new Date()`), never `new Date()` in a client component: the SSR and client texts must match at hydration.
-- `Fade` (react-awesome-reveal) needs an element child, never a Fragment: the library clones the child with a
-  `className`.
+- Reveal-on-scroll goes through react-awesome-reveal 5 `Reveal` (`from="left" | "bottom" | "right"`): one `div`
+  around its children, revealed together, once.
 - `Title` sets the heading level explicitly: one `h1` per page, `h2` per section, `h3` for the section subtitle.
 - Colors come from the `$colors` map and `$brand-*` variables in `_variables.scss`; breakpoints through the
   `mixins.mobile` / `tablet` / `desktop` mixins.
@@ -113,9 +113,8 @@ The site follows the RGAA 4.1.2; audit with `/rgaa-audit`. Pieces that settle a 
 - A `target="_blank"` link has an `aria-label` « <destination>, ouvre dans un nouvel onglet » (RGAA 13.2).
 - `Emoji` renders a `role="img"` with its `label`, or `aria-hidden` without one (RGAA 13.5).
 - `Title` gives the heading levels (RGAA 9.1); `Layout` gives the `header` / `nav` / `main` / `footer` landmarks.
-- `html lang` comes from `config.ts`; the `<noscript>` style of `layout.tsx` and the `prefers-reduced-motion` rule
-  of `styles/index.scss` keep `Fade` content visible without JavaScript or when the user asked for less motion
-  (RGAA 13.8).
+- `html lang` comes from `config.ts`. react-awesome-reveal 5 keeps `Reveal` content visible without JavaScript
+  (`scripting: none`) and with reduced motion, through its own stylesheet (RGAA 13.8).
 - Repeated items are lists: `SkillCard` tags are a `ul`, `CareerCard` missions a `dl` (RGAA 9.3).
 - Known debt, not to extend: the home page still spaces some blocks with `<br />` (RGAA 8.9); the intro uses
   paragraphs with a margin, new code uses margins or `gap`.

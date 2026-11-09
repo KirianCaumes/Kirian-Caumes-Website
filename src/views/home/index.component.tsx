@@ -1,6 +1,7 @@
 'use client'
 
 import classNames from 'classnames'
+import { Reveal } from 'react-awesome-reveal'
 import Link from 'next/link'
 import Image from 'next/image'
 import styles from 'views/home/index.module.scss'
@@ -17,7 +18,13 @@ import Icon from 'components/elements/icon/icon.component'
 import Title from 'components/elements/title/title.component'
 import Button from 'components/inputs/button/button.component'
 import Container from 'components/containers/container/container.component'
-import Fade from 'components/containers/fade/fade.component'
+
+// Half a block away over 1 s: more visible than the library default (24px, 600 ms), softer than v4 (a full block)
+const REVEAL_FROM = {
+    left: { opacity: 0, x: '-50%' },
+    bottom: { opacity: 0, y: '50%' },
+    right: { opacity: 0, x: '50%' },
+} as const
 
 export interface IndexProps {
     /** Date captured at server (pre)render, reused client-side so date-derived text never mismatches at hydration */
@@ -145,10 +152,10 @@ export default function Index({ now }: IndexProps) {
 
                     <Columns>
                         <Columns.Column>
-                            <Fade
+                            <Reveal
                                 className={styles['row-about-fade-container']}
-                                direction="left"
-                                triggerOnce
+                                duration={1000}
+                                from={REVEAL_FROM.left}
                             >
                                 <IconCard
                                     color="tertiary"
@@ -160,13 +167,13 @@ export default function Index({ now }: IndexProps) {
                                     quotidien. Parce qu'une bonne ambiance de travail, c'est aussi ce qui fait la différence au sein d'une
                                     équipe.
                                 </IconCard>
-                            </Fade>
+                            </Reveal>
                         </Columns.Column>
                         <Columns.Column>
-                            <Fade
+                            <Reveal
                                 className={styles['row-about-fade-container']}
-                                direction="up"
-                                triggerOnce
+                                duration={1000}
+                                from={REVEAL_FROM.bottom}
                             >
                                 <IconCard
                                     color="secondary"
@@ -178,13 +185,13 @@ export default function Index({ now }: IndexProps) {
                                     décisions. L'humain reste au cœur de mon approche : écoute, implication et relation de confiance avec
                                     les clients comme avec l'équipe.
                                 </IconCard>
-                            </Fade>
+                            </Reveal>
                         </Columns.Column>
                         <Columns.Column>
-                            <Fade
+                            <Reveal
                                 className={styles['row-about-fade-container']}
-                                direction="right"
-                                triggerOnce
+                                duration={1000}
+                                from={REVEAL_FROM.right}
                             >
                                 <IconCard
                                     color="primary"
@@ -195,7 +202,7 @@ export default function Index({ now }: IndexProps) {
                                     Passionné d'informatique depuis toujours, j'aborde chaque problème comme un défi à relever. La recherche
                                     de la meilleure solution, même lorsque c'est complexe, est ce qui me motive au quotidien.
                                 </IconCard>
-                            </Fade>
+                            </Reveal>
                         </Columns.Column>
                     </Columns>
                 </Container>
@@ -219,10 +226,10 @@ export default function Index({ now }: IndexProps) {
                         Mon savoir-faire technique et managérial
                     </Title>
                     <br />
-                    <Fade
+                    <Reveal
                         className={styles['row-skills-fade-container']}
-                        direction="up"
-                        triggerOnce
+                        duration={1000}
+                        from={REVEAL_FROM.bottom}
                     >
                         <Columns>
                             <Columns.Column sizes={['one-third-widescreen', 'one-third-desktop', 'full-tablet']}>
@@ -273,11 +280,11 @@ export default function Index({ now }: IndexProps) {
                                 />
                             </Columns.Column>
                         </Columns>
-                    </Fade>
-                    <Fade
+                    </Reveal>
+                    <Reveal
                         className={styles['row-skills-fade-container']}
-                        direction="up"
-                        triggerOnce
+                        duration={1000}
+                        from={REVEAL_FROM.bottom}
                     >
                         <Columns>
                             <Columns.Column sizes={['one-third-widescreen', 'one-third-desktop', 'half-tablet']}>
@@ -325,7 +332,7 @@ export default function Index({ now }: IndexProps) {
                                 />
                             </Columns.Column>
                         </Columns>
-                    </Fade>
+                    </Reveal>
                 </Container>
             </div>
             <div
@@ -347,167 +354,164 @@ export default function Index({ now }: IndexProps) {
                         La petite histoire de mon cheminement professionnel
                     </Title>
                     <br />
-                    <Fade
-                        direction="up"
-                        triggerOnce
+                    <Reveal
+                        duration={1000}
+                        from={REVEAL_FROM.bottom}
                     >
-                        <div>
-                            <CareerCard
-                                location={{
-                                    company: 'Next Decision',
-                                    href: 'https://www.next-decision.fr/',
-                                    city: 'Nantes',
-                                }}
-                                missions={[
-                                    {
-                                        title: 'Référent technique & qualité logicielle',
-                                        description:
-                                            // eslint-disable-next-line max-len
-                                            "Garant de la qualité, de la maintenabilité et des bonnes pratiques de développement via la mise en place de standards de qualité logicielle. Définition d'architectures full stack scalables en React et NestJS pour des applications métier critiques.",
-                                    },
-                                    {
-                                        title: 'Cadrage fonctionnel & pilotage technique',
-                                        description:
-                                            // eslint-disable-next-line max-len
-                                            "Animation d'ateliers de cadrage fonctionnel et pilotage des décisions techniques avec les parties prenantes métier dans des secteurs variés : recrutement, transport, immobilier, informatique, etc.",
-                                    },
-                                    {
-                                        title: "Mentorat & accompagnement d'équipes",
-                                        description:
-                                            // eslint-disable-next-line max-len
-                                            "Montée en compétence de développeurs juniors sur plusieurs projets : code reviews, pair programming et animation d'ateliers techniques.",
-                                    },
-                                    {
-                                        title: 'Architecture cloud & DevOps',
-                                        description:
-                                            // eslint-disable-next-line max-len
-                                            "Conception et mise en œuvre d'architectures cloud Azure et On-Premise (AKS), conteneurisation Docker, pipelines CI/CD automatisés et déploiements haute disponibilité.",
-                                    },
-                                    {
-                                        title: 'Développement assisté par IA',
-                                        description:
-                                            // eslint-disable-next-line max-len
-                                            "Mise en place du développement assisté par IA sur les projets de l'agence : un outillage Claude Code commun, de la revue de code à la recette, et des agents Azure OpenAI livrés dans les applications clients.",
-                                    },
-                                ]}
-                                now={now}
-                                period={[new Date(2021, 8), now]}
-                                title="CDI Lead Tech / Développeur Full Stack"
-                            />
-                            <CareerCard
-                                duration="3 ans"
-                                location={{
-                                    company: 'Next Decision',
-                                    href: 'https://www.next-decision.fr/',
-                                    city: 'Nantes',
-                                }}
-                                missions={[
-                                    {
-                                        title: "Développement d'applications web métier pour PME et grands groupes",
-                                        description:
-                                            // eslint-disable-next-line max-len
-                                            "Prise en charge complète d'applications web de A à Z : Frontend, Backend (API REST sécurisées) et Base de données, incluant maintenance et évolutions.",
-                                    },
-                                    {
-                                        title: 'Suivi technique et relation client',
-                                        description:
-                                            // eslint-disable-next-line max-len
-                                            "Rédaction de spécifications fonctionnelles, pilotage de projets, coordination avec les clients et conception d'architectures cloud.",
-                                    },
-                                ]}
-                                period={[new Date(2018, 6), new Date(2021, 7)]}
-                                title="Alternance Développeur Full Stack (Bachelor 3 à Mastère 2)"
-                            />
-                            <CareerCard
-                                location={{ company: 'Next Decision', href: 'https://www.next-decision.fr/', city: 'Nantes' }}
-                                missions={[
-                                    {
-                                        title: "Création d'applications web fonctionnelles et spécialisées pour les entreprises",
-                                        description:
-                                            // eslint-disable-next-line max-len
-                                            'Implémentation de nouvelles fonctionnalités et résolution des anomalies présentes dans des applications existantes',
-                                    },
-                                ]}
-                                period={[new Date(2018, 6), new Date(2018, 7)]}
-                                title="Stage en développement d'applications web (Bachelor 2)"
-                            />
-                            <CareerCard
-                                location={{
-                                    city: 'Nantes',
-                                    company: 'Label Communication',
-                                    href: 'https://www.labelcommunication.net/',
-                                }}
-                                missions={[
-                                    {
-                                        title: 'Développement de sites web vitrines modernes et ergonomiques',
-                                        description:
-                                            // eslint-disable-next-line max-len
-                                            "Apprentissage de WordPress et de son écosystème, incluant WooCommerce et autres plugins gravitants dans l'écosystème du CMS",
-                                    },
-                                ]}
-                                period={[new Date(2017, 6), new Date(2017, 7)]}
-                                title="Stage en développement web (Bachelor 1)"
-                            />
-                            <CareerCard
-                                location={{
-                                    city: 'Nantes',
-                                    company: 'Ynov',
-                                    href: 'https://www.ynov.com/campus/nantes/',
-                                }}
-                                missions={[
-                                    {
-                                        title: '2 années de Mastères',
-                                        description:
-                                            "Diplômes : (RNCP) Expert Informatique et Systèmes d'Information et Mastère Expert Développement Web",
-                                    },
-                                    {
-                                        title: '3 années de Bachelor',
-                                        description: "Apprentissage général de l'informatique : développement, réseau et culture générale",
-                                    },
-                                ]}
-                                period={[new Date(2016, 8), new Date(2021, 7)]}
-                                title="Études supérieures Développeur Informatique Ingésup"
-                            />
-                            <CareerCard
-                                location={{
-                                    city: 'Nantes',
-                                    company: 'Lycée Notre-Dame de Toutes-Aides',
-                                    href: 'http://ndtoutesaides.fr/',
-                                }}
-                                missions={[
-                                    {
-                                        title: 'Études Scientifiques',
-                                        description: 'Diplôme : Baccalauréat Scientifique SVT, mention assez bien',
-                                    },
-                                    {
-                                        title: 'Projet Bac. ISN (spécialité informatique)',
-                                        description: "Réalisation d'un jeu vidéo sous Processing 3",
-                                    },
-                                ]}
-                                period={[new Date(2012, 8), new Date(2016, 5)]}
-                                title="Études Baccalauréat"
-                            />
-                            <CareerCard
-                                location={{
-                                    city: 'Nantes',
-                                    company: 'Parabellum Geographic Insight',
-                                    href: 'https://www.pginsight.com/',
-                                }}
-                                missions={[
-                                    {
-                                        title: "Observation des métiers de l'informatique",
-                                        description: 'Observation de problématiques réseaux et développements',
-                                    },
-                                ]}
-                                period={[new Date(2011, 11)]}
-                                title={
-                                    <>
-                                        Stage d'observation (3<sup>ème</sup>, Lycée)
-                                    </>
-                                }
-                            />
-                        </div>
-                    </Fade>
+                        <CareerCard
+                            location={{
+                                company: 'Next Decision',
+                                href: 'https://www.next-decision.fr/',
+                                city: 'Nantes',
+                            }}
+                            missions={[
+                                {
+                                    title: 'Référent technique & qualité logicielle',
+                                    description:
+                                        // eslint-disable-next-line max-len
+                                        "Garant de la qualité, de la maintenabilité et des bonnes pratiques de développement via la mise en place de standards de qualité logicielle. Définition d'architectures full stack scalables en React et NestJS pour des applications métier critiques.",
+                                },
+                                {
+                                    title: 'Cadrage fonctionnel & pilotage technique',
+                                    description:
+                                        // eslint-disable-next-line max-len
+                                        "Animation d'ateliers de cadrage fonctionnel et pilotage des décisions techniques avec les parties prenantes métier dans des secteurs variés : recrutement, transport, immobilier, informatique, etc.",
+                                },
+                                {
+                                    title: "Mentorat & accompagnement d'équipes",
+                                    description:
+                                        // eslint-disable-next-line max-len
+                                        "Montée en compétence de développeurs juniors sur plusieurs projets : code reviews, pair programming et animation d'ateliers techniques.",
+                                },
+                                {
+                                    title: 'Architecture cloud & DevOps',
+                                    description:
+                                        // eslint-disable-next-line max-len
+                                        "Conception et mise en œuvre d'architectures cloud Azure et On-Premise (AKS), conteneurisation Docker, pipelines CI/CD automatisés et déploiements haute disponibilité.",
+                                },
+                                {
+                                    title: 'Développement assisté par IA',
+                                    description:
+                                        // eslint-disable-next-line max-len
+                                        "Mise en place du développement assisté par IA sur les projets de l'agence : un outillage Claude Code commun, de la revue de code à la recette, et des agents Azure OpenAI livrés dans les applications clients.",
+                                },
+                            ]}
+                            now={now}
+                            period={[new Date(2021, 8), now]}
+                            title="CDI Lead Tech / Développeur Full Stack"
+                        />
+                        <CareerCard
+                            duration="3 ans"
+                            location={{
+                                company: 'Next Decision',
+                                href: 'https://www.next-decision.fr/',
+                                city: 'Nantes',
+                            }}
+                            missions={[
+                                {
+                                    title: "Développement d'applications web métier pour PME et grands groupes",
+                                    description:
+                                        // eslint-disable-next-line max-len
+                                        "Prise en charge complète d'applications web de A à Z : Frontend, Backend (API REST sécurisées) et Base de données, incluant maintenance et évolutions.",
+                                },
+                                {
+                                    title: 'Suivi technique et relation client',
+                                    description:
+                                        // eslint-disable-next-line max-len
+                                        "Rédaction de spécifications fonctionnelles, pilotage de projets, coordination avec les clients et conception d'architectures cloud.",
+                                },
+                            ]}
+                            period={[new Date(2018, 6), new Date(2021, 7)]}
+                            title="Alternance Développeur Full Stack (Bachelor 3 à Mastère 2)"
+                        />
+                        <CareerCard
+                            location={{ company: 'Next Decision', href: 'https://www.next-decision.fr/', city: 'Nantes' }}
+                            missions={[
+                                {
+                                    title: "Création d'applications web fonctionnelles et spécialisées pour les entreprises",
+                                    description:
+                                        'Implémentation de nouvelles fonctionnalités et résolution des anomalies présentes dans des applications existantes',
+                                },
+                            ]}
+                            period={[new Date(2018, 6), new Date(2018, 7)]}
+                            title="Stage en développement d'applications web (Bachelor 2)"
+                        />
+                        <CareerCard
+                            location={{
+                                city: 'Nantes',
+                                company: 'Label Communication',
+                                href: 'https://www.labelcommunication.net/',
+                            }}
+                            missions={[
+                                {
+                                    title: 'Développement de sites web vitrines modernes et ergonomiques',
+                                    description:
+                                        // eslint-disable-next-line max-len
+                                        "Apprentissage de WordPress et de son écosystème, incluant WooCommerce et autres plugins gravitants dans l'écosystème du CMS",
+                                },
+                            ]}
+                            period={[new Date(2017, 6), new Date(2017, 7)]}
+                            title="Stage en développement web (Bachelor 1)"
+                        />
+                        <CareerCard
+                            location={{
+                                city: 'Nantes',
+                                company: 'Ynov',
+                                href: 'https://www.ynov.com/campus/nantes/',
+                            }}
+                            missions={[
+                                {
+                                    title: '2 années de Mastères',
+                                    description:
+                                        "Diplômes : (RNCP) Expert Informatique et Systèmes d'Information et Mastère Expert Développement Web",
+                                },
+                                {
+                                    title: '3 années de Bachelor',
+                                    description: "Apprentissage général de l'informatique : développement, réseau et culture générale",
+                                },
+                            ]}
+                            period={[new Date(2016, 8), new Date(2021, 7)]}
+                            title="Études supérieures Développeur Informatique Ingésup"
+                        />
+                        <CareerCard
+                            location={{
+                                city: 'Nantes',
+                                company: 'Lycée Notre-Dame de Toutes-Aides',
+                                href: 'http://ndtoutesaides.fr/',
+                            }}
+                            missions={[
+                                {
+                                    title: 'Études Scientifiques',
+                                    description: 'Diplôme : Baccalauréat Scientifique SVT, mention assez bien',
+                                },
+                                {
+                                    title: 'Projet Bac. ISN (spécialité informatique)',
+                                    description: "Réalisation d'un jeu vidéo sous Processing 3",
+                                },
+                            ]}
+                            period={[new Date(2012, 8), new Date(2016, 5)]}
+                            title="Études Baccalauréat"
+                        />
+                        <CareerCard
+                            location={{
+                                city: 'Nantes',
+                                company: 'Parabellum Geographic Insight',
+                                href: 'https://www.pginsight.com/',
+                            }}
+                            missions={[
+                                {
+                                    title: "Observation des métiers de l'informatique",
+                                    description: 'Observation de problématiques réseaux et développements',
+                                },
+                            ]}
+                            period={[new Date(2011, 11)]}
+                            title={
+                                <>
+                                    Stage d'observation (3<sup>ème</sup>, Lycée)
+                                </>
+                            }
+                        />
+                    </Reveal>
                 </Container>
             </div>
             <div
@@ -535,9 +539,9 @@ export default function Index({ now }: IndexProps) {
                             sizes={['one-third-desktop', 'full-tablet']}
                             vAlign="center"
                         >
-                            <Fade
-                                direction="left"
-                                triggerOnce
+                            <Reveal
+                                duration={1000}
+                                from={REVEAL_FROM.left}
                             >
                                 <Image
                                     alt="Capture d'écran du site kiriancaumes.fr"
@@ -545,7 +549,7 @@ export default function Index({ now }: IndexProps) {
                                     src="/images/website.png"
                                     width={300}
                                 />
-                            </Fade>
+                            </Reveal>
                         </Columns.Column>
                         <Columns.Column>
                             <p>
@@ -639,9 +643,9 @@ export default function Index({ now }: IndexProps) {
                     <br />
                     <Columns className={classNames(styles['row-passions-columns'])}>
                         <Columns.Column sizes={['one-third-desktop', 'half-tablet']}>
-                            <Fade
-                                direction="left"
-                                triggerOnce
+                            <Reveal
+                                duration={1000}
+                                from={REVEAL_FROM.left}
                             >
                                 <FlatCard
                                     alt="Kirian Caumes avec son équipe de handball"
@@ -659,12 +663,12 @@ export default function Index({ now }: IndexProps) {
                                     <br />
                                     Évidemment, fidèle supporter du HBC Nantes et de l'équipe de France.
                                 </FlatCard>
-                            </Fade>
+                            </Reveal>
                         </Columns.Column>
                         <Columns.Column sizes={['one-third-desktop', 'half-tablet']}>
-                            <Fade
-                                direction="up"
-                                triggerOnce
+                            <Reveal
+                                duration={1000}
+                                from={REVEAL_FROM.bottom}
                             >
                                 <FlatCard
                                     alt="Collection de vinyles d'In Flames - A Jester's Collection"
@@ -687,12 +691,12 @@ export default function Index({ now }: IndexProps) {
                                     </a>
                                     .
                                 </FlatCard>
-                            </Fade>
+                            </Reveal>
                         </Columns.Column>
                         <Columns.Column sizes={['one-third-desktop', 'half-tablet']}>
-                            <Fade
-                                direction="right"
-                                triggerOnce
+                            <Reveal
+                                duration={1000}
+                                from={REVEAL_FROM.right}
                             >
                                 <FlatCard
                                     alt="Développement et exemple de code React"
@@ -716,7 +720,7 @@ export default function Index({ now }: IndexProps) {
                                     Cette démarche me permet d'explorer librement de nouvelles idées et de nourrir mes projets
                                     professionnels de découvertes issues de mes propres recherches et expériences.
                                 </FlatCard>
-                            </Fade>
+                            </Reveal>
                         </Columns.Column>
                     </Columns>
                 </Container>
@@ -742,9 +746,9 @@ export default function Index({ now }: IndexProps) {
                     <br />
                     <Columns>
                         <Columns.Column sizes={['one-third-widescreen', 'one-third-desktop', 'half-tablet']}>
-                            <Fade
-                                direction="left"
-                                triggerOnce
+                            <Reveal
+                                duration={1000}
+                                from={REVEAL_FROM.left}
                             >
                                 <ContactCard
                                     color="secondary"
@@ -755,12 +759,12 @@ export default function Index({ now }: IndexProps) {
                                     }}
                                     title="Par mail"
                                 />
-                            </Fade>
+                            </Reveal>
                         </Columns.Column>
                         <Columns.Column sizes={['one-third-widescreen', 'one-third-desktop', 'half-tablet']}>
-                            <Fade
-                                direction="right"
-                                triggerOnce
+                            <Reveal
+                                duration={1000}
+                                from={REVEAL_FROM.right}
                             >
                                 <ContactCard
                                     color="primary"
@@ -774,7 +778,7 @@ export default function Index({ now }: IndexProps) {
                                     }}
                                     title="Par Linkedin"
                                 />
-                            </Fade>
+                            </Reveal>
                         </Columns.Column>
                     </Columns>
                 </Container>

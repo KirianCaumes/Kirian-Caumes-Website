@@ -27,7 +27,7 @@
     "js-cookie": "^3.0.8",
     "next": "16.4.5",
     "react": "19.3.1",
-    "react-awesome-reveal": "^4.3.1",
+    "react-awesome-reveal": "^5.0.0",
     "react-dom": "19.3.1",
     "react-ga4": "^3.0.1",
     "react-use": "^17.6.1",
